@@ -16,12 +16,11 @@ public class TestController {
  
 	@Autowired
 	public TestDAO  tDAO = null;
+	
 	@GetMapping("/t")
 	public List<TestVO> TestBoard() {
 	
-	System.out.println(tDAO.selectList()); 
-	
-	return tDAO.selectList();
+		System.out.println(tDAO.selectList()); 
+		return tDAO.selectList();
 	}
-	
 }

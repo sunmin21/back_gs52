@@ -16,8 +16,11 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @ComponentScan({
 	"com.gs52.controller",
-	"com.gs52.dao"
+	"com.gs52.dao",
+	"com.gs52.controller.manager",
+	"com.gs52.dao.manager"
 })
+
 @SpringBootApplication
 public class Gs52Application extends SpringBootServletInitializer {
 
