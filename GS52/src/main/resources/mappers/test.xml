@@ -7,6 +7,6 @@
 
 <mapper namespace="Test">
 	 <select id="selectTest" parameterType="map" resultType="com.gs52.vo.TestVO">
-      SELECT * from TEST
+      SELECT * from test
    </select>
 </mapper>
