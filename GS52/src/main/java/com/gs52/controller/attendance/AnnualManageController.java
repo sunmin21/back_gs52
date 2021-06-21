@@ -28,6 +28,7 @@ public class AnnualManageController {
 	
 	@PostMapping("/insert")
 	public void insertBoard(@RequestBody AnnualManageVO vo){
+		System.out.println("insert====");
 		System.out.println(vo);
 		aDAO.insertAnnual(vo);
 		

@@ -20,7 +20,6 @@ public class AnnualManageDAO {
 	public List<AnnualManageVO> selectList(int userid){
 	   System.out.println("@");
 			 System.out.println(sqlFactory.openSession().selectList("Annual.selectAnnual",userid));
-			 System.out.println("@");
 		 return sqlFactory.openSession().selectList("Annual.selectAnnual",userid);
 		 
 		 
