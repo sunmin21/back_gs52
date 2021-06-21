@@ -13,17 +13,15 @@ public class AnnualManageVO {
 
 	
 	private int VACATION_INDEX=0;
-	
-	
 	private int VACATION_EMP_ID =0;
-	
 	private String VACATION_DATE = null;
-	
-	private int VACATION_ATTEND_INFO_INDEX =0;
-	
 	private String VACATION_CONTENTS = null;
+	private int VACATION_ATTEND_INFO_INDEX =0;
+	private double EMP_VACATION=0;
+	private String ATTEND_TYPE_NAME  =null;
+	private double COUNT =0;
+	private int EMP_ID = 0;
 	
-	private int VACATION_REMAIN=0;
    
 	
 }

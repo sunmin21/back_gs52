@@ -18,21 +18,31 @@ public class AnnualManageDAO {
 	private SqlSessionFactory sqlFactory =null;
 	
 	public List<AnnualManageVO> selectList(int userid){
-	   System.out.println("@");
-			 System.out.println(sqlFactory.openSession().selectList("Annual.selectAnnual",userid));
 		 return sqlFactory.openSession().selectList("Annual.selectAnnual",userid);
 		 
-		 
+	}
+	
+	public List<AnnualManageVO> selectOne(int userid){
+		 return sqlFactory.openSession().selectList("Annual.selectEmpVacation",userid);
 	}
 	public void insertAnnual(AnnualManageVO vo) {
 		
 		sqlFactory.openSession().selectList("Annual.insertAnnual",vo);
+		sqlFactory.openSession().commit();
+		sqlFactory.openSession().close();
 		
 	}
 	
 	public void deleteAnnual(int annualIndex) {
 		
 		sqlFactory.openSession().selectOne("Annual.deleteAnnual",annualIndex);
+	}
+	
+	public void updateAnnual(AnnualManageVO vo) {
+		  sqlFactory.openSession().update("Annual.updateEmpVacation",vo); //
+		  sqlFactory.openSession().close();
+		 		
+	
 	}
 	
 	
