@@ -17,6 +17,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 @ComponentScan({
 	"com.gs52.controller",
 	"com.gs52.dao",
+
 	"com.gs52.controller.manager",
 	"com.gs52.dao.manager"
 })
@@ -37,7 +38,7 @@ public class Gs52Application extends SpringBootServletInitializer {
 		sqlSessionFactoryBean.setMapperLocations(arrResource);
 		return sqlSessionFactoryBean.getObject();
 	}
-	
+
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(Gs52Application.class);
