@@ -2,3 +2,5 @@
 *.properties
 *.properties
 GS52/src/main/resources/application.properties
+GS52/src/main/resources/application.properties
+*.properties
