@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ConfRoom">
+<!-- 	 <select id="Select_room" parameterType="map" resultType="com.gs52.vo.ConfRoomVO">
+      SELECT * from room
+   </select>	 --> 
+   
+   <select id="Insert_room" parameterType="map" resultType="com.gs52.vo.ConfRoomVO">
+      insert into ROOM_BOOK_1 (room_book_title, room_book_room_index, room_book_date, room_book_time, room_book_emp_id_send, room_book_emp_id_receive)
+       VALUES (#{title}, #{index}, #{date}, #{time}, #{emp_id_send}, #{emp_id_receive})
+   </select>
+   
+      <select id="select_room" parameterType="map" resultType="com.gs52.vo.ConfRoomVO">
+      select * from room_book_1
+   </select>
+</mapper>
+

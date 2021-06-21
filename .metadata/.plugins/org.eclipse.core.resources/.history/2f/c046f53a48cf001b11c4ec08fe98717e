@@ -1,0 +1,12 @@
+server.port=8081
+spring.mvc.view.prefix=/WEB-INF/jsp/
+spring.mvc.view.suffix=.jsp
+
+spring.devtools.livereload.enabled=true
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521/xe
+spring.datasource.username=sun
+spring.datasource.password=oracle
+
+spring.servlet.multipart.enabled=true
+spring.servlet.multipart.max-file-size=10MB
