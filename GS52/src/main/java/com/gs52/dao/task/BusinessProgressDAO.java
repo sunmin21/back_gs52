@@ -22,7 +22,6 @@ public class BusinessProgressDAO {
 	public List<BusinessProgressVO> selectListTodo(BusinessProgressVO vo){
 		
 	
-		  
 		 return sqlFacotry.openSession().selectList("task.selectListTodo",vo);
 		 
 		 
@@ -38,14 +37,15 @@ public class BusinessProgressDAO {
 	public List<BusinessProgressVO> selectListSuccess(BusinessProgressVO vo){
 		
 		
-		  
+		  System.out.println(vo);
+          System.out.println(sqlFacotry.openSession().selectList("task.selectListSuccess",vo));
 		 return sqlFacotry.openSession().selectList("task.selectListSuccess",vo);
 		 
 		 
 	}
 	public int updateTodoDone(BusinessProgressVO vo) {
 		// TODO Auto-generated method stub
-		System.out.println(vo);
+		
 		return sqlFacotry.openSession().update("task.updateTodoDone",vo);
 	}
 }

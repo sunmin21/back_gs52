@@ -24,21 +24,21 @@ public class BusinessProgressController {
 	@PostMapping(value="/todo")
 	public List<BusinessProgressVO> selectListTodo(@RequestBody BusinessProgressVO vo ) {
 		
-		System.out.println(vo);
+		
 		return bDAO.selectListTodo(vo);
 	}
 	
 	@PostMapping(value="/todo/Done")
 	public int selectListTodoDone(@RequestBody BusinessProgressVO vo ) {
 		
-		 System.out.println(vo);
+		
 		return bDAO.updateTodoDone(vo);
 	}
 	
 	@PostMapping(value="/send")
 	public List<BusinessProgressVO> selectListSend(@RequestBody BusinessProgressVO vo ) {
 		
-		System.out.println(vo);
+		
 		return bDAO.selectListSend(vo);
 	}
 	
