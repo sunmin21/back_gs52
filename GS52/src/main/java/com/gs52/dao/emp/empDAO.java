@@ -1,4 +1,4 @@
-package com.gs52.dao;
+package com.gs52.dao.emp;
 
 import java.util.List;
 
@@ -8,18 +8,20 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gs52.vo.TestVO;
+import com.gs52.vo.emp.EmpVO;
+import com.gs52.vo.task.BusinessProgressVO;
 
 @Service  
-@Transactional // 실패하면 다시 롤백하라
-public class TestDAO {
-
+@Transactional
+public class empDAO {
 	@Autowired 
 	private SqlSessionFactory sqlFacotry =null;
 	
-	public List<TestVO> selectList(){
-			
-		 return sqlFacotry.openSession().selectList("Test.selectTest");
+	
+	public List<EmpVO> selectListEmp(){
+		
+	
+		 return sqlFacotry.openSession().selectList("user.selectListUser");
 		 
 		 
 	}
