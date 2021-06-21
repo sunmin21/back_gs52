@@ -17,16 +17,12 @@ public class AnnualManageVO {
 	
 	private int VACATION_EMP_ID =0;
 	
-	
 	private String VACATION_DATE = null;
-	
 	
 	private int VACATION_ATTEND_INFO_INDEX =0;
 	
-	
-	
 	private String VACATION_CONTENTS = null;
-	
+	private int EMP_VACATION =0;
    
 	
 }

@@ -6,12 +6,27 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="Annual">
-   	 <select id="selectAnnual" parameterType="int" resultType="com.gs52.vo.attendance.AnnualManageVO">
-      SELECT * from VACATION where vacation_emp_id = #{userid}
-   </select>
-   	 <insert id="insertAnnual" parameterType="com.gs52.vo.attendance.AnnualManageVO">
-   	 INSERT INTO VACATION(VACATION_INDEX,VACATION_EMP_ID,VACATION_DATE,VACATION_ATTEND_INFO_INDEX,VACATION_CONTENTS)
-   	 VALUES(#{VACATION_INDEX},#{VACATION_EMP_ID},#{VACATION_DATE},#{VACATION_ATTEND_INFO_INDEX},#{VACATION_CONTENTS})
-   	  
-   	 </insert>
+
+	<select id="selectAnnual" parameterType="int"
+		resultType="com.gs52.vo.attendance.AnnualManageVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+		 select VACATION_INDEX,
+		VACATION_EMP_ID,
+		VACATION_DATE,
+		VACATION_CONTENTS,
+		VACATION_ATTEND_INFO_INDEX,
+		EMP_VACATION
+		from VACATION  , EMP WHERE VACATION_EMP_ID = EMP_ID AND VACATION_EMP_ID=#{userid}
+	</select>
+	<insert id="insertAnnual"
+		parameterType="com.gs52.vo.attendance.AnnualManageVO">
+		INSERT INTO
+		VACATION(VACATION_INDEX,VACATION_EMP_ID,VACATION_DATE,VACATION_ATTEND_INFO_INDEX,VACATION_CONTENTS)
+		VALUES(#{VACATION_INDEX},#{VACATION_EMP_ID},#{VACATION_DATE},#{VACATION_ATTEND_INFO_INDEX},#{VACATION_CONTENTS})
+
+	</insert>
+
+	<delete id="deleteAnnual">
+		DELETE FROM VACATION WHERE VACATION_INDEX= #{VACATION_INDEX}
+	</delete>
 </mapper>

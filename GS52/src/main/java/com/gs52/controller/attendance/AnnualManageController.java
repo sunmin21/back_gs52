@@ -20,17 +20,23 @@ public class AnnualManageController {
  
 	@Autowired
 	public AnnualManageDAO  aDAO = null;
-	@PostMapping("/a")
+	@PostMapping("/select")
 	public List<AnnualManageVO> TestBoard(@RequestBody AnnualManageVO vo) {
-	
+	System.out.println(aDAO.selectList(vo.getVACATION_EMP_ID()));
 	return aDAO.selectList(vo.getVACATION_EMP_ID());
 	}
 	
-	@PostMapping("/b")
+	@PostMapping("/insert")
 	public void insertBoard(@RequestBody AnnualManageVO vo){
 		System.out.println(vo);
 		aDAO.insertAnnual(vo);
 		
+	}
+	
+	@PostMapping("/delete")
+	public void deleteBoard(@RequestBody AnnualManageVO vo) {
+		System.out.println(vo.getVACATION_INDEX());
+		aDAO.deleteAnnual(vo.getVACATION_INDEX());
 	}
 	
 }

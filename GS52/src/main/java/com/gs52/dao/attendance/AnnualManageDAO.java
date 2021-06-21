@@ -18,7 +18,9 @@ public class AnnualManageDAO {
 	private SqlSessionFactory sqlFactory =null;
 	
 	public List<AnnualManageVO> selectList(int userid){
-			 
+	   System.out.println("@");
+			 System.out.println(sqlFactory.openSession().selectList("Annual.selectAnnual",userid));
+			 System.out.println("@");
 		 return sqlFactory.openSession().selectList("Annual.selectAnnual",userid);
 		 
 		 
@@ -27,6 +29,11 @@ public class AnnualManageDAO {
 		
 		sqlFactory.openSession().selectList("Annual.insertAnnual",vo);
 		
+	}
+	
+	public void deleteAnnual(int annualIndex) {
+		
+		sqlFactory.openSession().selectOne("Annual.deleteAnnual",annualIndex);
 	}
 	
 	
