@@ -26,18 +26,25 @@ public class AnnualManageController {
 	return aDAO.selectList(vo.getVACATION_EMP_ID());
 	}
 	
+	@PostMapping("/select2")
+	public List<AnnualManageVO> EmpBoard(@RequestBody AnnualManageVO vo) {
+		return aDAO.selectOne(vo.getVACATION_EMP_ID());
+		} 
+	
 	@PostMapping("/insert")
 	public void insertBoard(@RequestBody AnnualManageVO vo){
-		System.out.println("insert====");
-		System.out.println(vo);
 		aDAO.insertAnnual(vo);
 		
 	}
 	
 	@PostMapping("/delete")
 	public void deleteBoard(@RequestBody AnnualManageVO vo) {
-		System.out.println(vo.getVACATION_INDEX());
 		aDAO.deleteAnnual(vo.getVACATION_INDEX());
+	}
+	@PostMapping("/update")
+	public void updateBoard(@RequestBody AnnualManageVO vo) {
+		aDAO.updateAnnual(vo);
+		
 	}
 	
 }
