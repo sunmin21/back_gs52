@@ -30,10 +30,10 @@
 	</repositories>
 
 	<dependencies>
-		<!-- security -->
+		<!-- security --><!-- 
 		 <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-security</artifactId> 
 			</dependency> <dependency> <groupId>org.springframework.security</groupId> 
-			<artifactId>spring-security-taglibs</artifactId> </dependency>
+			<artifactId>spring-security-taglibs</artifactId> </dependency> -->
 		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
