@@ -39,7 +39,7 @@ public class AnnualManageController {
 	
 	@PostMapping("/delete")
 	public void deleteBoard(@RequestBody AnnualManageVO vo) {
-		aDAO.deleteAnnual(vo.getVACATION_INDEX());
+		aDAO.deleteAnnual(vo.getVACATION_DATE());
 	}
 	@PostMapping("/update")
 	public void updateBoard(@RequestBody AnnualManageVO vo) {
