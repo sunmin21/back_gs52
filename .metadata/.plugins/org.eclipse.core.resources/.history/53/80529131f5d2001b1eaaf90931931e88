@@ -16,11 +16,7 @@
    </insert>
    
       <select id="Select_room" parameterType="map" resultType="com.gs52.vo.ConfRoomVO">
-      select * from room_b
-   </select>
-   
-         <select id="Select_emp" parameterType="map" resultType="com.gs52.vo.emp.EmpVO">
-      select * from emp
+      select * from room_book_1
    </select>
 </mapper>
 

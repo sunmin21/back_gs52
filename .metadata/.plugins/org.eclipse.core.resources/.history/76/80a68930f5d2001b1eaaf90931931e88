@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.gs52.vo.ConfRoomVO;
-import com.gs52.vo.emp.EmpVO;
 
 @Service  
 @Transactional // 실패하면 다시 롤백하라
@@ -31,12 +30,6 @@ public class ConfRoomDAO {
 		System.out.println(sqlFacotry.toString());
 		System.out.println(sqlFacotry.openSession().toString());
 		 return sqlFacotry.openSession().insert("ConfRoom.Insert_room", vo);
-	}
-	
-	public List<EmpVO> selectEmp(){
-
-		System.out.println("selectEmp");
-		 return sqlFacotry.openSession().selectList("ConfRoom.Select_emp");
 		 
 		 
 	}
