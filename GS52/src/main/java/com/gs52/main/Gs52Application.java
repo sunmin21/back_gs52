@@ -36,7 +36,7 @@ public class Gs52Application extends SpringBootServletInitializer {
 		sqlSessionFactoryBean.setMapperLocations(arrResource);
 		return sqlSessionFactoryBean.getObject();
 	}
-	
+
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(Gs52Application.class);
