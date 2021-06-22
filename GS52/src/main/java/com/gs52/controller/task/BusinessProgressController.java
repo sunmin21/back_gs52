@@ -27,7 +27,15 @@ public class BusinessProgressController {
 		
 		return bDAO.selectListTodo(vo);
 	}
-	
+	@PostMapping(value="/board")
+	public List<BusinessProgressVO> insertTodoBoard(@RequestParam(value="board" ,required=false) String board,@RequestParam(value="search",required=false) Object search) {
+		
+		System.out.println("타냐?");
+		System.out.println(board);
+		System.out.println(search);
+//		return bDAO.selectListTodo(vo);
+		return null;
+	}
 	@PostMapping(value="/todo/Done")
 	public int selectListTodoDone(@RequestBody BusinessProgressVO vo ) {
 		
