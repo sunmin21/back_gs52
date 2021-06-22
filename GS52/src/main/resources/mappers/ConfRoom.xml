@@ -9,8 +9,8 @@
    </select>	 --> 
    
    <insert id="Insert_room" parameterType="com.gs52.vo.ConfRoomVO">
-   insert into ROOM_BOOK_1 (ROOM_BOOK_INDEX, ROOM_BOOK_TITLE)
-       VALUES (#{ROOM_BOOK_INDEX}, #{ROOM_BOOK_TITLE})
+   insert into room_b (ROOM_B_INDEX, ROOM_B_TITLE)
+       VALUES (#{ROOM_B_INDEX}, #{ROOM_B_TITLE})
 <!--       insert into ROOM_BOOK_1 (room_book_title, room_book_room_index, room_book_date, room_book_time, room_book_emp_id_send, room_book_emp_id_receive)
        VALUES (#{title}, #{index}, #{date}, #{time}, #{emp_id_send}, #{emp_id_receive}) -->
    </insert>
