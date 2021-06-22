@@ -1,6 +1,9 @@
 package com.gs52.controller.task;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gs52.dao.TestDAO;
 import com.gs52.dao.task.BusinessProgressDAO;
 import com.gs52.vo.task.BusinessProgressVO;
 
@@ -23,17 +25,22 @@ public class BusinessProgressController {
 	
 	@PostMapping(value="/todo")
 	public List<BusinessProgressVO> selectListTodo(@RequestBody BusinessProgressVO vo ) {
-		
-		
+	
 		return bDAO.selectListTodo(vo);
 	}
-	@PostMapping(value="/board")
-	public List<BusinessProgressVO> insertTodoBoard(@RequestParam(value="board" ,required=false) String board,@RequestParam(value="search",required=false) Object search) {
+	@GetMapping(value="/board")
+	public List<BusinessProgressVO> insertTodoBoard(@RequestParam(required=false) String board ,@RequestParam(required=false) List<Integer>	no) {
 		
 		System.out.println("타냐?");
-		System.out.println(board);
-		System.out.println(search);
-//		return bDAO.selectListTodo(vo);
+		System.out.println(board	);
+		
+		
+		for(int item : no) {
+			System.out.println(item);
+					
+		}
+		
+
 		return null;
 	}
 	@PostMapping(value="/todo/Done")
@@ -45,7 +52,7 @@ public class BusinessProgressController {
 	
 	@PostMapping(value="/send")
 	public List<BusinessProgressVO> selectListSend(@RequestBody BusinessProgressVO vo ) {
-		
+		 	
 		
 		return bDAO.selectListSend(vo);
 	}
