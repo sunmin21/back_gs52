@@ -6,20 +6,23 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="task">
-	 <select id="selectListTodo" parameterType="com.gs52.vo.task.BusinessProgressVO" resultType="com.gs52.vo.task.BusinessProgressVO">
-      SELECT * from TODO where TODO_EMP_ID_RECEIVCE =#{TODO_EMP_ID_RECEIVCE} AND TODO_DONE = 0 
+	  <select id="selectListTodo" parameterType="com.gs52.vo.task.BusinessProgressVO" resultType="com.gs52.vo.task.BusinessProgressVO">
+
+      SELECT * from TODO,TODO_RE where TODO_INDEX=TODO_RE_TODO_INDEX AND TODO_RE_EMP_ID=#{TODO_RE_EMP_ID} AND TODO_DONE = 0
    </select>
    
     <select id="selectListSend" parameterType="com.gs52.vo.task.BusinessProgressVO" resultType="com.gs52.vo.task.BusinessProgressVO">
-      SELECT * from TODO where TODO_EMP_ID_SEND =#{TODO_EMP_ID_SEND}   
+
+      SELECT * from TODO,TODO_RE where TODO_EMP_ID_SEND =#{TODO_EMP_ID_SEND}  and TODO_INDEX=TODO_RE_INDEX 
    </select>
    
    <select id="selectListSuccess" parameterType="com.gs52.vo.task.BusinessProgressVO" resultType="com.gs52.vo.task.BusinessProgressVO">
-      SELECT * from TODO where TODO_EMP_ID_RECEIVCE =#{TODO_EMP_ID_RECEIVCE} AND TODO_DONE != 0  
+      SELECT * from TODO,TODO_RE where TODO_INDEX=TODO_RE_TODO_INDEX AND TODO_RE_EMP_ID=#{TODO_RE_EMP_ID} AND TODO_DONE  !=0
+   
    </select>
     <update id="updateTodoDone" parameterType="com.gs52.vo.task.BusinessProgressVO">
-      UPDATE TODO SET TODO_DONE = #{TODO_DONE}, TODO_END_DATE=#{TODO_END_DATE}
-      WHERE TODO_EMP_ID_RECEIVCE = #{TODO_EMP_ID_RECEIVCE}  AND TODO_INDEX=#{TODO_INDEX}
+     UPDATE TODO_RE SET TODO_DONE = #{TODO_DONE}, TODO_END_DATE=#{TODO_END_DATE}
+      WHERE TODO_RE_EMP_ID = #{TODO_RE_EMP_ID}  AND TODO_RE_TODO_INDEX=#{TODO_INDEX} 
    </update>
   
 </mapper>
