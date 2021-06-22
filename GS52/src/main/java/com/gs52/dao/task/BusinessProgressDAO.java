@@ -1,6 +1,8 @@
 package com.gs52.dao.task;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.transaction.Transactional;
 
@@ -47,5 +49,25 @@ public class BusinessProgressDAO {
 		// TODO Auto-generated method stub
 		
 		return sqlFacotry.openSession().update("task.updateTodoDone",vo);
+	}
+	public List<BusinessProgressVO> insertBoard(List list) {
+		
+		Map vo = new HashMap();
+		vo.put("content",list.get(0));
+		vo.put("startDate",list.get(1));
+		vo.put("sendId",list.get(2));
+		sqlFacotry.openSession().insert("task.insertBoard",vo);
+		int TODO_INDEX = sqlFacotry.openSession().selectOne("task.selectStartDate",vo);
+		vo.put("todoIndex",TODO_INDEX);
+		for(int item : (List<Integer>)list.get(3)) {
+			vo.put("receiveId",item);
+			
+			sqlFacotry.openSession().selectOne("task.insertReBoard",vo);
+			
+					
+		}
+           
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

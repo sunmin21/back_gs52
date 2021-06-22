@@ -24,5 +24,15 @@
      UPDATE TODO_RE SET TODO_DONE = #{TODO_DONE}, TODO_END_DATE=#{TODO_END_DATE}
       WHERE TODO_RE_EMP_ID = #{TODO_RE_EMP_ID}  AND TODO_RE_TODO_INDEX=#{TODO_INDEX} 
    </update>
+   <insert id="insertBoard" parameterType="map">
+     insert into TODO(TODO_EMP_ID_SEND, TODO_CONTENTS, TODO_START_DATE) values ( #{sendId},#{content},#{startDate})  
+     </insert> 
+    <select id="selectStartDate" parameterType="map" resultType="Int">
+    select TODO_INDEX FROM TODO WHERE TODO_START_DATE=#{startDate}
+    </select>
+  
+   <insert id="insertReBoard" parameterType="map">
+     insert into TODO_RE(TODO_RE_EMP_ID, TODO_RE_TODO_INDEX, TODO_DONE) values (#{receiveId},#{todoIndex},0)  </insert> 
+    
   
 </mapper>
