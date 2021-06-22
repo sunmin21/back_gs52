@@ -41,6 +41,6 @@
 	</insert>
 
 	<delete id="deleteAnnual">
-		DELETE FROM VACATION WHERE VACATION_INDEX= #{VACATION_INDEX}
+		DELETE FROM VACATION WHERE VACATION_DATE= #{VACATION_DATE}
 	</delete>
 </mapper>

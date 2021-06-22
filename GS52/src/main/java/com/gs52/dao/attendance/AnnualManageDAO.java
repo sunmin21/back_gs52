@@ -33,9 +33,9 @@ public class AnnualManageDAO {
 		
 	}
 	
-	public void deleteAnnual(int annualIndex) {
+	public void deleteAnnual(String annualDate) {
 		
-		sqlFactory.openSession().selectOne("Annual.deleteAnnual",annualIndex);
+		sqlFactory.openSession().selectOne("Annual.deleteAnnual",annualDate);
 	}
 	
 	public void updateAnnual(AnnualManageVO vo) {
