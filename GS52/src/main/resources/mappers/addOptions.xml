@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="addOptions">
+	<select id="selectListDept" parameterType="map"
+		resultType="com.gs52.vo.emp.DeptVO">
+		 SELECT * FROM DEPT,(select dept_index,count(*) as team_count from dept,team where dept.dept_index = team.team_dept_index group by dept_index) deptB 
+		 where dept.dept_index = deptB.dept_index
+	</select>
+	
+	<delete id="deleteDept" parameterType="int">
+	
+	delete from dept where dept_index=#{index}
+	</delete>
+</mapper>

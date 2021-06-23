@@ -17,7 +17,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 @ComponentScan({
 	"com.gs52.controller",
 	"com.gs52.dao",
-	"com.soulmovie.security",
+//	"com.soulmovie.security",
 })
 
 @SpringBootApplication
