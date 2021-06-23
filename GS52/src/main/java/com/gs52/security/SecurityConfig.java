@@ -28,6 +28,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
+		auth.inMemoryAuthentication().withUser("user1")
+		.password("$2a$10$qbTVRGiC8RePIsMz4z/QP.LjBmLOMGXBCkmW2comzfNaoeidd5/aa").roles("USER");
 		//새로만든 service객체 추가 + 암호화 방법 설정
 		auth.userDetailsService(userDetailsService).passwordEncoder(BCE());
 	}
@@ -42,34 +44,35 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http ) throws Exception {
 		http.authorizeRequests( )
-			 	.antMatchers("/admin","/admin/*").hasAuthority("ADMIN")
-			 	.antMatchers("/choice","/choice/*").hasAnyAuthority("ADMIN","USER")
-				.antMatchers("/board/**").authenticated()
-			 	.anyRequest().permitAll()
-			 	.and()
+//			 	.antMatchers("/admin","/admin/*").hasAuthority("ADMIN")
+//			 	.antMatchers("/choice","/choice/*").hasAnyAuthority("ADMIN","USER")
+//				.antMatchers("/board/**").authenticated()
+//				.antMatchers("/*").authenticated()
+			 	.anyRequest().permitAll();
+//			 	.and()
 //			 .formLogin()
 //			 	.loginPage("/security/login")  //로그인 페이지 url
 //			 	.loginProcessingUrl("/security/loginProcess")//<form action= "" 설정
 //			 	.permitAll()    			//누구나 접근
 //			 	.defaultSuccessUrl("/security/home") //성공시 이동할 페이지
 //			 	.and()
-			 .formLogin()
-	        	.loginPage("/member/login")  //로그인 페이지 url
-	        	.loginProcessingUrl("/loginProcess") //<form action="?"
-	        	.failureUrl("/member/edit")//누구나 접근
-	        	.defaultSuccessUrl("/") 	//성공시 이동할 페이지
-	        	.successHandler(successHandler())
-	        	.permitAll()
-	        	.and()
-			 .logout()
-			 	.logoutUrl("/member/logout")  //로그아웃페이지
-			 	.logoutSuccessUrl("/") //성공시 페이지
-			 	.invalidateHttpSession(true)  // httpSession.invalidate 를 실행
-			 	.clearAuthentication(true)///로그아웃 후 인증삭제
-			 	.permitAll()
-			 	.and()
-			 .exceptionHandling()
-			 	.accessDeniedPage("/page403");
+//			 .formLogin()
+//	        	.loginPage("/emp/login")  //로그인 페이지 url
+//	        	.loginProcessingUrl("/loginProcess") //<form action="?"
+//	        	.failureUrl("/member/edit")//누구나 접근
+//	        	.defaultSuccessUrl("/") 	//성공시 이동할 페이지
+//	        	.successHandler(successHandler())
+//	        	.permitAll()
+//	        	.and()
+//			 .logout()
+//			 	.logoutUrl("/member/logout")  //로그아웃페이지
+//			 	.logoutSuccessUrl("/") //성공시 페이지
+//			 	.invalidateHttpSession(true)  // httpSession.invalidate 를 실행
+//			 	.clearAuthentication(true)///로그아웃 후 인증삭제
+//			 	.permitAll()
+//			 	.and()
+//			 .exceptionHandling()
+//			 	.accessDeniedPage("/page403");
 		
 		
 			//보안에 취약함.

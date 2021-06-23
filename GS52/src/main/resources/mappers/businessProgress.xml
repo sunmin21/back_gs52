@@ -8,16 +8,16 @@
 <mapper namespace="task">
 	  <select id="selectListTodo" parameterType="com.gs52.vo.task.BusinessProgressVO" resultType="com.gs52.vo.task.BusinessProgressVO">
 
-      SELECT * from TODO,TODO_RE where TODO_INDEX=TODO_RE_TODO_INDEX AND TODO_RE_EMP_ID=#{TODO_RE_EMP_ID} AND TODO_DONE = 0
+      SELECT * from TODO,TODO_RE,EMP where emp.emp_id =todo.todo_emp_id_send and TODO_INDEX=TODO_RE_TODO_INDEX AND TODO_RE_EMP_ID=2 AND TODO_DONE = 0
    </select>
    
     <select id="selectListSend" parameterType="com.gs52.vo.task.BusinessProgressVO" resultType="com.gs52.vo.task.BusinessProgressVO">
+ SELECT * from TODO,TODO_RE,EMP where EMP.EMP_ID=TODO_RE_EMP_ID and TODO_EMP_ID_SEND =#{TODO_EMP_ID_SEND} and TODO_INDEX=TODO_RE_TODO_INDEX
 
-      SELECT * from TODO,TODO_RE where TODO_EMP_ID_SEND =#{TODO_EMP_ID_SEND}  and TODO_INDEX=TODO_RE_INDEX 
    </select>
    
    <select id="selectListSuccess" parameterType="com.gs52.vo.task.BusinessProgressVO" resultType="com.gs52.vo.task.BusinessProgressVO">
-      SELECT * from TODO,TODO_RE where TODO_INDEX=TODO_RE_TODO_INDEX AND TODO_RE_EMP_ID=#{TODO_RE_EMP_ID} AND TODO_DONE  !=0
+      SELECT * from TODO,TODO_RE,EMP where emp.emp_id =todo.todo_emp_id_send and TODO_INDEX=TODO_RE_TODO_INDEX AND TODO_RE_EMP_ID=2 AND TODO_DONE != 0
    
    </select>
     <update id="updateTodoDone" parameterType="com.gs52.vo.task.BusinessProgressVO">

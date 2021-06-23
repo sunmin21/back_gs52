@@ -58,8 +58,7 @@ public class BusinessProgressController {
 	
 	@PostMapping(value="/send")
 	public List<BusinessProgressVO> selectListSend(@RequestBody BusinessProgressVO vo ) {
-		 	
-		
+		 
 		return bDAO.selectListSend(vo);
 	}
 	

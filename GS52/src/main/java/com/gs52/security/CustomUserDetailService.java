@@ -28,6 +28,8 @@ public class CustomUserDetailService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		//username을 이용하여 mapper에서 원하는 값을 받아옴.
+		System.out.println("@@@");
+		System.out.println(username);
 		EmpVO user =eDAO.selectUser(username);
 		String password= user.getEMP_PWD();
 		String[] userRoles = {user.getAdmin()};

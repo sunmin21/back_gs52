@@ -39,8 +39,7 @@ public class BusinessProgressDAO {
 	public List<BusinessProgressVO> selectListSuccess(BusinessProgressVO vo){
 		
 		
-		  System.out.println(vo);
-          System.out.println(sqlFacotry.openSession().selectList("task.selectListSuccess",vo));
+		
 		 return sqlFacotry.openSession().selectList("task.selectListSuccess",vo);
 		 
 		 
