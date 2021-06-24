@@ -52,19 +52,19 @@ public class BusinessProgressController {
 	@PostMapping(value="/todo/Done")
 	public int selectListTodoDone(@RequestBody BusinessProgressVO vo ) {
 		
-		
+		 System.out.println(vo);
+		 System.out.println("DOne");
 		return bDAO.updateTodoDone(vo);
 	}
 	
 	@PostMapping(value="/send")
 	public List<BusinessProgressVO> selectListSend(@RequestBody BusinessProgressVO vo ) {
-		 
+		
 		return bDAO.selectListSend(vo);
 	}
 	
 	@PostMapping(value="/success")
 	public List<BusinessProgressVO> selectListSuccess(@RequestBody BusinessProgressVO vo ) {
-		
 		
 		return bDAO.selectListSuccess(vo);
 	}

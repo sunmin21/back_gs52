@@ -13,13 +13,13 @@ public class BusinessProgressVO {
   
 	
 	int TODO_INDEX = 0;
-	int TODO_EMP_ID_SEND= 0;
+	int TODO_EMP_INDEX_SEND= 0;
 	int TODO_DONE=0;
 	String TODO_TITLE=null;
 	String TODO_CONTENTS=null;
 	String TODO_START_DATE=null;
 	String TODO_END_DATE=null;
-	int TODO_RE_EMP_ID = 0;
+	int TODO_RE_EMP_INDEX = 0;
 	String EMP_NAME =null;
 	
 }

@@ -25,6 +25,7 @@ public class AddOptions {
 	@GetMapping("/addoptions/dept")
 	public List<DeptVO> DeptSelet() {
 			System.out.println("오니?");
+			System.out.println(aDAO.selectListDept());
 		return aDAO.selectListDept();
 	}
 	
