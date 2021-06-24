@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class HolidayVO {
 	private int HOLIDAY_INDEX = 0;
 	private String HOLIDAY_DATE = null;

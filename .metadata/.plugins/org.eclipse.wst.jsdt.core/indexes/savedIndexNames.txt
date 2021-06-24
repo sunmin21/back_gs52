@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\jiyoon\Documents\GitHub\back_gs52\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2176015486.index
+958314124.index
+1777766484.index
+2477177868.index
+151029235.index
+744748264.index
