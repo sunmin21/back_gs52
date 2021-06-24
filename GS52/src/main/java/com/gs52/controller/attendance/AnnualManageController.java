@@ -22,13 +22,15 @@ public class AnnualManageController {
 	public AnnualManageDAO  aDAO = null;
 	@PostMapping("/select")
 	public List<AnnualManageVO> TestBoard(@RequestBody AnnualManageVO vo) {
-	System.out.println(aDAO.selectList(vo.getVACATION_EMP_ID()));
-	return aDAO.selectList(vo.getVACATION_EMP_ID());
+	System.out.println(aDAO.selectList(vo.getVACATION_EMP_INDEX()));
+	return aDAO.selectList(vo.getVACATION_EMP_INDEX());
 	}
 	
 	@PostMapping("/select2")
 	public List<AnnualManageVO> EmpBoard(@RequestBody AnnualManageVO vo) {
-		return aDAO.selectOne(vo.getVACATION_EMP_ID());
+		System.out.println("여기여기");
+		System.out.println(aDAO.selectOne(vo.getVACATION_EMP_INDEX()));
+		return aDAO.selectOne(vo.getVACATION_EMP_INDEX());
 		} 
 	
 	@PostMapping("/insert")
