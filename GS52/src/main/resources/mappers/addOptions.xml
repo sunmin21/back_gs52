@@ -3,16 +3,52 @@
 <!DOCTYPE mapper 
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-   
+
 <mapper namespace="addOptions">
 	<select id="selectListDept" parameterType="map"
 		resultType="com.gs52.vo.emp.DeptVO">
-		 SELECT * FROM DEPT,(select dept_index,count(*) as team_count from dept,team where dept.dept_index = team.team_dept_index group by dept_index) deptB 
-		 where dept.dept_index = deptB.dept_index
+		SELECT
+		DEPT.DEPT_INDEX,DEPT.DEPT_NAME,NVL(deptB.TEAM_COUNT,0) as team_count
+		FROM DEPT left join(select dept_index,count(*) as team_count from
+		dept,team where dept.dept_index = team.team_dept_index group by
+		dept_index) deptB on dept.dept_index = deptB.dept_index order by dept_index
 	</select>
-	
+
 	<delete id="deleteDept" parameterType="int">
-	
-	delete from dept where dept_index=#{index}
+
+		delete from dept where
+		dept_index=#{index}
 	</delete>
+	<insert id="insertDept" parameterType="com.gs52.vo.emp.DeptVO">
+	insert into dept(DEPT_NAME) values (#{DEPT_NAME})
+	</insert>
+	<update id="updateDept" parameterType="com.gs52.vo.emp.DeptVO">
+
+
+		UPDATE dept SET DEPT_NAME
+		= #{DEPT_NAME}
+		WHERE DEPT_INDEX = #{DEPT_INDEX}
+	</update>
+	<select id="selectListTeam" resultType="com.gs52.vo.emp.TeamVO">
+
+		select
+		TEAM_INDEX,TEAM_DEPT_INDEX,
+		DEPT_NAME,DEPT_INDEX,TEAM_NAME,
+		TEAM_WORK_TYPE,WORK_TYPE_NAME as TEAM_WORK_NAME,NVL(emp.cnt,0) as PERSON_COUNT,
+		WORK_RULE_INDEX,WORK_RULE_NAME,WORK_RULE_START,WORK_RULE_BREAK,WORK_RULE_AVG_HOUR
+		from dept,WORK_TYPE,work_rule, team
+		left join (select emp_team_index,count(*) as cnt from emp group by
+		emp_team_index) emp on team.team_index =emp.emp_team_index
+		where TEAM_DEPT_INDEX=dept_index and
+		WORK_TYPE_INDEX=WORK_RULE_WORK_TYPE_INDEX and WORK_RULE_INDEX=
+		TEAM_WORK_TYPE
+
+	</select>
+	<delete id="deleteTeam" parameterType="int">
+
+		delete from team where
+		team_index=#{index}
+	</delete>
+
+
 </mapper>

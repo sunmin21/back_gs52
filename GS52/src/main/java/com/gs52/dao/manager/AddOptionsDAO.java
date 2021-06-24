@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gs52.vo.emp.DeptVO;
+import com.gs52.vo.emp.TeamVO;
 import com.gs52.vo.manager.HolidayVO;
 
 @Service
@@ -28,4 +29,26 @@ public class AddOptionsDAO {
 		
 		return sqlFactory.openSession().delete("addOptions.deleteDept",index);
 	}
+	public int updateDept(DeptVO vo) {
+		// TODO Auto-generated method stub
+		
+		
+		return sqlFactory.openSession().update("addOptions.updateDept",vo);
+	}
+	
+	public int insertDept(DeptVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFactory.openSession().update("addOptions.insertDept",vo);
+	}
+	public List<TeamVO> selectListTeam() {
+		
+		return sqlFactory.openSession().selectList("addOptions.selectListTeam");
+	}
+	public int deleteTeam(int index) {
+		// TODO Auto-generated method stub
+		System.out.println("인덱스");
+		System.out.println(index);
+		return sqlFactory.openSession().delete("addOptions.deleteTeam",index);
+	}
+	
 }

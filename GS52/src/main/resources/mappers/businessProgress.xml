@@ -8,7 +8,7 @@
 <mapper namespace="task">
 	  <select id="selectListTodo" parameterType="com.gs52.vo.task.BusinessProgressVO" resultType="com.gs52.vo.task.BusinessProgressVO">
 
-      SELECT * from TODO,TODO_RE,EMP where emp.EMP_INDEX =todo.TODO_EMP_INDEX_SEND and TODO_INDEX=TODO_RE_TODO_INDEX AND TODO_RE_EMP_INDEX=2 AND TODO_DONE = 0
+      select * from todo,todo_re,emp where todo.todo_index = todo_re_todo_index and todo_re_emp_index=#{TODO_RE_EMP_INDEX} and emp_index=todo_re_emp_index AND TODO_DONE =0
    </select>
    
     <select id="selectListSend" parameterType="com.gs52.vo.task.BusinessProgressVO" resultType="com.gs52.vo.task.BusinessProgressVO">
