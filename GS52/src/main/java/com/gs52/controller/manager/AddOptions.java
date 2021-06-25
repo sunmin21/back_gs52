@@ -14,6 +14,7 @@ import com.gs52.dao.manager.AddOptionsDAO;
 import com.gs52.dao.manager.HolidayDAO;
 import com.gs52.vo.emp.DeptVO;
 import com.gs52.vo.emp.TeamVO;
+import com.gs52.vo.emp.WorkRuleVO;
 import com.gs52.vo.manager.HolidayVO;
 
 @RestController
@@ -45,7 +46,7 @@ public class AddOptions {
 	
 	@PostMapping("/addoptions/deptInsert")
 	public int deptInsert(@RequestBody DeptVO vo) {
-		System.out.println(vo);
+
 		return aDAO.insertDept(vo);
 	}
 	
@@ -54,10 +55,35 @@ public class AddOptions {
 	
 		return aDAO.selectListTeam();
 	}
+	@GetMapping("/addoptions/workRule")
+	public List<WorkRuleVO> workRuleSelect() {
+	
+		return aDAO.selectListWorkRule();
+	}
+	
+	
 	@PostMapping("/addoptions/teamDelete")
 	public int TeamDelete(@RequestBody TeamVO vo) {
 			
-		System.out.println(vo.getTEAM_INDEX());
+	
 		return aDAO.deleteTeam(vo.getTEAM_INDEX());
 	}
+	@PostMapping("/addoptions/teamUpdate")
+	public int TeamUpdate(@RequestBody TeamVO vo) {
+			
+		
+		return aDAO.updateTeam(vo);
+	}
+	@PostMapping("/addoptions/teamInsert")
+	public int teamInsert(@RequestBody TeamVO vo) {
+		
+		return aDAO.insertTeam(vo);
+	}
+	
+	@GetMapping("/addoptions/workType")
+	public List<WorkRuleVO> workTypeSelect() {
+	 System.out.println(aDAO.selectListworkType());
+		return aDAO.selectListworkType();
+	}
+	
 }

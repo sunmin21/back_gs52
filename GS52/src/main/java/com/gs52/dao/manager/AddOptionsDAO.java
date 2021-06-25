@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.gs52.vo.emp.DeptVO;
 import com.gs52.vo.emp.TeamVO;
+import com.gs52.vo.emp.WorkRuleVO;
 import com.gs52.vo.manager.HolidayVO;
 
 @Service
@@ -38,7 +39,7 @@ public class AddOptionsDAO {
 	
 	public int insertDept(DeptVO vo) {
 		// TODO Auto-generated method stub
-		return sqlFactory.openSession().update("addOptions.insertDept",vo);
+		return sqlFactory.openSession().insert("addOptions.insertDept",vo);
 	}
 	public List<TeamVO> selectListTeam() {
 		
@@ -46,9 +47,28 @@ public class AddOptionsDAO {
 	}
 	public int deleteTeam(int index) {
 		// TODO Auto-generated method stub
-		System.out.println("인덱스");
-		System.out.println(index);
+		
 		return sqlFactory.openSession().delete("addOptions.deleteTeam",index);
 	}
+	
+	public int updateTeam(TeamVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFactory.openSession().update("addOptions.updateTeam",vo);
+	}
+	public int insertTeam(TeamVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFactory.openSession().insert("addOptions.insertTeam",vo);
+	}
+	public List<WorkRuleVO> selectListWorkRule() {
+		// TODO Auto-generated method stub
+		
+		return sqlFactory.openSession().selectList("addOptions.selectListWorkRule");
+	}
+	public List<WorkRuleVO> selectListworkType() {
+		// TODO Auto-generated method stub
+		return sqlFactory.openSession().selectList("addOptions.selectListworkType");
+	}
+	
+	
 	
 }

@@ -41,7 +41,7 @@
 		emp_team_index) emp on team.team_index =emp.emp_team_index
 		where TEAM_DEPT_INDEX=dept_index and
 		WORK_TYPE_INDEX=WORK_RULE_WORK_TYPE_INDEX and WORK_RULE_INDEX=
-		TEAM_WORK_TYPE
+		TEAM_WORK_TYPE order by team_index
 
 	</select>
 	<delete id="deleteTeam" parameterType="int">
@@ -49,6 +49,26 @@
 		delete from team where
 		team_index=#{index}
 	</delete>
+	
+	<update id="updateTeam" parameterType="com.gs52.vo.emp.DeptVO">
+
+
+		UPDATE team SET TEAM_NAME
+		= #{TEAM_NAME}, TEAM_WORK_TYPE=#{TEAM_WORK_TYPE}
+		WHERE TEAM_INDEX = #{TEAM_INDEX}
+	</update>
+	<insert id="insertTeam" parameterType="com.gs52.vo.emp.DeptVO">
+	insert into team(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (#{TEAM_DEPT_INDEX},#{TEAM_NAME},#{TEAM_WORK_TYPE})
+	</insert>
+	
+	<select id="selectListWorkRule" parameterType="map"
+		resultType="com.gs52.vo.emp.WorkRuleVO">
+		select * from work_rule,work_type where work_type_index=WORK_RULE_WORK_TYPE_INDEX
+	</select>
+	<select id="selectListworkType" parameterType="map"
+		resultType="com.gs52.vo.emp.WorkRuleVO">
+		select * from WORK_TYPE
+	</select>
 
 
 </mapper>
