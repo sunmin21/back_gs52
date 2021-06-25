@@ -82,8 +82,16 @@ public class AddOptions {
 	
 	@GetMapping("/addoptions/workType")
 	public List<WorkRuleVO> workTypeSelect() {
-	 System.out.println(aDAO.selectListworkType());
-		return aDAO.selectListworkType();
+	 
+		return aDAO.selectListWorkType();
+	}
+	
+	@PostMapping("/addoptions/workRuleUpdate")
+	public int workRuleUpdate(@RequestBody WorkRuleVO vo) {
+//			System.out.println(vo);
+		
+		return aDAO.updateWorkType(vo);
+	
 	}
 	
 }

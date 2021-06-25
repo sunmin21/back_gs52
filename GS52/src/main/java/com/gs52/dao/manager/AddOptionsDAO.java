@@ -64,9 +64,14 @@ public class AddOptionsDAO {
 		
 		return sqlFactory.openSession().selectList("addOptions.selectListWorkRule");
 	}
-	public List<WorkRuleVO> selectListworkType() {
+	public List<WorkRuleVO> selectListWorkType() {
 		// TODO Auto-generated method stub
 		return sqlFactory.openSession().selectList("addOptions.selectListworkType");
+	}
+	public int updateWorkType(WorkRuleVO vo) {
+		// TODO Auto-generated method stub
+		System.out.println(vo);
+		return sqlFactory.openSession().update("addOptions.updateWorkType",vo);
 	}
 	
 	

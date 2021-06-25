@@ -12,8 +12,9 @@ public class WorkRuleVO {
 	long WORK_RULE_WORK_TYPE_INDEX =0L;
 	String WORK_RULE_NAME =null;
 	String WORK_RULE_START = null;
+	String WORK_RULE_END =null;
 	String WORK_RULE_BREAK =null;
-	int WORK_RULE_AVG_HOUR =0;
+	long WORK_RULE_AVG_HOUR =0L;
 	String WORK_TYPE_NAME =null;
 	long WORK_TYPE_INDEX =0L;
 }

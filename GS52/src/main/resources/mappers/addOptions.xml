@@ -69,6 +69,19 @@
 		resultType="com.gs52.vo.emp.WorkRuleVO">
 		select * from WORK_TYPE
 	</select>
+	<update id="updateWorkType" parameterType="com.gs52.vo.emp.DeptVO">
+
+		
+		UPDATE WORK_RULE SET 
+		WORK_RULE_WORK_TYPE_INDEX=#{WORK_RULE_WORK_TYPE_INDEX},
+		WORK_RULE_NAME=#{WORK_RULE_NAME},
+		WORK_RULE_START=#{WORK_RULE_START},
+		WORK_RULE_END=#{WORK_RULE_END},
+		WORK_RULE_BREAK=#{WORK_RULE_BREAK},
+		WORK_RULE_AVG_HOUR=#{WORK_RULE_AVG_HOUR}
+		
+		WHERE WORK_RULE_INDEX = #{WORK_RULE_INDEX}
+	</update>
 
 
 </mapper>
