@@ -17,4 +17,5 @@ public class WorkRuleVO {
 	long WORK_RULE_AVG_HOUR =0L;
 	String WORK_TYPE_NAME =null;
 	long WORK_TYPE_INDEX =0L;
+	long TEAM_COUNT=0L;
 }

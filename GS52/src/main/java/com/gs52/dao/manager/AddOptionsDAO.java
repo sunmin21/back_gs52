@@ -66,12 +66,21 @@ public class AddOptionsDAO {
 	}
 	public List<WorkRuleVO> selectListWorkType() {
 		// TODO Auto-generated method stub
+		System.out.println(sqlFactory.openSession().selectList("addOptions.selectListworkType"));
 		return sqlFactory.openSession().selectList("addOptions.selectListworkType");
 	}
 	public int updateWorkType(WorkRuleVO vo) {
 		// TODO Auto-generated method stub
-		System.out.println(vo);
+	
 		return sqlFactory.openSession().update("addOptions.updateWorkType",vo);
+	}
+	public int deleteWorkRule(long index) {
+		// TODO Auto-generated method stub
+		return sqlFactory.openSession().delete("addOptions.deleteWorkRule",index);
+	}
+	public int insertWorkRule(WorkRuleVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFactory.openSession().insert("addOptions.insertWorkRule",vo);
 	}
 	
 	

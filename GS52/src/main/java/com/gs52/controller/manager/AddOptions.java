@@ -94,4 +94,19 @@ public class AddOptions {
 	
 	}
 	
+	@PostMapping("/addoptions/workRuleDelete")
+	public int workRuleDelete(@RequestBody WorkRuleVO vo) {
+			System.out.println(vo);
+	System.out.println("너뭐냐");
+		return aDAO.deleteWorkRule(vo.getWORK_RULE_INDEX());
+	}
+	
+	@PostMapping("/addoptions/workRuleInsert")
+	public int workRuleInsert(@RequestBody WorkRuleVO vo) {
+		
+		return aDAO.insertWorkRule(vo);
+	}
+	
+	
+	
 }
