@@ -21,7 +21,14 @@ public class empDAO {
 	public List<EmpVO> selectListEmp(){
 		
 	
-		 return sqlFacotry.openSession().selectList("user.selectListUser");
+		 return sqlFacotry.openSession().selectList("emp.selectListUser");
+		 
+		 
+	}
+	public EmpVO selectUser(String EMP_ID){
+		
+		
+		 return sqlFacotry.openSession().selectOne("emp.selectUser",EMP_ID);
 		 
 		 
 	}

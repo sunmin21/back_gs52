@@ -32,4 +32,5 @@ public class EmpVO {
 	private String EMP_ACCOUNT_NUMBER = null;
 	private int EMP_VACATION = 0;
 	private String EMP_SALARY = null;
+	private String admin ="USER";
 }

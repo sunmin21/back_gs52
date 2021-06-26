@@ -1,6 +1,8 @@
 package com.gs52.controller.task;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
@@ -29,19 +31,23 @@ public class BusinessProgressController {
 		return bDAO.selectListTodo(vo);
 	}
 	@GetMapping(value="/board")
-	public List<BusinessProgressVO> insertTodoBoard(@RequestParam(required=false) String board ,@RequestParam(required=false) List<Integer>	no) {
+	public List<BusinessProgressVO> insertTodoBoard(@RequestParam(required=false) String board ,
+			@RequestParam(required=false) List<Integer> no,
+			@RequestParam(required=false) String startDate,
+			@RequestParam(required=false) int sendId) {
+		List list = new ArrayList();
+		list.add(board);
+		list.add(startDate);
+		list.add(sendId);
+		list.add(no);
+	    
 		
-		System.out.println("타냐?");
-		System.out.println(board	);
 		
 		
-		for(int item : no) {
-			System.out.println(item);
-					
-		}
+		
 		
 
-		return null;
+		return bDAO.insertBoard(list);
 	}
 	@PostMapping(value="/todo/Done")
 	public int selectListTodoDone(@RequestBody BusinessProgressVO vo ) {
@@ -52,8 +58,7 @@ public class BusinessProgressController {
 	
 	@PostMapping(value="/send")
 	public List<BusinessProgressVO> selectListSend(@RequestBody BusinessProgressVO vo ) {
-		 	
-		
+		 
 		return bDAO.selectListSend(vo);
 	}
 	

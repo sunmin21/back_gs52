@@ -20,5 +20,6 @@ public class BusinessProgressVO {
 	String TODO_START_DATE=null;
 	String TODO_END_DATE=null;
 	int TODO_RE_EMP_ID = 0;
+	String EMP_NAME =null;
 	
 }
