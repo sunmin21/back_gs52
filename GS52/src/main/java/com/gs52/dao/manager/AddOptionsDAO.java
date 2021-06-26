@@ -107,6 +107,20 @@ public class AddOptionsDAO {
 		// TODO Auto-generated method stub
 		return sqlFactory.openSession().selectList("ConfRoom.Select_room");
 	}
+	public int selectCheckConfRoom(ConfRoomVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFactory.openSession().selectOne("addOptions.selectCheckConfRoom",vo);
+	}
+	public int deleteConfRoom(long index) {
+		// TODO Auto-generated method stub
+		System.out.println(index);
+		return sqlFactory.openSession().delete("addOptions.deleteConfRoom",index);
+	}
+	public int updateConfRoom(ConfRoomVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFactory.openSession().update("addOptions.updateConfRoom",vo);
+	}
+	
 
 	
 	

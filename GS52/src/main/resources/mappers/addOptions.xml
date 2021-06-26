@@ -128,4 +128,25 @@
 		insert into work_rule(WORK_RULE_WORK_TYPE_INDEX, WORK_RULE_NAME, WORK_RULE_START, WORK_RULE_END, WORK_RULE_BREAK, WORK_RULE_AVG_HOUR) values
 		(#{WORK_RULE_WORK_TYPE_INDEX},#{WORK_RULE_NAME},#{WORK_RULE_START},#{WORK_RULE_END},#{WORK_RULE_BREAK},#{WORK_RULE_AVG_HOUR})
 	</insert>
+	
+	<select id="selectCheckConfRoom" parameterType="com.gs52.vo.ConfRoomVO"
+		resultType="int">
+		select count(*) from conf_room where CONF_ROOM_FLOOR=#{CONF_ROOM_FLOOR} and  CONF_ROOM_NUMBER =#{CONF_ROOM_NUMBER}
+	</select>
+	
+	<delete id="deleteConfRoom" parameterType="long">
+
+		delete from conf_room where
+		CONF_ROOM_INDEX=#{index}
+	</delete>
+	
+	
+	<update id="updateConfRoom" parameterType="com.gs52.vo.ConfRoomVO">
+
+
+		UPDATE conf_room SET CONF_ROOM_FLOOR
+		= #{CONF_ROOM_FLOOR	}, CONF_ROOM_NUMBER=#{CONF_ROOM_NUMBER}
+		WHERE CONF_ROOM_INDEX =
+		#{CONF_ROOM_INDEX}
+	</update>
 </mapper>

@@ -133,5 +133,23 @@ public class AddOptions {
 		return aDAO.selectListConf();
 	}
 	
+	@PostMapping("/addoptions/confRoomCheck")
+	public int confRoomCheck(@RequestBody ConfRoomVO vo) {
+
+		return aDAO.selectCheckConfRoom(vo);
+	}
+	@PostMapping("/addoptions/confRoomDelete")
+	public int confRoomDelete(@RequestBody ConfRoomVO vo) {
+
+		return aDAO.deleteConfRoom(vo.getCONF_ROOM_INDEX());
+	}
+	@PostMapping("/addoptions/confRoomUpdate")
+	public int confRoomUpdate(@RequestBody ConfRoomVO vo) {
+
+		
+		return aDAO.updateConfRoom(vo);
+	
+	}
+	
 	
 }
