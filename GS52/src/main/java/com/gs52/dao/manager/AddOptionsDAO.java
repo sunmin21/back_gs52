@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.gs52.vo.ConfRoomVO;
 import com.gs52.vo.emp.DeptVO;
 import com.gs52.vo.emp.TeamVO;
 import com.gs52.vo.emp.WorkRuleVO;
@@ -24,6 +25,10 @@ public class AddOptionsDAO {
 		
 		
 		return sqlFactory.openSession().selectList("addOptions.selectListDept");
+	}
+	public int selectChecktDept(DeptVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFactory.openSession().selectOne("addOptions.selectCheckDept",vo);
 	}
 	public int deleteDept(int index) {
 		
@@ -45,6 +50,11 @@ public class AddOptionsDAO {
 		
 		return sqlFactory.openSession().selectList("addOptions.selectListTeam");
 	}
+	public int selectCheckTeam( TeamVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFactory.openSession().selectOne("addOptions.selectCheckTeam",vo);
+	}
+
 	public int deleteTeam(int index) {
 		// TODO Auto-generated method stub
 		
@@ -64,15 +74,24 @@ public class AddOptionsDAO {
 		
 		return sqlFactory.openSession().selectList("addOptions.selectListWorkRule");
 	}
+	
+
 	public List<WorkRuleVO> selectListWorkType() {
 		// TODO Auto-generated method stub
 		System.out.println(sqlFactory.openSession().selectList("addOptions.selectListworkType"));
 		return sqlFactory.openSession().selectList("addOptions.selectListworkType");
 	}
-	public int updateWorkType(WorkRuleVO vo) {
+	
+	
+	public int selectCheckWorkRule(WorkRuleVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFactory.openSession().selectOne("addOptions.selectCheckWorkRule",vo);
+	}
+	
+	public int updateWorkRule(WorkRuleVO vo) {
 		// TODO Auto-generated method stub
 	
-		return sqlFactory.openSession().update("addOptions.updateWorkType",vo);
+		return sqlFactory.openSession().update("addOptions.updateWorkRule",vo);
 	}
 	public int deleteWorkRule(long index) {
 		// TODO Auto-generated method stub
@@ -82,6 +101,13 @@ public class AddOptionsDAO {
 		// TODO Auto-generated method stub
 		return sqlFactory.openSession().insert("addOptions.insertWorkRule",vo);
 	}
+	
+	
+	public List<ConfRoomVO> selectListConf() {
+		// TODO Auto-generated method stub
+		return sqlFactory.openSession().selectList("ConfRoom.Select_room");
+	}
+
 	
 	
 	

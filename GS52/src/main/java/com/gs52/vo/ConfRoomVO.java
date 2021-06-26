@@ -12,5 +12,6 @@ public class ConfRoomVO {
 	private long CONF_ROOM_INDEX=0L;
 	private long CONF_ROOM_FLOOR=0L;
 	private long CONF_ROOM_NUMBER=0L;
+	private long CONF_ROOM_COUNT=0L;
 	
 }

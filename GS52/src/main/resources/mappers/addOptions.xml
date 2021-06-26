@@ -15,6 +15,12 @@
 		dept_index
 	</select>
 
+	<select id="selectCheckDept" parameterType="com.gs52.vo.emp.DeptVO"
+		resultType="int">
+		select count(*) from dept where DEPT_NAME=#{DEPT_NAME}
+	</select>
+
+
 	<delete id="deleteDept" parameterType="int">
 
 		delete from dept where
@@ -49,6 +55,12 @@
 		TEAM_WORK_TYPE order by team_index
 
 	</select>
+	<select id="selectCheckTeam" parameterType="com.gs52.vo.emp.TeamVO"
+		resultType="int">
+		select count(*) from team where TEAM_NAME=#{TEAM_NAME}
+	</select>
+	
+	
 	<delete id="deleteTeam" parameterType="int">
 
 		delete from team where
@@ -81,13 +93,19 @@
 		group by WORK_RULE_INDEX) cnt on (cnt.WORK_RULE_INDEX=
 		work_rule.WORK_RULE_INDEX)
 		where work_type_index=WORK_RULE_WORK_TYPE_INDEX
+		order by WORK_RULE_INDEX
 	</select>
 	<select id="selectListworkType" parameterType="map"
 		resultType="com.gs52.vo.emp.WorkRuleVO">
 		select * from work_type
 	</select>
-	<update id="updateWorkType"
-		parameterType="com.gs52.vo.emp.DeptVO">
+	<select id="selectCheckWorkRule" parameterType="com.gs52.vo.emp.WorkRuleVO"
+		resultType="int">
+		select count(*) from work_rule where WORK_RULE_NAME= #{WORK_RULE_NAME}
+	</select>
+	
+	<update id="updateWorkRule"
+		parameterType="com.gs52.vo.emp.WorkRuleVO">
 
 
 		UPDATE WORK_RULE SET
