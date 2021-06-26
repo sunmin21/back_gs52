@@ -8,31 +8,31 @@
 <mapper namespace="task">
 	  <select id="selectListTodo" parameterType="com.gs52.vo.task.BusinessProgressVO" resultType="com.gs52.vo.task.BusinessProgressVO">
 
-      SELECT * from TODO,TODO_RE,EMP where emp.emp_id =todo.todo_emp_id_send and TODO_INDEX=TODO_RE_TODO_INDEX AND TODO_RE_EMP_ID=2 AND TODO_DONE = 0
+      select * from todo,todo_re,emp where todo.todo_index = todo_re_todo_index and todo_re_emp_index=#{TODO_RE_EMP_INDEX} and emp_index=todo_re_emp_index AND TODO_DONE =0
    </select>
    
     <select id="selectListSend" parameterType="com.gs52.vo.task.BusinessProgressVO" resultType="com.gs52.vo.task.BusinessProgressVO">
- SELECT * from TODO,TODO_RE,EMP where EMP.EMP_ID=TODO_RE_EMP_ID and TODO_EMP_ID_SEND =#{TODO_EMP_ID_SEND} and TODO_INDEX=TODO_RE_TODO_INDEX
+ SELECT * from TODO,TODO_RE,EMP where EMP.EMP_INDEX=TODO_RE_EMP_INDEX and TODO_EMP_INDEX_SEND =#{TODO_EMP_INDEX_SEND} and TODO_INDEX=TODO_RE_TODO_INDEX 
 
    </select>
    
    <select id="selectListSuccess" parameterType="com.gs52.vo.task.BusinessProgressVO" resultType="com.gs52.vo.task.BusinessProgressVO">
-      SELECT * from TODO,TODO_RE,EMP where emp.emp_id =todo.todo_emp_id_send and TODO_INDEX=TODO_RE_TODO_INDEX AND TODO_RE_EMP_ID=2 AND TODO_DONE != 0
+      SELECT * from TODO,TODO_RE,EMP where emp.EMP_INDEX =todo.TODO_EMP_INDEX_SEND and TODO_INDEX=TODO_RE_TODO_INDEX AND TODO_RE_EMP_INDEX=2 AND TODO_DONE != 0
    
    </select>
     <update id="updateTodoDone" parameterType="com.gs52.vo.task.BusinessProgressVO">
      UPDATE TODO_RE SET TODO_DONE = #{TODO_DONE}, TODO_END_DATE=#{TODO_END_DATE}
-      WHERE TODO_RE_EMP_ID = #{TODO_RE_EMP_ID}  AND TODO_RE_TODO_INDEX=#{TODO_INDEX} 
+      WHERE TODO_RE_EMP_INDEX = #{TODO_RE_EMP_INDEX}  AND TODO_RE_TODO_INDEX=#{TODO_INDEX} 
    </update>
    <insert id="insertBoard" parameterType="map">
-     insert into TODO(TODO_EMP_ID_SEND, TODO_CONTENTS, TODO_START_DATE) values ( #{sendId},#{content},#{startDate})  
+     insert into TODO(TODO_EMP_INDEX_SEND, TODO_CONTENTS, TODO_START_DATE) values ( #{sendId},#{content},#{startDate})  
      </insert> 
     <select id="selectStartDate" parameterType="map" resultType="Int">
     select TODO_INDEX FROM TODO WHERE TODO_START_DATE=#{startDate}
     </select>
   
    <insert id="insertReBoard" parameterType="map">
-     insert into TODO_RE(TODO_RE_EMP_ID, TODO_RE_TODO_INDEX, TODO_DONE) values (#{receiveId},#{todoIndex},0)  </insert> 
+     insert into TODO_RE(TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX, TODO_DONE) values (#{receiveId},#{todoIndex},0)  </insert> 
     
   
 </mapper>

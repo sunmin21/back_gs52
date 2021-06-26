@@ -11,4 +11,5 @@ public class DeptVO {
 	int DEPT_INDEX =0;
 	String DEPT_NAME= null;
 	int TEAM_COUNT=0;
+	
 }

@@ -9,16 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor //모든 속성을 파라미터로 갖는 생성자
 public class ConfRoomVO {
 
-//	private long room_index =0L;
-//	private long room_floor =0L;
-//	private long room_number =0L;
-
-	private long ROOM_BOOK_INDEX=0L;
-	private String ROOM_BOOK_TITLE=null;
-//	private long room_book_room_index=0L;
-//	private String room_book_date=null;
-//	private String room_book_time=null;
-//	private long room_book_emp_id_send=0L;
-//	private long room_book_emp_id_receive=0L;
+	private long CONF_ROOM_INDEX=0L;
+	private long CONF_ROOM_FLOOR=0L;
+	private long CONF_ROOM_NUMBER=0L;
+	private long CONF_ROOM_COUNT=0L;
 	
 }

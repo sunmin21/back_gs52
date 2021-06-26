@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="inform">
+	<insert id="Insert_Inform" parameterType="com.gs52.vo.manager.RegistVO">
+		insert into EMP(EMP_TEAM_INDEX, EMP_RANK_INDEX, EMP_POSITION_INDEX, EMP_ID, EMP_PWD) VALUES (#{EMP_TEAM_INDEX}, #{EMP_RANK_INDEX}, #{EMP_POSITION_INDEX}, #{EMP_ID}, #{EMP_PWD}) 
+	</insert>
+<!-- 
+	<select id="Select_Dept" parameterType="map" resultType="com.gs52.vo.manager.DeptVO">
+      select * from dept
+   </select>
+   
+   <select id="Select_team" parameterType="map">
+      select * from team
+   </select> -->
+
+</mapper>
