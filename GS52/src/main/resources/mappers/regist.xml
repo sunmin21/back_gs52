@@ -16,6 +16,10 @@
    
    <select id="Select_team" parameterType="map">
       select * from team
+   </select>  
+   
+    <select id="Selec_Login" parameterType="map">
+      select EMP_ID from emp
    </select>
 
 </mapper>

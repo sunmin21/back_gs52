@@ -26,14 +26,4 @@ public class InformController {
 		return mDAO.insertInform(vo);
 	}
 
-
-//	@GetMapping("/regist")
-//	public List<RegistVO> selectDept() {
-//
-//		System.out.println("selectDept"); 
-//		System.out.println(rDAO.selectList()); 
-//	return rDAO.selectList();
-//	}
-//	
-	
 }

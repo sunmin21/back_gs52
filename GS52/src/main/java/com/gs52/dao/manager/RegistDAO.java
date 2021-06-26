@@ -34,4 +34,11 @@ public class RegistDAO {
 		 return sqlFacotry.openSession().insert("regist.Insert_Regist", vo);
 	}
 	
+	public RegistVO insertLogin(){
+
+		System.out.println("Selec_Login");
+		 return sqlFacotry.openSession().selectOne("regist.Selec_Login");
+		 
+		 
+	}
 }
