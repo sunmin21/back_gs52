@@ -116,17 +116,19 @@ public class AddOptionsDAO {
 		System.out.println(index);
 		return sqlFactory.openSession().delete("addOptions.deleteConfRoom",index);
 	}
+	
+	public int insertConfRoom(ConfRoomVO vo) {
+		// TODO Auto-generated method stu
+		System.out.println("DAO!!!");
+		System.out.println( vo);
+		return sqlFactory.openSession().insert("addOptions.updateConfRoom",vo);
+		
+	}
 	public int updateConfRoom(ConfRoomVO vo) {
 		// TODO Auto-generated method stub
 		return sqlFactory.openSession().update("addOptions.updateConfRoom",vo);
 	}
-	public int InsertConfRoom(ConfRoomVO vo) {
-		// TODO Auto-generated method stu
-		System.out.println("DAO!!!");
-		System.out.println( vo);
-		return sqlFactory.openSession().insert("addOptions.insertConfRoom",vo);
-		
-	}
+	
 	
 
 	

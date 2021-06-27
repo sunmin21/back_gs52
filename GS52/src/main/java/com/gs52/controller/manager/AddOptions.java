@@ -154,7 +154,7 @@ public class AddOptions {
 		System.out.println("Controller .!!!@@");
 		System.out.println(vo);
 		
-		return aDAO.InsertConfRoom(vo);
+		return aDAO.insertConfRoom(vo);
 	}
 	
 }
