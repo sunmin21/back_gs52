@@ -120,6 +120,13 @@ public class AddOptionsDAO {
 		// TODO Auto-generated method stub
 		return sqlFactory.openSession().update("addOptions.updateConfRoom",vo);
 	}
+	public int InsertConfRoom(ConfRoomVO vo) {
+		// TODO Auto-generated method stu
+		System.out.println("DAO!!!");
+		System.out.println( vo);
+		return sqlFactory.openSession().insert("addOptions.insertConfRoom",vo);
+		
+	}
 	
 
 	

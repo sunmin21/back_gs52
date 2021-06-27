@@ -149,4 +149,10 @@
 		WHERE CONF_ROOM_INDEX =
 		#{CONF_ROOM_INDEX}
 	</update>
+	
+	<insert id="insertConfRoom" parameterType="com.gs52.vo.ConfRoomVO">
+		insert into conf_room(CONF_ROOM_FLOOR, CONF_ROOM_NUMBER) values
+		(#{CONF_ROOM_FLOOR},#{CONF_ROOM_NUMBER})
+	</insert>
+	
 </mapper>

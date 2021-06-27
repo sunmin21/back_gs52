@@ -24,7 +24,7 @@ from conf_room a,conf b
 where a.CONF_ROOM_INDEX=b.CONF_ROOM_INDEX 
 group by a.conf_room_index) 
 conf 
-on (conf.ind= conf_room_index)  
+on (conf.ind= conf_room_index)   order by conf_room_index
    </select>
    
          <select id="Select_emp" parameterType="map" resultType="com.gs52.vo.emp.EmpVO">

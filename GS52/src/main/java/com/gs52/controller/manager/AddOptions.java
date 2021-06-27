@@ -102,8 +102,7 @@ public class AddOptions {
 	
 	@PostMapping("/addoptions/workRuleCheck")
 	public int workRuleCheck(@RequestBody WorkRuleVO vo) {
-		System.out.println(vo);
-	    System.out.println(aDAO.selectCheckWorkRule(vo));
+	
 		return aDAO.selectCheckWorkRule(vo);
 	
 	}
@@ -150,6 +149,12 @@ public class AddOptions {
 		return aDAO.updateConfRoom(vo);
 	
 	}
-	
+	@PostMapping("/addoptions/confRoomInsert")
+	public int confRoomInsert(@RequestBody ConfRoomVO vo) {
+		System.out.println("Controller .!!!@@");
+		System.out.println(vo);
+		
+		return aDAO.InsertConfRoom(vo);
+	}
 	
 }
