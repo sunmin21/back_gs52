@@ -124,8 +124,7 @@ public class AddOptionsDAO {
 	}
 	public int insertConfRoom(ConfRoomVO vo) {
 		// TODO Auto-generated method stu
-		System.out.println("DAO!!!");
-		System.out.println( sqlFactory.openSession().insert("addOptions.insertConfRoom",vo));
+	
 		return sqlFactory.openSession().insert("addOptions.insertConfRoom",vo);
 		
 	}

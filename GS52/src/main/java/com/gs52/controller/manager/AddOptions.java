@@ -151,8 +151,7 @@ public class AddOptions {
 	}
 	@PostMapping("/addoptions/confRoomInsert")
 	public int confRoomInsert(@RequestBody ConfRoomVO vo) {
-		System.out.println("Controller .!!!@@");
-		System.out.println(vo);
+	
 		
 		return aDAO.insertConfRoom(vo);
 	}
