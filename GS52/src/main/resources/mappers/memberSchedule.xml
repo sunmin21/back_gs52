@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Member">
+
+	<select id="selectTeam" 
+		resultType="com.gs52.vo.attendance.MemberTeamVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+		 select TEAM_INDEX,
+	TEAM_DEPT_INDEX,
+	TEAM_NAME,
+	TEAM_WORK_TYPE from team
+	</select>
+	
+	<select id="selectEmp" resultType="com.gs52.vo.attendance.MemberEmpVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+		select EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_INTRO, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY from emp  
+		</select>
+	
+	
+</mapper>

@@ -2,7 +2,8 @@ package com.gs52.controller.attendance;
 
 import java.util.List;
 
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,9 +18,16 @@ import com.gs52.vo.attendance.AnnualManageVO;
 @RestController
 @RequestMapping(value="/annual")
 public class AnnualManageController {
- 
+ 	
+	private final AnnualManageDAO aDAO;
+	private final Log log = LogFactory.getLog(this.getClass());
+	
 	@Autowired
-	public AnnualManageDAO  aDAO = null;
+	public AnnualManageController(AnnualManageDAO aDAO) {
+		this.aDAO = aDAO;
+	}
+	
+	
 	@PostMapping("/select")
 	public List<AnnualManageVO> TestBoard(@RequestBody AnnualManageVO vo) {
 	System.out.println(aDAO.selectList(vo.getVACATION_EMP_INDEX()));
@@ -28,8 +36,7 @@ public class AnnualManageController {
 	
 	@PostMapping("/select2")
 	public List<AnnualManageVO> EmpBoard(@RequestBody AnnualManageVO vo) {
-		System.out.println("여기여기");
-		System.out.println(aDAO.selectOne(vo.getVACATION_EMP_INDEX()));
+		log.info("\n"+ aDAO.selectOne(vo.getVACATION_EMP_INDEX()));
 		return aDAO.selectOne(vo.getVACATION_EMP_INDEX());
 		} 
 	
