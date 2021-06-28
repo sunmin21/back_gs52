@@ -26,6 +26,13 @@ group by a.conf_room_index)
 conf 
 on (conf.ind= conf_room_index)   order by conf_room_index
    </select>
+      <select id="Select_room_floor" parameterType="map" resultType="com.gs52.vo.ConfRoomVO">
+      select distinct CONF_ROOM_FLOOR from CONF_ROOM
+   </select>
+   
+    <select id="Select_conf_room" parameterType="map" resultType="com.gs52.vo.ConfRoomVO">
+      select * from CONF_ROOM where CONF_ROOM_FLOOR=#{CONF_ROOM_FLOOR}
+   </select>
    
          <select id="Select_emp" parameterType="map" resultType="com.gs52.vo.emp.EmpVO">
       select * from emp
