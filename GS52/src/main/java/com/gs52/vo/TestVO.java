@@ -11,6 +11,5 @@ public class TestVO {
 
 	private long no =0L;
 	private String name =null;
-   
 	
 }

@@ -5,8 +5,17 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
    
 <mapper namespace="Holiday">
-	<select id="selectHoliday" parameterType="map"
+	<select id="showHoliday" parameterType="map"
 		resultType="com.gs52.vo.manager.HolidayVO">
 		SELECT * FROM HOLIDAY
 	</select>
+	
+	<insert id="addHoliday" parameterType="com.gs52.vo.manager.HolidayVO">
+		INSERT INTO HOLIDAY(HOLIDAY_INDEX, HOLIDAY_TITLE, HOLIDAY_DATE, HOLIDAY_ANNUAL_REPEAT) 
+		VALUES(#{HOLIDAY_INDEX}, #{HOLIDAY_TITLE}, #{HOLIDAY_DATE}, #{HOLIDAY_ANNUAL_REPEAT})
+	</insert>
+	
+	<delete id="delHoliday">
+		DELETE FROM HOLIDAY WHERE HOLIDAY_INDEX = #{HOLIDAY_INDEX}
+	</delete>
 </mapper>

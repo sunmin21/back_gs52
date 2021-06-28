@@ -18,7 +18,18 @@ public class HolidayDAO {
 	private SqlSessionFactory sqlFactory = null;
 	
 	public List<HolidayVO> selectList() {
-		System.out.println(sqlFactory.openSession().selectList("Holiday.selectHoliday"));
-		return sqlFactory.openSession().selectList("Holiday.selectHoliday");
+		System.out.println(sqlFactory.openSession().selectList("Holiday.showHoliday"));
+		return sqlFactory.openSession().selectList("Holiday.showHoliday");
+	}
+	
+	public void addHoliday(HolidayVO vo){
+		sqlFactory.openSession().selectList("Holiday.addHoliday",vo);
+		sqlFactory.openSession().commit();
+		sqlFactory.openSession().close();
+	}
+	
+	public void delHoliday(int holidayIndex){
+		System.out.println(holidayIndex);
+		sqlFactory.openSession().selectOne("Holiday.delHoliday", holidayIndex);
 	}
 }
