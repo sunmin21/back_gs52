@@ -78,7 +78,7 @@ public class AddOptionsDAO {
 
 	public List<WorkRuleVO> selectListWorkType() {
 		// TODO Auto-generated method stub
-		System.out.println(sqlFactory.openSession().selectList("addOptions.selectListworkType"));
+	
 		return sqlFactory.openSession().selectList("addOptions.selectListworkType");
 	}
 	
@@ -113,7 +113,7 @@ public class AddOptionsDAO {
 	}
 	public int deleteConfRoom(long index) {
 		// TODO Auto-generated method stub
-		System.out.println(index);
+
 		return sqlFactory.openSession().delete("addOptions.deleteConfRoom",index);
 	}
 	
