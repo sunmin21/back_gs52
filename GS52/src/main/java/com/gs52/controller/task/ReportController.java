@@ -25,8 +25,6 @@ public class ReportController {
 	public List<ReportVO> ReportBoard(@RequestBody ReportVO vo) {
 		System.out.println("spring => report");
 		System.out.println(vo);
-		
-		System.out.println("THIS IS CONTROLLER PART");
 		return rDAO.selectList(vo);
 	}
 	
