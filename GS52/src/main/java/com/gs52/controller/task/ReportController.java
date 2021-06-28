@@ -3,6 +3,7 @@ package com.gs52.controller.task;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,7 @@ import com.gs52.vo.task.ReportVO;
 
 @RestController
 @RequestMapping(value="/report")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class ReportController {
 	
 	@Autowired
