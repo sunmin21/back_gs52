@@ -21,7 +21,7 @@ public class HolidayController {
 	
 	@GetMapping("/showHoliday")
 	public List<HolidayVO> HolidayBoard() {
-		System.out.println("스프링~~~~");
+		System.out.println("spring => holiday");
 		System.out.println(hDAO.selectList());		
 		return hDAO.selectList();
 	}
