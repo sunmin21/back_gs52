@@ -16,20 +16,14 @@
    </select>
    
    <!-- 직급 -->
-   <select id="Select_Rank" parameterType="map" resultType="com.gs52.vo.manager.RankVO">
+   <select id="Select_Rank" parameterType="map">
       select * from Rank
    </select>     
    
    <!-- 직책 -->
-   <select id="Select_Position" parameterType="map" resultType="com.gs52.vo.manager.PositionVO">
+   <select id="Select_Position" parameterType="map">
       select * from Position
-   </select> 
-   
-   
-   <!-- emp 목록 -->
-   <select id="Select_Emp" parameterType="map" resultType="com.gs52.vo.emp.EmpVO">
-      select * from emp
-   </select>   
+   </select>  
    
     <select id="Selec_Login" parameterType="map">
       select EMP_ID from emp

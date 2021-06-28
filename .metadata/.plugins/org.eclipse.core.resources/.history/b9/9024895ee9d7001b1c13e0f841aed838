@@ -9,9 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.gs52.vo.emp.EmpVO;
-import com.gs52.vo.manager.PositionVO;
-import com.gs52.vo.manager.RankVO;
 import com.gs52.vo.manager.RegistVO;
 
 @Service  
@@ -21,31 +18,13 @@ public class RegistDAO {
 	@Autowired 
 	private SqlSessionFactory sqlFacotry =null;
 	
-	public List<RegistVO> selectDept(){
+	public List<RegistVO> selectList(){
 
-		System.out.println("selectDept");
+		System.out.println("selectList");
 		 return sqlFacotry.openSession().selectList("regist.Select_Dept");
+		 
+		 
 	}
-	public List<RankVO> selectRank(){
-
-		System.out.println("selectRank");
-		 return sqlFacotry.openSession().selectList("regist.Select_Rank");
-	}
-	public List<PositionVO> selectPosition(){
-
-		System.out.println("SelectPosition");
-		 return sqlFacotry.openSession().selectList("regist.Select_Position");
-	}
-	
-	public List<EmpVO> selectEmp(){
-
-		System.out.println("selectEmp");
-		 return sqlFacotry.openSession().selectList("regist.Select_Emp");
-	}
-	
-	
-	
-	
 
 	public int insertRegist(@RequestBody RegistVO vo){
 		System.out.println(vo);

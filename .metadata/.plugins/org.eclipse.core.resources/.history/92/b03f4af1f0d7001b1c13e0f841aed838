@@ -23,13 +23,7 @@
    <!-- 직책 -->
    <select id="Select_Position" parameterType="map" resultType="com.gs52.vo.manager.PositionVO">
       select * from Position
-   </select> 
-   
-   
-   <!-- emp 목록 -->
-   <select id="Select_Emp" parameterType="map" resultType="com.gs52.vo.emp.EmpVO">
-      select * from emp
-   </select>   
+   </select>  
    
     <select id="Selec_Login" parameterType="map">
       select EMP_ID from emp
