@@ -39,9 +39,9 @@ public class ConfRoomDAO {
 		 return sqlFacotry.openSession().selectList("ConfRoom.Select_room_floor");
 	}
 	
-	public List<ConfRoomVO> selectRoom(@RequestBody ConfRoomVO vo){
+	public List<ConfRoomVO> selectConfRoom(@RequestBody ConfRoomVO vo){
 		System.out.println("DAO select Room");
-		 return sqlFacotry.openSession().selectList("ConfRoom.Select_room", vo);
+		 return sqlFacotry.openSession().selectList("ConfRoom.Select_conf_room", vo);
 	}
 	
 	public List<EmpVO> selectEmp(){

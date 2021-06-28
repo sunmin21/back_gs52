@@ -43,11 +43,11 @@ public class ConfRoomController {
 	return tDAO.selectRoomFloor();
 	}
 	
-	@PostMapping("/select_room")
+	@PostMapping("/Select_conf_room")
 	public List<ConfRoomVO> selectRoom(@RequestBody ConfRoomVO vo) {
 		System.out.println("select room");
 		System.out.println(vo);
-	return tDAO.selectRoom(vo);
+	return tDAO.selectConfRoom(vo);
 	}
 	
 	
