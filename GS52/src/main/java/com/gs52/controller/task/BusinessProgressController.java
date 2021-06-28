@@ -30,7 +30,9 @@ public class BusinessProgressController {
 	
 	@PostMapping(value="/todo")
 	public List<BusinessProgressVO> selectListTodo(@RequestBody BusinessProgressVO vo ) {
-	
+	   System.out.println("타냐?");
+	   System.out.println(vo);
+	   System.out.println(bDAO.selectListTodo(vo));
 		return bDAO.selectListTodo(vo);
 	}
 	@GetMapping(value="/board")

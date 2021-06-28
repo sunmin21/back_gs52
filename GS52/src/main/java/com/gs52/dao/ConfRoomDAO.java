@@ -34,12 +34,16 @@ public class ConfRoomDAO {
 	
 	
 	
-	public List<ConfRoomVO> selectRoom(){
-		System.out.println("DAO select Room");
-		 return sqlFacotry.openSession().selectList("ConfRoom.Select_room");
-		 
-		 
+	public List<ConfRoomVO> selectRoomFloor(){
+		System.out.println("DAO select Room Floor");
+		 return sqlFacotry.openSession().selectList("ConfRoom.Select_room_floor");
 	}
+	
+	public List<ConfRoomVO> selectRoom(@RequestBody ConfRoomVO vo){
+		System.out.println("DAO select Room");
+		 return sqlFacotry.openSession().selectList("ConfRoom.Select_room", vo);
+	}
+	
 	public List<EmpVO> selectEmp(){
 
 		System.out.println("selectEmp");
