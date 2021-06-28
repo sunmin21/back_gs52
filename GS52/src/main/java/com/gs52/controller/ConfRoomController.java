@@ -3,6 +3,7 @@ package com.gs52.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,7 @@ import com.gs52.vo.ConfRoomBookVO;
 import com.gs52.vo.ConfRoomVO;
 import com.gs52.vo.emp.EmpVO;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping(value="/schedule/confRoom")
 public class ConfRoomController {
@@ -27,7 +29,7 @@ public class ConfRoomController {
 	return tDAO.insertList(vo);
 	}
 	
-	@GetMapping("/select")
+	@PostMapping("/select")
 	public List<ConfRoomBookVO> selectConf() {
 
 		System.out.println("select Conf");
@@ -37,7 +39,7 @@ public class ConfRoomController {
 	}
 	
 	
-	@GetMapping("/select_room_floor")
+	@PostMapping("/select_room_floor")
 	public List<ConfRoomVO> selectRoomFloor() {
 		System.out.println("select floor");
 	return tDAO.selectRoomFloor();
@@ -52,7 +54,7 @@ public class ConfRoomController {
 	
 	
 	
-	@GetMapping("/select_emp")
+	@PostMapping("/select_emp")
 	public List<EmpVO> selectEmp(@RequestBody EmpVO vo) {
 	
 	System.out.println(tDAO.selectEmp()); 
