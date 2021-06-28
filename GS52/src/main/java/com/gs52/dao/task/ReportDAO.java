@@ -26,6 +26,7 @@ public class ReportDAO {
 	
 	
 	public void addReport (ReportVO vo) {
+		System.out.println(vo);
 		sqlFactory.openSession().selectList("Report.addReport", vo);
 		sqlFactory.openSession().commit();
 		sqlFactory.openSession().close();

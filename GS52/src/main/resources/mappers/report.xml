@@ -15,7 +15,7 @@
 	
 	<insert id="addReport" parameterType="com.gs52.vo.task.ReportVO">
 		INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
-		VALUES(#{REPORT_EMP_INDEX}, #{REPOERT_CONTENTS}, #{REPORT_TARGET_DATE})
+		VALUES(#{REPORT_EMP_INDEX}, #{REPORT_CONTENTS}, #{REPORT_TARGET_DATE})
 	</insert>
 	
 	<delete id="delReport">
