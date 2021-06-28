@@ -16,8 +16,12 @@
       select * from CONF
    </select>
       
-      <select id="Select_room" parameterType="map" resultType="com.gs52.vo.ConfRoomVO">
-      select * from CONF_ROOM
+      <select id="Select_room_floor" parameterType="map" resultType="com.gs52.vo.ConfRoomVO">
+      select distinct CONF_ROOM_FLOOR from CONF_ROOM
+   </select>
+   
+    <select id="Select_room" parameterType="map" resultType="com.gs52.vo.ConfRoomVO">
+      select * from CONF_ROOM where CONF_ROOM_FLOOR=#{CONF_ROOM_FLOOR}
    </select>
    
          <select id="Select_emp" parameterType="map" resultType="com.gs52.vo.emp.EmpVO">

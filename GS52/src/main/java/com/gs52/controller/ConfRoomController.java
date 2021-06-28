@@ -37,11 +37,20 @@ public class ConfRoomController {
 	}
 	
 	
-	@GetMapping("/select_room")
-	public List<ConfRoomVO> selectRoom() {
-		System.out.println("select room");
-	return tDAO.selectRoom();
+	@GetMapping("/select_room_floor")
+	public List<ConfRoomVO> selectRoomFloor() {
+		System.out.println("select floor");
+	return tDAO.selectRoomFloor();
 	}
+	
+	@PostMapping("/select_room")
+	public List<ConfRoomVO> selectRoom(@RequestBody ConfRoomVO vo) {
+		System.out.println("select room");
+		System.out.println(vo);
+	return tDAO.selectRoom(vo);
+	}
+	
+	
 	
 	@GetMapping("/select_emp")
 	public List<EmpVO> selectEmp(@RequestBody EmpVO vo) {

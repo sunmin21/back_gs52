@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor // 기본생성자
 @AllArgsConstructor //모든 속성을 파라미터로 갖는 생성자
 public class ConfRoomBookVO {
-
+	private long CONF_INDEX=0L;
 	private String CONF_TITLE=null;
 	private long CONF_ROOM_INDEX=0L;
 	private String CONF_DATE=null;
