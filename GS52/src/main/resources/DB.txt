@@ -1,0 +1,197 @@
+    --직급 테이블
+    insert into RANK values (0,'직급1');
+    insert into RANK values (1,'직급2');
+    insert into RANK values (2,'직급3');
+    insert into RANK values (3,'직급4');
+    
+    
+    -- 부서 테이블
+    
+    insert into DEPT values (0,'부서1');
+    
+    insert into DEPT values (0,'부서2');
+    
+    insert into DEPT values (0,'부서3');
+    
+    insert into DEPT values (0,'부서4');
+    insert into DEPT values (0,'부서5');
+    
+    -- 직책 테이블 
+    insert into position values(0,'사원');
+    
+    insert into position values(0,'부장');
+    
+    insert into position values(0,'과장');
+    
+    -- 근무 유형 판별
+    insert into WORK_TYPE values (0,'고정근무');
+    insert into WORK_TYPE values (1,'탄력근무');
+    
+    
+    -- 근무 형태 
+    insert into WORK_RULE(WORK_RULE_WORK_TYPE_INDEX,WORK_RULE_NAME,WORK_RULE_START, WORK_RULE_END, WORK_RULE_BREAK, WORK_RULE_AVG_HOUR) values (1,'워크룰','10:00','18:00','01:00',2);
+    
+    insert into WORK_RULE(WORK_RULE_WORK_TYPE_INDEX,WORK_RULE_NAME,WORK_RULE_START, WORK_RULE_END, WORK_RULE_BREAK, WORK_RULE_AVG_HOUR) values (2,'워크룰2','09:00','18:00','01:30',2);
+    
+    insert into WORK_RULE(WORK_RULE_WORK_TYPE_INDEX,WORK_RULE_NAME,WORK_RULE_START, WORK_RULE_END, WORK_RULE_BREAK, WORK_RULE_AVG_HOUR) values (1,'워크룰3','08:00','18:00','02:00',2);
+    
+    --
+    
+    -- 팀 형태 
+    insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'팀1',1);
+    insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'팀1-2',1);
+    insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'팀1-3',1);
+    
+    
+    insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (2,'팀2',2);
+    
+    insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (3,'팀3',3);
+    
+    -- EMP
+    insert into EMP(EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_INTRO, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY)
+                     values(1,'test0','test0','eamil0','address0','phone0','birth0','intro0','photo0','entry_date0',1,1,1,'은행명0','계좌번호0',123,'2000');
+    insert into EMP(EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_INTRO, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY)
+                 values(2,'test1','test1','eamiL1','address1','phone1','birth1','intro1','photo1','entry_date1',2,2,2,'은행명1','계좌번호1',123,'3000');
+    insert into EMP(EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_INTRO, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY)
+                   values(3,'test2','test2','eamil2','address2','phone2','birth2','intro2','photo2','entry_date2',3,3,3,'은행명2','계좌번호2',123,'4000');
+    insert into EMP(EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_INTRO, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY)
+                     values(4,'test3','test3','eamil3','address3','phone3','birth3','intro3','photo3','entry_date3',1,2,2,'은행명3','계좌번호3',123,'5000');
+    insert into EMP(EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_INTRO, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY)
+                   values(54321,'hoho','1234','1@naver.com','한국','010-0000','1995/11/11','내 소개','link','2020/12/12',3,3,3,'신한','11011111',20,'2000');
+    
+    
+    
+
+    
+    
+    --TODO 할일 게시판
+    insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) values (2,'TESTTITLE0','TESTCONTENT',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+    
+    
+    insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) values (2,'TESTTITLE0','TESTCONTENT',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+    insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) values (2,'TESTTITLE0','TESTCONTENT',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+    insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) values (2,'TESTTITLE0','TESTCONTENT2',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+    
+    insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) values (3,'TESTTITLE1','TESTCONTENT1',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+    
+    insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) values (3,'TESTTITLE2','TESTCONTENT2',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+    
+    insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) values (1,'TESTTITLE3','TESTCONTENT3',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+    insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) values (2,'TESTTITLE3','TESTCONTENT3','1998/12/31 23:59:59');
+    
+    
+    -- TODO_RE 할일 받는 사람 INDEX
+    insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,1,0);
+    insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(1,1,0);
+    insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(3,1,0);
+    insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,2,0);
+    insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,3,0);
+    select* from emp; 
+    select * from todo;
+    -- 근무형태(ATTEND_TYPE)
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('출근');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('퇴근');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('지각');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('결근');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('외근');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('출장');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('연차');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('반차');
+    
+    select * from emp;
+    -- 공지사항
+    insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) values ('제목1','내용1',1,'2020/06/28');
+    
+    insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) values ('제목2','내용4',1,'2020/06/28');
+    
+    insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) values ('제목3','내용4',1,'2020/06/28');
+    
+    insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) values ('제목4','내용4',1,'2020/06/28');
+    -- 근무형태(ATTEND_TYPE)
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('출근');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('퇴근');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('지각');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('결근');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('외근');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('출장');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('연차');
+    insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('반차');
+    
+    -- 연차관리(VACATION)
+    insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS) values(5,'2017/06/22',7,'병가');
+    insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS) values(5,'2015/03/24',7,'휴가');
+    insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS) values(5,'2015/03/23',7,'휴가');
+    insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS) values(5,'2015/03/22',7,'휴가');
+    insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS) values(5,'2011/02/22',7,'휴가');
+    
+-- 휴일관리 (HOLIDAY)
+insert into holiday(holiday_title, holiday_date, holiday_annual_repeat) 
+values ('창립기념일', '2021-06-03', 1);
+insert into holiday(holiday_title, holiday_date, holiday_annual_repeat) 
+values ('워크숍', '2021-06-09', 0);
+insert into holiday(holiday_title, holiday_date, holiday_annual_repeat) 
+values ('휴가', '2021-06-14', 0);
+insert into holiday(holiday_title, holiday_date, holiday_annual_repeat) 
+values ('가정의날', '2021-06-16', 1);
+insert into holiday(holiday_title, holiday_date, holiday_annual_repeat) 
+values ('그냥', '2021-06-25', 0);
+insert into holiday(holiday_title, holiday_date, holiday_annual_repeat) 
+values ('그냥22', '2021-06-30', 0);
+
+-- 주간보고 (REPORT)
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(1, '1차 회의록 작성', '2021-06-01');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(1, '2차 회의록 작성', '2021-06-04');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(1, '3차 회의록 작성', '2021-06-07');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(1, '4차 회의록 작성', '2021-06-10');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(1, '5차 회의록 작성', '2021-06-14');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(1, '6차 회의록 작성', '2021-06-17');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(1, '7차 회의록 작성', '2021-06-20');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(1, '8차 회의록 작성', '2021-06-23');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(1, '9차 회의록 작성', '2021-06-27');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(1, '10차 회의록 작성', '2021-06-30');
+
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(2, '서울 출장', '2021-06-01');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(2, '부산 출장', '2021-06-10');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(2, '대구 출장', '2021-06-20');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(3, '1차 보고서 작성', '2021-06-01');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(3, '2차 보고서 작성', '2021-06-10');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(3, '3차 보고서 작성', '2021-06-20');
+
+-- 회의실 추가
+insert into conf_room(conf_room_floor, conf_room_number) values(2, 201);
+insert into conf_room(conf_room_floor, conf_room_number) values(2, 202);
+insert into conf_room(conf_room_floor, conf_room_number) values(3, 301);
+insert into conf_room(conf_room_floor, conf_room_number) values(3, 302);
+insert into conf_room(conf_room_floor, conf_room_number) values(3, 303);
+
+
+-- 회의실 예약정보 추가
+insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) values('회의실 예약1', 1, '2021-06-25', '09:00', '10:00', 1);
+insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) values('회의실 예약2', 2, '2021-06-28', '09:00', '10:00', 3);
+insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) values('회의실 예약3', 3, '2021-06-23', '10:00', '10:30', 2);
+insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) values('회의실 예약4', 1, '2021-06-24', '08:00', '10:00', 1);
+
+
+-- 회의 참석자
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(3, 1);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index)x     values(4, 1);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(1, 2);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(4, 2);
+   
+commit;
