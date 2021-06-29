@@ -32,6 +32,12 @@ public class AnnualManageDAO {
 		sqlFactory.openSession().close();
 		
 	}
+	public void insertAttend(AnnualManageVO vo) {
+		sqlFactory.openSession().selectList("Annual.insertAttend",vo);
+		sqlFactory.openSession().commit();
+		sqlFactory.openSession().close();
+		
+	}
 	
 	public void deleteAnnual(String annualDate) {
 		

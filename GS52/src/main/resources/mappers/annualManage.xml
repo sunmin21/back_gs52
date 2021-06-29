@@ -39,6 +39,14 @@
 		VALUES(#{VACATION_INDEX},#{VACATION_EMP_INDEX},#{VACATION_DATE},#{VACATION_ATTEND_INFO_INDEX},#{VACATION_CONTENTS})
 
 	</insert>
+	
+	<insert id="insertAttend" parameterType="com.gs52.vo.attendance.AnnualManageVO">
+	insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
+values(#{VACATION_EMP_INDEX},#{VACATION_DATE},#{VACATION_ATTEND_INFO_INDEX})
+	
+	
+	</insert>
+	
 
 	<delete id="deleteAnnual">
 		DELETE FROM VACATION WHERE VACATION_DATE= #{VACATION_DATE}
