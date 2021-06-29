@@ -39,10 +39,15 @@ public class AnnualManageDAO {
 		
 	}
 	
-	public void deleteAnnual(String annualDate) {
+	public void deleteAnnual(AnnualManageVO vo) {
 		
-		sqlFactory.openSession().selectOne("Annual.deleteAnnual",annualDate);
+		sqlFactory.openSession().selectOne("Annual.deleteAnnual",vo);
 	}
+	public void deleteAttend(AnnualManageVO vo) {
+		sqlFactory.openSession().selectOne("Annual.deleteAttend",vo);
+	}
+	
+
 	
 	public void updateAnnual(AnnualManageVO vo) {
 		  sqlFactory.openSession().update("Annual.updateEmpVacation",vo); //
@@ -50,6 +55,8 @@ public class AnnualManageDAO {
 		 		
 	
 	}
+
+
 	
 	
 }
