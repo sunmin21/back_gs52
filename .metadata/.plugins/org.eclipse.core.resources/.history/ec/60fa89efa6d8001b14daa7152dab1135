@@ -1,0 +1,26 @@
+@ -18,7 +18,7 @@ import com.gs52.jwt.models.User;
+public class UserDetailsImpl implements UserDetails {  // UserDetails - Security 내장 객체임
+	private static final long serialVersionUID = 1L;
+
+	private Long id;
+	private String id;
+
+	private String username;
+
+@ -29,7 +29,7 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
+
+	private Collection<? extends GrantedAuthority> authorities;
+
+	public UserDetailsImpl(Long id, String username, String email, String password,
+	public UserDetailsImpl(String id, String username, String email, String password,
+			Collection<? extends GrantedAuthority> authorities) {
+		this.id = id;
+		this.username = username;
+@ -56,7 +56,7 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
+		return authorities;
+	}
+
+	public Long getId() {
+	public String getId() {
+		return id;
+	}
