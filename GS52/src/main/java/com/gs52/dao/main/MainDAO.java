@@ -16,7 +16,7 @@ public class MainDAO {
 	@Autowired 
 	private SqlSessionFactory sqlFacotry =null;
 	
-	public List<NoticeVO> selectListNotice(){
-		 return sqlFacotry.openSession().selectList("main.selectListNotice");
+	public List<NoticeVO> selectListNotice(String NOTICE_INDEX){
+		 return sqlFacotry.openSession().selectList("main.selectListNotice",NOTICE_INDEX);
 	}
 }

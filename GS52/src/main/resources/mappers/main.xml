@@ -6,8 +6,11 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="main">
-	<select id="selectListNotice" resultType="com.gs52.vo.main.NoticeVO">
-		select NOTICE_INDEX, NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE,EMP_NAME from notice,emp where NOTICE_EMP_INDEX=EMP_INDEX
+	<select id="selectListNotice" resultType="com.gs52.vo.main.NoticeVO" parameterType="String">
+		select NOTICE_INDEX, NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE,EMP_NAME 
+    from notice,emp 
+    where NOTICE_EMP_INDEX=EMP_INDEX
+    and  NOTICE_INDEX like #{NOTICE_INDEX}||'%'
 	</select>
   
 
