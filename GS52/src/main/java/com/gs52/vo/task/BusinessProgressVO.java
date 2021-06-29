@@ -1,7 +1,5 @@
 package com.gs52.vo.task;
 
-import com.gs52.vo.TestVO;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

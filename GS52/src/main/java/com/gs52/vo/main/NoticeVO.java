@@ -1,7 +1,5 @@
 package com.gs52.vo.main;
 
-import com.gs52.vo.ConfRoomBookVO;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

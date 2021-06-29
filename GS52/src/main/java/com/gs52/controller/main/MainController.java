@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gs52.dao.TestDAO;
 import com.gs52.dao.main.MainDAO;
-import com.gs52.vo.TestVO;
 import com.gs52.vo.main.NoticeVO;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping(value="/main")
+
 public class MainController {
  
 	@Autowired
@@ -23,8 +22,18 @@ public class MainController {
 	
 	@GetMapping("/notice")
 	public List<NoticeVO> TestBoard() {
-	
+	 System.out.println("아아아아아2ㄴ");
 		
 		return mDAO.selectListNotice();
+		
+		
 	}
+	
+	
+	@GetMapping("/all")
+	public String allAccess() {
+		System.out.println("all 권한 들어옴");
+		return "Public Content.";
+	}
+	
 }

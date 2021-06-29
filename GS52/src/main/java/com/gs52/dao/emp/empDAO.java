@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gs52.vo.emp.EmpVO;
-import com.gs52.vo.task.BusinessProgressVO;
 
 @Service  
 @Transactional

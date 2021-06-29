@@ -6,16 +6,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gs52.dao.attendance.AnnualManageDAO;
 import com.gs52.dao.attendance.MemberEmpDAO;
 import com.gs52.dao.attendance.MemberTeamDAO;
-import com.gs52.vo.attendance.AnnualManageVO;
 import com.gs52.vo.attendance.MemberEmpVO;
 import com.gs52.vo.attendance.MemberTeamVO;
 

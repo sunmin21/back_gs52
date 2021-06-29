@@ -6,18 +6,34 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.stereotype.Repository;
 
 
+
+
+
+
+@EntityScan(basePackages = {"com.gs52.models"})
+@EnableJpaRepositories(basePackages = {"com.gs52.repository"})
 @ComponentScan({
+	"com.gs52.repository",
 	"com.gs52.controller",
 	"com.gs52.dao",
-//	"com.soulmovie.security",
+	
+	"com.gs52.security",
+	
+	
+	
 })
 
 @SpringBootApplication

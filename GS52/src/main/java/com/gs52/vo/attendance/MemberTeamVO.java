@@ -1,7 +1,5 @@
 package com.gs52.vo.attendance;
 
-import org.apache.ibatis.annotations.Param;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

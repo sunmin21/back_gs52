@@ -12,7 +12,6 @@ import com.gs52.vo.ConfRoomVO;
 import com.gs52.vo.emp.DeptVO;
 import com.gs52.vo.emp.TeamVO;
 import com.gs52.vo.emp.WorkRuleVO;
-import com.gs52.vo.manager.HolidayVO;
 
 @Service
 @Transactional

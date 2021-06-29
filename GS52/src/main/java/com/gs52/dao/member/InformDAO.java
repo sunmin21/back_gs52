@@ -1,7 +1,5 @@
 package com.gs52.dao.member;
 
-import java.util.List;
-
 import javax.transaction.Transactional;
 
 import org.apache.ibatis.session.SqlSessionFactory;

@@ -8,7 +8,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gs52.vo.attendance.AnnualManageVO;
 import com.gs52.vo.attendance.MemberEmpVO;
 
 @Service  

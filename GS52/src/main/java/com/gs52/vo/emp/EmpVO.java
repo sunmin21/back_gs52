@@ -1,7 +1,5 @@
 package com.gs52.vo.emp;
 
-import com.gs52.vo.task.BusinessProgressVO;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
