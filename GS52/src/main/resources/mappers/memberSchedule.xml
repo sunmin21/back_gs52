@@ -21,5 +21,10 @@
 		select EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_INTRO, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY from emp  
 		</select>
 	
+	<select id="selectAttend" resultType="com.gs52.vo.attendance.MemberAttendVO">
+	select EMP_INDEX,EMP_ID, EMP_NAME,EMP_TEAM_INDEX ,ATTEND_INDEX,ATTEND_EMP_INDEX
+,ATTEND_DATE, ATTEND_TYPE_NAME from emp, attend, attend_type where emp.emp_index = attend.attend_emp_index
+and attend_type.attend_type_index = attend.attend_attend_type_index
+	</select>
 	
 </mapper>
