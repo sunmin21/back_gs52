@@ -1,4 +1,4 @@
-package com.gs52.security;
+package com.gs52.jwt.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,9 +14,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.gs52.security.jwt.AuthEntryPointJwt;
-import com.gs52.security.jwt.AuthTokenFilter;
-import com.gs52.security.services.UserDetailsServiceImpl;
+import com.gs52.jwt.security.jwt.AuthEntryPointJwt;
+import com.gs52.jwt.security.jwt.AuthTokenFilter;
+import com.gs52.jwt.security.services.UserDetailsServiceImpl;
 
 
 //Security에서는 모든 웹페이지에 대한 요청이 들어올 때 OncePerRequestFilter로 오는 것으로 설계가 되어 있음

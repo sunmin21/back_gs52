@@ -1,4 +1,4 @@
-package com.gs52.security.jwt;
+package com.gs52.jwt.security.jwt;
 
 import java.io.IOException;
 

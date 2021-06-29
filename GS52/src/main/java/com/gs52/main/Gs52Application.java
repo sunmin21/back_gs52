@@ -14,8 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+
 import org.springframework.stereotype.Repository;
 
 
@@ -23,15 +22,14 @@ import org.springframework.stereotype.Repository;
 
 
 
-@EntityScan(basePackages = {"com.gs52.models"})
-@EnableJpaRepositories(basePackages = {"com.gs52.repository"})
+@EntityScan(basePackages = {"com.gs52.jwt.models"})
+@EnableJpaRepositories(basePackages = {"com.gs52.jwt.repository"})
 @ComponentScan({
-	"com.gs52.repository",
+	"com.gs52.jwt.repository",
 	"com.gs52.controller",
 	"com.gs52.dao",
 	
-	"com.gs52.security",
-	
+	"com.gs52.jwt.security",	
 	
 	
 })

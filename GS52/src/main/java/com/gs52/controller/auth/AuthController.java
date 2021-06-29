@@ -20,18 +20,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import com.gs52.models.ERole;
-import com.gs52.models.Role;
-import com.gs52.models.User;
-import com.gs52.payload.request.LoginRequest;
-import com.gs52.payload.request.SignupRequest;
-import com.gs52.payload.response.JwtResponse;
-import com.gs52.payload.response.MessageResponse;
-import com.gs52.repository.RoleRepository;
-import com.gs52.repository.UserRepository;
-import com.gs52.security.jwt.JwtUtils;
-import com.gs52.security.services.UserDetailsImpl;
+import com.gs52.jwt.models.ERole;
+import com.gs52.jwt.models.Role;
+import com.gs52.jwt.models.User;
+import com.gs52.jwt.payload.request.LoginRequest;
+import com.gs52.jwt.payload.request.SignupRequest;
+import com.gs52.jwt.payload.response.JwtResponse;
+import com.gs52.jwt.payload.response.MessageResponse;
+import com.gs52.jwt.repository.RoleRepository;
+import com.gs52.jwt.repository.UserRepository;
+import com.gs52.jwt.security.jwt.JwtUtils;
+import com.gs52.jwt.security.services.UserDetailsImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController

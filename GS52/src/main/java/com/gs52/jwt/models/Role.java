@@ -1,4 +1,4 @@
-package com.gs52.models;
+package com.gs52.jwt.models;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.gs52.security.services;
+package com.gs52.jwt.security.services;
 
 import java.util.Collection;
 import java.util.List;
@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.gs52.models.User;
+import com.gs52.jwt.models.User;
 
 // 로그인 정보 객체로, 사용자 이름을 가지고 실제 등록된 사용자인지를 확인한 후 로그인 정보를 객체로 생성함
 // 실제 인증 작업을 수행해서 이상유무를 판단 후, 이상이 없으면 Authentication을 생성함(setAuthentication)

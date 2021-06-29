@@ -1,4 +1,4 @@
-package com.gs52.security.jwt;
+package com.gs52.jwt.security.jwt;
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import com.gs52.security.services.UserDetailsImpl;
+import com.gs52.jwt.security.services.UserDetailsImpl;
 
 import io.jsonwebtoken.*;
 

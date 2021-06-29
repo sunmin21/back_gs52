@@ -1,4 +1,4 @@
-package com.gs52.repository;
+package com.gs52.jwt.repository;
 
 import java.util.Optional;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.gs52.models.ERole;
-import com.gs52.models.Role;
+import com.gs52.jwt.models.ERole;
+import com.gs52.jwt.models.Role;
 
 
 

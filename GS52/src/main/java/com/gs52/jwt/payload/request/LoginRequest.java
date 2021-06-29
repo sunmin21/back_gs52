@@ -1,4 +1,4 @@
-package com.gs52.payload.request;
+package com.gs52.jwt.payload.request;
 
 import javax.validation.constraints.NotBlank;
 

@@ -1,4 +1,4 @@
-package com.gs52.payload.response;
+package com.gs52.jwt.payload.response;
 
 import java.util.List;
 
