@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor // 기본생성자
 @AllArgsConstructor //모든 속성을 파라미터로 갖는 생성자
 public class EmpVO {
+	private String EMP_INDEX = null;
 	private String EMP_ID = null;
 	private String EMP_NAME = null;
 	private String EMP_PWD = null;

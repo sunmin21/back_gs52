@@ -11,7 +11,7 @@
     from notice,emp 
     where NOTICE_EMP_INDEX=EMP_INDEX
     and  NOTICE_INDEX like #{NOTICE_INDEX}||'%' 
-    order by notice_index
+    order by notice_index desc
 	</select>
   <insert id="insertNotice" parameterType="com.gs52.vo.main.NoticeVO">
 		insert into notice(NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
