@@ -1,4 +1,4 @@
-.metadata
+.metadata/
 *.properties
 *.properties
 GS52/src/main/resources/application.properties
