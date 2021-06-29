@@ -10,8 +10,25 @@
 		select NOTICE_INDEX, NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE,EMP_NAME 
     from notice,emp 
     where NOTICE_EMP_INDEX=EMP_INDEX
-    and  NOTICE_INDEX like #{NOTICE_INDEX}||'%'
+    and  NOTICE_INDEX like #{NOTICE_INDEX}||'%' 
+    order by notice_index
 	</select>
-  
+  <insert id="insertNotice" parameterType="com.gs52.vo.main.NoticeVO">
+		insert into notice(NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
+		values (#{NOTICE_TITLE},#{NOTICE_CONTENTS},#{NOTICE_EMP_INDEX},#{NOTICE_DATE})
+	</insert>
+<delete id="deleteNotice" parameterType="long">
 
+		delete from notice where
+		notice_index=#{NOTICE_INDEX}
+	</delete>
+	<update id="updateNotice" parameterType="com.gs52.vo.main.NoticeVO">
+
+
+		UPDATE notice SET NOTICE_TITLE
+		= #{NOTICE_TITLE}, NOTICE_CONTENTS=#{NOTICE_CONTENTS}
+		WHERE notice_index =
+		#{NOTICE_INDEX}
+	</update>
+	
 </mapper>

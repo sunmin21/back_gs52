@@ -19,4 +19,20 @@ public class MainDAO {
 	public List<NoticeVO> selectListNotice(String NOTICE_INDEX){
 		 return sqlFacotry.openSession().selectList("main.selectListNotice",NOTICE_INDEX);
 	}
+
+	public int insertNotice(NoticeVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFacotry.openSession().insert("main.insertNotice",vo);
+
+	}
+
+	public int deleteNotice(NoticeVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFacotry.openSession().delete("main.deleteNotice",vo);
+	}
+
+	public int updateNotice(NoticeVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFacotry.openSession().update("main.updateNotice",vo);
+	}
 }

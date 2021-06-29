@@ -25,7 +25,7 @@ public class BusinessProgressController {
 	
 	@PostMapping(value="/todo")
 	public List<BusinessProgressVO> selectListTodo(@RequestBody BusinessProgressVO vo ) {
-	   System.out.println("타냐?");
+	   
 	   System.out.println(vo);
 	   System.out.println(bDAO.selectListTodo(vo));
 		return bDAO.selectListTodo(vo);
@@ -40,7 +40,8 @@ public class BusinessProgressController {
 		list.add(startDate);
 		list.add(sendId);
 		list.add(no);
-	    
+		System.out.println(sendId);
+	    System.out.println(no);
 		
 		
 		
