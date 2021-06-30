@@ -10,11 +10,7 @@ import javax.validation.constraints.Size;
 
 
 @Entity
-@Table(	name = "users", 
-		uniqueConstraints = { 
-			@UniqueConstraint(columnNames = "username"),
-			@UniqueConstraint(columnNames = "email") 
-		})
+@Table(	name = "emp")
 
 @SequenceGenerator(
       name="USER_SEQ_GEN", //시퀀스 제너레이터 이름
@@ -26,34 +22,51 @@ import javax.validation.constraints.Size;
 public class User {
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USER_SEQ_GEN")
+	 @Column(name="emp_index")
 	 private Long id;
 
 	@NotBlank   // "", " "
 	@Size(max = 20)
+	 @Column(name="emp_id")
 	private String username;
 
 	@NotBlank
 	@Size(max = 50)
 	@Email
+	 @Column(name="emp_email")
 	private String email;
 
 	@NotBlank
 	@Size(max = 120)
+	@Column(name="emp_pwd")
 	private String password;
+	
+	 @Column(name="emp_rank_index")
+	private Long rank;
+	 
+	 @Column(name="emp_position_index")
+	private Long position;
+	
+	 @Column(name="emp_team_index")
+	private Long team;
 
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(	name = "user_roles", 
-				joinColumns = @JoinColumn(name = "user_id"), 
+				joinColumns = @JoinColumn(name = "emp_index"), 
 				inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
 
 	public User() {
 	}
 
-	public User(String username, String email, String password) {
+	public User(String username, String email, String password, Long position, Long rank, Long team) {
 		this.username = username;
 		this.email = email;
 		this.password = password;
+
+		this.rank = rank;
+		this.position=position;
+		this.team =team;
 	}
 
 	public Long getId() {
@@ -95,6 +108,32 @@ public class User {
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
+
+	public Long getRank() {
+		return rank;
+	}
+
+	public void setRank(Long rank) {
+		this.rank = rank;
+	}
+
+	public Long getPosition() {
+		return position;
+	}
+
+	public void setPosition(Long position) {
+		this.position = position;
+	}
+
+	public Long getTeam() {
+		return team;
+	}
+
+	public void setTeam(Long team) {
+		this.team = team;
+	}
+	
+	
 }
 
 //@Entity
