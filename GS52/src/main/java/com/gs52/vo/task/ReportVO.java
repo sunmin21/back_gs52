@@ -17,6 +17,7 @@ public class ReportVO {
 	private String WEEKEND = null;
 	
 	// 팀원 조회를 위해 필요한 부분
+	private int EMP_INDEX = 0;
 	private String EMP_NAME = null;
 	private String DEPT_NAME = null;
 	private String TEAM_NAME = null;
