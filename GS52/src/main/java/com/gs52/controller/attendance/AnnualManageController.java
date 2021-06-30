@@ -44,7 +44,7 @@ public class AnnualManageController {
 	public void insertBoard(@RequestBody AnnualManageVO vo){
 		aDAO.insertAnnual(vo);
 		aDAO.insertAttend(vo);
-		
+	
 	}
 	
 	@PostMapping("/delete")
