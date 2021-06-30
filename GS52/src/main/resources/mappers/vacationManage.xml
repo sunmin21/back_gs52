@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Vacation">
+
+	<select id="selectVacation" parameterType="int"
+		resultType="com.gs52.vo.manager.VacationManageVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+		 select VACATION_INDEX,
+		VACATION_EMP_INDEX,
+		VACATION_DATE,
+		EMP_NAME,
+		EMP_ID,
+		VACATION_CONTENTS,
+		VACATION_STATUS,
+		VACATION_ATTEND_INFO_INDEX,
+		ATTEND_TYPE_NAME,
+		EMP_VACATION
+		from VACATION  , EMP, ATTEND_TYPE WHERE VACATION_EMP_INDEX=EMP_INDEX AND VACATION_ATTEND_INFO_INDEX = ATTEND_TYPE_INDEX
+	  order by VACATION_DATE desc
+	</select>
+	
+	
+	
+	<update id="updateVacation"  parameterType="com.gs52.vo.manager.VacationManageVO">
+		UPDATE VACATION SET VACATION_STATUS = #{COUNT} WHERE VACATION_INDEX = #{VACATION_INDEX}
+	</update>
+	
+	<insert id="insertAttend" parameterType="com.gs52.vo.manager.VacationManageVO">
+	insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
+values(#{VACATION_EMP_INDEX},#{VACATION_DATE},#{VACATION_ATTEND_INFO_INDEX})
+	</insert>
+	
+</mapper>
