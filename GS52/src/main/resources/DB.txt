@@ -49,15 +49,15 @@
     
     -- EMP
     insert into EMP(EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_INTRO, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY)
-                     values(1,'test0','test0','eamil0','address0','phone0','birth0','intro0','photo0','entry_date0',1,1,1,'은행명0','계좌번호0',123,'2000');
+                     values(11111,'test0','test0','eamil0','address0','phone0','birth0','intro0','photo0','entry_date0',1,1,1,'은행명0','계좌번호0',123,'2000');
     insert into EMP(EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_INTRO, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY)
-                 values(2,'test1','test1','eamiL1','address1','phone1','birth1','intro1','photo1','entry_date1',2,2,2,'은행명1','계좌번호1',123,'3000');
+                 values(22222,'test1','test1','eamiL1','address1','phone1','birth1','intro1','photo1','entry_date1',2,2,2,'은행명1','계좌번호1',123,'3000');
     insert into EMP(EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_INTRO, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY)
-                   values(3,'test2','test2','eamil2','address2','phone2','birth2','intro2','photo2','entry_date2',3,3,3,'은행명2','계좌번호2',123,'4000');
+                   values(33333,'test2','test2','eamil2','address2','phone2','birth2','intro2','photo2','entry_date2',3,3,3,'은행명2','계좌번호2',123,'4000');
     insert into EMP(EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_INTRO, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY)
-                     values(4,'test3','test3','eamil3','address3','phone3','birth3','intro3','photo3','entry_date3',1,2,2,'은행명3','계좌번호3',123,'5000');
+                     values(44444,'test3','test3','eamil3','address3','phone3','birth3','intro3','photo3','entry_date3',1,2,2,'은행명3','계좌번호3',123,'5000');
     insert into EMP(EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_INTRO, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY)
-                   values(54321,'hoho','1234','1@naver.com','한국','010-0000','1995/11/11','내 소개','link','2020/12/12',3,3,3,'신한','11011111',20,'2000');
+                   values(55555,'hoho','1234','1@naver.com','한국','010-0000','1995/11/11','내 소개','link','2020/12/12',3,3,3,'신한','11011111',20,'2000');
     
     
     
