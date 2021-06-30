@@ -39,4 +39,10 @@ public class ReportController {
 		System.out.println("delReport =========");
 		rDAO.delReport(vo.getREPORT_INDEX());
 	}
+	
+	@PostMapping("/empList")
+	public List<ReportVO> empList(@RequestBody ReportVO vo) {
+		System.out.println("empList =========");
+		return rDAO.selectList(vo);
+	}
 }

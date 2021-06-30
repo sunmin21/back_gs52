@@ -18,7 +18,6 @@ public class ReportDAO {
 	private SqlSessionFactory sqlFactory = null;
 	
 	public List<ReportVO> selectList(ReportVO vo) {
-//		System.out.println(sqlFactory.openSession().selectList("Report.showReport", vo));
 		System.out.println(vo);
 		System.out.println("THIS IS DAO PART");		
 		return sqlFactory.openSession().selectList("Report.showReport", vo);
@@ -35,5 +34,10 @@ public class ReportDAO {
 	public void delReport (int ReportIndex) {
 		System.out.println(ReportIndex);
 		sqlFactory.openSession().selectOne("Report.delReport", ReportIndex);
+	}
+	
+	public List<ReportVO> selectEmpList(ReportVO vo) {
+		System.out.println(vo);
+		return sqlFactory.openSession().selectList("Report.empList", vo);
 	}
 }

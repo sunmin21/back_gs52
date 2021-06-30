@@ -15,4 +15,6 @@ public class ReportVO {
 	
 	private String WEEKSTART = null;
 	private String WEEKEND = null;
+	
+	
 }
