@@ -41,12 +41,19 @@ public class User {
 	@Column(name="emp_pwd")
 	private String password;
 	
+//
+//	@ManyToOne(targetEntity=Rank.class, fetch = FetchType.EAGER)
+//	@JoinColumn(name="emp_rank_index", referencedColumnName="rank_index")
 	 @Column(name="emp_rank_index")
 	private Long rank;
-	 
+//	
+//	@ManyToOne(targetEntity=Position.class, fetch = FetchType.EAGER)
+//	@JoinColumn(name="emp_position_index", referencedColumnName="position_index")
 	 @Column(name="emp_position_index")
 	private Long position;
-	
+//
+//	@ManyToOne(targetEntity=Team.class, fetch = FetchType.EAGER)
+//	@JoinColumn(name="emp_team_index", referencedColumnName="team_index")
 	 @Column(name="emp_team_index")
 	private Long team;
 
