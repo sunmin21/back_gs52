@@ -36,10 +36,6 @@ public class ReportDAO {
 		sqlFactory.openSession().selectOne("Report.delReport", ReportIndex);
 	}
 	
-//	public List<ReportVO> selectEmpList() {
-//		return sqlFactory.openSession().selectList("Report.empList");
-//	}
-	
 	public List<ReportVO> selectEmpList(ReportVO vo) {
 		System.out.println(vo);
 		System.out.println("selectEmpList");		
