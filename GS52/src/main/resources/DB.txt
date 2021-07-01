@@ -190,7 +190,7 @@ insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, c
 
 -- 회의 참석자
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(3, 1);
-insert into conf_re( conf_re_emp_index, conf_re_conf_index)x     values(4, 1);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index)     values(4, 1);
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(1, 2);
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(4, 2);
    
