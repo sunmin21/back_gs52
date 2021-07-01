@@ -10,10 +10,9 @@
 	<select id="selectTeam" 
 		resultType="com.gs52.vo.attendance.MemberTeamVO">
 		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
-		 select TEAM_INDEX,
+			 select TEAM_INDEX,
 	TEAM_DEPT_INDEX,
-	TEAM_NAME,
-	TEAM_WORK_TYPE from team
+	TEAM_NAME,TEAM_WORK_TYPE, DEPT_NAME from team,dept where team.TEAM_DEPT_INDEX = dept.dept_index order by team_DEPT_INDEX
 	</select>
 	
 	<select id="selectEmp" resultType="com.gs52.vo.attendance.MemberEmpVO">

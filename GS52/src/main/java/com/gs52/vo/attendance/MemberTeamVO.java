@@ -14,6 +14,7 @@ public class MemberTeamVO {
 	private int TEAM_DEPT_INDEX =0;
 	private String TEAM_NAME = null;
 	private int TEAM_WORK_TYPE = 0;
+	private String DEPT_NAME = null;
 	
    
 	
