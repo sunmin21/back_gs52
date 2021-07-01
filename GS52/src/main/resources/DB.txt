@@ -1,3 +1,14 @@
+   
+-- security role table data
+CREATE SEQUENCE seq_roles;
+
+CREATE SEQUENCE EMP_SEQ
+START WITH 1
+INCREMENT BY 1;
+/
+
+   
+   
     --직급 테이블
     insert into RANK values (0,'직급1');
     insert into RANK values (1,'직급2');
@@ -195,14 +206,10 @@ insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(1, 2);
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(4, 2);
 
 
+
 -- security role table data
-
-drop SEQUENCE seq_roles;
-CREATE SEQUENCE seq_roles;
-
-INSERT INTO roles(id, name) VALUES(SEQ_ROLES.nextval,'ROLE_USER');
-INSERT INTO roles(id, name) VALUES(SEQ_ROLES.nextval,'ROLE_MODERATOR');
-INSERT INTO roles(id, name) VALUES(SEQ_ROLES.nextval,'ROLE_ADMIN');
-
+INSERT INTO roles(name) VALUES('ROLE_USER');
+INSERT INTO roles( name) VALUES('ROLE_MODERATOR');
+INSERT INTO roles(name) VALUES('ROLE_ADMIN');
    
 commit;
