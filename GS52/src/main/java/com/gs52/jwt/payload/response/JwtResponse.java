@@ -8,13 +8,15 @@ public class JwtResponse {
 	private Long id;
 	private String username;
 	private String email;
+	private Long first_login;
 	private List<String> roles;
 
-	public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles) {
+	public JwtResponse(String accessToken, Long id, String username, String email, Long first_login,List<String> roles) {
 		this.token = accessToken;
 		this.id = id;
 		this.username = username;
 		this.email = email;
+		this.first_login = first_login;
 		this.roles = roles;
 	}
 
@@ -56,6 +58,16 @@ public class JwtResponse {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	
+	
+
+	public Long getFirst_login() {
+		return first_login;
+	}
+
+	public void setFirst_login(Long first_login) {
+		this.first_login = first_login;
 	}
 
 	public List<String> getRoles() {

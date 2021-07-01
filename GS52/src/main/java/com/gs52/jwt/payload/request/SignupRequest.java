@@ -26,6 +26,8 @@ public class SignupRequest {  // 회원가입 시 웹페이지에서 입력한 R
 	private Long team;
 
 	private Long position;
+
+	private Long first_login;
 	
   
     public String getUsername() {
@@ -82,6 +84,14 @@ public class SignupRequest {  // 회원가입 시 웹페이지에서 입력한 R
 
 	public void setPosition(Long position) {
 		this.position = position;
+	}
+
+	public Long getFirst_login() {
+		return first_login;
+	}
+
+	public void setFirst_login(Long first_login) {
+		this.first_login = first_login;
 	}
     
 }

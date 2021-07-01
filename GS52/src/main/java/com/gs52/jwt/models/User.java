@@ -14,7 +14,8 @@ import javax.validation.constraints.Size;
 
 @SequenceGenerator(
       name="USER_SEQ_GEN", //시퀀스 제너레이터 이름
-      sequenceName="SEQ_user", //시퀀스 이름
+     sequenceName="emp_seq", //시퀀스 이름
+     // sequenceName="seq_users",
       initialValue=1, //시작값
       allocationSize=1 //메모리를 통해 할당할 범위 사이즈, 50~100
 )
@@ -56,6 +57,9 @@ public class User {
 //	@JoinColumn(name="emp_team_index", referencedColumnName="team_index")
 	 @Column(name="emp_team_index")
 	private Long team;
+	 
+	 @Column(name="emp_first_login")
+	private Long first_login;
 
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(	name = "user_roles", 
@@ -66,7 +70,7 @@ public class User {
 	public User() {
 	}
 
-	public User(String username, String email, String password, Long position, Long rank, Long team) {
+	public User(String username, String email, String password, Long position, Long rank, Long team, Long first_login) {
 		this.username = username;
 		this.email = email;
 		this.password = password;
@@ -74,6 +78,7 @@ public class User {
 		this.rank = rank;
 		this.position=position;
 		this.team =team;
+		this.first_login=first_login;
 	}
 
 	public Long getId() {
@@ -138,6 +143,14 @@ public class User {
 
 	public void setTeam(Long team) {
 		this.team = team;
+	}
+
+	public Long getFirst_login() {
+		return first_login;
+	}
+
+	public void setFirst_login(Long first_login) {
+		this.first_login = first_login;
 	}
 	
 	
