@@ -19,6 +19,16 @@ public class SignupRequest {  // 회원가입 시 웹페이지에서 입력한 R
     @NotBlank
     @Size(min = 6, max = 40)
     private String password;
+    
+
+	private Long rank;
+    
+	private Long team;
+
+	private Long position;
+
+	private Long first_login;
+	
   
     public String getUsername() {
         return username;
@@ -51,4 +61,37 @@ public class SignupRequest {  // 회원가입 시 웹페이지에서 입력한 R
     public void setRole(Set<String> role) {
       this.role = role;
     }
+
+	public Long getRank() {
+		return rank;
+	}
+
+	public void setRank(Long rank) {
+		this.rank = rank;
+	}
+
+	public Long getTeam() {
+		return team;
+	}
+
+	public void setTeam(Long team) {
+		this.team = team;
+	}
+
+	public Long getPosition() {
+		return position;
+	}
+
+	public void setPosition(Long position) {
+		this.position = position;
+	}
+
+	public Long getFirst_login() {
+		return first_login;
+	}
+
+	public void setFirst_login(Long first_login) {
+		this.first_login = first_login;
+	}
+    
 }

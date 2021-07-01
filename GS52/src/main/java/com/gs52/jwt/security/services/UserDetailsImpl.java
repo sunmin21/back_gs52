@@ -26,16 +26,19 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 
 	@JsonIgnore
 	private String password;
+	
+	private long first_login;
 
 	private Collection<? extends GrantedAuthority> authorities;
 
-	public UserDetailsImpl(Long id, String username, String email, String password,
+	public UserDetailsImpl(Long id, String username, String email, String password, long first_login,
 			Collection<? extends GrantedAuthority> authorities) {
 		this.id = id;
 		this.username = username;
 		this.email = email;
 		this.password = password;
 		this.authorities = authorities;    // 
+		this.first_login = first_login;
 	}
 
 	public static UserDetailsImpl build(User user) {
@@ -47,7 +50,8 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 				user.getId(), 
 				user.getUsername(), 
 				user.getEmail(),
-				user.getPassword(), 
+				user.getPassword(),
+				user.getFirst_login(), 
 				authorities);
 	}
 
@@ -73,7 +77,11 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 	public String getUsername() {
 		return username;
 	}
-
+	
+	public long getFirst_login() {
+		return first_login;
+	}
+	
 	@Override
 	public boolean isAccountNonExpired() {
 		return true;
