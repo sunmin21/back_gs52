@@ -1,1 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="Project">
+	<select id="selectRequested" parameterType="map" resultType="com.gs52.vo.schedual.ProjectVO">
+	</select>
+	
+	<select id="selectProceeding" parameterType="map" resultType="com.gs52.vo.schedual.ProjectVO">
+		SELECT PROJECT.*
+		FROM PROJECT, PROJECT_WITH 
+		WHERE PROJECT.PROJECT_INDEX = PROJECT_WITH.PROJECT_INDEX
+		    AND TO_CHAR(SYSDATE, 'YYYY-MM-DD') 
+		        BETWEEN PROJECT_START AND PROJECT_END
+		    AND PROJECT_WITH_EMP_INDEX = #{PROJECT_WITH_EMP_INDEX}
+	</select>
+	
+	<select id="selectCompleted" parameterType="map" resultType="com.gs52.vo.schedual.ProjectVO">>
+	</select>
+	
+	<select id="selectExpected" parameterType="map" resultType="com.gs52.vo.schedual.ProjectVO">
+	</select>
+</mapper>
