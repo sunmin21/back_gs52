@@ -205,7 +205,7 @@ values(9,'2021-06-09',4);
 
 -- 휴일관리 (HOLIDAY)
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
-values ('창립기념일', '2021-06-03', 1);
+values ('6월기념', '2021-06-03', 1);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
 values ('워크숍', '2021-06-09', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
@@ -216,6 +216,18 @@ insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
 values ('그냥', '2021-06-25', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
 values ('그냥22', '2021-06-30', 0);
+insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
+values ('7월기념', '2021-07-02', 0);
+insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
+values ('워크숍', '2021-07-05', 0);
+insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
+values ('창립기념일', '2021-07-14', 0);
+insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
+values ('가정의날', '2021-07-19', 0);
+insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
+values ('휴가', '2021-07-21', 0);
+insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
+values ('내부규정', '2021-07-28', 0);
 
 -- 주간보고 (REPORT)
 INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
@@ -245,6 +257,25 @@ INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
 VALUES(2, '부산 출장', '2021-06-10');
 INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
 VALUES(2, '대구 출장', '2021-06-20');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(2, '2의 7/5 주간보고', '2021-07-05');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(2, '2의 7/7 주간보고', '2021-07-07');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(2, '2의 7/9 주간보고', '2021-07-09');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(2, '2의 7/14 주간보고', '2021-07-14');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(2, '2의 7/19 주간보고', '2021-07-19');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(2, '2의 7/20 주간보고', '2021-07-20');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(2, '2의 7/22 주간보고', '2021-07-22');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(2, '2의 7/26 주간보고', '2021-07-26');
+INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
+VALUES(2, '2의 7/30 주간보고', '2021-07-30');
+
 INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
 VALUES(3, '1차 보고서 작성', '2021-06-01');
 INSERT INTO REPORT(REPORT_EMP_INDEX, REPORT_CONTENTS, REPORT_TARGET_DATE)
