@@ -1,4 +1,4 @@
-package com.gs52.vo.schedual;
+package com.gs52.vo.schedule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +21,22 @@ public class ProjectVO {
 
 	String PROJECT_TITLE = null;
 	String PROJECT_CONTENT = null;
-	String  PROJECT_FILE = null;
 	String PROJECT_START = null;
 	String PROJECT_END = null;
-	int PROJECT_OKAY = 0;
-	List<Integer> PROJECT_WITH_EMP_INDEX = new ArrayList<Integer>();
-    long PROJECT_WITH_READER =0L;
+	String PROJECT_DATE = null;
+	int PROJECT_OKAY = 0;  
+	
+	//팀원 추가
+	List<Integer> PROJECT_WITH_EMP_INDEXS = new ArrayList<Integer>();
+	long PROJECT_WITH_EMP_INDEX= 0L;
+    int PROJECT_WITH_OKAY=0 ;
+    String PROJECT_WITH_REJECT= null;
+    int  PROJECT_WITH_READER= 0;
+    // 첨부파일추가
     MultipartFile[] FILES = null;
+    
+    String PROJECT_FILE_ORIGIN_NAME =null;
+    String PROJECT_FILE_NAME =null;
+    String PROJECT_FILE_PATH =null; 
+    String PROJECT_FILE_DATE = null;
 }

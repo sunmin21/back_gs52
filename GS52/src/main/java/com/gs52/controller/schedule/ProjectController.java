@@ -25,7 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.gs52.dao.schedule.ProjectDAO;
 import com.gs52.dao.task.BusinessProgressDAO;
-import com.gs52.vo.schedual.ProjectVO;
+import com.gs52.vo.schedule.ProjectVO;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping(value="/schedule")
@@ -37,45 +37,15 @@ public class ProjectController {
 	
 	@PostMapping(value="/project/insertproject")
 	public int  selectListTodo(@ModelAttribute ProjectVO vo) {
-		System.out.println(vo);
-		for (MultipartFile uploadFile : vo.getFILES()) {
-//			if(uploadFile.getContentType().startsWith("image")==false) {
-//				return 0;
-//			}  //이미지만 띄우고 싶을때 
-			
-			
-			String originalName = uploadFile.getOriginalFilename();
-			
-			String fileName = originalName.substring(originalName.lastIndexOf("\\")+1); 
-			String folderPath = makeFolder();
-			String uuid = UUID.randomUUID().toString();
-			String saveName = uploadPath + File.separator + folderPath + File.separator +uuid+"_"+ fileName;
-		    
-			Path savePath  = Paths.get(saveName);
-			System.out.println(originalName);
-			System.out.println(fileName);
-		     System.out.println(savePath);
-		    try {
-		    	System.out.println("에러");
-		    	uploadFile.transferTo(savePath);
-		    	System.out.println("에러2");
-		    }catch(IOException e){
-		    
-		    	e.printStackTrace();
-		    }
-		}
-		return 0;
-//		return pDAO.insertProject(vo);
+	
+		
+		//프로젝트 추가 
+		
+		
+		
+	
+		return pDAO.insertProject(vo);
 	}
-	private String makeFolder() {
-		String str = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
-		String folderPath = str.replace("/", File.separator);
-		//make folder
-		File uploadPathFolder = new File(uploadPath, folderPath);
-		if (uploadPathFolder.exists()==false) {
-			uploadPathFolder.mkdirs();
-		}
-		return folderPath;
-	}
+
 	
 }
