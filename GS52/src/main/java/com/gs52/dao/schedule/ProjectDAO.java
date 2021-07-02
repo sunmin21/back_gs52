@@ -58,6 +58,7 @@ public class ProjectDAO {
 	   }
           
 	   			//첨부파일 추가
+	   if(vo.getFILES().length >=1) {
 	 		for (MultipartFile uploadFile : vo.getFILES()) {
 //	 			if(uploadFile.getContentType().startsWith("image")==false) {
 //	 				return 0;
@@ -90,6 +91,7 @@ public class ProjectDAO {
 	 		    	e.printStackTrace();
 	 		    }
 	 		}
+	   }
 		return sqlFacotry.openSession().insert("Project.insertProjectFile", vo);	
 //		 return sqlFacotry.openSession().insert("inform.Insert_Inform", vo);
 	}
