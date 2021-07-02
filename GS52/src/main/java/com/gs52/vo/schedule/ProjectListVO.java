@@ -1,5 +1,12 @@
 package com.gs52.vo.schedule;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProjectListVO {
 	
 	// project 테이블 컬럼들

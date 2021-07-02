@@ -5,10 +5,12 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
    
 <mapper namespace="Project">
-	<select id="selectRequested" parameterType="map" resultType="com.gs52.vo.schedual.ProjectVO">
+	<select id="selectRequested" parameterType="com.gs52.vo.schedule.ProjectListVO" 
+		resultType="com.gs52.vo.schedule.ProjectVO">
 	</select>
 	
-	<select id="selectProceeding" parameterType="map" resultType="com.gs52.vo.schedual.ProjectVO">
+	<select id="selectProceeding" parameterType="com.gs52.vo.schedule.ProjectListVO" 
+		resultType="com.gs52.vo.schedule.ProjectVO">
 		SELECT PROJECT.*
 		FROM PROJECT, PROJECT_WITH 
 		WHERE PROJECT.PROJECT_INDEX = PROJECT_WITH.PROJECT_INDEX
@@ -17,9 +19,11 @@
 		    AND PROJECT_WITH_EMP_INDEX = #{PROJECT_WITH_EMP_INDEX}
 	</select>
 	
-	<select id="selectCompleted" parameterType="map" resultType="com.gs52.vo.schedual.ProjectVO">>
+	<select id="selectCompleted" parameterType="com.gs52.vo.schedule.ProjectListVO" 
+		resultType="com.gs52.vo.schedule.ProjectVO">>
 	</select>
 	
-	<select id="selectExpected" parameterType="map" resultType="com.gs52.vo.schedual.ProjectVO">
+	<select id="selectExpected" parameterType="com.gs52.vo.schedule.ProjectListVO" 
+		resultType="com.gs52.vo.schedule.ProjectVO">
 	</select>
 </mapper>
