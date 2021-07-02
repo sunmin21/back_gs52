@@ -24,11 +24,16 @@ public class User {
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USER_SEQ_GEN")
 	 @Column(name="emp_index")
-	 private Long id;
+	 private Long index;
+
+	@NotBlank   // "", " "
+	@Size(max = 50)
+	 @Column(name="emp_id")
+	private String id;
 
 	@NotBlank   // "", " "
 	@Size(max = 20)
-	 @Column(name="emp_id")
+	 @Column(name="emp_name")
 	private String username;
 
 	@NotBlank
@@ -38,7 +43,7 @@ public class User {
 	private String email;
 
 	@NotBlank
-	@Size(max = 120)
+	@Size(max = 150)
 	@Column(name="emp_pwd")
 	private String password;
 	
@@ -64,7 +69,10 @@ public class User {
 	public User() {
 	}
 
-	public User(String username, String email, String password, Long position, Long rank, Long team, Long first_login) {
+	public User(String id, String username, String email, String password, Long position, Long rank, Long team, Long first_login) {
+		System.out.println("id");
+		System.out.println(id);
+		this.id = id;
 		this.username = username;
 		this.email = email;
 		this.password = password;
@@ -75,11 +83,20 @@ public class User {
 		this.first_login=first_login;
 	}
 
-	public Long getId() {
+	public Long getIndex() {
+		return index;
+	}
+
+	public void setIndex(Long index) {
+		this.index = index;
+	}
+	
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

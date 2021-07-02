@@ -18,7 +18,7 @@ import com.gs52.jwt.models.User;
 public class UserDetailsImpl implements UserDetails {  // UserDetails - Security 내장 객체임
 	private static final long serialVersionUID = 1L;
 
-	private Long id;
+	private Long index;
 
 	private String username;
 
@@ -31,9 +31,9 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 
 	private Collection<? extends GrantedAuthority> authorities;
 
-	public UserDetailsImpl(Long id, String username, String email, String password, long first_login,
+	public UserDetailsImpl(Long index, String username, String email, String password, long first_login,
 			Collection<? extends GrantedAuthority> authorities) {
-		this.id = id;
+		this.index = index;
 		this.username = username;
 		this.email = email;
 		this.password = password;
@@ -47,7 +47,7 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 				.collect(Collectors.toList());
 
 		return new UserDetailsImpl(
-				user.getId(), 
+				user.getIndex(), 
 				user.getUsername(), 
 				user.getEmail(),
 				user.getPassword(),
@@ -60,8 +60,8 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 		return authorities;
 	}
 
-	public Long getId() {
-		return id;
+	public Long getIndex() {
+		return index;
 	}
 
 	public String getEmail() {
@@ -109,6 +109,6 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 		if (o == null || getClass() != o.getClass())
 			return false;
 		UserDetailsImpl user = (UserDetailsImpl) o;
-		return Objects.equals(id, user.id);
+		return Objects.equals(index, user.index);
 	}
 }

@@ -6,9 +6,14 @@ import javax.validation.constraints.*;
  
 public class SignupRequest {  // 회원가입 시 웹페이지에서 입력한 Request 내용임
     @NotBlank
+    @Size(min = 3, max = 50)
+    private String id;
+    
+    
+    @NotBlank
     @Size(min = 3, max = 20)
     private String username;
- 
+    
     @NotBlank
     @Size(max = 50)
     @Email
@@ -38,7 +43,15 @@ public class SignupRequest {  // 회원가입 시 웹페이지에서 입력한 R
         this.username = username;
     }
  
-    public String getEmail() {
+    public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getEmail() {
         return email;
     }
  

@@ -78,7 +78,7 @@ public class AuthController {
 				.collect(Collectors.toList());
 
 		return ResponseEntity.ok(new JwtResponse(jwt, 
-												 userDetails.getId(), 
+												 userDetails.getIndex(), 
 												 userDetails.getUsername(), 
 												 userDetails.getEmail(),
 												 userDetails.getFirst_login(), 
@@ -98,12 +98,26 @@ public class AuthController {
 	// Authentication Manager에서는 입력된 Request 정보가 올바른지를 검사하는 것으로 볼 수 있음
 	@PostMapping("/signup")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+		System.out.println("signup111111111111111111111111111");
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
 			return ResponseEntity
 					.badRequest()
 					.body(new MessageResponse("Error: Username is already taken!"));
 		}
 
+		System.out.println("signup222222222222222222222222222222");
+
+		System.out.println(signUpRequest.getId());
+		System.out.println(signUpRequest.getUsername());
+//		if (userRepository.existsById(signUpRequest.getId())) {
+//			System.out.println("signUpRequest.getId()");
+//			System.out.println(signUpRequest.getId());
+//			return ResponseEntity
+//					.badRequest()
+//					.body(new MessageResponse("Error: ID is already taken!"));
+//		}
+
+		System.out.println("signup33333333333333333333333");
 		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
 			return ResponseEntity
 					.badRequest()
@@ -111,7 +125,9 @@ public class AuthController {
 		}
 
 		// Create new user's account
-		User user = new User(signUpRequest.getUsername(), 
+		User user = new User(
+				 			 signUpRequest.getId(), 
+							 signUpRequest.getUsername(), 
 							 signUpRequest.getEmail(),
 							 encoder.encode(signUpRequest.getPassword()),
 							 signUpRequest.getPosition(),
