@@ -6,7 +6,6 @@
    
 <mapper namespace="Project">
 	<select id="selectIndex" parameterType="com.gs52.vo.schedual.ProjectVO" resultType="int">
-		
 		SELECT PROJECT_INDEX FROM PROJECT WHERE PROJECT_DATE =#{PROJECT_DATE}
 	</select>
 	
@@ -25,8 +24,9 @@
 		values(#{PROJECT_INDEX}, #{PROJECT_FILE_ORIGIN_NAME}, #{PROJECT_FILE_NAME},  #{PROJECT_FILE_PATH},#{PROJECT_FILE_DATE})  
 	</insert>
 	
-	
-	<delete id="delHoliday">
-		DELETE FROM HOLIDAY WHERE HOLIDAY_INDEX = #{HOLIDAY_INDEX}
-	</delete>
+	<select id="selectProceeding" parameterType="com.gs52.vo.schedual.ProjectVO"
+	resultType="com.gs52.vo.schedual.ProjectVO">
+		SELECT * FROM PROJECT WHERE TO_CHAR(SYSDATE, 'YYYY-MM-DD') 
+    		BETWEEN PROJECT_START AND PROJECT_END
+	</select>
 </mapper>
