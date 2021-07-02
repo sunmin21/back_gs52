@@ -57,8 +57,10 @@ public class ProjectDAO {
 		 sqlFacotry.openSession().insert("Project.insertEmpWith", vo);
 	   }
           
+	   System.out.println(vo.getFILES());
 	   			//첨부파일 추가
-	   if(vo.getFILES().length >=1) {
+	   if(vo.getFILES() != null) {
+		   System.out.println("등록하냐");
 	 		for (MultipartFile uploadFile : vo.getFILES()) {
 //	 			if(uploadFile.getContentType().startsWith("image")==false) {
 //	 				return 0;
@@ -92,7 +94,7 @@ public class ProjectDAO {
 	 		    }
 	 		}
 	   }
-		return sqlFacotry.openSession().insert("Project.insertProjectFile", vo);	
+		return 1;	
 //		 return sqlFacotry.openSession().insert("inform.Insert_Inform", vo);
 	}
 	
