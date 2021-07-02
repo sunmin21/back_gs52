@@ -38,32 +38,37 @@ public class ProjectController {
 	@PostMapping(value="/project/insertproject")
 	public int  selectListTodo(@ModelAttribute ProjectVO vo) {
 		System.out.println(vo);
-		for (MultipartFile uploadFile : vo.getFILES()) {
-//			if(uploadFile.getContentType().startsWith("image")==false) {
-//				return 0;
-//			}  //이미지만 띄우고 싶을때 
-			
-			
-			String originalName = uploadFile.getOriginalFilename();
-			
-			String fileName = originalName.substring(originalName.lastIndexOf("\\")+1); 
-			String folderPath = makeFolder();
-			String uuid = UUID.randomUUID().toString();
-			String saveName = uploadPath + File.separator + folderPath + File.separator +uuid+"_"+ fileName;
-		    
-			Path savePath  = Paths.get(saveName);
-			System.out.println(originalName);
-			System.out.println(fileName);
-		     System.out.println(savePath);
-		    try {
-		    	System.out.println("에러");
-		    	uploadFile.transferTo(savePath);
-		    	System.out.println("에러2");
-		    }catch(IOException e){
-		    
-		    	e.printStackTrace();
-		    }
-		}
+		
+		//프로젝트 추가 
+		System.out.println("?");
+		
+		//첨부파일 추가
+//		for (MultipartFile uploadFile : vo.getFILES()) {
+////			if(uploadFile.getContentType().startsWith("image")==false) {
+////				return 0;
+////			}  //이미지만 띄우고 싶을때 
+//			
+//			
+//			String originalName = uploadFile.getOriginalFilename();
+//			
+//			String fileName = originalName.substring(originalName.lastIndexOf("\\")+1); 
+//			String folderPath = makeFolder();
+//			String uuid = UUID.randomUUID().toString();
+//			String saveName = uploadPath + File.separator + folderPath + File.separator +uuid+"_"+ fileName;
+//		    
+//			Path savePath  = Paths.get(saveName);
+//			System.out.println(originalName);
+//			System.out.println(fileName);
+//		     System.out.println(savePath);
+//		    try {
+//		    	System.out.println("에러");
+//		    	uploadFile.transferTo(savePath);
+//		    	System.out.println("에러2");
+//		    }catch(IOException e){
+//		    
+//		    	e.printStackTrace();
+//		    }
+//		}
 		return 0;
 //		return pDAO.insertProject(vo);
 	}
