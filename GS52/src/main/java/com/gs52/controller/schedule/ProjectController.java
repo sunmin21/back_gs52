@@ -25,7 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.gs52.dao.schedule.ProjectDAO;
 import com.gs52.dao.task.BusinessProgressDAO;
-import com.gs52.vo.schedual.ProjectVO;
+import com.gs52.vo.schedule.ProjectVO;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping(value="/schedule")

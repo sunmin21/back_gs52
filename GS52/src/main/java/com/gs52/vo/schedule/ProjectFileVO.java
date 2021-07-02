@@ -1,4 +1,4 @@
-package com.gs52.vo.schedual;
+package com.gs52.vo.schedule;
 
 public class ProjectFileVO {
 

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.gs52.vo.manager.RegistVO;
-import com.gs52.vo.schedual.ProjectVO;
+import com.gs52.vo.schedule.ProjectVO;
 
 
 @Service  
