@@ -217,7 +217,7 @@ values ('창립기념일', '2021-07-14', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
 values ('가정의날', '2021-07-19', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
-values ('휴가', '2021-07-21', 0);
+values ('휴가', '2021-07-23', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
 values ('내부규정', '2021-07-28', 0);
 
