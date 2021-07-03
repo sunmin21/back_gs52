@@ -13,14 +13,14 @@ import com.gs52.dao.schedule.ProjectListDAO;
 import com.gs52.vo.schedule.ProjectListVO;
 
 @RestController
-@RequestMapping(value="/schedule")
+@RequestMapping(value="/project")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class ProjectListController {
 	
 	@Autowired
 	public ProjectListDAO plDAO = null;
 	
-	@PostMapping("/projectList/selectProceeding")
+	@PostMapping("/selectProceeding")
 	public List<ProjectListVO> ProjectListBoard(@RequestBody ProjectListVO vo) {
 		System.out.println("spring => selectProceeding");
 		System.out.println(vo);		
