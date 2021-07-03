@@ -99,24 +99,23 @@ public class AuthController {
 	@PostMapping("/signup")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
 		System.out.println("signup111111111111111111111111111");
-		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-			return ResponseEntity
-					.badRequest()
-					.body(new MessageResponse("Error: Username is already taken!"));
-		}
+		
 
 		System.out.println("signup222222222222222222222222222222");
-
+		//System.out.println(signUpRequest.getRole());
 		System.out.println(signUpRequest.getId());
 		System.out.println(signUpRequest.getUsername());
-//		if (userRepository.existsById(signUpRequest.getId())) {
-//			System.out.println("signUpRequest.getId()");
-//			System.out.println(signUpRequest.getId());
-//			return ResponseEntity
-//					.badRequest()
-//					.body(new MessageResponse("Error: ID is already taken!"));
-//		}
-
+		
+		//중복 아이디 가입 불가능
+		if (userRepository.existsById(signUpRequest.getId())) {
+			System.out.println("signUpRequest.getId()");
+			System.out.println(signUpRequest.getId());
+			return ResponseEntity
+					.badRequest()
+					.body(new MessageResponse("Error: ID is already taken!"));
+		}
+		
+		//중복 이메일 가입 불가능
 		System.out.println("signup33333333333333333333333");
 		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
 			return ResponseEntity

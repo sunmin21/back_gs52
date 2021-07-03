@@ -22,10 +22,11 @@ import javax.validation.constraints.Size;
 
 public class User {
 	 @Id
-	 @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USER_SEQ_GEN")
+	 @GeneratedValue(strategy=GenerationType.AUTO, generator="USER_SEQ_GEN")
 	 @Column(name="emp_index")
 	 private Long index;
 
+	 //사원번호(아이디)
 	@NotBlank   // "", " "
 	@Size(max = 50)
 	 @Column(name="emp_id")
@@ -52,7 +53,7 @@ public class User {
 	
 	@Column(name="emp_position_index")
 	private Long position;
-//
+
 
 	@Column(name="emp_team_index")
 	private Long team;

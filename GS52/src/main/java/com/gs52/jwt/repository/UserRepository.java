@@ -12,11 +12,11 @@ import com.gs52.jwt.models.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 	Optional<User> findByUsername(String username);
-//	Optional<User> findById(String id);
-//
-//	Boolean existsById(String id);
-//	
-	Boolean existsByUsername(String username);
+	Optional<User> findById(String id);
+
+	Boolean existsById(String id);
+	
+	//Boolean existsByUsername(String username);
 
 	Boolean existsByEmail(String email);
 }
