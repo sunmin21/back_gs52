@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Personal">
+
+	<select id="selectConfPerson" 
+		resultType="com.gs52.vo.schedule.PersonalConfVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+	select CONF_INDEX,CONF_TITLE,CONF_ROOM_INDEX, CONF_DATE, CONF_START, CONF_END, CONF_RE_INDEX, CONF_RE_EMP_INDEX, CONF_RE_CONF_INDEX, EMP_ID from conf,conf_re,emp 
+where conf.conf_index = conf_re.conf_re_conf_index and conf_re.conf_re_emp_index = emp.emp_INDEX
+	</select>
+	
+	<select id="selectConfLeader" resultType="com.gs52.vo.schedule.PersonalConfVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+		select CONF_INDEX, CONF_TITLE, CONF_ROOM_INDEX, CONF_DATE, CONF_START, CONF_END, CONF_EMP_INDEX_SEND,EMP_ID from conf,emp where conf.conf_emp_index_send = emp.emp_index  
+		</select>
+	
+	
+	
+</mapper>
