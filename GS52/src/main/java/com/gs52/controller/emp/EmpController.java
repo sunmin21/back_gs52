@@ -22,7 +22,8 @@ public class EmpController {
 	
 	@GetMapping(value="/listAll")
 	public List<EmpVO> selectListUser() {
-		
+  
+	
 		return eDAO.selectListEmp();
 		
 	}

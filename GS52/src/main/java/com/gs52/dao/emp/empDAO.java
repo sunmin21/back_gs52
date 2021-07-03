@@ -19,7 +19,7 @@ public class empDAO {
 	
 	public List<EmpVO> selectListEmp(){
 		
-	
+	    
 		 return sqlFacotry.openSession().selectList("emp.selectListUser");
 		 
 		 
