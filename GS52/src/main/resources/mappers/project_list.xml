@@ -6,11 +6,11 @@
    
 <mapper namespace="Project">
 	<select id="selectRequested" parameterType="com.gs52.vo.schedule.ProjectListVO" 
-		resultType="com.gs52.vo.schedule.ProjectVO">
+		resultType="com.gs52.vo.schedule.ProjectListVO">
 	</select>
 	
 	<select id="selectProceeding" parameterType="com.gs52.vo.schedule.ProjectListVO" 
-		resultType="com.gs52.vo.schedule.ProjectVO">
+		resultType="com.gs52.vo.schedule.ProjectListVO">
 		SELECT PROJECT.*, EMP_NAME
 	    FROM PROJECT, PROJECT_WITH, EMP
 		WHERE PROJECT.PROJECT_INDEX = PROJECT_WITH.PROJECT_INDEX
@@ -21,10 +21,10 @@
 	</select>
 	
 	<select id="selectCompleted" parameterType="com.gs52.vo.schedule.ProjectListVO" 
-		resultType="com.gs52.vo.schedule.ProjectVO">>
+		resultType="com.gs52.vo.schedule.ProjectListVO">>
 	</select>
 	
 	<select id="selectExpected" parameterType="com.gs52.vo.schedule.ProjectListVO" 
-		resultType="com.gs52.vo.schedule.ProjectVO">
+		resultType="com.gs52.vo.schedule.ProjectListVO">
 	</select>
 </mapper>

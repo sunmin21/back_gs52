@@ -11,12 +11,12 @@ public class ProjectListVO {
 	
 	// project 테이블 컬럼들
 	private int PROJECT_INDEX = 0;
-	private String PROJCET_TITLE = null;
-	private String PROJCET_CONTENT = null;
-	private String PROJCET_START = null;
-	private String PROJCET_END = null;
-	private int PROJCET_OKAY = 0;
-	private String PROJCET_DATE = null;
+	private String PROJECT_TITLE = null;
+	private String PROJECT_CONTENT = null;
+	private String PROJECT_START = null;
+	private String PROJECT_END = null;
+	private int PROJECT_OKAY = 0;
+	private String PROJECT_DATE = null;
 	
 	// projcet_with 테이블 컬럼들
 	private int PROJECT_WITH_INDEX = 0;
@@ -25,6 +25,5 @@ public class ProjectListVO {
 	private String PROJECT_WITH_REJECT = null;
 	private int PROJECT_WITH_LEADER = 0;
 	
-	private String EMP_NAME = null;
-	
+	private String EMP_NAME = null;	
 }
