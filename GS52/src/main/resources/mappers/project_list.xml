@@ -11,12 +11,13 @@
 	
 	<select id="selectProceeding" parameterType="com.gs52.vo.schedule.ProjectListVO" 
 		resultType="com.gs52.vo.schedule.ProjectVO">
-		SELECT PROJECT.*
-		FROM PROJECT, PROJECT_WITH 
+		SELECT PROJECT.*, EMP_NAME
+	    FROM PROJECT, PROJECT_WITH, EMP
 		WHERE PROJECT.PROJECT_INDEX = PROJECT_WITH.PROJECT_INDEX
-		    AND TO_CHAR(SYSDATE, 'YYYY-MM-DD') 
-		        BETWEEN PROJECT_START AND PROJECT_END
-		    AND PROJECT_WITH_EMP_INDEX = #{PROJECT_WITH_EMP_INDEX}
+	        AND PROJECT_WITH.PROJECT_WITH_LEADER = EMP.EMP_INDEX
+	        AND TO_CHAR(SYSDATE, 'YYYY-MM-DD') 
+	            BETWEEN PROJECT_START AND PROJECT_END
+	        AND PROJECT_WITH_EMP_INDEX = #{PROJECT_WITH_EMP_INDEX}
 	</select>
 	
 	<select id="selectCompleted" parameterType="com.gs52.vo.schedule.ProjectListVO" 
