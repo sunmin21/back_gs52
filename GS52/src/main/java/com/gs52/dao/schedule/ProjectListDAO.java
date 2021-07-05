@@ -21,4 +21,9 @@ public class ProjectListDAO {
 		System.out.println(vo);
 		return sqlFactory.openSession().selectList("Project.selectProceeding",vo);
 	}
+	
+//	public List<ProjectListVO> selectList(ProjectListVO vo) {
+//		System.out.println(vo);
+//		return sqlFactory.openSession().selectList("Project.selectRequested",vo);
+//	}
 }

@@ -7,6 +7,12 @@
 <mapper namespace="Project">
 	<select id="selectRequested" parameterType="com.gs52.vo.schedule.ProjectListVO" 
 		resultType="com.gs52.vo.schedule.ProjectListVO">
+		SELECT PROJECT.*, EMP_NAME
+	    FROM PROJECT, PROJECT_WITH, EMP
+		WHERE PROJECT.PROJECT_INDEX = PROJECT_WITH.PROJECT_INDEX
+	        AND PROJECT_WITH.PROJECT_WITH_LEADER = EMP.EMP_INDEX
+	        AND PROJECT_WITH_OKAY = 0
+	        AND PROJECT_WITH_EMP_INDEX = #{PROJECT_WITH_EMP_INDEX}
 	</select>
 	
 	<select id="selectProceeding" parameterType="com.gs52.vo.schedule.ProjectListVO" 
@@ -17,5 +23,5 @@
 	        AND PROJECT_WITH.PROJECT_WITH_LEADER = EMP.EMP_INDEX
 	        AND PROJECT_WITH_OKAY = 1
 	        AND PROJECT_WITH_EMP_INDEX = #{PROJECT_WITH_EMP_INDEX}	
-	</select>
+	</select>	
 </mapper>
