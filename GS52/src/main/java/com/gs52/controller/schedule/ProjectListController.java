@@ -20,16 +20,16 @@ public class ProjectListController {
 	@Autowired
 	public ProjectListDAO plDAO = null;
 	
-	@PostMapping("/selectProceeding")
-	public List<ProjectListVO> ProjectListBoard(@RequestBody ProjectListVO vo) {
-		System.out.println("spring => selectProceeding");
+	@PostMapping("/selectRequested")
+	public List<ProjectListVO> RequestedListBoard(@RequestBody ProjectListVO vo) {
+		System.out.println("spring => selectRequested");
 		System.out.println(vo);		
 		return plDAO.selectList(vo);
 	}
 	
-	@PostMapping("/selectRequested")
-	public List<ProjectListVO> RequestedListBoard(@RequestBody ProjectListVO vo) {
-		System.out.println("spring => selectRequested");
+	@PostMapping("/selectProceeding")
+	public List<ProjectListVO> ProjectListBoard(@RequestBody ProjectListVO vo) {
+		System.out.println("spring => selectProceeding");
 		System.out.println(vo);		
 		return plDAO.selectList(vo);
 	}
