@@ -24,7 +24,7 @@ public class ProjectListController {
 	public List<ProjectListVO> RequestedListBoard(@RequestBody ProjectListVO vo) {
 		System.out.println("spring => selectRequested");
 		System.out.println(vo);		
-		return plDAO.selectList(vo);
+		return plDAO.selectRequestedList(vo);
 	}
 	
 	@PostMapping("/selectProceeding")
