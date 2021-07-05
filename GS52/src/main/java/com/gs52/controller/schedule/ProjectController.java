@@ -9,6 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.gs52.dao.schedule.ProjectDAO;
 import com.gs52.dao.task.BusinessProgressDAO;
+import com.gs52.vo.schedule.ProjectFileVO;
+import com.gs52.vo.schedule.ProjectSelectVO;
 import com.gs52.vo.schedule.ProjectVO;
+import com.gs52.vo.schedule.ProjectWithVO;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping(value="/schedule")
@@ -36,16 +40,33 @@ public class ProjectController {
 	private String uploadPath;
 	
 	@PostMapping(value="/project/insertproject")
-	public int  selectListTodo(@ModelAttribute ProjectVO vo) {
-	
-		
-		//프로젝트 추가 
-		
-		
-		
+	public int  insertProject(@ModelAttribute ProjectVO vo) {
+
 	
 		return pDAO.insertProject(vo);
 	}
+	
+	@PostMapping(value="/project/selectOneProject")
+	public ProjectSelectVO  selectOneProject(@RequestBody ProjectSelectVO vo) {
+      
+	
+		return pDAO.selectOneProject(vo);
+	}
+
+	@PostMapping(value="/project/selectOneProjectWith")
+	public List<ProjectWithVO>  selectOneProjectWith(@RequestBody ProjectWithVO vo) {
+      
+
+		return pDAO.selectOneProjectWith(vo);
+	}
+	
+	@PostMapping(value="/project/selectOneProjectFile")
+	public List<ProjectWithVO>  selectOneProjectFile(@RequestBody ProjectFileVO vo) {
+      
+	
+		return pDAO.selectOneProjectFile(vo);
+	}
+
 
 	
 }

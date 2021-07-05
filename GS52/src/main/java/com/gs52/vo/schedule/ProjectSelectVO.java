@@ -15,13 +15,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor // 기본생성자
 @AllArgsConstructor // 모든 속성을 파라미터로 갖는 생성자
 
-public class ProjectFileVO {
+public class ProjectSelectVO {
 
 	long PROJECT_INDEX = 0L;
-    long PROJECT_FILE_INDEX =0L;
-    long PROJECT_FILE_PROJECT_INDEX =0L;
-    String PROJECT_FILE_ORIGIN_NAME =null;
-    String PROJECT_FILE_NAME =null;
-    String PROJECT_FILE_PATH =null; 
-    String PROJECT_FILE_DATE = null;
+
+	String PROJECT_TITLE = null;
+	String PROJECT_CONTENT = null;
+	String PROJECT_START = null;
+	String PROJECT_END = null;
+	String PROJECT_DATE = null;
+	int PROJECT_OKAY = 0;  
+	
+
 }
