@@ -28,13 +28,17 @@ public class ProjectVO {
 	
 	//팀원 추가
 	List<Integer> PROJECT_WITH_EMP_INDEXS = new ArrayList<Integer>();
+	long PROJECT_WITH_INDEX =0L;
 	long PROJECT_WITH_EMP_INDEX= 0L;
     int PROJECT_WITH_OKAY=0 ;
     String PROJECT_WITH_REJECT= null;
-    int  PROJECT_WITH_READER= 0;
+    int  PROJECT_WITH_LEADER= 0;
+    String PROJECT_WITH_COLOR =null;
     // 첨부파일추가
     MultipartFile[] FILES = null;
     
+    long PROJECT_FILE_INDEX =0L;
+    long PROJECT_FILE_PROJECT_INDEX =0L;
     String PROJECT_FILE_ORIGIN_NAME =null;
     String PROJECT_FILE_NAME =null;
     String PROJECT_FILE_PATH =null; 

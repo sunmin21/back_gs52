@@ -25,7 +25,7 @@
 	<select id="selectEmpVacation" parameterType="int"
 		resultType="com.gs52.vo.attendance.AnnualManageVO">
 		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
-		SELECT EMP_VACATION FROM EMP WHERE EMP_INDEX=#{userid}
+		SELECT EMP_VACATION, EMP_NAME, EMP_ID FROM EMP WHERE EMP_INDEX=#{userid}
 	</select>
 	
 	<update id="updateEmpVacation"  parameterType="com.gs52.vo.attendance.AnnualManageVO">

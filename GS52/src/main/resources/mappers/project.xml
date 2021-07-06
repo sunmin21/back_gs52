@@ -3,24 +3,59 @@
 <!DOCTYPE mapper 
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-   
+
 <mapper namespace="Project">
-	<select id="selectIndex" parameterType="com.gs52.vo.schedule.ProjectVO" resultType="int">
-		SELECT PROJECT_INDEX FROM PROJECT WHERE PROJECT_DATE =#{PROJECT_DATE}
+	<select id="selectIndex"
+		parameterType="com.gs52.vo.schedule.ProjectVO" resultType="int">
+		SELECT
+		PROJECT_INDEX FROM PROJECT WHERE PROJECT_DATE =#{PROJECT_DATE}
 	</select>
-	
-	<insert id="insertProject" parameterType="com.gs52.vo.schedule.ProjectVO">
-		INSERT INTO PROJECT (PROJECT_TITLE, PROJECT_CONTENT, PROJECT_START, PROJECT_END, PROJECT_OKAY, PROJECT_DATE) 
-		values(#{PROJECT_TITLE},#{PROJECT_CONTENT},#{PROJECT_START},#{PROJECT_END},#{PROJECT_OKAY} ,#{PROJECT_DATE})  
+
+	<insert id="insertProject"
+		parameterType="com.gs52.vo.schedule.ProjectVO">
+		INSERT INTO PROJECT (PROJECT_TITLE, PROJECT_CONTENT,
+		PROJECT_START, PROJECT_END, PROJECT_OKAY, PROJECT_DATE)
+		values(#{PROJECT_TITLE},#{PROJECT_CONTENT},#{PROJECT_START},#{PROJECT_END},#{PROJECT_OKAY}
+		,#{PROJECT_DATE})
 	</insert>
-	
-	<insert id="insertEmpWith" parameterType="com.gs52.vo.schedule.ProjectVO">
-		INSERT INTO PROJECT_WITH (PROJECT_INDEX, PROJECT_WITH_EMP_INDEX, PROJECT_WITH_OKAY, PROJECT_WITH_READER) 
-		values(#{PROJECT_INDEX}, #{PROJECT_WITH_EMP_INDEX}, #{PROJECT_WITH_OKAY},  #{PROJECT_WITH_READER})  
+
+	<insert id="insertEmpWith"
+		parameterType="com.gs52.vo.schedule.ProjectVO">
+		INSERT INTO PROJECT_WITH (PROJECT_INDEX,
+		PROJECT_WITH_EMP_INDEX, PROJECT_WITH_OKAY, PROJECT_WITH_LEADER)
+		values(#{PROJECT_INDEX}, #{PROJECT_WITH_EMP_INDEX},
+		#{PROJECT_WITH_OKAY}, #{PROJECT_WITH_LEADER})
 	</insert>
-	
-	<insert id="insertProjectFile" parameterType="com.gs52.vo.schedule.ProjectVO">
-		INSERT INTO PROJECT_FILE (PROJECT_FILE_PROJECT_INDEX, PROJECT_FILE_ORIGIN_NAME, PROJECT_FILE_NAME, PROJECT_FILE_PATH, PROJECT_FILE_DATE) 
-		values(#{PROJECT_INDEX}, #{PROJECT_FILE_ORIGIN_NAME}, #{PROJECT_FILE_NAME},  #{PROJECT_FILE_PATH},#{PROJECT_FILE_DATE})  
+
+	<insert id="insertProjectFile"
+		parameterType="com.gs52.vo.schedule.ProjectVO">
+		INSERT INTO PROJECT_FILE (PROJECT_FILE_PROJECT_INDEX,
+		PROJECT_FILE_ORIGIN_NAME, PROJECT_FILE_NAME, PROJECT_FILE_PATH,
+		PROJECT_FILE_DATE)
+		values(#{PROJECT_INDEX}, #{PROJECT_FILE_ORIGIN_NAME}, #{PROJECT_FILE_NAME},
+		#{PROJECT_FILE_PATH},#{PROJECT_FILE_DATE})
 	</insert>
+	<select id="selectOneProject"
+		parameterType="com.gs52.vo.schedule.ProjectVO"
+		resultType="com.gs52.vo.schedule.ProjectSelectVO">
+		SELECT * FROM PROJECT WHERE PROJECT_INDEX =#{PROJECT_INDEX}
+	</select>
+	<select id="selectOneProjectWith"
+		parameterType="com.gs52.vo.schedule.ProjectVO"
+		resultType="com.gs52.vo.schedule.ProjectWithVO">
+
+		SELECT PROJECT_WITH.*,emp_name,team_name,dept_name
+		FROM PROJECT_WITH,emp,team,dept
+		WHERE PROJECT_INDEX =#{PROJECT_INDEX}
+		and emp.EMP_INDEX = project_with_emp_index
+		and emp.EMP_TEAM_INDEX = team.TEAM_INDEX
+		and team.TEAM_DEPT_INDEX = dept.dept_index
+	</select>
+	<select id="selectOneProjectFile"
+		parameterType="com.gs52.vo.schedule.ProjectVO"
+		resultType="com.gs52.vo.schedule.ProjectFileVO">
+		SELECT * FROM PROJECT_FILE WHERE PROJECT_FILE_PROJECT_INDEX
+		=#{PROJECT_INDEX}
+	</select>
+
 </mapper>

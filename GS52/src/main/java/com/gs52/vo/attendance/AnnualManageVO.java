@@ -20,6 +20,8 @@ public class AnnualManageVO {
 	private String ATTEND_TYPE_NAME  =null;
 	private double COUNT =0;
 	private int EMP_ID = 0;
+	private String EMP_NAME= null;
+	
 	
    
 	
