@@ -53,34 +53,34 @@ insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (5,'경리�
 
 -- EMP
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(1, '11111111','1','$2a$10$CkniTGdDjF0KGXtwh3Me3OY5sWFdZbdYeDlp2jAYhFKoiAmG/ZShm','231@gmail.com',3,3,3,1,15);
+                     values(1, '11111111','김갑수','$2a$10$CkniTGdDjF0KGXtwh3Me3OY5sWFdZbdYeDlp2jAYhFKoiAmG/ZShm','231@gmail.com',3,3,3,1,15);
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(2, '22222222','2','$2a$10$HobB0wMoWuM.4KdLOlL1OOQZchx/nhLlqZEAUiL/eO0RvEDGfgFwO','2@gmail.com',2,2,2,1,15);
+                     values(2, '22222222','김형수','$2a$10$HobB0wMoWuM.4KdLOlL1OOQZchx/nhLlqZEAUiL/eO0RvEDGfgFwO','2@gmail.com',2,2,2,1,15);
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(3, '33333333','3','$2a$10$orTi9GB5Pzw30JlFQPfgqus/NpDHixWV1jLPWpQt0PouYX6RjcIZi','3@gmail.com',2,2,2,1,15);
+                     values(3, '33333333','김민수','$2a$10$orTi9GB5Pzw30JlFQPfgqus/NpDHixWV1jLPWpQt0PouYX6RjcIZi','3@gmail.com',2,2,2,1,15);
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(4, '44444444','4','$2a$10$ubcDBjYicWlQAKc38oIfOezDc4YsvlxnLUSfXqZNuQcnr2sbxcaBW','4@gmail.com',2,2,1,1,15);
+                     values(4, '44444444','김진수','$2a$10$ubcDBjYicWlQAKc38oIfOezDc4YsvlxnLUSfXqZNuQcnr2sbxcaBW','4@gmail.com',2,2,1,1,15);
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(5, '55555555','5','$2a$10$6lzs4Ahx8whQaIgNpDNn8ORZsh30k8JUituiv/YFCMdW7XUJTdy9.','5@gmail.com',2,2,1,1,15);
+                     values(5, '55555555','김장수','$2a$10$6lzs4Ahx8whQaIgNpDNn8ORZsh30k8JUituiv/YFCMdW7XUJTdy9.','5@gmail.com',2,2,1,1,15);
 
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(6, '66666666','6','$2a$10$.uskntPiOUMkU30tM4U2C.vqVfPTfBbgcRtGvDpN6eIbtmxYPEGhq','6@gmail.com',1,1,3,1,15);
+                     values(6, '66666666','김혁수','$2a$10$.uskntPiOUMkU30tM4U2C.vqVfPTfBbgcRtGvDpN6eIbtmxYPEGhq','6@gmail.com',1,1,3,1,15);
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(7, '77777777','7','$2a$10$xl1579rCRwEL6CD2Mnm42ua8l8UwSCRh/iSEuY6cJSqS3RXtcDd.O','7@gmail.com',2,1,3,1,15);
+                     values(7, '77777777','김만수','$2a$10$xl1579rCRwEL6CD2Mnm42ua8l8UwSCRh/iSEuY6cJSqS3RXtcDd.O','7@gmail.com',2,1,3,1,15);
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(8, '88888888','8','$2a$10$w7eGhflv4ogBJBc7o8ulQeSp8HNzEkF7OnSkjt8A1Rl5QQTf/qTqi','8@gmail.com',1,5,2,1,15);
+                     values(8, '88888888','김문수','$2a$10$w7eGhflv4ogBJBc7o8ulQeSp8HNzEkF7OnSkjt8A1Rl5QQTf/qTqi','8@gmail.com',1,5,2,1,15);
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(9, '99999999','9','$2a$10$XHh9Ex672NpsD8MJDKUYQ.L64yYRz1dGTI33PxlKgeZQtslL.d9hG','9@gmail.com',2,2,1,1,15);
+                     values(9, '99999999','김명수','$2a$10$XHh9Ex672NpsD8MJDKUYQ.L64yYRz1dGTI33PxlKgeZQtslL.d9hG','9@gmail.com',2,2,1,1,15);
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(10, '10101010','10','$2a$10$Tju.t55JhLcFCRFNFRV1K.h6Kn59CXdNTyLq7nw4agn8vkiAEH.si','10@gmail.com',1,3,2,1,15);             
+                     values(10, '10101010','김학수','$2a$10$Tju.t55JhLcFCRFNFRV1K.h6Kn59CXdNTyLq7nw4agn8vkiAEH.si','10@gmail.com',1,3,2,1,15);             
 
 
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(11, '110110','11','$2a$10$o7tDFZHGfxQ92Zr6ssRWNOAxQ.VvmgbKiJ1v8GR.mPWfHlLUFgAR6','11@gmail.com',1,3,2,1,15);
+                     values(11, '110110','김한수','$2a$10$o7tDFZHGfxQ92Zr6ssRWNOAxQ.VvmgbKiJ1v8GR.mPWfHlLUFgAR6','11@gmail.com',1,3,2,1,15);
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(12, '120120','12','$2a$10$S1Oq1mzZdP7p1pKOIpf7wuKM4LZHbSlUSCf0GwLDdUJaW0YrvVF0O','12@gmail.com',4,3,2,1,15);
+                     values(12, '120120','김병수','$2a$10$S1Oq1mzZdP7p1pKOIpf7wuKM4LZHbSlUSCf0GwLDdUJaW0YrvVF0O','12@gmail.com',4,3,2,1,15);
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)
-                     values(13, '130130','13','$2a$10$cF0thcmwqVIiSPzB3tqV0O7Y5OB0Cei9gd8paaYmNAwzpQayqHB6O','13@gmail.com',2,4,1,1,15);         
+                     values(13, '130130','김정수','$2a$10$cF0thcmwqVIiSPzB3tqV0O7Y5OB0Cei9gd8paaYmNAwzpQayqHB6O','13@gmail.com',2,4,1,1,15);         
                      
                      commit;
 
@@ -110,16 +110,6 @@ insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(3,1
 insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,2,0);
 insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,3,0);
 
--- 근무형태(ATTEND_TYPE)
-insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('출근');
-insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('퇴근');
-insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('지각');
-insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('결근');
-insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('외근');
-insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('출장');
-insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('연차');
-insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('반차');
-
 -- 공지사항
 insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
 values ('제목1','내용1',1,'2020/06/28');
@@ -138,7 +128,8 @@ insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('결근');
 insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('외근');
 insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('출장');
 insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('연차');
-insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('반차');
+insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('오전반차');
+insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('오후반차');
 
 -- 근태관리(ATTEND)
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)

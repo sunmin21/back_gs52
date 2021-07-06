@@ -17,7 +17,6 @@ public class MemberEmpVO {
 	private String EMP_ADDRESS = null;
 	private String EMP_PHONE = null;
 	private String EMP_BIRTH = null;
-	private String EMP_INTRO = null;
 	private String EMP_PHOTO = null;
 	private String EMP_ENTRY_DATE = null;
 	private int EMP_RANK_INDEX = 0;
