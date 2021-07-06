@@ -28,13 +28,13 @@ public class User {
 
 	 //사원번호(아이디)
 	@NotBlank   // "", " "
-	@Size(max = 50)
-	 @Column(name="emp_id")
+	@Size(max = 20)
+	 @Column(name="emp_name")
 	private String id;
 
 	@NotBlank   // "", " "
-	@Size(max = 20)
-	 @Column(name="emp_name")
+	@Size(max = 50)
+	 @Column(name="emp_id")
 	private String username;
 
 	@NotBlank
@@ -66,6 +66,30 @@ public class User {
 				joinColumns = @JoinColumn(name = "emp_index"), 
 				inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
+	
+	@Column(name="emp_address")
+	private String address;
+	@Column(name="emp_phone")
+	private String phone;
+	@Column(name="emp_birth")
+	private String birth;
+	@Column(name="emp_photo")
+	private String photo;
+	@Column(name="emp_entry_date")
+	private String entry_date;
+	@Column(name="emp_bank_name")
+	private String bank_name;
+	@Column(name="emp_account_number")
+	private Integer account_number;
+//	@Column(name="emp_vacation")
+//	private long vacation;
+//	@Column(name="emp_salary")
+//	private String salary;
+//	
+
+	
+	
+	
 
 	public User() {
 	}
@@ -163,6 +187,62 @@ public class User {
 
 	public void setFirst_login(Long first_login) {
 		this.first_login = first_login;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getBirth() {
+		return birth;
+	}
+
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public String getEntry_date() {
+		return entry_date;
+	}
+
+	public void setEntry_date(String entry_date) {
+		this.entry_date = entry_date;
+	}
+
+	public String getBank_name() {
+		return bank_name;
+	}
+
+	public void setBank_name(String bank_name) {
+		this.bank_name = bank_name;
+	}
+
+	public long getAccount_number() {
+		return account_number;
+	}
+
+	public void setAccount_number(Integer account_number) {
+		this.account_number = account_number;
 	}
 	
 	

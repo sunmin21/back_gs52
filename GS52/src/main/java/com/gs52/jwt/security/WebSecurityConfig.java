@@ -43,6 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //		로그인을 시도할 때 객체를 생성하며, Security의 내장 객체(UserDetails)를 가지고 인증을 수행함
 	}
 
+	//인증방법 의미
 	@Override
 	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
 		authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
@@ -57,11 +58,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //		인증 수행을 위한 동작을 나타냄.
 	}
 
+	//로그인 시 db에 BCrypt로 저장되어 있는 패스워드를 로그인할 때 입력한 비밀번호와 비교하기 위해 사용
 	@Bean
 	public PasswordEncoder passwordEncoder() {  //내장객체로, 비밀번호 암호화를 담당
 		return new BCryptPasswordEncoder();
 	}
 
+	//jwt 인증이 실패할 경우 처리할 entry 설정과 JWT인증에서는 세션을 사용하지 않기 때문에, session을 stateless해줌.
+	//jwt인증을 처리할 filter를 springsecurity의 기본적인 필터인 UsernamePasswordAuthenticationFilter를 넣어준다.
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		System.out.println("안녕");

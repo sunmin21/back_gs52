@@ -21,24 +21,36 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 	private Long index;
 
 	private String username;
+	
+	private String id;
 
 	private String email;
 
 	@JsonIgnore
 	private String password;
 	
+
+	private Long rank;
+	private Long position;
+	private Long team;
+	
 	private long first_login;
 
 	private Collection<? extends GrantedAuthority> authorities;
 
-	public UserDetailsImpl(Long index, String username, String email, String password, long first_login,
+	public UserDetailsImpl(Long index, String username, String id, String email, String password, long first_login, long rank, long position, long team,
 			Collection<? extends GrantedAuthority> authorities) {
 		this.index = index;
 		this.username = username;
+		this.id = id;
 		this.email = email;
 		this.password = password;
 		this.authorities = authorities;    // 
 		this.first_login = first_login;
+		this.rank = rank;
+		this.position = position;
+		this.team = team;
+		
 	}
 
 	public static UserDetailsImpl build(User user) {
@@ -49,9 +61,21 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 		return new UserDetailsImpl(
 				user.getIndex(), 
 				user.getUsername(), 
+				user.getId(),
 				user.getEmail(),
 				user.getPassword(),
 				user.getFirst_login(), 
+				user.getRank(), 
+				user.getPosition(), 
+				user.getTeam(), 
+//				user.getAddress(),
+//				user.getPhone(),
+//				user.getBirth(),
+//				user.getPhoto(),
+//				user.getEntry_date(),
+//				user.getBank_name(),
+//				user.getAccount_number(),
+//				user.get
 				authorities);
 	}
 
@@ -78,10 +102,42 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 		return username;
 	}
 	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public long getFirst_login() {
 		return first_login;
 	}
 	
+	public Long getRank() {
+		return rank;
+	}
+
+	public void setRank(Long rank) {
+		this.rank = rank;
+	}
+
+	public Long getPosition() {
+		return position;
+	}
+
+	public void setPosition(Long position) {
+		this.position = position;
+	}
+
+	public Long getTeam() {
+		return team;
+	}
+
+	public void setTeam(Long team) {
+		this.team = team;
+	}
+
 	@Override
 	public boolean isAccountNonExpired() {
 		return true;

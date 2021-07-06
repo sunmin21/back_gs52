@@ -5,18 +5,29 @@ import java.util.Set;
 import javax.validation.constraints.*;
  
 public class UpdateRequest {  // 회원가입 시 웹페이지에서 입력한 Request 내용임
-    
+    private String id;
+	
     @NotBlank
     @Size(min = 6, max = 40)
     private String password;
     
-	private String tel;
-    
 	private String address;
 
-	private String bank;
+	private String phone;
 
-	private String account;
+	private String bitrh;
+	private String photo;
+	private String bank_name;
+	private long account_number;
+	
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getPassword() {
 		return password;
@@ -26,12 +37,12 @@ public class UpdateRequest {  // 회원가입 시 웹페이지에서 입력한 R
 		this.password = password;
 	}
 
-	public String getTel() {
-		return tel;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setTel(String tel) {
-		this.tel = tel;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getAddress() {
@@ -42,21 +53,38 @@ public class UpdateRequest {  // 회원가입 시 웹페이지에서 입력한 R
 		this.address = address;
 	}
 
-	public String getBank() {
-		return bank;
+	public String getBitrh() {
+		return bitrh;
 	}
 
-	public void setBank(String bank) {
-		this.bank = bank;
+	public void setBitrh(String bitrh) {
+		this.bitrh = bitrh;
 	}
 
-	public String getAccount() {
-		return account;
+	public String getPhoto() {
+		return photo;
 	}
 
-	public void setAccount(String account) {
-		this.account = account;
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
+
+	public String getBank_name() {
+		return bank_name;
+	}
+
+	public void setBank_name(String bank_name) {
+		this.bank_name = bank_name;
+	}
+
+	public long getAccount_number() {
+		return account_number;
+	}
+
+	public void setAccount_number(long account_number) {
+		this.account_number = account_number;
+	}
+	
 	
   
     

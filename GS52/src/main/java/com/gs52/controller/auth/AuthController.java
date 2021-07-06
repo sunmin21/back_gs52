@@ -2,6 +2,7 @@ package com.gs52.controller.auth;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -22,9 +23,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gs52.jwt.models.ERole;
 import com.gs52.jwt.models.Role;
+import com.gs52.jwt.models.UpdateUser;
 import com.gs52.jwt.models.User;
 import com.gs52.jwt.payload.request.LoginRequest;
 import com.gs52.jwt.payload.request.SignupRequest;
+import com.gs52.jwt.payload.request.UpdateRequest;
 import com.gs52.jwt.payload.response.JwtResponse;
 import com.gs52.jwt.payload.response.MessageResponse;
 import com.gs52.jwt.repository.RoleRepository;
@@ -59,18 +62,10 @@ public class AuthController {
 		Authentication authentication = authenticationManager.authenticate(
 				// UserDetailsService를 호출하는 것은 AuthTokenFilter와 동일하다 볼 수 있으며, 비밀번호 검사를 하는 추가 작업인 PasswordEncoder도 추가로 호출함
 				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
-		System.out.println("signin@@@@@@@@@@@@@@@@@@");
-		System.out.println(authentication.getName());
-		System.out.println(authentication.getPrincipal());
-		System.out.println(authentication.getCredentials());
-		System.out.println(authentication.getAuthorities());
-		System.out.println(authentication.isAuthenticated());
 		
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		String jwt = jwtUtils.generateJwtToken(authentication);
 		
-		System.out.println("signin22222@@@@@@@@@@");
-		System.out.println(jwt);
 		
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();		
 		List<String> roles = userDetails.getAuthorities().stream()
@@ -78,10 +73,13 @@ public class AuthController {
 				.collect(Collectors.toList());
 
 		return ResponseEntity.ok(new JwtResponse(jwt, 
-												 userDetails.getIndex(), 
 												 userDetails.getUsername(), 
+												 userDetails.getId(), 
 												 userDetails.getEmail(),
 												 userDetails.getFirst_login(), 
+												 userDetails.getRank(),
+												 userDetails.getPosition(),
+												 userDetails.getTeam(),
 												 roles));
 	}
 	
@@ -102,7 +100,7 @@ public class AuthController {
 		
 
 		System.out.println("signup222222222222222222222222222222");
-		//System.out.println(signUpRequest.getRole());
+		System.out.println(signUpRequest.getRole());
 		System.out.println(signUpRequest.getId());
 		System.out.println(signUpRequest.getUsername());
 		
@@ -122,6 +120,8 @@ public class AuthController {
 					.badRequest()
 					.body(new MessageResponse("Error: Email is already in use!"));
 		}
+		
+		
 
 		// Create new user's account
 		User user = new User(
@@ -137,14 +137,57 @@ public class AuthController {
 		Set<String> strRoles = signUpRequest.getRole();
 		Set<Role> roles = new HashSet<>();
 
-		if (strRoles == null) {
+		System.out.println("signUpRequest.getRank()");
+		System.out.println(signUpRequest.getRank());
+//		if(signUpRequest.getRank()==3) {
+//			System.out.println("getRank adminnnnnnnnnnnnnnnnnn");
+//			strRoles.add("ROLE_ADMIN");
+//		}
+
+		System.out.println("???????????????????????????");
+		
+		
+		
+		//rank가 3일 때 관리자부여
+		if(signUpRequest.getRank()==3) {
+			System.out.println("getRank adminnnnnnnnnnnnnnnnnn");
+			Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
+					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+			roles.add(adminRole);
+		}
+		else {
 			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 			roles.add(userRole);
+			System.out.println(userRole);
+			System.out.println(userRole.toString());
+			System.out.println(userRole.getName());
+			System.out.println(userRole.getId());
+		}
+		
+		/*
+		if (strRoles == null) {
+			System.out.println("str roles == null");
+//  select
+//        role0_.id as id1_3_,
+//        role0_.name as name2_3_ 
+//    from
+//        roles role0_ 
+//    where
+//        role0_.name=?			
+ 
+			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+			roles.add(userRole);
+			System.out.println(userRole);
+			System.out.println(userRole.toString());
+			System.out.println(userRole.getName());
+			System.out.println(userRole.getId());
 		} else {
 			strRoles.forEach(role -> {
 				switch (role) {
 				case "admin":
+					System.out.println("getRank adminnnnnnnnnnnnnnnnnn");
 					Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
 							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 					roles.add(adminRole);
@@ -163,6 +206,7 @@ public class AuthController {
 				}
 			});
 		}
+		*/
 
 		user.setRoles(roles);
 		userRepository.save(user);
@@ -171,22 +215,37 @@ public class AuthController {
 	}
 	
 	
-//	
-//	@PostMapping("/update_user")
-//	public ResponseEntity<?> updateUser(@Valid @RequestBody SignupRequest signUpRequest) {
-//		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-//			return ResponseEntity
-//					.badRequest()
-//					.body(new MessageResponse("Error: Username is already taken!"));
-//		}
-//
-//		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-//			return ResponseEntity
-//					.badRequest()
-//					.body(new MessageResponse("Error: Email is already in use!"));
-//		}
-//
-//		// Create new user's account
+	
+	@PostMapping("/update_user")
+	public ResponseEntity<?> updateUser(@Valid @RequestBody UpdateRequest update) {
+		System.out.println("update_user");
+		System.out.println(update.getId());
+		System.out.println(update.getAddress());
+		System.out.println(update.getPhone());
+		
+		Optional<User> user = userRepository.findByUsername(update.getId());
+
+		user.ifPresent(selectUser->{
+			selectUser.setPassword(encoder.encode(update.getPassword()));
+			selectUser.setAddress(update.getAddress());
+			selectUser.setPhone(update.getPhone());
+			selectUser.setFirst_login(0L);
+			userRepository.save(selectUser);
+		});
+//		System.out.println("user");
+//		System.out.println(user.toString());
+//		UpdateUser updateUser = new UpdateUser(
+//										update.getPassword(),
+//										update.getAddress(),
+//										update.getPhone(),
+//										update.getBitrh(),
+//										update.getPhoto(),
+//										update.getBank_name(),
+//										update.getAccount_number());
+//		
+		
+		
+		// Create new user's account
 //		User user = new User(signUpRequest.getUsername(), 
 //							 signUpRequest.getEmail(),
 //							 encoder.encode(signUpRequest.getPassword()),
@@ -198,36 +257,11 @@ public class AuthController {
 //		Set<String> strRoles = signUpRequest.getRole();
 //		Set<Role> roles = new HashSet<>();
 //
-//		if (strRoles == null) {
-//			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-//					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//			roles.add(userRole);
-//		} else {
-//			strRoles.forEach(role -> {
-//				switch (role) {
-//				case "admin":
-//					Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
-//							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//					roles.add(adminRole);
-//
-//					break;
-//				case "mod":
-//					Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
-//							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//					roles.add(modRole);
-//
-//					break;
-//				default:
-//					Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-//							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//					roles.add(userRole);
-//				}
-//			});
-//		}
+//		
 //
 //		user.setRoles(roles);
 //		userRepository.save(user);
-//
-//		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
-//	}
+
+		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+	}
 }
