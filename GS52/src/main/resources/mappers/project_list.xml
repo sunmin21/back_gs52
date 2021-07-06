@@ -4,10 +4,20 @@
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
    
-<mapper namespace="Project">
+<mapper namespace="Project">	
+	<select id="selectProceeding" parameterType="com.gs52.vo.schedule.ProjectListVO" 
+		resultType="com.gs52.vo.schedule.ProjectListVO">
+		SELECT PROJECT.*, EMP_NAME, PROJECT_WITH.*
+	    FROM PROJECT, PROJECT_WITH, EMP
+		WHERE PROJECT.PROJECT_INDEX = PROJECT_WITH.PROJECT_INDEX
+	        AND PROJECT_WITH.PROJECT_WITH_LEADER = EMP.EMP_INDEX
+	        AND PROJECT_WITH_OKAY = 1
+	        AND PROJECT_WITH_EMP_INDEX = #{PROJECT_WITH_EMP_INDEX}	
+	</select>
+	
 	<select id="selectRequested" parameterType="com.gs52.vo.schedule.ProjectListVO" 
 		resultType="com.gs52.vo.schedule.ProjectListVO">
-		SELECT PROJECT.*, EMP_NAME
+		SELECT PROJECT.*, EMP_NAME, PROJECT_WITH.*
 	    FROM PROJECT, PROJECT_WITH, EMP
 		WHERE PROJECT.PROJECT_INDEX = PROJECT_WITH.PROJECT_INDEX
 	        AND PROJECT_WITH.PROJECT_WITH_LEADER = EMP.EMP_INDEX
@@ -15,13 +25,10 @@
 	        AND PROJECT_WITH_EMP_INDEX = #{PROJECT_WITH_EMP_INDEX}
 	</select>
 	
-	<select id="selectProceeding" parameterType="com.gs52.vo.schedule.ProjectListVO" 
-		resultType="com.gs52.vo.schedule.ProjectListVO">
-		SELECT PROJECT.*, EMP_NAME
-	    FROM PROJECT, PROJECT_WITH, EMP
-		WHERE PROJECT.PROJECT_INDEX = PROJECT_WITH.PROJECT_INDEX
-	        AND PROJECT_WITH.PROJECT_WITH_LEADER = EMP.EMP_INDEX
-	        AND PROJECT_WITH_OKAY = 1
-	        AND PROJECT_WITH_EMP_INDEX = #{PROJECT_WITH_EMP_INDEX}	
-	</select>	
+	<update id="updateRequested" parameterType="com.gs52.vo.schedule.ProjectListVO">
+		UPDATE PROJECT_WITH 
+		SET PROJECT_WITH_OKAY = #{PROJECT_WITH_OKAY},
+		    PROJECT_WITH_REJECT = #{PROJECT_WITH_REJECT}
+		WHERE PROJECT_WITH_INDEX = #{PROJECT_WITH_INDEX} 
+	</update>
 </mapper>

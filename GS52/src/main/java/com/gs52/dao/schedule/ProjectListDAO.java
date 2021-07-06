@@ -16,14 +16,20 @@ public class ProjectListDAO {
 	
 	@Autowired
 	private SqlSessionFactory sqlFactory = null;
+	
+	public List<ProjectListVO> selectList(ProjectListVO vo) {
+		System.out.println(vo);
+		return sqlFactory.openSession().selectList("Project.selectProceeding",vo);
+	}
 
 	public List<ProjectListVO> selectRequestedList(ProjectListVO vo) {
 		System.out.println(vo);
 		return sqlFactory.openSession().selectList("Project.selectRequested",vo);
 	}
 	
-	public List<ProjectListVO> selectList(ProjectListVO vo) {
+	public void updateRequest(ProjectListVO vo) {
 		System.out.println(vo);
-		return sqlFactory.openSession().selectList("Project.selectProceeding",vo);
+		sqlFactory.openSession().update("Project.updateRequested", vo);
+//		sqlFactory.openSession().close();
 	}
 }
