@@ -28,7 +28,7 @@ public class ProjectListDAO {
 	}
 	
 	public void updateRequest(ProjectListVO vo) {
-		System.out.println(vo);
+	
 		sqlFactory.openSession().update("Project.updateRequested", vo);
 //		sqlFactory.openSession().close();
 	}
