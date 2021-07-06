@@ -26,7 +26,7 @@ public class ProjectWithVO {
     String PROJECT_WITH_REJECT= null;
     int  PROJECT_WITH_LEADER= 0;
     
-    String PROJECT_WITH_COLOR =null;
+    String 	PROJECT_WITH_COLOR =null;
     String EMP_NAME= null;
     String TEAM_NAME= null;
     String  DEPT_NAME =null;

@@ -59,9 +59,15 @@ public class ProjectDAO {
 		int projectIndex = sqlFacotry.openSession().selectOne("Project.selectIndex", vo);
 		vo.setPROJECT_INDEX(projectIndex);
 	   for (int  emp : vo.getPROJECT_WITH_EMP_INDEXS()) {
-		 
+		
 		   vo.setPROJECT_WITH_EMP_INDEX(emp);
-
+           if(vo.getPROJECT_WITH_LEADER() == emp ) {
+		   vo.setPROJECT_WITH_OKAY(1);
+           }else {
+        	   vo.setPROJECT_WITH_OKAY(0);
+                  
+           }  
+           
 		 sqlFacotry.openSession().insert("Project.insertEmpWith", vo);
 	   }
           
