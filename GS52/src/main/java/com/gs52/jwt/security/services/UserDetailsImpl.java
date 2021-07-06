@@ -35,10 +35,11 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 	private Long team;
 	
 	private long first_login;
+	private long vacation;
 
 	private Collection<? extends GrantedAuthority> authorities;
 
-	public UserDetailsImpl(Long index, String username, String id, String email, String password, long first_login, long rank, long position, long team,
+	public UserDetailsImpl(Long index, String username, String id, String email, String password, long first_login, long rank, long position, long team, long vacation,
 			Collection<? extends GrantedAuthority> authorities) {
 		this.index = index;
 		this.username = username;
@@ -50,6 +51,7 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 		this.rank = rank;
 		this.position = position;
 		this.team = team;
+		this.vacation = vacation;
 		
 	}
 
@@ -68,6 +70,7 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 				user.getRank(), 
 				user.getPosition(), 
 				user.getTeam(), 
+				user.getVacation(),
 //				user.getAddress(),
 //				user.getPhone(),
 //				user.getBirth(),
@@ -136,6 +139,15 @@ public class UserDetailsImpl implements UserDetails {  // UserDetails - Security
 
 	public void setTeam(Long team) {
 		this.team = team;
+	}
+
+	
+	public long getVacation() {
+		return vacation;
+	}
+
+	public void setVacation(long vacation) {
+		this.vacation = vacation;
 	}
 
 	@Override

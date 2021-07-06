@@ -81,6 +81,7 @@ public class AuthController {
 												 userDetails.getRank(),
 												 userDetails.getPosition(),
 												 userDetails.getTeam(),
+												 userDetails.getVacation(),
 												 roles));
 	}
 	
@@ -233,35 +234,6 @@ public class AuthController {
 			selectUser.setFirst_login(0L);
 			userRepository.save(selectUser);
 		});
-//		System.out.println("user");
-//		System.out.println(user.toString());
-//		UpdateUser updateUser = new UpdateUser(
-//										update.getPassword(),
-//										update.getAddress(),
-//										update.getPhone(),
-//										update.getBitrh(),
-//										update.getPhoto(),
-//										update.getBank_name(),
-//										update.getAccount_number());
-//		
-		
-		
-		// Create new user's account
-//		User user = new User(signUpRequest.getUsername(), 
-//							 signUpRequest.getEmail(),
-//							 encoder.encode(signUpRequest.getPassword()),
-//							 signUpRequest.getPosition(),
-//							 signUpRequest.getRank(),
-//							 signUpRequest.getTeam(),
-//							 signUpRequest.getFirst_login());
-//
-//		Set<String> strRoles = signUpRequest.getRole();
-//		Set<Role> roles = new HashSet<>();
-//
-//		
-//
-//		user.setRoles(roles);
-//		userRepository.save(user);
 
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 	}

@@ -81,8 +81,8 @@ public class User {
 	private String bank_name;
 	@Column(name="emp_account_number")
 	private Integer account_number;
-//	@Column(name="emp_vacation")
-//	private long vacation;
+	@Column(name="emp_vacation")
+	private long vacation;
 //	@Column(name="emp_salary")
 //	private String salary;
 //	
@@ -243,6 +243,14 @@ public class User {
 
 	public void setAccount_number(Integer account_number) {
 		this.account_number = account_number;
+	}
+
+	public long getVacation() {
+		return vacation;
+	}
+
+	public void setVacation(long vacation) {
+		this.vacation = vacation;
 	}
 	
 	

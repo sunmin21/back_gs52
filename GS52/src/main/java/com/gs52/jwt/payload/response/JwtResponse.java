@@ -14,8 +14,9 @@ public class JwtResponse {
 	private Long rank;
 	private Long position;
 	private Long team;
+	private Long vacation;
 
-	public JwtResponse(String accessToken, Long index, String id, String username, String email, Long first_login, long rank, long position, long team, List<String> roles) {
+	public JwtResponse(String accessToken, Long index, String id, String username, String email, Long first_login, long rank, long position, long team, Long vacation, List<String> roles) {
 		this.token = accessToken;
 		this.index=index;
 		this.id = id;
@@ -26,6 +27,8 @@ public class JwtResponse {
 		this.rank = rank;
 		this.position = position;
 		this.team = team;
+		this.vacation = vacation;
+		
 	}
 
 	public String getAccessToken() {
@@ -111,6 +114,15 @@ public class JwtResponse {
 
 	public void setFirst_login(Long first_login) {
 		this.first_login = first_login;
+	}
+
+	
+	public Long getVacation() {
+		return vacation;
+	}
+
+	public void setVacation(Long vacation) {
+		this.vacation = vacation;
 	}
 
 	public List<String> getRoles() {
