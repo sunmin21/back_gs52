@@ -5,6 +5,7 @@ import java.util.List;
 public class JwtResponse {
 	private String token;
 	private String type = "Bearer";
+	private Long index;
 	private String id;
 	private String username;
 	private String email;
@@ -14,8 +15,9 @@ public class JwtResponse {
 	private Long position;
 	private Long team;
 
-	public JwtResponse(String accessToken, String id, String username, String email, Long first_login, long rank, long position, long team, List<String> roles) {
+	public JwtResponse(String accessToken, Long index, String id, String username, String email, Long first_login, long rank, long position, long team, List<String> roles) {
 		this.token = accessToken;
+		this.index=index;
 		this.id = id;
 		this.username = username;
 		this.email = email;
@@ -40,6 +42,15 @@ public class JwtResponse {
 
 	public void setTokenType(String tokenType) {
 		this.type = tokenType;
+	}
+
+	
+	public Long getIndex() {
+		return index;
+	}
+
+	public void setIndex(Long index) {
+		this.index = index;
 	}
 
 	public String getId() {
