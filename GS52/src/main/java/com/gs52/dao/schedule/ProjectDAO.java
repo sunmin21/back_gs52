@@ -84,7 +84,7 @@ public class ProjectDAO {
 	 			String saveName = uploadPath + File.separator + folderPath + File.separator +uuid+"_"+ fileName;
 	 			
 	 			Path savePath  = Paths.get(saveName);
-	 			
+	 			 System.out.println(savePath);
 	 		   vo.setPROJECT_FILE_ORIGIN_NAME(fileName);
 	 		   vo.setPROJECT_FILE_NAME(uuid+"_"+fileName);
 	 		   vo.setPROJECT_FILE_PATH(saveName); 
@@ -92,10 +92,10 @@ public class ProjectDAO {
 	 		   
 	 			
 	 		    try {
-	 		    	System.out.println("에러");
+	 		    	
 	 		    	uploadFile.transferTo(savePath);
 	 		    	sqlFacotry.openSession().insert("Project.insertProjectFile", vo);
-	 		    	System.out.println("에러2");
+	 		    
 	 		    }catch(IOException e){
 	 		    
 	 		    	e.printStackTrace();
@@ -118,7 +118,7 @@ public class ProjectDAO {
 	}
  
 	public List<ProjectWithVO> selectOneProjectFile(ProjectFileVO vo) {
-	    System.out.println(vo);
+
 		return sqlFacotry.openSession().selectList("Project.selectOneProjectFile", vo);
 	}
 	

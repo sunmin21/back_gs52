@@ -36,7 +36,7 @@ public class ProjectListController {
 	
 	@PostMapping("/updateRequested")
 	public void updateBoard(@RequestBody ProjectListVO vo) {
-		System.out.println("업데이트니");
+
 		System.out.println(vo);
 		plDAO.updateRequest(vo);
 	}
