@@ -43,6 +43,7 @@ public class ProjectDAO {
 	private String makeFolder() {
 		String str = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 		String folderPath = str.replace("/", File.separator);
+		
 		// make folder
 		File uploadPathFolder = new File(uploadPath, folderPath);
 		if (uploadPathFolder.exists() == false) {
@@ -86,11 +87,12 @@ public class ProjectDAO {
 				String saveName = uploadPath + File.separator + folderPath + File.separator + uuid + "_" + fileName;
 
 				Path savePath = Paths.get(saveName);
-				System.out.println(savePath);
+				
 				vo.setPROJECT_FILE_ORIGIN_NAME(fileName);
 				vo.setPROJECT_FILE_NAME(uuid + "_" + fileName);
 				vo.setPROJECT_FILE_PATH(saveName);
 				vo.setPROJECT_FILE_DATE(vo.getPROJECT_DATE());
+				vo.setPROJECT_REACT_PATH("/upload/"+folderPath+ "/" + uuid + "_" + fileName);
 
 				try {
 
@@ -150,7 +152,7 @@ public class ProjectDAO {
 				String folderPath = makeFolder();
 				String uuid = UUID.randomUUID().toString();
 				String saveName = uploadPath + File.separator + folderPath + File.separator + uuid + "_" + fileName;
-
+               
 				Path savePath = Paths.get(saveName);
 				System.out.println(savePath);
 				vo.setPROJECT_FILE_ORIGIN_NAME(fileName);
