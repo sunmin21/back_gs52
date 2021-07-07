@@ -129,7 +129,7 @@
 		(#{WORK_RULE_WORK_TYPE_INDEX},#{WORK_RULE_NAME},#{WORK_RULE_START},#{WORK_RULE_END},#{WORK_RULE_BREAK},#{WORK_RULE_AVG_HOUR})
 	</insert>
 	
-	<select id="selectCheckConfRoom" parameterType="com.gs52.vo.ConfRoomVO"
+	<select id="selectCheckConfRoom" parameterType="com.gs52.vo.schedule.ConfRoomVO"
 		resultType="int">
 		select count(*) from conf_room where CONF_ROOM_FLOOR=#{CONF_ROOM_FLOOR} and  CONF_ROOM_NUMBER =#{CONF_ROOM_NUMBER}
 	</select>
@@ -141,7 +141,7 @@
 	</delete>
 	
 	
-	<update id="updateConfRoom" parameterType="com.gs52.vo.ConfRoomVO">
+	<update id="updateConfRoom" parameterType="com.gs52.vo.schedule.ConfRoomVO">
 
 
 		UPDATE conf_room SET CONF_ROOM_FLOOR
@@ -150,7 +150,7 @@
 		#{CONF_ROOM_INDEX}
 	</update>
 	
-	<insert id="insertConfRoom" parameterType="com.gs52.vo.ConfRoomVO">
+	<insert id="insertConfRoom" parameterType="com.gs52.vo.schedule.ConfRoomVO">
 		insert into 
 		conf_room(CONF_ROOM_FLOOR, CONF_ROOM_NUMBER) values
 		(#{CONF_ROOM_FLOOR},#{CONF_ROOM_NUMBER}) 

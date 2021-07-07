@@ -1,4 +1,4 @@
-package com.gs52.controller;
+package com.gs52.controller.schedule;
 
 import java.util.List;
 
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gs52.dao.ConfRoomDAO;
-import com.gs52.vo.ConfRoomBookVO;
-import com.gs52.vo.ConfRoomVO;
+import com.gs52.dao.schedule.ConfRoomDAO;
 import com.gs52.vo.emp.EmpVO;
+import com.gs52.vo.schedule.ConfRoomBookVO;
+import com.gs52.vo.schedule.ConfRoomVO;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -51,8 +51,6 @@ public class ConfRoomController {
 		System.out.println(vo);
 	return tDAO.selectConfRoom(vo);
 	}
-	
-	
 	
 	@PostMapping("/select_emp")
 	public List<EmpVO> selectEmp(@RequestBody EmpVO vo) {

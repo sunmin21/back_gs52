@@ -1,4 +1,4 @@
-package com.gs52.dao;
+package com.gs52.dao.schedule;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.gs52.vo.ConfRoomBookVO;
-import com.gs52.vo.ConfRoomVO;
 import com.gs52.vo.emp.EmpVO;
+import com.gs52.vo.schedule.ConfRoomBookVO;
+import com.gs52.vo.schedule.ConfRoomVO;
 
 @Service  
 @Transactional // 실패하면 다시 롤백하라
@@ -28,10 +28,10 @@ public class ConfRoomDAO {
 		 return sqlFacotry.openSession().insert("ConfRoom.Insert_book", vo);
 	}
 	
+	
 	public List<ConfRoomBookVO> selectList(){
 		 return sqlFacotry.openSession().selectList("ConfRoom.Select_book");
 	}
-	
 	
 	
 	public List<ConfRoomVO> selectRoomFloor(){

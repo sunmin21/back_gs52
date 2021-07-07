@@ -1,4 +1,4 @@
-package com.gs52.vo;
+package com.gs52.vo.schedule;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
