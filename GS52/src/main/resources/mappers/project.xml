@@ -35,6 +35,25 @@
 		values(#{PROJECT_INDEX}, #{PROJECT_FILE_ORIGIN_NAME}, #{PROJECT_FILE_NAME},
 		#{PROJECT_FILE_PATH},#{PROJECT_FILE_DATE})
 	</insert>
+	<update id="updateProject"
+		parameterType="com.gs52.vo.schedule.ProjectVO">
+		update PROJECT 
+		SET PROJECT_TITLE=#{PROJECT_TITLE},
+		 PROJECT_CONTENT=#{PROJECT_CONTENT}, 
+		 PROJECT_START=#{PROJECT_START},
+		 PROJECT_END=#{PROJECT_END},
+		 PROJECT_UPDATE =#{PROJECT_UPDATE}
+		WHERE PROJECT_INDEX = #{PROJECT_INDEX}
+		
+	</update> 
+	<delete id="deleteEmpWith">
+	DELETE FROM PROJECT_WITH WHERE PROJECT_INDEX = #{PROJECT_INDEX}
+	</delete>
+<delete id="deleteFile" parameterType="String">
+	DELETE FROM PROJECT_FILE WHERE PROJECT_FILE_PATH = #{deleteFile}
+	</delete>
+		
+
 	<select id="selectOneProject"
 		parameterType="com.gs52.vo.schedule.ProjectVO"
 		resultType="com.gs52.vo.schedule.ProjectSelectVO">
