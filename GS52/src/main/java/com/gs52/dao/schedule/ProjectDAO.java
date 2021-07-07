@@ -59,9 +59,15 @@ public class ProjectDAO {
 		int projectIndex = sqlFacotry.openSession().selectOne("Project.selectIndex", vo);
 		vo.setPROJECT_INDEX(projectIndex);
 	   for (int  emp : vo.getPROJECT_WITH_EMP_INDEXS()) {
-		 
+		
 		   vo.setPROJECT_WITH_EMP_INDEX(emp);
-
+           if(vo.getPROJECT_WITH_LEADER() == emp ) {
+		   vo.setPROJECT_WITH_OKAY(1);
+           }else {
+        	   vo.setPROJECT_WITH_OKAY(0);
+                  
+           }  
+           
 		 sqlFacotry.openSession().insert("Project.insertEmpWith", vo);
 	   }
           
@@ -84,7 +90,7 @@ public class ProjectDAO {
 	 			String saveName = uploadPath + File.separator + folderPath + File.separator +uuid+"_"+ fileName;
 	 			
 	 			Path savePath  = Paths.get(saveName);
-	 			
+	 			 System.out.println(savePath);
 	 		   vo.setPROJECT_FILE_ORIGIN_NAME(fileName);
 	 		   vo.setPROJECT_FILE_NAME(uuid+"_"+fileName);
 	 		   vo.setPROJECT_FILE_PATH(saveName); 
@@ -92,10 +98,10 @@ public class ProjectDAO {
 	 		   
 	 			
 	 		    try {
-	 		    	System.out.println("에러");
+	 		    	
 	 		    	uploadFile.transferTo(savePath);
 	 		    	sqlFacotry.openSession().insert("Project.insertProjectFile", vo);
-	 		    	System.out.println("에러2");
+	 		    
 	 		    }catch(IOException e){
 	 		    
 	 		    	e.printStackTrace();
@@ -118,7 +124,7 @@ public class ProjectDAO {
 	}
  
 	public List<ProjectWithVO> selectOneProjectFile(ProjectFileVO vo) {
-	    System.out.println(vo);
+
 		return sqlFacotry.openSession().selectList("Project.selectOneProjectFile", vo);
 	}
 	
