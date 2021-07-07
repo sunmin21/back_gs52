@@ -44,6 +44,6 @@ public class ProjectListController {
 	public List<ProjectListVO> AskedListBoard(@RequestBody ProjectListVO vo) {
 		System.out.println("spring => selectAsked");
 		System.out.println(vo);		
-		return plDAO.selectRequestedList(vo);
+		return plDAO.selectAskedList(vo);
 	}
 }
