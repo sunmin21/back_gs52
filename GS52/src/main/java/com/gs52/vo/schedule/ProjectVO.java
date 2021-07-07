@@ -2,6 +2,7 @@ package com.gs52.vo.schedule;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,6 +25,7 @@ public class ProjectVO {
 	String PROJECT_START = null;
 	String PROJECT_END = null;
 	String PROJECT_DATE = null;
+	String PROJECT_UPDATE =null;
 	int PROJECT_OKAY = 0;  
 	
 	//팀원 추가
@@ -34,8 +36,10 @@ public class ProjectVO {
     String PROJECT_WITH_REJECT= null;
     int  PROJECT_WITH_LEADER= 0;
     String PROJECT_WITH_COLOR =null;
+    
     // 첨부파일추가
     MultipartFile[] FILES = null;
+    List<String> PROJECT_DELETE_FILES = new ArrayList<String>(); 
     
     long PROJECT_FILE_INDEX =0L;
     long PROJECT_FILE_PROJECT_INDEX =0L;

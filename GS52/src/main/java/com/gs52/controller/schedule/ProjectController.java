@@ -46,6 +46,13 @@ public class ProjectController {
 		return pDAO.insertProject(vo);
 	}
 	
+	@PostMapping(value="/project/updateproject")
+	public int   updateProject(@ModelAttribute ProjectVO vo) {
+
+	
+		return pDAO.updateProject(vo);
+	}
+	
 	@PostMapping(value="/project/selectOneProject")
 	public ProjectSelectVO  selectOneProject(@RequestBody ProjectSelectVO vo) {
       

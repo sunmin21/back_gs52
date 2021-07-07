@@ -29,24 +29,23 @@ import com.gs52.vo.schedule.ProjectWithVO;
 import io.jsonwebtoken.Header;
 import oracle.sql.BLOB;
 
-
-@Service  
+@Service
 @Transactional // 실패하면 다시 롤백하라
 public class ProjectDAO {
 
-	@Autowired 
-	private SqlSessionFactory sqlFacotry =null;
-	
-	@Value("${org.zerock.upload.path}") 
-	
+	@Autowired
+	private SqlSessionFactory sqlFacotry = null;
+
+	@Value("${org.zerock.upload.path}")
+
 	private String uploadPath;
-	
+
 	private String makeFolder() {
 		String str = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 		String folderPath = str.replace("/", File.separator);
-		//make folder
+		// make folder
 		File uploadPathFolder = new File(uploadPath, folderPath);
-		if (uploadPathFolder.exists()==false) {
+		if (uploadPathFolder.exists() == false) {
 			uploadPathFolder.mkdirs();
 		}
 		return folderPath;
@@ -54,63 +53,125 @@ public class ProjectDAO {
 
 	public int insertProject(@RequestBody ProjectVO vo) {
 		sqlFacotry.openSession().insert("Project.insertProject", vo);
-		
-    
+
 		int projectIndex = sqlFacotry.openSession().selectOne("Project.selectIndex", vo);
 		vo.setPROJECT_INDEX(projectIndex);
-	   for (int  emp : vo.getPROJECT_WITH_EMP_INDEXS()) {
-		
-		   vo.setPROJECT_WITH_EMP_INDEX(emp);
-           if(vo.getPROJECT_WITH_LEADER() == emp ) {
-		   vo.setPROJECT_WITH_OKAY(1);
-           }else {
-        	   vo.setPROJECT_WITH_OKAY(0);
-                  
-           }  
-           
-		 sqlFacotry.openSession().insert("Project.insertEmpWith", vo);
-	   }
-          
-	   System.out.println(vo.getFILES());
-	   			//첨부파일 추가
-	   if(vo.getFILES() != null) {
-		  
-	 		for (MultipartFile uploadFile : vo.getFILES()) {
+		for (int emp : vo.getPROJECT_WITH_EMP_INDEXS()) {
+
+			vo.setPROJECT_WITH_EMP_INDEX(emp);
+			if (vo.getPROJECT_WITH_LEADER() == emp) {
+				vo.setPROJECT_WITH_OKAY(1);
+			} else {
+				vo.setPROJECT_WITH_OKAY(0);
+
+			}
+
+			sqlFacotry.openSession().insert("Project.insertEmpWith", vo);
+		}
+
+		System.out.println(vo.getFILES());
+		// 첨부파일 추가
+		if (vo.getFILES() != null) {
+
+			for (MultipartFile uploadFile : vo.getFILES()) {
 //	 			if(uploadFile.getContentType().startsWith("image")==false) {
 //	 				return 0;
 //	 			}  //이미지만 띄우고 싶을때 
-	 			
-	 			
-	 		
-	 			String originalName = uploadFile.getOriginalFilename();
-	 			
-	 			String fileName = originalName.substring(originalName.lastIndexOf("\\")+1); 
-	 			String folderPath = makeFolder();
-	 			String uuid = UUID.randomUUID().toString();
-	 			String saveName = uploadPath + File.separator + folderPath + File.separator +uuid+"_"+ fileName;
-	 			
-	 			Path savePath  = Paths.get(saveName);
-	 			 System.out.println(savePath);
-	 		   vo.setPROJECT_FILE_ORIGIN_NAME(fileName);
-	 		   vo.setPROJECT_FILE_NAME(uuid+"_"+fileName);
-	 		   vo.setPROJECT_FILE_PATH(saveName); 
-	 		   vo.setPROJECT_FILE_DATE(vo.getPROJECT_DATE());
-	 		   
-	 			
-	 		    try {
-	 		    	
-	 		    	uploadFile.transferTo(savePath);
-	 		    	sqlFacotry.openSession().insert("Project.insertProjectFile", vo);
-	 		    
-	 		    }catch(IOException e){
-	 		    
-	 		    	e.printStackTrace();
-	 		    	return 0;
-	 		    }
-	 		}
-	   }
-		return 1;	
+
+				String originalName = uploadFile.getOriginalFilename();
+
+				String fileName = originalName.substring(originalName.lastIndexOf("\\") + 1);
+				String folderPath = makeFolder();
+				String uuid = UUID.randomUUID().toString();
+				String saveName = uploadPath + File.separator + folderPath + File.separator + uuid + "_" + fileName;
+
+				Path savePath = Paths.get(saveName);
+				System.out.println(savePath);
+				vo.setPROJECT_FILE_ORIGIN_NAME(fileName);
+				vo.setPROJECT_FILE_NAME(uuid + "_" + fileName);
+				vo.setPROJECT_FILE_PATH(saveName);
+				vo.setPROJECT_FILE_DATE(vo.getPROJECT_DATE());
+
+				try {
+
+					uploadFile.transferTo(savePath);
+					sqlFacotry.openSession().insert("Project.insertProjectFile", vo);
+
+				} catch (IOException e) {
+
+					e.printStackTrace();
+					return 0;
+				}
+			}
+		}
+		return 1;
 //		 return sqlFacotry.openSession().insert("inform.Insert_Inform", vo);
+	}
+
+	public int updateProject(ProjectVO vo) {
+
+		sqlFacotry.openSession().update("Project.updateProject", vo);
+
+//	    
+//		int projectIndex = sqlFacotry.openSession().selectOne("Project.selectIndex", vo);
+//		vo.setPROJECT_INDEX(projectIndex);
+		sqlFacotry.openSession().delete("Project.deleteEmpWith", vo);
+		for (int emp : vo.getPROJECT_WITH_EMP_INDEXS()) {
+
+			vo.setPROJECT_WITH_EMP_INDEX(emp);
+			if (vo.getPROJECT_WITH_LEADER() == emp) {
+				vo.setPROJECT_WITH_OKAY(1);
+			} else {
+				vo.setPROJECT_WITH_OKAY(0);
+
+			}
+
+			sqlFacotry.openSession().insert("Project.insertEmpWith", vo);
+		}
+
+		for (String deleteFile : vo.getPROJECT_DELETE_FILES()) {
+			File file = new File(deleteFile);
+			file.delete();
+
+			sqlFacotry.openSession().insert("Project.deleteFile", deleteFile);
+
+		}
+
+		// 첨부파일 추가
+		if (vo.getFILES() != null) {
+			for (MultipartFile uploadFile : vo.getFILES()) {
+//	 			if(uploadFile.getContentType().startsWith("image")==false) {
+//	 				return 0;
+//	 			}  //이미지만 띄우고 싶을때 
+
+				String originalName = uploadFile.getOriginalFilename();
+
+				String fileName = originalName.substring(originalName.lastIndexOf("\\") + 1);
+				String folderPath = makeFolder();
+				String uuid = UUID.randomUUID().toString();
+				String saveName = uploadPath + File.separator + folderPath + File.separator + uuid + "_" + fileName;
+
+				Path savePath = Paths.get(saveName);
+				System.out.println(savePath);
+				vo.setPROJECT_FILE_ORIGIN_NAME(fileName);
+				vo.setPROJECT_FILE_NAME(uuid + "_" + fileName);
+				vo.setPROJECT_FILE_PATH(saveName);
+				vo.setPROJECT_FILE_DATE(vo.getPROJECT_DATE());
+
+				try {
+
+					uploadFile.transferTo(savePath);
+					sqlFacotry.openSession().insert("Project.insertProjectFile", vo);
+
+				} catch (IOException e) {
+
+					e.printStackTrace();
+					return 0;
+				}
+			}
+		}
+		// TODO Auto-generated method stub
+		return 1;
 	}
 
 	public ProjectSelectVO selectOneProject(ProjectSelectVO vo) {
@@ -122,10 +183,10 @@ public class ProjectDAO {
 		// TODO Auto-generated method stub
 		return sqlFacotry.openSession().selectList("Project.selectOneProjectWith", vo);
 	}
- 
+
 	public List<ProjectWithVO> selectOneProjectFile(ProjectFileVO vo) {
 
 		return sqlFacotry.openSession().selectList("Project.selectOneProjectFile", vo);
 	}
-	
+
 }
