@@ -5,23 +5,28 @@ START WITH 14
 INCREMENT BY 1;
 /
 
---직급 테이블
-insert into RANK values (0,'직급1');
-insert into RANK values (1,'직급2');
-insert into RANK values (2,'직급3');
-insert into RANK values (3,'직급4');
-
--- 부서 테이블
-insert into DEPT values (0,'부서1');
-insert into DEPT values (0,'부서2');
-insert into DEPT values (0,'부서3');
-insert into DEPT values (0,'부서4');
-insert into DEPT values (0,'부서5');
+--직위 테이블
+insert into RANK(rank_name) values ('사원');
+insert into RANK(rank_name) values ('대리');
+insert into RANK(rank_name) values ('과장');
+insert into RANK(rank_name) values ('차장');
+insert into RANK(rank_name) values ('부장');
+insert into RANK(rank_name) values ('사장');
+insert into RANK(rank_name) values ('회장');
 
 -- 직책 테이블
-insert into position values(0,'사원');
-insert into position values(0,'부장');
-insert into position values(0,'과장');
+insert into position(position_name) values('팀원');
+insert into position(position_name) values('팀장');
+insert into position(position_name) values('실장');
+insert into position(position_name) values('본부장');
+
+-- 부서 테이블
+insert into DEPT(dept_name) values ('관리부서');
+insert into DEPT(dept_name) values ('기술부서');
+insert into DEPT(dept_name) values ('생산부서');
+insert into DEPT(dept_name) values ('영업부서');
+insert into DEPT(dept_name) values ('개발부서');
+
 
 -- 근무 유형 판별
 insert into WORK_TYPE values (0,'고정근무');
@@ -37,19 +42,17 @@ insert into WORK_RULE(WORK_RULE_WORK_TYPE_INDEX,WORK_RULE_NAME,WORK_RULE_START, 
 values (1,'워크룰3','08:00','18:00','02:00',2);
 
 -- 팀 형태
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'팀1',1);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'팀1-2',1);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'팀1-3',1);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (2,'팀2',2);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (3,'팀3',3);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'총무팀',1);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'경영지원팀',1);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'인사팀',1);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (2,'고객만족팀',2);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (3,'전략기획팀',3);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (4,'영업팀',3);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (5,'개발팀',3);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (5,'경리팀',3);
+insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'총무팀',3);
+insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'경리팀',3);
+insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (2,'품질관리팀',1);
+insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (3,'생산1팀',3);
+insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (3,'생산2팀',3);
+insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (3,'상품관리팀',1);
+insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (4,'해외영업팀',1);
+insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (4,'국내영업팀',1);
+insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (4,'고객관리팀',2);
+insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (5,'개발1팀',1);
+insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (5,'개발2팀',1);
 
 -- EMP
     insert into EMP(EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_FIRST_LOGIN, EMP_VACATION)

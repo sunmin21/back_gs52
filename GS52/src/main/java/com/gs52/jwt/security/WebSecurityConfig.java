@@ -74,8 +74,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()   // jwt token으로 인증할것이므로 세션필요없음
 			.authorizeRequests()
 			.antMatchers("/manager").access("hasRole('ADMIN')")
-			.antMatchers("/holiday/**").access("hasRole('ADMIN')")
-//			.antMatchers("/manager").hasRole("ADMIN")
 			.antMatchers("/manager/**").hasRole("ADMIN")
 			.antMatchers("/api/auth/**").permitAll()
 			.antMatchers("/**").permitAll()
