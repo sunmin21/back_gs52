@@ -28,8 +28,12 @@ public class ProjectListDAO {
 	}
 	
 	public void updateRequest(ProjectListVO vo) {
-	
 		sqlFactory.openSession().update("Project.updateRequested", vo);
 //		sqlFactory.openSession().close();
+	}
+	
+	public List<ProjectListVO> selectAskedList(ProjectListVO vo) {
+		System.out.println(vo);
+		return sqlFactory.openSession().selectList("Project.selectAsked",vo);
 	}
 }

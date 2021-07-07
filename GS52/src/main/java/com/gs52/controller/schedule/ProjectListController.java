@@ -36,8 +36,14 @@ public class ProjectListController {
 	
 	@PostMapping("/updateRequested")
 	public void updateBoard(@RequestBody ProjectListVO vo) {
-
 		System.out.println(vo);
 		plDAO.updateRequest(vo);
+	}
+	
+	@PostMapping("/selectAsked")
+	public List<ProjectListVO> AskedListBoard(@RequestBody ProjectListVO vo) {
+		System.out.println("spring => selectAsked");
+		System.out.println(vo);		
+		return plDAO.selectRequestedList(vo);
 	}
 }
