@@ -72,8 +72,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.cors().and().csrf().disable()   // rest api이므로 csrf 보안이 필요없으므로 disable처리
 			.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()   // jwt token으로 인증할것이므로 세션필요없음
-			.authorizeRequests().antMatchers("/api/auth/**").permitAll()
+			.authorizeRequests()
+			.antMatchers("/manager").access("hasRole('ADMIN')")
+			.antMatchers("/holiday/**").access("hasRole('ADMIN')")
+//			.antMatchers("/manager").hasRole("ADMIN")
+			.antMatchers("/manager/**").hasRole("ADMIN")
+			.antMatchers("/api/auth/**").permitAll()
 			.antMatchers("/**").permitAll()
+			//.antMatchers("/manager").access("hasRole('ROLE_ADMIN')")
+//			.antMatchers("/manager/**").hasRole("ROLE_ADMIN")
 			.anyRequest().authenticated();
 
 		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
