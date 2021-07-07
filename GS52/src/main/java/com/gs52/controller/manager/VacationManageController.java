@@ -18,7 +18,7 @@ import com.gs52.vo.manager.VacationManageVO;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping(value="/vacation")
+@RequestMapping(value="/manager/vacation")
 public class VacationManageController {
  	
 	
