@@ -47,4 +47,5 @@ public class ProjectVO {
     String PROJECT_FILE_NAME =null;
     String PROJECT_FILE_PATH =null; 
     String PROJECT_FILE_DATE = null;
+    String PROJECT_REACT_PATH= null;
 }
