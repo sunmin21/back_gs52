@@ -20,6 +20,7 @@ public class ProjectFileVO {
 	long PROJECT_INDEX = 0L;
     long PROJECT_FILE_INDEX =0L;
     long PROJECT_FILE_PROJECT_INDEX =0L;
+    String PROJECT_REACT_PATH= null;
     String PROJECT_FILE_ORIGIN_NAME =null;
     String PROJECT_FILE_NAME =null;
     String PROJECT_FILE_PATH =null; 

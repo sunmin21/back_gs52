@@ -40,8 +40,8 @@ public class ProjectDAO {
 
 	private String uploadPath;
 
-	private String makeFolder() {
-		String str = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+	private String makeFolder(String str) {
+
 		String folderPath = str.replace("/", File.separator);
 		
 		// make folder
@@ -78,21 +78,23 @@ public class ProjectDAO {
 //	 			if(uploadFile.getContentType().startsWith("image")==false) {
 //	 				return 0;
 //	 			}  //이미지만 띄우고 싶을때 
-
+				String str = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 				String originalName = uploadFile.getOriginalFilename();
 
 				String fileName = originalName.substring(originalName.lastIndexOf("\\") + 1);
-				String folderPath = makeFolder();
+				String folderPath = makeFolder(str);
 				String uuid = UUID.randomUUID().toString();
 				String saveName = uploadPath + File.separator + folderPath + File.separator + uuid + "_" + fileName;
-
+                   
 				Path savePath = Paths.get(saveName);
-				
+				String ReactPath = folderPath.replace(File.separator,"/"); 
+				System.out.println(ReactPath );
+				System.out.println("/upload/"+ReactPath+ "/" + uuid + "_" + fileName);
 				vo.setPROJECT_FILE_ORIGIN_NAME(fileName);
 				vo.setPROJECT_FILE_NAME(uuid + "_" + fileName);
 				vo.setPROJECT_FILE_PATH(saveName);
 				vo.setPROJECT_FILE_DATE(vo.getPROJECT_DATE());
-				vo.setPROJECT_REACT_PATH("/upload/"+folderPath+ "/" + uuid + "_" + fileName);
+				vo.setPROJECT_REACT_PATH("/upload/"+str+ "/" + uuid + "_" + fileName);
 
 				try {
 
@@ -145,11 +147,11 @@ public class ProjectDAO {
 //	 			if(uploadFile.getContentType().startsWith("image")==false) {
 //	 				return 0;
 //	 			}  //이미지만 띄우고 싶을때 
-
+				String str = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 				String originalName = uploadFile.getOriginalFilename();
 
 				String fileName = originalName.substring(originalName.lastIndexOf("\\") + 1);
-				String folderPath = makeFolder();
+				String folderPath = makeFolder(str);
 				String uuid = UUID.randomUUID().toString();
 				String saveName = uploadPath + File.separator + folderPath + File.separator + uuid + "_" + fileName;
                
@@ -159,7 +161,7 @@ public class ProjectDAO {
 				vo.setPROJECT_FILE_NAME(uuid + "_" + fileName);
 				vo.setPROJECT_FILE_PATH(saveName);
 				vo.setPROJECT_FILE_DATE(vo.getPROJECT_DATE());
-
+				vo.setPROJECT_REACT_PATH("/upload/"+str+ "/" + uuid + "_" + fileName);
 				try {
 
 					uploadFile.transferTo(savePath);
