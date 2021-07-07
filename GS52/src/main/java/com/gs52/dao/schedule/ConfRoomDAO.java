@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.gs52.vo.emp.EmpVO;
+import com.gs52.vo.schedule.ConfReVO;
 import com.gs52.vo.schedule.ConfRoomBookVO;
 import com.gs52.vo.schedule.ConfRoomVO;
 
@@ -21,12 +22,19 @@ public class ConfRoomDAO {
 	private SqlSessionFactory sqlFacotry =null;
 
 	public int insertList(@RequestBody ConfRoomBookVO vo){
-		System.out.println(vo);
 		System.out.println("insertList");
-		System.out.println(sqlFacotry.toString());
-		System.out.println(sqlFacotry.openSession().toString());
 		 return sqlFacotry.openSession().insert("ConfRoom.Insert_book", vo);
 	}
+	
+	public int selectConfSeq(){
+		 return sqlFacotry.openSession().selectOne("ConfRoom.Select_conf_seq");
+	}
+	
+	public int insertConfRe(@RequestBody ConfReVO vo){
+		System.out.println("insertConfRe");
+		 return sqlFacotry.openSession().insert("ConfRoom.Insert_conf_re", vo);
+	}
+	
 	
 	
 	public List<ConfRoomBookVO> selectList(){

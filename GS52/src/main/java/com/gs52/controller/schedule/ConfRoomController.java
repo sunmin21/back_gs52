@@ -1,17 +1,20 @@
 package com.gs52.controller.schedule;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gs52.dao.schedule.ConfRoomDAO;
 import com.gs52.vo.emp.EmpVO;
+import com.gs52.vo.schedule.ConfReVO;
 import com.gs52.vo.schedule.ConfRoomBookVO;
 import com.gs52.vo.schedule.ConfRoomVO;
 
@@ -19,14 +22,31 @@ import com.gs52.vo.schedule.ConfRoomVO;
 @RestController
 @RequestMapping(value="/schedule/confRoom")
 public class ConfRoomController {
- 
+
 	@Autowired
 	public ConfRoomDAO  tDAO = null;
 
 	@PostMapping("/insert")
-	public int insertConf(@RequestBody ConfRoomBookVO vo) {
-		System.out.println("insert Conf");
-	return tDAO.insertList(vo);
+	public void insertConf(@RequestBody ConfRoomBookVO vo) {
+		ObjectMapper mapper = new ObjectMapper();
+
+		tDAO.insertList(vo);
+		List<Map> lm = vo.getPerson();
+		List<Integer> List_emp= new ArrayList<Integer>();
+		
+		for(int i=0; i<lm.size() ; i++) {
+			 String str = lm.get(i).toString();
+			 str = str.replace("{id=", "");
+			 str = str.replace("}", "");
+			 List_emp.add(Integer.parseInt(str.toString()));
+		}
+		
+		ConfReVO crVO = new ConfReVO();
+		crVO.setCONF_RE_EMP_INDEX(List_emp);
+		crVO.setCONF_RE_CONF_INDEX(tDAO.selectConfSeq());
+		tDAO.insertConfRe(crVO);
+		
+	
 	}
 	
 	@PostMapping("/select")
