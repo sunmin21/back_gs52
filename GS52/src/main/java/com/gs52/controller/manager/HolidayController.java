@@ -14,7 +14,7 @@ import com.gs52.dao.manager.HolidayDAO;
 import com.gs52.vo.manager.HolidayVO;
 
 @RestController
-@RequestMapping(value="/holiday")
+@RequestMapping(value="/manager/holiday")
 @CrossOrigin(origins="*",maxAge=3600)
 public class HolidayController {
 	
