@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;id&apos; in &apos;com.gs52.jwt.models.User&apos; to &apos;index&apos;&#x0D;&#x0A;- Original project: &apos;GS52&apos;&#x0D;&#x0A;- Original element: &apos;com.gs52.jwt.models.User.id&apos;&#x0D;&#x0A;- Renamed element: &apos;com.gs52.jwt.models.User.index&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;id&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src\/main\/java&lt;com.gs52.jwt.models{User.java[User^id" name="index" references="true" setter="false" stamp="1625216239367" textual="false" version="1.0"/>
+</session>

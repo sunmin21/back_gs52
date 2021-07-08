@@ -1,0 +1,5 @@
+package com.gs52.jwt.models;
+
+public class Team {
+
+}

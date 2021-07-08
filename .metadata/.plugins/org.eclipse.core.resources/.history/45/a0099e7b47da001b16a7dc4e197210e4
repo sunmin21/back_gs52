@@ -1,0 +1,27 @@
+server.port=8081
+spring.mvc.view.prefix=/WEB-INF/jsp/
+spring.mvc.view.suffix=.jsp
+
+spring.devtools.livereload.enabled=true
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521/xe
+spring.datasource.username=gs52
+spring.datasource.password=oracle
+
+spring.servlet.multipart.enabled=true
+spring.servlet.multipart.max-file-size=10MB
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.database-platform=org.hibernate.dialect.Oracle10gDialect
+spring.jpa.hibernate.use-new-id-generator-mappings=false
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+logging.level.org.hibernate.SQL = debug
+logging.level.org.hibernate.type.descriptor.sql = trace
+
+
+
+
+bezkoder.app.jwtSecret=bezKoderSecretKey
+bezkoder.app.jwtExpirationMs=86400000
+

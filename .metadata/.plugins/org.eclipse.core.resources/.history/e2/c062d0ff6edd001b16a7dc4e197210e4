@@ -1,0 +1,75 @@
+package com.gs52.jwt.models;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+
+@Entity
+@Table(	name = "emp")
+
+@SequenceGenerator(
+      name="USER_SEQ_GEN", //시퀀스 제너레이터 이름
+     sequenceName="emp_seq", //시퀀스 이름
+     // sequenceName="seq_users",
+      initialValue=1, //시작값
+      allocationSize=1 //메모리를 통해 할당할 범위 사이즈, 50~100
+)
+
+public class UpdateUser {
+
+	@Column(name="emp_address")
+	private String address;
+	
+	@Column(name="emp_phone")
+	private String phone;
+	
+	@Column(name="emp_birth")
+	private String birth;
+	
+	@Column(name="emp_photo")
+	private String photo;
+	
+	@Column(name="emp_entry_date")
+	private String entry_date;
+	
+	@Column(name="emp_bank_name")
+	private String bank_name;
+	
+	@Column(name="emp_account_number")
+	private long account_number;
+	
+	@Column(name="emp_vacation")
+	private long vacation;
+	
+	@Column(name="emp_salary")
+	private String salary;
+	
+
+	
+	
+	
+
+	public User() {
+	}
+
+	public User(String id, String username, String email, String password, Long position, Long rank, Long team, Long first_login) {
+		System.out.println("id");
+		System.out.println(id);
+		this.id = id;
+		this.username = username;
+		this.email = email;
+		this.password = password;
+
+		this.rank = rank;
+		this.position=position;
+		this.team =team;
+		this.first_login=first_login;
+	}
+
+
+}

@@ -1,0 +1,27 @@
+package com.gs52.jwt.payload.request;
+
+import javax.validation.constraints.NotBlank;
+
+public class LoginRequest {
+	@NotBlank
+	private String id;
+
+	@NotBlank
+	private String password;
+
+	public String getUsername() {
+		return id;
+	}
+
+	public void setUsername(String username) {
+		this.id = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+}

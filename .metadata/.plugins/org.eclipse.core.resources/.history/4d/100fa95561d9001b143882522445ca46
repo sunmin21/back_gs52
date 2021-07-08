@@ -1,0 +1,5 @@
+package com.gs52.jwt.repository;
+
+public class PositionRepository {
+
+}

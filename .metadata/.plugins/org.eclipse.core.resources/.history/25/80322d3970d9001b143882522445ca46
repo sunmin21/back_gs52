@@ -1,0 +1,17 @@
+package com.gs52.jwt.repository;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.gs52.jwt.models.Team;
+
+
+
+@Repository
+@Qualifier("teamRepository")
+public interface TeamRepository extends JpaRepository<Team, Long> {  // JPA에서 사용할 Role Repository임
+	Team findById(Long team_index);
+}

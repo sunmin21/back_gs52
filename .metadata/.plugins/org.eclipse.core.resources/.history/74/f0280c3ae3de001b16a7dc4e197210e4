@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="addOptions">
+	<select id="selectListDept" parameterType="map"
+		resultType="com.gs52.vo.emp.DeptVO">
+		SELECT
+		DEPT.DEPT_INDEX,DEPT.DEPT_NAME,NVL(deptB.TEAM_COUNT,0) as team_count
+		FROM DEPT left join(select dept_index,count(*) as team_count from
+		dept,team where dept.dept_index = team.team_dept_index group by
+		dept_index) deptB on dept.dept_index = deptB.dept_index order by
+		dept_index
+	</select>
+
+	<select id="selectCheckDept" parameterType="com.gs52.vo.emp.DeptVO"
+		resultType="int">
+		select count(*) from dept where DEPT_NAME=#{DEPT_NAME}
+	</select>
+
+
+	<delete id="deleteDept" parameterType="int">
+
+		delete from dept where
+		dept_index=#{index}
+	</delete>
+	<insert id="insertDept" parameterType="com.gs52.vo.emp.DeptVO">
+		insert into dept(DEPT_NAME) values (#{DEPT_NAME})
+	</insert>
+	<update id="updateDept" parameterType="com.gs52.vo.emp.DeptVO">
+
+
+		UPDATE dept SET DEPT_NAME
+		= #{DEPT_NAME}
+		WHERE DEPT_INDEX = #{DEPT_INDEX}
+	</update>
+	<select id="selectListTeam" resultType="com.gs52.vo.emp.TeamVO">
+
+		select
+		TEAM_INDEX,TEAM_DEPT_INDEX,
+		DEPT_NAME,DEPT_INDEX,TEAM_NAME,
+		TEAM_WORK_TYPE,WORK_TYPE_NAME as TEAM_WORK_NAME,NVL(emp.cnt,0) as
+		PERSON_COUNT,
+		WORK_RULE_INDEX,WORK_RULE_NAME,WORK_RULE_START,WORK_RULE_BREAK,WORK_RULE_AVG_HOUR
+		from dept,WORK_TYPE,work_rule, team
+		left join (select
+		emp_team_index,count(*) as cnt from emp group by
+		emp_team_index) emp on
+		team.team_index =emp.emp_team_index
+		where TEAM_DEPT_INDEX=dept_index
+		and
+		WORK_TYPE_INDEX=WORK_RULE_WORK_TYPE_INDEX and WORK_RULE_INDEX=
+		TEAM_WORK_TYPE order by team_index
+
+	</select>
+	<select id="selectCheckTeam" parameterType="com.gs52.vo.emp.TeamVO"
+		resultType="int">
+		select count(*) from team where TEAM_NAME=#{TEAM_NAME}
+	</select>
+	
+	
+	<delete id="deleteTeam" parameterType="int">
+
+		delete from team where
+		team_index=#{index}
+	</delete>
+
+	<update id="updateTeam" parameterType="com.gs52.vo.emp.DeptVO">
+
+
+		UPDATE team SET TEAM_NAME
+		= #{TEAM_NAME}, TEAM_WORK_TYPE=#{TEAM_WORK_TYPE}
+		WHERE TEAM_INDEX =
+		#{TEAM_INDEX}
+	</update>
+	<insert id="insertTeam" parameterType="com.gs52.vo.emp.DeptVO">
+		insert into team(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values
+		(#{TEAM_DEPT_INDEX},#{TEAM_NAME},#{TEAM_WORK_TYPE})
+	</insert>
+
+	<select id="selectListWorkRule" parameterType="map"
+		resultType="com.gs52.vo.emp.WorkRuleVO">
+		select WORK_TYPE_INDEX, WORK_TYPE_NAME,work_rule.WORK_RULE_INDEX,
+		WORK_RULE_WORK_TYPE_INDEX, WORK_RULE_NAME, WORK_RULE_START,
+		WORK_RULE_END, WORK_RULE_BREAK, WORK_RULE_AVG_HOUR,NVL(cnt.cnt,0) as
+		TEAM_COUNT
+		from work_type,work_rule left join
+		(select WORK_RULE_INDEX,count(*) as cnt
+		from work_rule,team
+		where TEAM_WORK_TYPE =WORK_RULE_INDEX
+		group by WORK_RULE_INDEX) cnt on (cnt.WORK_RULE_INDEX=
+		work_rule.WORK_RULE_INDEX)
+		where work_type_index=WORK_RULE_WORK_TYPE_INDEX
+		order by WORK_RULE_INDEX
+	</select>
+	<select id="selectListworkType" parameterType="map"
+		resultType="com.gs52.vo.emp.WorkRuleVO">
+		select * from work_type
+	</select>
+	<select id="selectCheckWorkRule" parameterType="com.gs52.vo.emp.WorkRuleVO"
+		resultType="int">
+		select count(*) from work_rule where WORK_RULE_NAME= #{WORK_RULE_NAME}
+	</select>
+	
+	<update id="updateWorkRule"
+		parameterType="com.gs52.vo.emp.WorkRuleVO">
+
+
+		UPDATE WORK_RULE SET
+		WORK_RULE_WORK_TYPE_INDEX=#{WORK_RULE_WORK_TYPE_INDEX},
+		WORK_RULE_NAME=#{WORK_RULE_NAME},
+		WORK_RULE_START=#{WORK_RULE_START},
+		WORK_RULE_END=#{WORK_RULE_END},
+		WORK_RULE_BREAK=#{WORK_RULE_BREAK},
+		WORK_RULE_AVG_HOUR=#{WORK_RULE_AVG_HOUR}
+
+		WHERE WORK_RULE_INDEX = #{WORK_RULE_INDEX}
+	</update>
+<delete id="deleteWorkRule" parameterType="long">
+
+		delete from work_rule where
+		WORK_RULE_INDEX=#{index}
+	</delete>
+
+<insert id="insertWorkRule" parameterType="com.gs52.vo.emp.DeptVO">
+		insert into work_rule(WORK_RULE_WORK_TYPE_INDEX, WORK_RULE_NAME, WORK_RULE_START, WORK_RULE_END, WORK_RULE_BREAK, WORK_RULE_AVG_HOUR) values
+		(#{WORK_RULE_WORK_TYPE_INDEX},#{WORK_RULE_NAME},#{WORK_RULE_START},#{WORK_RULE_END},#{WORK_RULE_BREAK},#{WORK_RULE_AVG_HOUR})
+	</insert>
+	
+	<select id="selectCheckConfRoom" parameterType="com.gs52.vo.ConfRoomVO"
+		resultType="int">
+		select count(*) from conf_room where CONF_ROOM_FLOOR=#{CONF_ROOM_FLOOR} and  CONF_ROOM_NUMBER =#{CONF_ROOM_NUMBER}
+	</select>
+	
+	<delete id="deleteConfRoom" parameterType="long">
+
+		delete from conf_room where
+		CONF_ROOM_INDEX=#{index}
+	</delete>
+	
+	
+	<update id="updateConfRoom" parameterType="com.gs52.vo.ConfRoomVO">
+
+
+		UPDATE conf_room SET CONF_ROOM_FLOOR
+		= #{CONF_ROOM_FLOOR	}, CONF_ROOM_NUMBER=#{CONF_ROOM_NUMBER}
+		WHERE CONF_ROOM_INDEX =
+		#{CONF_ROOM_INDEX}
+	</update>
+	
+	<insert id="insertConfRoom" parameterType="com.gs52.vo.ConfRoomVO">
+		insert into 
+		conf_room(CONF_ROOM_FLOOR, CONF_ROOM_NUMBER) values
+		(#{CONF_ROOM_FLOOR},#{CONF_ROOM_NUMBER}) 
+	</insert>
+	
+</mapper>

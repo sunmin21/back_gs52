@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ConfRoom">
+   <insert id="Insert_book" parameterType="com.gs52.vo.schedule.ConfRoomBookVO">
+   <selectKey resultType="int" keyProperty="CONF_INDEX " order="AFTER">
+		SELECT CONF_INDEX from CONF
+      </selectKey>
+
+   insert into CONF (CONF_TITLE, CONF_ROOM_INDEX, CONF_DATE, CONF_START, CONF_END, CONF_EMP_INDEX_SEND )
+       VALUES (#{CONF_TITLE}, #{CONF_ROOM_INDEX}, #{CONF_DATE}, #{CONF_START}, #{CONF_END}, #{CONF_EMP_INDEX_SEND})
+<!--       insert into ROOM_BOOK_1 (room_book_title, room_book_room_index, room_book_date, room_book_time, room_book_emp_id_send, room_book_emp_id_receive)
+       VALUES (#{title}, #{index}, #{date}, #{time}, #{emp_id_send}, #{emp_id_receive}) -->
+   </insert>
+  
+   
+      <select id="Select_book" parameterType="map" resultType="com.gs52.vo.schedule.ConfRoomBookVO">
+      select * from CONF
+   </select>
+      
+      <select id="Select_room" parameterType="map" resultType="com.gs52.vo.schedule.ConfRoomVO">
+      	select CONF_ROOM_INDEX,CONF_ROOM_FLOOR,CONF_ROOM_NUMBER,NVL(conf.cnt,0) as CONF_ROOM_COUNT
+		from conf_room left join 
+		(select a.conf_room_index ind,count(*) as cnt
+		from conf_room a,conf b 
+		where a.CONF_ROOM_INDEX=b.CONF_ROOM_INDEX 
+		group by a.conf_room_index) 
+		conf 
+		on (conf.ind= conf_room_index)   order by conf_room_index
+   </select>
+   
+      <select id="Select_room_floor" parameterType="map" resultType="com.gs52.vo.schedule.ConfRoomVO">
+      select distinct CONF_ROOM_FLOOR from CONF_ROOM
+   </select>
+   
+    <select id="Select_conf_room" parameterType="map" resultType="com.gs52.vo.schedule.ConfRoomVO">
+      select * from CONF_ROOM where CONF_ROOM_FLOOR=#{CONF_ROOM_FLOOR}
+   </select>
+   
+    <select id="Select_emp" parameterType="map" resultType="com.gs52.vo.emp.EmpVO">
+      select * from emp
+   </select>
+</mapper>
+
