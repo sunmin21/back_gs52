@@ -90,34 +90,38 @@ insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (5,'개발2�
 
 --TODO 할일 게시판
 insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (2,'회의록작성','회의록 작성 해서 오늘 오후3시까지 메일 회신 부탁드립니다. wpdbsx@naver.com',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+values (2,'TESTTITLE0','TESTCONTENT',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
 insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (2,'프로젝트 개발','차세대 프로젝트 OO기업 기획서, 데이터베이스 설계서 프로젝트에 올려주시길 바랍니다.',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+values (2,'TESTTITLE0','TESTCONTENT',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
 insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (2,'프로젝트 진척도','차세대 프로젝트 OO기업 진척도 및 현재까지 진행된 사항 보고 내일 오후 3시 501회의실에서 보고 부탁드립니다.',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+values (2,'TESTTITLE0','TESTCONTENT',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
 insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (2,'비품 ','팀 내 없는 비품 조사해서 신청 부탁드립니다.',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+values (2,'TESTTITLE0','TESTCONTENT2',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
 insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (2,'협업','차세대 프로젝트 OO기업 인원 보충해서 보고서작성 후 프로젝트에 올려 주시길 바랍니다.',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
-
+values (3,'TESTTITLE1','TESTCONTENT1',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
+values (3,'TESTTITLE2','TESTCONTENT2',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
+values (1,'TESTTITLE3','TESTCONTENT3',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
+values (2,'TESTTITLE3','TESTCONTENT3','1998/12/31 23:59:59');
 
 -- TODO_RE 할일 받는 사람 INDEX
-insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,1,1);
-insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,2,1);
-insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,3,2);
-insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,4,2);
-insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,5,0);
-insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,6,0);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,1,0);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(1,1,0);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(3,1,0);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,2,0);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,3,0);
 
 -- 공지사항
 insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
-values ('식당 업체 선정','삼성웰스토리 선정 , 2021/07/05일 부터 배식업체가 바뀌게 되었습니다.',1,'2020/06/28');
+values ('제목1','내용1',1,'2020/06/28');
 insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
-values ('건강의날 행사','전 직원 황령산 등산예정 2021/07/03(토) 황령산 입구(08:00까지) 와주시길 바랍니다. ',1,'2020/06/28');
+values ('제목2','내용4',1,'2020/06/28');
 insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
-values ('주차장 신청','선착순으로 회사 주차장 신청 가능 매달 5일날 신청가능',1,'2020/06/28');
+values ('제목3','내용4',1,'2020/06/28');
 insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
-values ('상반기 보너스 지급','상반기 팀마다 실적에 따른 차등 지급 ',1,'2020/06/28');
+values ('제목4','내용4',1,'2020/06/28');
     
 -- 근무형태(ATTEND_TYPE)
 insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('출근');
@@ -385,23 +389,19 @@ values(12,'2021-07-30',5,'명지점 제출임박',1);
 
 -- 휴일관리 (HOLIDAY)
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
-values ('6월기념', '2021-06-03', 1);
+values ('6월기념', '2021-06-03', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
 values ('워크숍', '2021-06-09', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
 values ('휴가', '2021-06-14', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
-values ('가정의날', '2021-06-16', 1);
+values ('가정의날', '2021-06-16', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
-values ('그냥', '2021-06-25', 0);
-insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
-values ('그냥22', '2021-06-30', 0);
+values ('힐링데이', '2021-06-25', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
 values ('7월기념', '2021-07-02', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
 values ('워크숍', '2021-07-05', 0);
-insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
-values ('창립기념일', '2021-07-14', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
 values ('가정의날', '2021-07-19', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
@@ -776,3 +776,6 @@ INSERT INTO USER_ROLES(EMP_INDEX, ROLE_ID) VALUES (12, 1);
 INSERT INTO USER_ROLES(EMP_INDEX, ROLE_ID) VALUES (13, 1);
 
 commit;
+
+select * from holiday;
+select * from project;
