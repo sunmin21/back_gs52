@@ -177,7 +177,13 @@ public class ProjectDAO {
 		// TODO Auto-generated method stub
 		return 1;
 	}
-
+	
+	
+	public int updateProjectWith(ProjectWithVO vo) {
+		// TODO Auto-generated method stub
+		 System.out.println(vo);
+		return sqlFacotry.openSession().update("Project.updateProjectWith", vo);
+	}
 	public ProjectSelectVO selectOneProject(ProjectSelectVO vo) {
 		// TODO Auto-generated method stub
 		return sqlFacotry.openSession().selectOne("Project.selectOneProject", vo);
@@ -192,5 +198,7 @@ public class ProjectDAO {
 
 		return sqlFacotry.openSession().selectList("Project.selectOneProjectFile", vo);
 	}
+
+	
 
 }

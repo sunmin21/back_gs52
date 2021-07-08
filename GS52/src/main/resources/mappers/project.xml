@@ -46,6 +46,15 @@
 		WHERE PROJECT_INDEX = #{PROJECT_INDEX}
 		
 	</update> 
+	
+	<update id="updateProjectWith"
+		parameterType="com.gs52.vo.schedule.ProjectWithVO">
+		update PROJECT_WITH 
+		SET PROJECT_WITH_COLOR = #{PROJECT_WITH_COLOR}
+		WHERE PROJECT_WITH_INDEX = #{PROJECT_WITH_INDEX} 
+		
+	</update> 
+	
 	<delete id="deleteEmpWith">
 	DELETE FROM PROJECT_WITH WHERE PROJECT_INDEX = #{PROJECT_INDEX}
 	</delete>

@@ -18,6 +18,7 @@ public class PersonalConfVO {
 	private long CONF_RE_INDEX =0L;
 	private long CONF_RE_EMP_INDEX =0L;
 	private long CONF_RE_CONF_INDEX= 0L;
+	private long CONF_ROOM_NUMBER = 0L;
 	private String EMP_ID =null;
 	
    

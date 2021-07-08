@@ -53,6 +53,14 @@ public class ProjectController {
 		return pDAO.updateProject(vo);
 	}
 	
+	@PostMapping(value="/project/updateprojectWith")
+	public void updateProjectWith(@RequestBody ProjectWithVO vo) {
+
+	System.out.println("이거타냐?뭐지이거");
+	System.out.println( pDAO.updateProjectWith(vo));
+	System.out.println("이거다이거");
+	}
+	
 	@PostMapping(value="/project/selectOneProject")
 	public ProjectSelectVO  selectOneProject(@RequestBody ProjectSelectVO vo) {
       
