@@ -53,5 +53,12 @@
     <select id="Select_emp" parameterType="map" resultType="com.gs52.vo.emp.EmpVO">
       select * from emp
    </select>
+   
+   	<delete id="Delete_conf_re" >
+   		delete from CONF_RE where CONF_RE_CONF_INDEX = #{CONF_RE_CONF_INDEX}
+	</delete>   	
+	<delete id="Delete_conf" >
+   		delete from CONF where CONF_INDEX = #{CONF_INDEX}
+	</delete>
 </mapper>
 

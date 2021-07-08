@@ -79,4 +79,11 @@ public class ConfRoomController {
 	
 	return tDAO.selectEmp();
 	}
+	
+	@PostMapping("/delete_conf")
+	public int deleteConf(@RequestBody ConfRoomBookVO vo) {
+		System.out.println("deleteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+		System.out.println(vo.getCONF_INDEX());
+		return tDAO.deleteConf(vo.getCONF_INDEX());
+	}
 }
