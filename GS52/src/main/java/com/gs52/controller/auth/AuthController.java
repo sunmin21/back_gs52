@@ -118,7 +118,7 @@ public class AuthController {
 		System.out.println(signUpRequest.getUsername());
 		
 		//중복 아이디 가입 불가능
-		if (userRepository.existsById(signUpRequest.getId())) {
+		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
 			System.out.println("signUpRequest.getId()");
 			System.out.println(signUpRequest.getId());
 			return ResponseEntity
