@@ -777,19 +777,29 @@ insert into conf_room(conf_room_floor, conf_room_number) values(3, 303);
 
 -- 회의실 예약정보 추가
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) 
-values('회의실 예약1', 1, '2021-07-06', '09:00', '10:00', 1);
+values('영업 회의', 1, '2021-07-06', '09:00', '10:00', 1);
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) 
-values('회의실 예약2', 2, '2021-07-07', '09:00', '10:00', 3);
+values('인사 회의', 2, '2021-07-07', '09:00', '10:00', 3);
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) 
-values('회의실 예약3', 3, '2021-07-08', '10:00', '10:30', 2);
+values('인사 회의', 3, '2021-07-08', '10:00', '10:30', 2);
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) 
-values('회의실 예약4', 1, '2021-07-09', '08:00', '10:00', 1);
+values('운영 회의', 1, '2021-07-09', '09:00', '11:00', 1);
+insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) 
+values('경과 보고', 1, '2021/07/09', '11:00', '12:00', 2);
+insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) 
+values('인사 회의', 1, '2021-07-09', '14:00', '16:00', 3);
 
 -- 회의 참석자
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(3, 1);
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(4, 1);
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(1, 2);
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(4, 2);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(2, 4);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(3, 4);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(4, 5);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(5, 5);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(6, 6);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(7, 6);
 
 -- security role table data
 INSERT INTO roles(name) VALUES('ROLE_USER');
