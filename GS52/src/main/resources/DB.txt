@@ -90,38 +90,34 @@ insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (5,'개발2�
 
 --TODO 할일 게시판
 insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (2,'TESTTITLE0','TESTCONTENT',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+values (2,'회의록작성','회의록 작성 해서 오늘 오후3시까지 메일 회신 부탁드립니다. wpdbsx@naver.com',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
 insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (2,'TESTTITLE0','TESTCONTENT',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+values (2,'프로젝트 개발','차세대 프로젝트 OO기업 기획서, 데이터베이스 설계서 프로젝트에 올려주시길 바랍니다.',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
 insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (2,'TESTTITLE0','TESTCONTENT',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+values (2,'프로젝트 진척도','차세대 프로젝트 OO기업 진척도 및 현재까지 진행된 사항 보고 내일 오후 3시 501회의실에서 보고 부탁드립니다.',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
 insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (2,'TESTTITLE0','TESTCONTENT2',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+values (2,'비품 ','팀 내 없는 비품 조사해서 신청 부탁드립니다.',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
 insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (3,'TESTTITLE1','TESTCONTENT1',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
-insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (3,'TESTTITLE2','TESTCONTENT2',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
-insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (1,'TESTTITLE3','TESTCONTENT3',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
-insert into TODO (TODO_EMP_INDEX_SEND,TODO_TITLE,TODO_CONTENTS,TODO_START_DATE) 
-values (2,'TESTTITLE3','TESTCONTENT3','1998/12/31 23:59:59');
+values (2,'협업','차세대 프로젝트 OO기업 인원 보충해서 보고서작성 후 프로젝트에 올려 주시길 바랍니다.',to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+
 
 -- TODO_RE 할일 받는 사람 INDEX
-insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,1,0);
-insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(1,1,0);
-insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(3,1,0);
-insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,2,0);
-insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,3,0);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,1,1);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,2,1);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,3,2);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,4,2);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,5,0);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,6,0);
 
 -- 공지사항
 insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
-values ('07/08 회의보고서 작성.','07/08 회의 보고서 작성',1,'2020/06/28');
+values ('식당 업체 선정','삼성웰스토리 선정 , 2021/07/05일 부터 배식업체가 바뀌게 되었습니다.',1,'2020/06/28');
 insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
-values ('07/08 프로젝트 계획','웹 개발 프로젝트 계획서 작성',1,'2020/06/28');
+values ('건강의날 행사','전 직원 황령산 등산예정 2021/07/03(토) 황령산 입구(08:00까지) 와주시길 바랍니다. ',1,'2020/06/28');
 insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
-values ('07/09 업무','차세대 OO기업 프로젝트 진행사항 보고',1,'2020/06/28');
-insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) ㅌ
-values ('07/10 업무','차세대 OO기업 데이터베이스 구축',1,'2020/06/28');
+values ('주차장 신청','선착순으로 회사 주차장 신청 가능 매달 5일날 신청가능',1,'2020/06/28');
+insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
+values ('상반기 보너스 지급','상반기 팀마다 실적에 따른 차등 지급 ',1,'2020/06/28');
     
 -- 근무형태(ATTEND_TYPE)
 insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('출근');
@@ -134,29 +130,18 @@ insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('연차');
 insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('오전반차');
 insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('오후반차');
 
--- 근태관리(ATTEND) --구성원 스케줄
+-- 근태관리(ATTEND)
 --1. 출근 2. 퇴근 3. 지각 4. 결근 5. 외근 6. 출장 7. 연차 8. 오전반차 9. 오후반차
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(1,'2021-07-19',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(1,'2021-07-20',7);
 
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(2,'2021-07-05',6);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(2,'2021-07-06',6);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(2,'2021-07-07',6);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(2,'2021-07-08',6);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(2,'2021-07-09',6);
+
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(2,'2021-07-19',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(2,'2021-07-20',7);
-
-
 
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(3,'2021-07-05',7);
@@ -275,66 +260,22 @@ insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(12,'2021-07-30',5);
 
 
--- 연차관리(VACATION) --연차신청 페이지
+-- 연차관리(VACATION)
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
 values(1,'2021-07-19',7,'여름휴가',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
 values(1,'2021-07-20',7,'여름휴가',1);
 
-
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-08-03',7,'여름 휴가',0);
+values(2,'2021-07-06',5,'출장',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-08-04',7,'여름 휴가',0);
+values(2,'2021-07-07',5,'출장',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-08-05',7,'여름 휴가',0);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-07-16',6,'서울 출장',0);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-07-15',6,'서울 출장',0);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-07-14',6,'서울 출장',0);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-07-13',6,'서울 출장',0);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-07-12',6,'서울 출장',0);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-07-08',6,'사상 외근',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-07-09',6,'사상 외근',1);
+values(2,'2021-07-08',5,'출장',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
 values(2,'2021-07-19',7,'여름휴가',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
 values(2,'2021-07-20',7,'여름휴가',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-02-19',7,'휴가',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-02-20',7,'휴가',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-02-19',7,'휴가',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2021-02-20',7,'휴가',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2020-12-20',7,'병가',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2020-12-21',7,'병가',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2020-06-20',7,'병가',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2020-06-21',7,'병가',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2020-03-11',6,'강촌 출장',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2020-03-12',6,'강촌 출장',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2020-05-13',6,'강촌 출장',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2020-05-12',6,'강촌 출장',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
-values(2,'2020-05-11',6,'강촌 출장',1);
-
-
-
 
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS) 
 values(3,'2021-07-05',7,'휴가',1);
@@ -798,14 +739,13 @@ insert into conf_room(conf_room_floor, conf_room_number) values(3, 303);
 
 -- 회의실 예약정보 추가
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) 
-values('영업 회의', 1, '2021-07-06', '09:00', '10:00', 1);
+values('회의실 예약1', 1, '2021-07-06', '09:00', '10:00', 1);
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) 
-values('인사 회의', 2, '2021-07-07', '09:00', '10:00', 3);
+values('회의실 예약2', 2, '2021-07-07', '09:00', '10:00', 3);
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) 
-values('인사 회의', 3, '2021-07-08', '10:00', '10:30', 2);
+values('회의실 예약3', 3, '2021-07-08', '10:00', '10:30', 2);
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send) 
-values('개발 회의', 1, '2021-07-09', '08:00', '10:00', 1);
-
+values('회의실 예약4', 1, '2021-07-09', '08:00', '10:00', 1);
 
 -- 회의 참석자
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(3, 1);
