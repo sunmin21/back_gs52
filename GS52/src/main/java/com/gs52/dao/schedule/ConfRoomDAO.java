@@ -56,7 +56,13 @@ public class ConfRoomDAO {
 
 		System.out.println("selectEmp");
 		 return sqlFacotry.openSession().selectList("ConfRoom.Select_emp");
-		 
-		 
+	}
+	
+	public int deleteConf(long l) {
+		System.out.println("deleteConf");
+		System.out.println("1");
+		sqlFacotry.openSession().delete("ConfRoom.Delete_conf_re", l);
+		System.out.println("2");
+		return sqlFacotry.openSession().delete("ConfRoom.Delete_conf", l);
 	}
 }
