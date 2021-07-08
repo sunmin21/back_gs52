@@ -115,13 +115,13 @@ insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,3
 
 -- 공지사항
 insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
-values ('제목1','내용1',1,'2020/06/28');
+values ('07/08 회의보고서 작성.','07/08 회의 보고서 작성',1,'2020/06/28');
 insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
-values ('제목2','내용4',1,'2020/06/28');
+values ('07/08 프로젝트 계획','웹 개발 프로젝트 계획서 작성',1,'2020/06/28');
 insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
-values ('제목3','내용4',1,'2020/06/28');
-insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) 
-values ('제목4','내용4',1,'2020/06/28');
+values ('07/09 업무','차세대 OO기업 프로젝트 진행사항 보고',1,'2020/06/28');
+insert into notice (NOTICE_TITLE, NOTICE_CONTENTS, NOTICE_EMP_INDEX, NOTICE_DATE) ㅌ
+values ('07/10 업무','차세대 OO기업 데이터베이스 구축',1,'2020/06/28');
     
 -- 근무형태(ATTEND_TYPE)
 insert into ATTEND_TYPE(ATTEND_TYPE_NAME) VALUES('출근');

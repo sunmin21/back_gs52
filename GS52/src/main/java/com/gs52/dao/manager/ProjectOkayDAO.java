@@ -12,7 +12,7 @@ import com.gs52.vo.schedule.ProjectListVO;
 
 @Service
 @Transactional
-public class ProjectDAO {
+public class ProjectOkayDAO {
 	
 	@Autowired
 	private SqlSessionFactory sqlFactory = null;
