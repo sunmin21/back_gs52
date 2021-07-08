@@ -10,13 +10,13 @@
 	<select id="selectConfPerson" 
 		resultType="com.gs52.vo.schedule.PersonalConfVO">
 		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
-	select CONF_INDEX,CONF_TITLE,CONF_ROOM_INDEX, CONF_DATE, CONF_START, CONF_END, CONF_RE_INDEX, CONF_RE_EMP_INDEX, CONF_RE_CONF_INDEX, EMP_ID from conf,conf_re,emp 
-where conf.conf_index = conf_re.conf_re_conf_index and conf_re.conf_re_emp_index = emp.emp_INDEX
+	select CONF_INDEX,CONF_TITLE,conf.CONF_ROOM_INDEX, CONF_DATE, CONF_START, CONF_END, CONF_RE_INDEX, CONF_RE_EMP_INDEX, CONF_RE_CONF_INDEX, EMP_ID, CONF_ROOM_NUMBER from conf_room, conf,conf_re,emp 
+where conf.conf_index = conf_re.conf_re_conf_index and conf_re.conf_re_emp_index = emp.emp_INDEX and conf_room.conf_room_index = conf.conf_room_index
 	</select>
 	
 	<select id="selectConfLeader" resultType="com.gs52.vo.schedule.PersonalConfVO">
 		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
-		select CONF_INDEX, CONF_TITLE, CONF_ROOM_INDEX, CONF_DATE, CONF_START, CONF_END, CONF_EMP_INDEX_SEND,EMP_ID from conf,emp where conf.conf_emp_index_send = emp.emp_index  
+		select CONF_INDEX, CONF_TITLE, conf.CONF_ROOM_INDEX, CONF_DATE, CONF_START, CONF_END, CONF_EMP_INDEX_SEND,EMP_ID, CONF_ROOM_NUMBER from conf_room,conf,emp where conf.conf_emp_index_send = emp.emp_index and conf_room.conf_room_index = conf.conf_room_index  
 		</select>
 	
 	
