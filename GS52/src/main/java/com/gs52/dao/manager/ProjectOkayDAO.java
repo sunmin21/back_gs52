@@ -21,4 +21,8 @@ public class ProjectOkayDAO {
 		System.out.println(vo);
 		return sqlFactory.openSession().selectList("Project.selectOkay",vo);
 	}
+	
+	public void updateOkay(ProjectListVO vo) {
+		sqlFactory.openSession().update("Project.updateOkay", vo);
+	}
 }

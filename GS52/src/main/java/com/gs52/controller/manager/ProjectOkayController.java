@@ -26,4 +26,10 @@ public class ProjectOkayController {
 		System.out.println(vo);		
 		return plDAO.selectList(vo);
 	}
+	
+	@PostMapping("/updateOkay")
+	public void updateOkay(@RequestBody ProjectListVO vo) {
+		System.out.println(vo);
+		plDAO.updateOkay(vo);
+	}
 }
