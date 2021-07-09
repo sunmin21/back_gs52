@@ -12,7 +12,7 @@ import com.gs52.vo.main.NoticeVO;
 
 @Service  
 @Transactional
-public class MainDAO {
+public class NoticeDAO {
 	@Autowired 
 	private SqlSessionFactory sqlFacotry =null;
 	

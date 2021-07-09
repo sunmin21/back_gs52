@@ -28,6 +28,7 @@ import com.gs52.dao.schedule.ProjectDAO;
 import com.gs52.dao.task.BusinessProgressDAO;
 import com.gs52.vo.schedule.ProjectFileVO;
 import com.gs52.vo.schedule.ProjectSelectVO;
+import com.gs52.vo.schedule.ProjectTaskVO;
 import com.gs52.vo.schedule.ProjectVO;
 import com.gs52.vo.schedule.ProjectWithVO;
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -56,10 +57,25 @@ public class ProjectController {
 	@PostMapping(value="/project/updateprojectWith")
 	public void updateProjectWith(@RequestBody ProjectWithVO vo) {
 
-	System.out.println("이거타냐?뭐지이거");
-	System.out.println( pDAO.updateProjectWith(vo));
-	System.out.println("이거다이거");
+
+	 pDAO.updateProjectWith(vo);
+	
 	}
+	
+	@PostMapping(value="/project/insertProjectTodo")
+	public void insertProjectTodo(@RequestBody ProjectTaskVO vo) {
+
+
+	 pDAO.insertProjectTodo(vo);
+	
+	}
+	@PostMapping(value="/project/selectTask")
+	public List<ProjectTaskVO>  selectTodo(@RequestBody ProjectTaskVO vo) {
+      
+	
+		return pDAO.selectTask(vo);
+	}
+
 	
 	@PostMapping(value="/project/selectOneProject")
 	public ProjectSelectVO  selectOneProject(@RequestBody ProjectSelectVO vo) {

@@ -29,9 +29,10 @@ public class BusinessProgressDAO {
 		 
 	}
 	public List<BusinessProgressVO> selectListSend(BusinessProgressVO vo){
-		
-
-		  
+		 
+		System.out.println("??");
+     System.out.println(vo);
+	System.out.println("??");
 		 return sqlFacotry.openSession().selectList("task.selectListSend",vo);
 		 
 		 

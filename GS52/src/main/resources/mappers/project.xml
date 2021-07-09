@@ -16,7 +16,7 @@
 		INSERT INTO PROJECT (PROJECT_TITLE, PROJECT_CONTENT,
 		PROJECT_START, PROJECT_END, PROJECT_OKAY, PROJECT_DATE)
 		values(#{PROJECT_TITLE},#{PROJECT_CONTENT},#{PROJECT_START},#{PROJECT_END},#{PROJECT_OKAY}
-		,#{PROJECT_DATE}) 
+		,#{PROJECT_DATE})
 	</insert>
 
 	<insert id="insertEmpWith"
@@ -32,36 +32,51 @@
 		INSERT INTO PROJECT_FILE (PROJECT_FILE_PROJECT_INDEX,
 		PROJECT_FILE_ORIGIN_NAME, PROJECT_FILE_NAME, PROJECT_FILE_PATH,
 		PROJECT_FILE_DATE,PROJECT_REACT_PATH)
-		values(#{PROJECT_INDEX}, #{PROJECT_FILE_ORIGIN_NAME}, #{PROJECT_FILE_NAME},
+		values(#{PROJECT_INDEX},
+		#{PROJECT_FILE_ORIGIN_NAME}, #{PROJECT_FILE_NAME},
 		#{PROJECT_FILE_PATH},#{PROJECT_FILE_DATE},#{PROJECT_REACT_PATH})
 	</insert>
 	<update id="updateProject"
 		parameterType="com.gs52.vo.schedule.ProjectVO">
-		update PROJECT 
+		update PROJECT
 		SET PROJECT_TITLE=#{PROJECT_TITLE},
-		 PROJECT_CONTENT=#{PROJECT_CONTENT}, 
-		 PROJECT_START=#{PROJECT_START},
-		 PROJECT_END=#{PROJECT_END},
-		 PROJECT_UPDATE =#{PROJECT_UPDATE}
+		PROJECT_CONTENT=#{PROJECT_CONTENT},
+		PROJECT_START=#{PROJECT_START},
+		PROJECT_END=#{PROJECT_END},
+		PROJECT_UPDATE =#{PROJECT_UPDATE}
 		WHERE PROJECT_INDEX = #{PROJECT_INDEX}
-		
-	</update> 
-	
+
+	</update>
+
 	<update id="updateProjectWith"
 		parameterType="com.gs52.vo.schedule.ProjectWithVO">
-		update PROJECT_WITH 
+		update PROJECT_WITH
 		SET PROJECT_WITH_COLOR = #{PROJECT_WITH_COLOR}
-		WHERE PROJECT_WITH_INDEX = #{PROJECT_WITH_INDEX} 
-		
-	</update> 
-	
+		WHERE PROJECT_WITH_INDEX =
+		#{PROJECT_WITH_INDEX}
+
+	</update>
+
+	<insert id="insertProjectTodo"
+		parameterType="com.gs52.vo.schedule.ProjectTaskVO">
+		INSERT INTO PROJECT_TASK (PROJECT_INDEX,
+		PROJECT_TASK_SUCCESS, PROJECT_TASK_PERCENT, PROJECT_TASK_CONTENT)
+		values(#{PROJECT_INDEX}, #{PROJECT_TASK_SUCCESS},
+		#{PROJECT_TASK_PERCENT}, #{PROJECT_TASK_CONTENT})
+	</insert>
+	<select id="selectTask"
+		parameterType="com.gs52.vo.schedule.ProjectTaskVO"
+		resultType="com.gs52.vo.schedule.ProjectTaskVO">
+		SELECT * FROM PROJECT_TASK WHERE PROJECT_INDEX=#{PROJECT_INDEX}
+	</select>
+
 	<delete id="deleteEmpWith">
-	DELETE FROM PROJECT_WITH WHERE PROJECT_INDEX = #{PROJECT_INDEX}
+		DELETE FROM PROJECT_WITH WHERE PROJECT_INDEX = #{PROJECT_INDEX}
 	</delete>
-<delete id="deleteFile" parameterType="String">
-	DELETE FROM PROJECT_FILE WHERE PROJECT_FILE_PATH = #{deleteFile}
+	<delete id="deleteFile" parameterType="String">
+		DELETE FROM PROJECT_FILE WHERE PROJECT_FILE_PATH = #{deleteFile}
 	</delete>
-		
+
 
 	<select id="selectOneProject"
 		parameterType="com.gs52.vo.schedule.ProjectVO"
@@ -73,10 +88,13 @@
 		resultType="com.gs52.vo.schedule.ProjectWithVO">
 
 		SELECT PROJECT_WITH.*,emp_name,team_name,dept_name
-		FROM PROJECT_WITH,emp,team,dept
+		FROM
+		PROJECT_WITH,emp,team,dept
 		WHERE PROJECT_INDEX =#{PROJECT_INDEX}
-		and emp.EMP_INDEX = project_with_emp_index
-		and emp.EMP_TEAM_INDEX = team.TEAM_INDEX
+		and
+		emp.EMP_INDEX = project_with_emp_index
+		and emp.EMP_TEAM_INDEX =
+		team.TEAM_INDEX
 		and team.TEAM_DEPT_INDEX = dept.dept_index
 	</select>
 	<select id="selectOneProjectFile"
@@ -85,5 +103,7 @@
 		SELECT * FROM PROJECT_FILE WHERE PROJECT_FILE_PROJECT_INDEX
 		=#{PROJECT_INDEX}
 	</select>
+
+
 
 </mapper>
