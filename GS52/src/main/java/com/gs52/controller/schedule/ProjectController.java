@@ -68,7 +68,17 @@ public class ProjectController {
 
 	 pDAO.insertProjectTodo(vo);
 	
-	}
+	  }
+	@PostMapping(value="/project/updateProjectTodo")
+	public void updateProjectTodo(@RequestBody ProjectTaskVO vo) {
+
+   System.out.println("너왔냐");
+   System.out.println("업데이트가된거가?");
+   System.out.println(vo);
+	 pDAO.updateProjectTodo(vo);
+	
+	  }
+	
 	@PostMapping(value="/project/selectTask")
 	public List<ProjectTaskVO>  selectTodo(@RequestBody ProjectTaskVO vo) {
       

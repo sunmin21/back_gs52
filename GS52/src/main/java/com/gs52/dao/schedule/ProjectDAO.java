@@ -211,6 +211,11 @@ public class ProjectDAO {
 		return sqlFacotry.openSession().selectList("Project.selectTask", vo);
 	}
 
+	public int updateProjectTodo(ProjectTaskVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFacotry.openSession().update("Project.updateProjectTodo", vo);
+	}
+
 	
 
 }

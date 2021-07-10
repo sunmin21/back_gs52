@@ -64,6 +64,16 @@
 		values(#{PROJECT_INDEX}, #{PROJECT_TASK_SUCCESS},
 		#{PROJECT_TASK_PERCENT}, #{PROJECT_TASK_CONTENT})
 	</insert>
+	<update id="updateProjectTodo"
+		parameterType="com.gs52.vo.schedule.ProjectWithVO">
+		update PROJECT_TASK
+		SET PROJECT_TASK_PERCENT = #{PROJECT_TASK_PERCENT}, 
+		PROJECT_TASK_CONTENT=#{PROJECT_TASK_CONTENT}
+		WHERE PROJECT_TASK_INDEX =
+		#{PROJECT_TASK_INDEX}
+
+	</update>
+	
 	<select id="selectTask"
 		parameterType="com.gs52.vo.schedule.ProjectTaskVO"
 		resultType="com.gs52.vo.schedule.ProjectTaskVO">
