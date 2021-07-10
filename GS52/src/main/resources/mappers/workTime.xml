@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WorkTime">
+	<select id="Select_Work_Rule" parameterType="map" resultType="com.gs52.vo.main.WorkTimeVO">
+		select * from WORK_RULE W, TEAM T where W.WORK_RULE_INDEX=T.TEAM_WORK_TYPE and T.TEAM_INDEX=${EMP_TEAM_INDEX} -->
+	</select>
+
+
+   <insert id="Insert_Start" parameterType="com.gs52.vo.main.WorkTimeVO">
+   
+   insert into ATTEND (ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_START, ATTEND_ATTEND_TYPE_INDEX)
+       VALUES (#{ATTEND_EMP_INDEX}, #{ATTEND_DATE}, 
+       #{ATTEND_START}, 
+       <!-- #{ATTEND_ATTEND_TYPE_INDEX}) -->
+       <!-- &lt; === < -->
+       <choose>
+		    <when test="ATTEND_START&lt;WORK_RULE_START">
+		    <!-- 출근  -->
+		      1
+		    </when>
+		    <when test="ATTEND_START&gt;WORK_RULE_START">
+		    <!-- 지각  -->
+		      3
+		    </when>
+		    <!-- 
+		    <otherwise>
+		      AND featured = 1
+		    </otherwise>
+		     -->
+		</choose>
+		)
+   </insert>
+   <!--    
+   SELECT * FROM USER_LIST
+   WHERE AGE = #{age}
+   <if test="userAddress != null" and userAddress != ''>
+     AND USER_ADDRESS = #{userAddress}
+   </if>
+ -->
+   
+</mapper>
