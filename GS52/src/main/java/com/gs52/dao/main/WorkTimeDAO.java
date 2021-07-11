@@ -31,4 +31,12 @@ public class WorkTimeDAO {
 		return sqlFacotry.openSession().insert("WorkTime.Insert_Start",vo);
 	}
 
+	public List<WorkTimeVO> SelectWorkCheck(@RequestBody WorkTimeVO vo) {
+		//ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_START, ATTEND_ATTEND_TYPE_INDEX
+		System.out.println("DAO");
+		System.out.println(vo.getATTEND_DATE());
+		
+		System.out.println(vo);
+		return sqlFacotry.openSession().selectList("WorkTime.Select_WorkCheck",vo);
+	}
 }

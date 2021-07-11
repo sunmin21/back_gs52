@@ -33,6 +33,13 @@ public class WorkTimeController {
 		System.out.println("WorkStart");
 		System.out.println(vo);
 		return wDAO.WorkStart(vo);
-		
+	}
+	
+
+	@PostMapping("/workCheck")
+	public List<WorkTimeVO> WorkCheck(@RequestBody WorkTimeVO vo){
+		System.out.println("WorkCheck");
+		System.out.println(vo);
+		return wDAO.SelectWorkCheck(vo);
 	}
 }

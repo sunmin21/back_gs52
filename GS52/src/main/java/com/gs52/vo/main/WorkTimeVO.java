@@ -12,12 +12,12 @@ public class WorkTimeVO {
 	
 	//ATTEND TABLE
 	long ATTEND_INDEX = 0L;
-	long ATTEND_EMP_INDEX = 0L;
+	long ATTEND_EMP_INDEX = 0L;						//FK
 	String ATTEND_DATE=null;
 	String ATTEND_START=null;
 	String ATTEND_BREAK=null;
 	String ATTEND_END=null;
-	long ATTEND_ATTEND_TYPE_INDEX=0L;
+	long ATTEND_ATTEND_TYPE_INDEX=0L;				//FK
 
 	
 	//ATTEND_TYPE TABLE
@@ -31,7 +31,7 @@ public class WorkTimeVO {
 	
 	//WORK_RULE
 	long WORK_RULE_INDEX=0L;
-	long WORK_RULE_WORK_TYPE_INDEX=0L;
+	long WORK_RULE_WORK_TYPE_INDEX=0L;				//FK
 	String WORK_RULE_START=null;
 	String WORK_RULE_END=null;
 	String WORK_RULE_BREAK=null;
