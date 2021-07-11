@@ -5,7 +5,7 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="WorkTime">
 	<select id="Select_Work_Rule" parameterType="map" resultType="com.gs52.vo.main.WorkTimeVO">
-		select * from WORK_RULE W, TEAM T where W.WORK_RULE_INDEX=T.TEAM_WORK_TYPE and T.TEAM_INDEX=${EMP_TEAM_INDEX} -->
+		select * from WORK_RULE W, TEAM T where W.WORK_RULE_INDEX=T.TEAM_WORK_TYPE and T.TEAM_INDEX=${EMP_TEAM_INDEX}
 	</select>
 
 
@@ -33,6 +33,12 @@
 		</choose>
 		)
    </insert>
+   
+   
+   <select id="Select_WorkCheck" parameterType="com.gs52.vo.main.WorkTimeVO" resultType="com.gs52.vo.main.WorkTimeVO">
+   		select * from ATTEND where ATTEND_DATE='${ATTEND_DATE}' and ATTEND_EMP_INDEX=${ATTEND_EMP_INDEX}
+   </select>
+   
    <!--    
    SELECT * FROM USER_LIST
    WHERE AGE = #{age}
