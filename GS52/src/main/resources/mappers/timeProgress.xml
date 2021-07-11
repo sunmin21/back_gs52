@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="TimeProgress">
+	<select id="Select_Total" parameterType="map" resultType="com.gs52.vo.main.WorkTimeVO">
+   		select ATTEND_TOTAL from ATTEND where ATTEND_DATE='${ATTEND_DATE}' and ATTEND_EMP_INDEX=${ATTEND_EMP_INDEX}
+	</select>
+	
+	<select id="Select_Week" parameterType="map" resultType="com.gs52.vo.main.WorkTimeVO">
+	select * from ATTEND 
+		where ATTEND_DATE between trunc(sysdate, 'iw') and trunc(sysdate , 'iw')+6 
+		and ATTEND_EMP_INDEX=${ATTEND_EMP_INDEX} 
+		<!-- select * from ATTEND 
+		where ATTEND_DATE between trunc(sysdate -7, 'iw') and trunc(sysdate , 'iw') 
+		and ATTEND_EMP_INDEX=${ATTEND_EMP_INDEX} -->
+
+	</select>
+
+
+</mapper>

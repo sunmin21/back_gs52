@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gs52.dao.main.WorkTimeDAO;
+import com.gs52.vo.main.BreakTimeVO;
 import com.gs52.vo.main.WorkTimeVO;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -34,6 +35,22 @@ public class WorkTimeController {
 		System.out.println(vo);
 		return wDAO.WorkStart(vo);
 	}
+
+	@PostMapping("/workEnd")
+	public int WorkEnd(@RequestBody WorkTimeVO vo) {
+
+		System.out.println("WorkStart");
+		System.out.println(vo);
+		return wDAO.WorkEnd(vo);
+	}
+	
+	@PostMapping("/workBreak")
+	public int WorkBreak(@RequestBody WorkTimeVO vo) {
+
+		System.out.println("WorkBreak");
+		System.out.println(vo);
+		return wDAO.WorkBreak(vo);
+	}
 	
 
 	@PostMapping("/workCheck")
@@ -41,5 +58,28 @@ public class WorkTimeController {
 		System.out.println("WorkCheck");
 		System.out.println(vo);
 		return wDAO.SelectWorkCheck(vo);
+	}
+	
+	@PostMapping("/breakStart")
+	public long BreakStart(@RequestBody BreakTimeVO vo) {
+
+		System.out.println("BreakStart");
+		System.out.println(vo);
+		int value = wDAO.BreakStart(vo);
+		System.out.println("value");
+		System.out.println(vo.getBREAK_INDEX());
+		return vo.getBREAK_INDEX();
+	}
+
+	@PostMapping("/breakEnd")
+	public long BreakEnd(@RequestBody BreakTimeVO vo) {
+
+		System.out.println("BreakEnd");
+		System.out.println(vo);
+		int value=wDAO.BreakEnd(vo);
+		System.out.println("value");
+		System.out.println(vo.getBREAK_TIME());
+		long time=vo.getBREAK_TIME();
+		return vo.getBREAK_TIME();
 	}
 }

@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.gs52.vo.main.BreakTimeVO;
 import com.gs52.vo.main.WorkTimeVO;
-import com.gs52.vo.schedule.ConfRoomBookVO;
 
 @Service  
 @Transactional
@@ -30,6 +30,12 @@ public class WorkTimeDAO {
 		//ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_START, ATTEND_ATTEND_TYPE_INDEX
 		return sqlFacotry.openSession().insert("WorkTime.Insert_Start",vo);
 	}
+	public int WorkEnd(@RequestBody WorkTimeVO vo) {
+		return sqlFacotry.openSession().update("WorkTime.Update_End",vo);
+	}
+	public int WorkBreak(@RequestBody WorkTimeVO vo) {
+		return sqlFacotry.openSession().update("WorkTime.Update_BreakTime",vo);
+	}
 
 	public List<WorkTimeVO> SelectWorkCheck(@RequestBody WorkTimeVO vo) {
 		//ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_START, ATTEND_ATTEND_TYPE_INDEX
@@ -39,4 +45,18 @@ public class WorkTimeDAO {
 		System.out.println(vo);
 		return sqlFacotry.openSession().selectList("WorkTime.Select_WorkCheck",vo);
 	}
+	
+	
+	public int BreakStart(@RequestBody BreakTimeVO vo) {
+		System.out.println("BreakStartDAO");
+		System.out.println(vo);
+		System.out.println(vo.getBREAK_INDEX());
+		return sqlFacotry.openSession().insert("WorkTime.Insert_BreakStart",vo);
+	}
+	
+	public int BreakEnd(@RequestBody BreakTimeVO vo) {
+		return sqlFacotry.openSession().update("WorkTime.Update_BreakEnd",vo);
+	}
+
+	
 }

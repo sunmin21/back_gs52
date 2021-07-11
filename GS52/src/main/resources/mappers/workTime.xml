@@ -10,7 +10,6 @@
 
 
    <insert id="Insert_Start" parameterType="com.gs52.vo.main.WorkTimeVO">
-   
    insert into ATTEND (ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_START, ATTEND_ATTEND_TYPE_INDEX)
        VALUES (#{ATTEND_EMP_INDEX}, #{ATTEND_DATE}, 
        #{ATTEND_START}, 
@@ -35,16 +34,36 @@
    </insert>
    
    
+	<update id="Update_End" parameterType="com.gs52.vo.main.WorkTimeVO">
+		update ATTEND set
+		 ATTEND_END= #{ATTEND_END}, 
+		 ATTEND_TOTAL=ROUND((TO_DATE(#{ATTEND_END}, 'HH24:MI') - TO_DATE(ATTEND_START, 'HH24:MI')) * 24 * 60, 2)
+		where ATTEND_EMP_INDEX=#{ATTEND_EMP_INDEX} and ATTEND_DATE=#{ATTEND_DATE}
+	</update>
+		
+	<update id="Update_BreakTime" parameterType="com.gs52.vo.main.WorkTimeVO">
+		update ATTEND set ATTEND_BREAK=ATTEND_BREAK+#{ATTEND_BREAK}
+		where ATTEND_EMP_INDEX=#{ATTEND_EMP_INDEX} and ATTEND_DATE=#{ATTEND_DATE}
+	</update>
+		
+   
    <select id="Select_WorkCheck" parameterType="com.gs52.vo.main.WorkTimeVO" resultType="com.gs52.vo.main.WorkTimeVO">
    		select * from ATTEND where ATTEND_DATE='${ATTEND_DATE}' and ATTEND_EMP_INDEX=${ATTEND_EMP_INDEX}
    </select>
+
+   <insert id="Insert_BreakStart" parameterType="com.gs52.vo.main.BreakTimeVO" >
+  		 <selectKey keyProperty="BREAK_INDEX" resultType="long">
+			SELECT BREAK_SEQ.CURRVAL FROM DUAL
+		</selectKey>
+   		insert into BREAK(BREAK_EMP_INDEX, BREAK_DATE, BREAK_START)
+   		VALUES(#{BREAK_EMP_INDEX}, #{BREAK_DATE}, #{BREAK_START})
+   </insert>
    
-   <!--    
-   SELECT * FROM USER_LIST
-   WHERE AGE = #{age}
-   <if test="userAddress != null" and userAddress != ''>
-     AND USER_ADDRESS = #{userAddress}
-   </if>
- -->
-   
+   	<update id="Update_BreakEnd" parameterType="com.gs52.vo.main.BreakTimeVO">
+  		 <selectKey keyProperty="BREAK_TIME" resultType="int">
+			SELECT ROUND((TO_DATE(#{BREAK_END}, 'HH24:MI') - TO_DATE(BREAK_START, 'HH24:MI')) * 24 * 60, 2) FROM BREAK WHERE BREAK_INDEX=#{BREAK_INDEX}
+		</selectKey>
+		update BREAK set BREAK_END=#{BREAK_END}
+		where BREAK_INDEX=#{BREAK_INDEX}
+	</update>
 </mapper>
