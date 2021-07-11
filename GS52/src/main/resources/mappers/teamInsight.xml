@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="TeamInsight">
+
+	<select id="selectTeamEntryDate" 
+		resultType="com.gs52.vo.schedule.TeamInsightVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+			 select avg(TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD')) - TO_DATE(emp_entry_date)) as team_entry_count  from emp where emp_team_index=#{EMP_TEAM_INDEX}
+	</select>
+	
+	
+	
+</mapper>
