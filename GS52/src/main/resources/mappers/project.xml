@@ -77,7 +77,15 @@
 	<select id="selectTask"
 		parameterType="com.gs52.vo.schedule.ProjectTaskVO"
 		resultType="com.gs52.vo.schedule.ProjectTaskVO">
-		SELECT * FROM PROJECT_TASK WHERE PROJECT_INDEX=#{PROJECT_INDEX}
+	
+		
+		SELECT * FROM PROJECT_TASK,(select SUM(PROJECT_TASK_PERCENT) PERCENT_SUM from PROJECT_TASK WHERE PROJECT_INDEX=#{PROJECT_INDEX})d WHERE PROJECT_INDEX=#{PROJECT_INDEX}
+	</select>
+		<select id="selectTaskDetail"
+		parameterType="com.gs52.vo.schedule.ProjectTaskDetailVO"
+		resultType="com.gs52.vo.schedule.ProjectTaskDetailVO">
+		SELECT * FROM PROJECT_TASK_DETAIL WHERE PROJECT_INDEX=#{PROJECT_INDEX}
+		
 	</select>
 
 	<delete id="deleteEmpWith">
