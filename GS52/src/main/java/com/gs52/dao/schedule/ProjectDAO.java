@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.gs52.vo.manager.RegistVO;
 import com.gs52.vo.schedule.ProjectFileVO;
 import com.gs52.vo.schedule.ProjectSelectVO;
+import com.gs52.vo.schedule.ProjectTaskDetailVO;
 import com.gs52.vo.schedule.ProjectTaskVO;
 import com.gs52.vo.schedule.ProjectVO;
 import com.gs52.vo.schedule.ProjectWithVO;
@@ -214,6 +215,11 @@ public class ProjectDAO {
 	public int updateProjectTodo(ProjectTaskVO vo) {
 		// TODO Auto-generated method stub
 		return sqlFacotry.openSession().update("Project.updateProjectTodo", vo);
+	}
+
+	public List<ProjectTaskVO> selectTaskDetail(ProjectTaskDetailVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFacotry.openSession().selectList("Project.selectTaskDetail", vo);
 	}
 
 	

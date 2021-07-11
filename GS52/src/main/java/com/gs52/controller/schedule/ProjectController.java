@@ -28,6 +28,7 @@ import com.gs52.dao.schedule.ProjectDAO;
 import com.gs52.dao.task.BusinessProgressDAO;
 import com.gs52.vo.schedule.ProjectFileVO;
 import com.gs52.vo.schedule.ProjectSelectVO;
+import com.gs52.vo.schedule.ProjectTaskDetailVO;
 import com.gs52.vo.schedule.ProjectTaskVO;
 import com.gs52.vo.schedule.ProjectVO;
 import com.gs52.vo.schedule.ProjectWithVO;
@@ -53,7 +54,7 @@ public class ProjectController {
 	
 		return pDAO.updateProject(vo);
 	}
-	
+
 	@PostMapping(value="/project/updateprojectWith")
 	public void updateProjectWith(@RequestBody ProjectWithVO vo) {
 
@@ -85,7 +86,13 @@ public class ProjectController {
 	
 		return pDAO.selectTask(vo);
 	}
-
+	@PostMapping(value="/project/selectTaskDetail")
+	public List<ProjectTaskVO>  selectTaskDetail(@RequestBody ProjectTaskDetailVO vo) {
+      
+	
+		return pDAO.selectTaskDetail(vo);
+	}
+	
 	
 	@PostMapping(value="/project/selectOneProject")
 	public ProjectSelectVO  selectOneProject(@RequestBody ProjectSelectVO vo) {
