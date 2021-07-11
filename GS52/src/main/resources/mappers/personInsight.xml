@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Insight">
+
+	<select id="selectEmpEntryDate" 
+		resultType="com.gs52.vo.attendance.PersonInsightVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+			 select TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD')) - TO_DATE(emp_entry_date) as EMP_ENTRY_COUNT, EMP_ENTRY_DATE from emp where emp_index = #{EMP_INDEX}
+	</select>
+	
+	<select id="selectProjectCount" resultType="com.gs52.vo.attendance.PersonInsightVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+		select count(project_with_emp_index) as EMP_PROJECT_COUNT from project_with where project_WITH_emp_index = #{EMP_INDEX}  
+		</select>
+	
+	<select id="selectTodoCount" resultType="com.gs52.vo.attendance.PersonInsightVO">
+	select count(*) as EMP_TODO_COUNT from todo_re where todo_done=2 and todo_RE_EMP_INDEX= #{EMP_INDEX}
+	</select>
+	
+	<select id="selectBusinessCount" resultType="com.gs52.vo.attendance.PersonInsightVO">
+	select count(*) as emp_business_count from vacation where vacation_emp_index =#{EMP_INDEX} and vacation_attend_info_index between  5 and 6 
+	</select>
+	
+	
+	<select id="selectReportCount" resultType="com.gs52.vo.attendance.PersonInsightVO">
+	select count(*) as emp_report_count from report where report_emp_index = #{EMP_INDEX} 
+	</select>
+	
+	
+</mapper>
