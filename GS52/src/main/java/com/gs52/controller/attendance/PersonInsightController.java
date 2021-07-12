@@ -32,7 +32,7 @@ public class PersonInsightController {
 	
 	@PostMapping("/selectempentrydate")
 	public List<PersonInsightVO> TestBoard(@RequestBody PersonInsightVO vo) {
-	System.out.println("!!"+piDAO.selectList(vo.getEMP_INDEX()));
+	
 	return piDAO.selectList(vo.getEMP_INDEX());
 	}
 	
@@ -51,20 +51,20 @@ public class PersonInsightController {
 	
 	@PostMapping("/selectbusinesscount")
 	public List<PersonInsightVO> BusinessCountBoard(@RequestBody PersonInsightVO vo) {
-	System.out.println("!!"+piDAO.selectBusinessCount(vo.getEMP_INDEX()));
+	
 	return piDAO.selectBusinessCount(vo.getEMP_INDEX());
 	}
 	
 	@PostMapping("/selectreportcount")
 	public List<PersonInsightVO> ReportCountBoard(@RequestBody PersonInsightVO vo) {
-	System.out.println("!!"+piDAO.selectReportCount(vo.getEMP_INDEX()));
+	
 	return piDAO.selectReportCount(vo.getEMP_INDEX());
 	}
 	
 	
 	@PostMapping("/selectworktime")
 	public List<PersonInsightVO> WorkTimeBoard(@RequestBody PersonInsightVO vo) {
-	System.out.println("!!"+piDAO.selectWorkTime(vo.getEMP_INDEX()));
+	
 	return piDAO.selectWorkTime(vo.getEMP_INDEX());
 	}
 	

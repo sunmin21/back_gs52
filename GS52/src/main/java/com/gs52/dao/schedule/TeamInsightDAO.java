@@ -43,8 +43,7 @@ public class TeamInsightDAO {
 	}
 	
 	public List<TeamInsightVO> selectReportList(int userid){
-		System.out.println(userid);
-		System.out.println("나오나?");
+	
 		
 		 return sqlFactory.openSession().selectList("TeamInsight.selectTeamReport",userid);
 		 
@@ -52,10 +51,18 @@ public class TeamInsightDAO {
 	
 	
 	public List<TeamInsightVO> selectWorkTimeList(int userid){
-		System.out.println(userid);
-		System.out.println("나오나?");
+	
 		
 		 return sqlFactory.openSession().selectList("TeamInsight.selectTeamWorkTime",userid);
+		 
+	}
+	
+	
+	public List<TeamInsightVO> selectTeamList(int userid){
+		System.out.println(userid);
+		System.out.println("나오나???");
+		
+		 return sqlFactory.openSession().selectList("TeamInsight.selectTeamList",userid);
 		 
 	}
 	

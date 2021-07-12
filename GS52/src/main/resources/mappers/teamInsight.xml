@@ -50,8 +50,16 @@
 		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
 		select NVL(sum(attend_total) / DECODE(count(*), 0, NULL, count(*)), 0)  as TEAM_WORK_TIME from attend, emp where attend_emp_index = emp_index and attend_attend_type_index <![CDATA[ < ]]>4 and emp_team_index=#{EMP_TEAM_INDEX}
 
-			 
 	</select>
+	
+	
+	
+	<select id="selectTeamList" 
+		resultType="com.gs52.vo.schedule.TeamInsightVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+		select EMP_INDEX from emp where emp_team_index = #{EMP_TEAM_INDEX}
+	</select>
+	
 	
 
 	

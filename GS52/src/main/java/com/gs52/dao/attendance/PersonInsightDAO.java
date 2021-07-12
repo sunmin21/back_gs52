@@ -19,9 +19,7 @@ public class PersonInsightDAO {
 	private SqlSessionFactory sqlFactory =null;
 	
 	public List<PersonInsightVO> selectList(int userid){
-		System.out.println(userid);
-		System.out.println("나오나?");
-		
+	
 		 return sqlFactory.openSession().selectList("Insight.selectEmpEntryDate",userid);
 		 
 	}

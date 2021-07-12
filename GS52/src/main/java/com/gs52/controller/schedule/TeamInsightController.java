@@ -40,33 +40,39 @@ public class TeamInsightController {
 	
 	@PostMapping("/selectteamproject")
 	public List<TeamInsightVO> TeamProject(@RequestBody TeamInsightVO vo) {
-	System.out.println("!!"+tiDAO.selectProjectList(vo.getEMP_TEAM_INDEX()));
+	
 	return tiDAO.selectProjectList(vo.getEMP_TEAM_INDEX());
 	}
 	
 	@PostMapping("/selectteamtodo")
 	public List<TeamInsightVO> TeamTodo(@RequestBody TeamInsightVO vo) {
-	System.out.println("!!"+tiDAO.selectTodoList(vo.getEMP_TEAM_INDEX()));
+	
 	return tiDAO.selectTodoList(vo.getEMP_TEAM_INDEX());
 	}
 	
 	@PostMapping("/selectteambusiness")
 	public List<TeamInsightVO> TeamBusiness(@RequestBody TeamInsightVO vo) {
-	System.out.println("!!"+tiDAO.selectBusinessList(vo.getEMP_TEAM_INDEX()));
+	
 	return tiDAO.selectBusinessList(vo.getEMP_TEAM_INDEX());
 	}
 	
 	@PostMapping("/selectteamreport")
 	public List<TeamInsightVO> TeamReport(@RequestBody TeamInsightVO vo) {
-	System.out.println("!!"+tiDAO.selectReportList(vo.getEMP_TEAM_INDEX()));
+	
 	return tiDAO.selectReportList(vo.getEMP_TEAM_INDEX());
 	}
 	
 	
 	@PostMapping("/selectteamworktime")
 	public List<TeamInsightVO> TeamWorkTime(@RequestBody TeamInsightVO vo) {
-	System.out.println("!!"+tiDAO.selectWorkTimeList(vo.getEMP_TEAM_INDEX()));
+	
 	return tiDAO.selectWorkTimeList(vo.getEMP_TEAM_INDEX());
+	}
+	
+	@PostMapping("/selectteamlist")
+	public List<TeamInsightVO> TeamList(@RequestBody TeamInsightVO vo) {
+	System.out.println("!!"+tiDAO.selectTeamList(vo.getEMP_TEAM_INDEX()));
+	return tiDAO.selectTeamList(vo.getEMP_TEAM_INDEX());
 	}
 	
 	
