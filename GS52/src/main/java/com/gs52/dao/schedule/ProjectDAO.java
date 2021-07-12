@@ -239,6 +239,11 @@ public class ProjectDAO {
 		return sqlFacotry.openSession().update("Project.updateProjecTaskDetailSuccess", vo);
 	}
 
+	public int updateprojectTaskDetail(ProjectTaskDetailVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFacotry.openSession().update("Project.updateprojectTaskDetail", vo);
+	}
+
 	
 
 }

@@ -24,4 +24,6 @@ public class ProjectTaskVO {
 	int PROJECT_TASK_PERCENT=0; 
 	String PROJECT_TASK_CONTENT = null;
 	int PERCENT_SUM  = 0;
+	int DETAIL_SUM = 0;
+	int DETAIL_SUCCESS_SUM=0;
 }

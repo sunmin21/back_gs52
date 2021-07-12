@@ -19,4 +19,6 @@ public class ProjectTaskDetailVO {
 	long PROJECT_TASK_DETAIL_EMP= 0L;
 	long PROJECT_INDEX =0L;
 	int PROJECT_TASK_DETAIL_SUCCESS =0;
+	String PROJECT_WITH_COLOR =null;
+	int DETAIL_SUM =0;
 }
