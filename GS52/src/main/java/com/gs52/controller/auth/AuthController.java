@@ -233,14 +233,13 @@ public class AuthController {
 
 		user.setRoles(roles);
 		userRepository.save(user);
-
+       
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 	}
 	
 	
 	@PostMapping("/updateEmpImg")
 	public int updateEmpImg(@ModelAttribute ProjectVO vo) {
-		System.out.println("updateEmpImg");
 		
 	   
 

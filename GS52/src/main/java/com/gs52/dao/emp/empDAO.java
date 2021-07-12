@@ -59,9 +59,9 @@ public class empDAO {
 		// 첨부파일 추가
 		if (vo.getFILES() != null) {
 			for (MultipartFile uploadFile : vo.getFILES()) {
-//			 			if(uploadFile.getContentType().startsWith("image")==false) {
-//			 				return 0;
-//			 			}  //이미지만 띄우고 싶을때 
+			 			if(uploadFile.getContentType().startsWith("image")==false) {
+			 				return 0;
+			 			}  //이미지만 띄우고 싶을때 
 				
 				
 				String originalName = uploadFile.getOriginalFilename();
@@ -83,6 +83,7 @@ public class empDAO {
 				try {
 
 					uploadFile.transferTo(savePath);
+					System.out.println(vo);
 					sqlFacotry.openSession().update("emp.updateEmpImgFile", vo);
 
 				} catch (IOException e) {
