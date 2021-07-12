@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mainCalendar">	
+	<select id="selectCalendar" parameterType="com.gs52.vo.main.CalendarVO" 
+		resultType="com.gs52.vo.main.CalendarVO">
+		SELECT *
+		FROM EMP, ATTEND, ATTEND_TYPE
+		WHERE EMP.EMP_INDEX = ATTEND.ATTEND_EMP_INDEX 
+		    AND ATTEND_TYPE.ATTEND_TYPE_INDEX = ATTEND.ATTEND_ATTEND_TYPE_INDEX
+		    AND EMP_INDEX = #{EMP_INDEX}
+	</select>	
+</mapper>

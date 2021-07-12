@@ -12,18 +12,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gs52.dao.main.CalendarDAO;
 import com.gs52.vo.main.CalendarVO;
 
-@RestController
-@RequestMapping(value="/project")
 @CrossOrigin(origins = "*", maxAge = 3600)
+@RestController
+@RequestMapping(value="/mainCalendar")
 public class CalendarController {
 	
 	@Autowired
 	public CalendarDAO cDAO = null;
 	
-	@PostMapping("/selectCalendarAttend")
-	public List<CalendarVO> ProjectListBoard(@RequestBody CalendarVO vo) {
-		System.out.println("spring => selectCalendarAttend");
+	@PostMapping("/selectCalendar")
+	public List<CalendarVO> CalendarBoard(@RequestBody CalendarVO vo) {
+//		System.out.println("spring => selectCalendarController");
 		System.out.println(vo);		
-		return cDAO.selectList(vo);
+		return cDAO.selectCalendar(vo);
 	}
 }
