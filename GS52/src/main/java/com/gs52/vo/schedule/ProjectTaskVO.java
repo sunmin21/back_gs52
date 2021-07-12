@@ -26,4 +26,5 @@ public class ProjectTaskVO {
 	int PERCENT_SUM  = 0;
 	int DETAIL_SUM = 0;
 	int DETAIL_SUCCESS_SUM=0;
+	long PROJECT_TASK_DETAIL_INDEX =0L;
 }
