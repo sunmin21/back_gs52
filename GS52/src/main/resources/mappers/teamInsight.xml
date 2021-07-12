@@ -13,6 +13,46 @@
 			 select avg(TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD')) - TO_DATE(emp_entry_date)) as team_entry_count  from emp where emp_team_index=#{EMP_TEAM_INDEX}
 	</select>
 	
+	<select id="selectTeamProject" 
+		resultType="com.gs52.vo.schedule.TeamInsightVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+			select  NVL(count(*) / DECODE(count(distinct emp_index), 0, NULL, count(distinct emp_index)), 0) as TEAM_PROJECT_AVG from project_with,emp where project_WITH_emp_index = emp_index  and emp_team_index = #{EMP_TEAM_INDEX}
+			
+	</select>
 	
+	
+	<select id="selectTeamTodo" 
+		resultType="com.gs52.vo.schedule.TeamInsightVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+				select NVL(count(*) / DECODE(count(distinct emp_index), 0, NULL, count(distinct emp_index)), 0) as TEAM_TODO_AVG from todo_re,emp where todo_done=2 and todo_RE_EMP_INDEX= emp_index and emp_team_index = #{EMP_TEAM_INDEX}
+			  
+	</select>
+	
+	
+	<select id="selectTeamBusiness" 
+		resultType="com.gs52.vo.schedule.TeamInsightVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+				select NVL(count(*) / DECODE(count(distinct emp_index), 0, NULL, count(distinct emp_index)), 0) as TEAM_BUSINESS_AVG from vacation,emp where vacation_emp_index = emp_index and vacation_attend_info_index between  5 and 6  and emp_team_index = #{EMP_TEAM_INDEX}
+			 
+	</select>
+	
+	
+		<select id="selectTeamReport" 
+		resultType="com.gs52.vo.schedule.TeamInsightVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+					select  NVL(count(*) / DECODE(count(distinct emp_index), 0, NULL, count(distinct emp_index)), 0)  as TEAM_REPORT_AVG from report,emp where report_emp_index = emp_index and emp_team_index = #{EMP_TEAM_INDEX}
+
+			 
+	</select>
+	
+	<select id="selectTeamWorkTime" 
+		resultType="com.gs52.vo.schedule.TeamInsightVO">
+		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
+		select NVL(sum(attend_total) / DECODE(count(*), 0, NULL, count(*)), 0)  as TEAM_WORK_TIME from attend, emp where attend_emp_index = emp_index and attend_attend_type_index <![CDATA[ < ]]>4 and emp_team_index=#{EMP_TEAM_INDEX}
+
+			 
+	</select>
+	
+
 	
 </mapper>

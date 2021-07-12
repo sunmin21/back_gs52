@@ -16,16 +16,19 @@ public class TeamInsightVO {
 
 	
 	/*------------------------------selectProjectCount----------------------------*/
-	private String EMP_PROJECT_COUNT =null;
+	private String TEAM_PROJECT_AVG =null;
 	
 	/*------------------------------selectTodoCount----------------------------*/
-	private String EMP_TODO_COUNT = null;
+	private String TEAM_TODO_AVG = null;
 	
 	
 	/*------------------------------selectBusinessCount----------------------------*/
-	private String EMP_BUSINESS_COUNT = null;
+	private String TEAM_BUSINESS_AVG = null;
 	
 	
 	/*------------------------------selectReportCount----------------------------*/
-	private String EMP_REPORT_COUNT = null;
+	private String TEAM_REPORT_AVG = null;
+	
+	/*------------------------------selectWorkTime----------------------------*/
+	private String TEAM_WORK_TIME = null;
 }

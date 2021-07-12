@@ -28,4 +28,7 @@ public class PersonInsightVO {
 	
 	/*------------------------------selectReportCount----------------------------*/
 	private String EMP_REPORT_COUNT = null;
+	
+	/*------------------------------selectWorkTime----------------------------*/
+	private String EMP_WORK_TIME = null;
 }

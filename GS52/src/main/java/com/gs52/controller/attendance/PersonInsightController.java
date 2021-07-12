@@ -62,4 +62,11 @@ public class PersonInsightController {
 	}
 	
 	
+	@PostMapping("/selectworktime")
+	public List<PersonInsightVO> WorkTimeBoard(@RequestBody PersonInsightVO vo) {
+	System.out.println("!!"+piDAO.selectWorkTime(vo.getEMP_INDEX()));
+	return piDAO.selectWorkTime(vo.getEMP_INDEX());
+	}
+	
+	
 }

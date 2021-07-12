@@ -31,5 +31,11 @@
 	select count(*) as emp_report_count from report where report_emp_index = #{EMP_INDEX} 
 	</select>
 	
+	<select id="selectWorkTime" resultType="com.gs52.vo.attendance.PersonInsightVO">
+	select NVL(sum(attend_total) / DECODE(count(*), 0, NULL, count(*)), 0) as EMP_WORK_TIME  from attend where attend_emp_index = #{EMP_INDEX} and attend_attend_type_index <![CDATA[ < ]]> 4
+	
+	</select>
+	
+	
 	
 </mapper>

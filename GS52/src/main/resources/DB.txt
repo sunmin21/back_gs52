@@ -101,6 +101,8 @@ values (2,'협업','차세대 프로젝트 OO기업 인원 보충해서 보고�
 
 -- TODO_RE 할일 받는 사람 INDEX
 insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(1,1,0);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(1,2,2);
+insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(1,3,2);
 insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(3,1,0);
 insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,1,0);
 insert into TODO_RE (TODO_RE_EMP_INDEX, TODO_RE_TODO_INDEX,TODO_DONE) values(2,2,0);
