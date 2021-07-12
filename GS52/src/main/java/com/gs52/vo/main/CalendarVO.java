@@ -12,4 +12,9 @@ public class CalendarVO {
 	private String EMP_NAME = null;
 	private String ATTEND_DATE = null;
 	private String ATTEND_TYPE_NAME = null;
+	
+	private String CONF_TITLE = null;
+	private String CONF_DATE = null;
+	private String CONF_START = null;
+	private String CONF_END = null;
 }

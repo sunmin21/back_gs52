@@ -18,9 +18,17 @@ public class CalendarDAO {
 	private SqlSessionFactory sqlFactory = null;
 	
 	public List<CalendarVO> selectCalendar(@RequestBody CalendarVO vo) {
-//		System.out.println("calendar DAO ~~~~~~");
-		System.out.println("@@@@@@@@@@@@@@@");
 		System.out.println(vo);
 		return sqlFactory.openSession().selectList("mainCalendar.selectCalendar", vo);
 	}
+	
+	public List<CalendarVO> selectCalendar2(@RequestBody CalendarVO vo) {
+		System.out.println(vo);
+		return sqlFactory.openSession().selectList("mainCalendar.selectCalendar2", vo);
+	}
+	
+	public List<CalendarVO> selectCalendar3(@RequestBody CalendarVO vo) {
+		System.out.println(vo);
+		return sqlFactory.openSession().selectList("mainCalendar.selectCalendar3", vo);
+	}	
 }

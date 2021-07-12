@@ -22,8 +22,19 @@ public class CalendarController {
 	
 	@PostMapping("/selectCalendar")
 	public List<CalendarVO> CalendarBoard(@RequestBody CalendarVO vo) {
-//		System.out.println("spring => selectCalendarController");
-		System.out.println(vo);		
+		System.out.println("111111111111");
 		return cDAO.selectCalendar(vo);
+	}
+	
+	@PostMapping("/selectCalendar2")
+	public List<CalendarVO> CalendarBoard2(@RequestBody CalendarVO vo) {
+		System.out.println("2222222222222");
+		return cDAO.selectCalendar2(vo);
+	}
+	
+	@PostMapping("/selectCalendar3")
+	public List<CalendarVO> CalendarBoard3(@RequestBody CalendarVO vo) {
+		System.out.println("33333333333333");
+		return cDAO.selectCalendar3(vo);
 	}
 }

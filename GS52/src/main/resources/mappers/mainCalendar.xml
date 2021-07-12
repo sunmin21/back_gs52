@@ -11,6 +11,26 @@
 		FROM EMP, ATTEND, ATTEND_TYPE
 		WHERE EMP.EMP_INDEX = ATTEND.ATTEND_EMP_INDEX 
 		    AND ATTEND_TYPE.ATTEND_TYPE_INDEX = ATTEND.ATTEND_ATTEND_TYPE_INDEX
+		    AND ATTEND_TYPE_INDEX > 3
 		    AND EMP_INDEX = #{EMP_INDEX}
 	</select>	
+	
+	<select id="selectCalendar2" parameterType="com.gs52.vo.main.CalendarVO" 
+		resultType="com.gs52.vo.main.CalendarVO">
+		SELECT *
+		FROM CONF_ROOM, CONF, CONF_RE, EMP
+		WHERE CONF.CONF_INDEX = CONF_RE.CONF_RE_CONF_INDEX
+			AND CONF_RE.CONF_RE_EMP_INDEX = EMP.EMP_INDEX
+			AND CONF_ROOM.CONF_ROOM_INDEX = CONF.CONF_ROOM_INDEX
+			AND EMP_INDEX = #{EMP_INDEX}
+    </select>
+    
+    <select id="selectCalendar3" parameterType="com.gs52.vo.main.CalendarVO" 
+		resultType="com.gs52.vo.main.CalendarVO">
+		SELECT *
+	    FROM CONF_ROOM, CONF, EMP
+	    WHERE CONF.CONF_EMP_INDEX_SEND = EMP.EMP_INDEX
+	        AND CONF_ROOM.CONF_ROOM_INDEX = CONF.CONF_ROOM_INDEX
+	        AND EMP_INDEX = #{EMP_INDEX}
+	</select>
 </mapper>
