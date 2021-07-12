@@ -10,9 +10,9 @@
 		insert into EMP(EMP_TEAM_INDEX, EMP_RANK_INDEX, EMP_POSITION_INDEX, EMP_ID, EMP_ENTRY_DATE) VALUES (#{EMP_TEAM_INDEX}, #{EMP_RANK_INDEX}, #{EMP_POSITION_INDEX}, #{EMP_ID}, #{EMP_ENTRY_DATE}) 
 	</insert>
 
-	<!-- 부서 -->
-	<select id="Select_Dept" parameterType="map" resultType="com.gs52.vo.manager.DeptVO">
-      select * from dept
+	<!-- 팀 -->
+	<select id="Select_Team" parameterType="map" resultType="com.gs52.vo.manager.TeamVO">
+      select * from Team
    </select>
    
    <!-- 직급 -->

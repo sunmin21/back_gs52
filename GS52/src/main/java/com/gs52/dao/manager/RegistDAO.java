@@ -13,6 +13,7 @@ import com.gs52.vo.emp.EmpVO;
 import com.gs52.vo.manager.PositionVO;
 import com.gs52.vo.manager.RankVO;
 import com.gs52.vo.manager.RegistVO;
+import com.gs52.vo.manager.TeamVO;
 
 @Service  
 @Transactional // 실패하면 다시 롤백하라
@@ -21,10 +22,10 @@ public class RegistDAO {
 	@Autowired 
 	private SqlSessionFactory sqlFacotry =null;
 	
-	public List<RegistVO> selectDept(){
+	public List<TeamVO> selectTeam(){
 
-		System.out.println("selectDept");
-		 return sqlFacotry.openSession().selectList("regist.Select_Dept");
+		System.out.println("selectTeam");
+		 return sqlFacotry.openSession().selectList("regist.Select_Team");
 	}
 	public List<RankVO> selectRank(){
 

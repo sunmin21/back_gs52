@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gs52.jwt.models.ERole;
 import com.gs52.jwt.models.Role;
-import com.gs52.jwt.models.UpdateUser;
 import com.gs52.jwt.models.User;
 import com.gs52.jwt.payload.request.LoginRequest;
 import com.gs52.jwt.payload.request.SignupRequest;
@@ -56,7 +55,6 @@ public class AuthController {
 
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-
 		System.out.println("#####signin#####");
 				// authenticataionManager.authenticate() 메소드로 검사하며 Security 내장 기능으로 수행함
 		Authentication authentication = authenticationManager.authenticate(
@@ -67,12 +65,12 @@ public class AuthController {
 		String jwt = jwtUtils.generateJwtToken(authentication);
 		
 		String tok=jwtUtils.getUserNameFromJwtToken(jwtUtils.generateJwtToken(authentication));
-		System.out.println("tok");
-		System.out.println(tok);
+//		System.out.println("tok");
+//		System.out.println(tok);
 		
 		
-		System.out.println("authentication.getAuthorities()");
-		System.out.println(authentication.getAuthorities());
+//		System.out.println("authentication.getAuthorities()");
+//		System.out.println(authentication.getAuthorities());
 		
 		
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();		
@@ -80,8 +78,8 @@ public class AuthController {
 				.map(item -> item.getAuthority())
 				.collect(Collectors.toList());
 
-		System.out.println("roles");
-		System.out.println(roles);
+		//System.out.println("roles");
+		//System.out.println(roles);
 
 		return ResponseEntity.ok(new JwtResponse(jwt, 
 												userDetails.getIndex(),
@@ -157,16 +155,23 @@ public class AuthController {
 //			strRoles.add("ROLE_ADMIN");
 //		}
 
-		System.out.println("???????????????????????????");
+		//System.out.println("???????????????????????????");
 		
 		
 		
-		//rank가 3일 때 관리자부여
-		if(signUpRequest.getRank()==3) {
-			System.out.println("getRank adminnnnnnnnnnnnnnnnnn");
+		//team이 인사팀일때 관리자부여
+		if(signUpRequest.getTeam()==2) {
+			System.out.println("getTeam adminnnnnnnnnnnnnnnnnn");
 			Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 			roles.add(adminRole);
+		}
+		//직책이 팀장일때 teamleader 부여
+		else if(signUpRequest.getPosition()==2) {
+			System.out.println("getPosition Team Leaderrrrrrrrrrrrrrrrrr");
+			Role teamLeaderRole = roleRepository.findByName(ERole.ROLE_TEAMLEADER)
+					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+			roles.add(teamLeaderRole);
 		}
 		else {
 			Role userRole = roleRepository.findByName(ERole.ROLE_USER)

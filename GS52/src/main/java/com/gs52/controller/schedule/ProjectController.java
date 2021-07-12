@@ -91,6 +91,13 @@ public class ProjectController {
 	 return pDAO.insertprojectTaskDetail(vo);
 	
 	  }
+	@PostMapping(value="/project/updateprojectTaskDetail")
+	public int updateprojectTaskDetail(@RequestBody ProjectTaskDetailVO vo) {
+
+   
+	 return pDAO.updateprojectTaskDetail(vo);
+	
+	  }
 	@PostMapping(value="/project/updateProjecTaskDetailSuccess")
 	public int updateProjecTaskDetailSuccess(@RequestBody ProjectTaskDetailVO vo) {
 

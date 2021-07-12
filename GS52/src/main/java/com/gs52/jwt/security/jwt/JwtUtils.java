@@ -46,7 +46,7 @@ public class JwtUtils {   // jwtUtils는 사용자가 선언해야함
 	public boolean validateJwtToken(String authToken) {
 		try {
 			Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
-			System.out.println("authToken : " + authToken);
+			//System.out.println("authToken : " + authToken);
 			
 			return true;
 			

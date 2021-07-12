@@ -14,6 +14,7 @@ import com.gs52.vo.emp.EmpVO;
 import com.gs52.vo.manager.PositionVO;
 import com.gs52.vo.manager.RankVO;
 import com.gs52.vo.manager.RegistVO;
+import com.gs52.vo.manager.TeamVO;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -24,12 +25,12 @@ public class RegistController {
 	public RegistDAO  rDAO = null;
 	
 
-	@PostMapping("/select_dept")
-	public List<RegistVO> selectDept() {
+	@PostMapping("/select_team")
+	public List<TeamVO> selectTeam() {
 
-		System.out.println("selectDept"); 
-		System.out.println(rDAO.selectDept()); 
-	return rDAO.selectDept();
+		System.out.println("selectTeam"); 
+		//System.out.println(rDAO.selectTeam()); 
+	return rDAO.selectTeam();
 	}
 	
 	@PostMapping("/select_rank")
