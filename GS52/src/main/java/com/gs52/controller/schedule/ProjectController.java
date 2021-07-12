@@ -84,11 +84,29 @@ public class ProjectController {
 	 pDAO.deleteProjectTodo(vo);
 	
 	  }
+	@PostMapping(value="/project/deleteProjecTaskAll")
+	public void deleteProjecTaskAll(@RequestBody ProjectTaskVO vo) {
+
+   
+	 pDAO.deleteProjecTaskAll(vo);
+	
+	  }
+	
+	
 	@PostMapping(value="/project/insertprojectTaskDetail")
 	public int insertprojectTaskDetail(@RequestBody ProjectTaskDetailVO vo) {
 
    
 	 return pDAO.insertprojectTaskDetail(vo);
+	
+	  }
+	
+	@PostMapping(value="/project/deleteProjectTaskDetail")
+	public int deleteProjectTaskDetail(@RequestBody ProjectTaskDetailVO vo) {
+
+       System.out.println(vo);
+       System.out.println("Detail");
+	 return pDAO.deleteProjectTaskDetail(vo);
 	
 	  }
 	@PostMapping(value="/project/updateprojectTaskDetail")

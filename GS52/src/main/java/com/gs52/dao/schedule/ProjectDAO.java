@@ -224,6 +224,8 @@ public class ProjectDAO {
 
 	public int deleteProjectTodo(ProjectTaskVO vo) {
 
+		
+		
 		return sqlFacotry.openSession().delete("Project.deleteProjectTodo", vo);
 		
 	}
@@ -242,6 +244,18 @@ public class ProjectDAO {
 	public int updateprojectTaskDetail(ProjectTaskDetailVO vo) {
 		// TODO Auto-generated method stub
 		return sqlFacotry.openSession().update("Project.updateprojectTaskDetail", vo);
+	}
+
+	public int deleteProjectTaskDetail(ProjectTaskDetailVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFacotry.openSession().delete("Project.deleteProjectTaskDetail", vo);
+		
+	}
+
+	public void deleteProjecTaskAll(ProjectTaskVO vo) {
+		// TODO Auto-generated method stub\
+	System.out.println("너부터타냐?@#!?@$");
+		sqlFacotry.openSession().delete("Project.deleteProjectTaskDetailAll", vo);
 	}
 
 	

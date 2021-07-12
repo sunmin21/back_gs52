@@ -114,7 +114,18 @@
 		DELETE FROM PROJECT_TASK WHERE PROJECT_TASK_INDEX =
 		#{PROJECT_TASK_INDEX}
 	</delete>
-
+	<delete id="deleteProjectTaskDetail"
+		parameterType="com.gs52.vo.schedule.ProjectTaskVO">
+		DELETE FROM PROJECT_TASK_DETAIL WHERE
+		PROJECT_TASK_DETAIL_INDEX =
+		#{PROJECT_TASK_DETAIL_INDEX} 
+	</delete>
+	<delete id="deleteProjectTaskDetailAll"
+		parameterType="com.gs52.vo.schedule.ProjectTaskVO">
+		DELETE FROM PROJECT_TASK_DETAIL WHERE
+		PROJECT_TASK_INDEX =
+		#{PROJECT_TASK_INDEX} 
+	</delete>
 	<select id="selectTask"
 		parameterType="com.gs52.vo.schedule.ProjectTaskVO"
 		resultType="com.gs52.vo.schedule.ProjectTaskVO">
@@ -127,16 +138,19 @@
 		SUM(PROJECT_TASK_PERCENT) PERCENT_SUM from PROJECT_TASK WHERE
 		PROJECT_INDEX=#{PROJECT_INDEX}) d,
 		PROJECT_TASK left join
-		(select PROJECT_TASK_INDEX, sum(PROJECT_TASK_DETAIL_PERCENT)
+		(select
+		PROJECT_TASK_INDEX, sum(PROJECT_TASK_DETAIL_PERCENT)
 		DETAIL_SUM from
 		PROJECT_TASK_DETAIL group by PROJECT_TASK_INDEX )su on
 		(su.PROJECT_TASK_INDEX =PROJECT_TASK.PROJECT_TASK_INDEX)
-		left join (select PROJECT_TASK_INDEX, sum(PROJECT_TASK_DETAIL_PERCENT)
+		left join
+		(select PROJECT_TASK_INDEX, sum(PROJECT_TASK_DETAIL_PERCENT)
 		DETAIL_SUM2 from
 		PROJECT_TASK_DETAIL where PROJECT_TASK_DETAIL_SUCCESS
 		=1 group by PROJECT_TASK_INDEX )su2 on(su2.PROJECT_TASK_INDEX
 		=PROJECT_TASK.PROJECT_TASK_INDEX)
 		WHERE PROJECT_INDEX=#{PROJECT_INDEX}
+		order by PROJECT_TASK.PROJECT_TASK_INDEX
 	</select>
 	<select id="selectTaskDetail"
 		parameterType="com.gs52.vo.schedule.ProjectTaskDetailVO"
@@ -158,7 +172,7 @@
 		wi.PROJECT_WITH_EMP_INDEX=de.PROJECT_TASK_DETAIL_EMP and
 		su.PROJECT_TASK_INDEX =de.PROJECT_TASK_INDEX
 		order by
-		de.PROJECT_TASK_INDEX
+		de.PROJECT_TASK_DETAIL_INDEX
 	</select>
 
 	<delete id="deleteEmpWith">
