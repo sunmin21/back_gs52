@@ -31,4 +31,13 @@
 		#{NOTICE_INDEX}
 	</update>
 	
+	<select id="selectCalendarAttend" parameterType="com.gs52.vo.schedule.ProjectListVO" 
+		resultType="com.gs52.vo.schedule.ProjectListVO">
+		SELECT *
+		FROM EMP, ATTEND, ATTEND_TYPE
+		WHERE EMP.EMP_INDEX = ATTEND.ATTEND_EMP_INDEX 
+		    AND ATTEND_TYPE.ATTEND_TYPE_INDEX = ATTEND.ATTEND_ATTEND_TYPE_INDEX
+		    AND EMP_INDEX = #{EMP_INDEX}
+	</select>
+	
 </mapper>
