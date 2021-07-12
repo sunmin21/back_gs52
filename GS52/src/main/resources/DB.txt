@@ -43,7 +43,7 @@ values (1,'워크룰3','08:00','18:00','02:00',2);
 
 -- 팀 형태
 insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'총무팀',3);
-insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'경리팀',3);
+insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (1,'인사팀',3);
 insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (2,'품질관리팀',1);
 insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (3,'생산1팀',3);
 insert into TEAM(TEAM_DEPT_INDEX, TEAM_NAME, TEAM_WORK_TYPE) values (3,'생산2팀',3);
@@ -870,6 +870,7 @@ insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(7, 6);
 INSERT INTO roles(name) VALUES('ROLE_USER');
 INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
 INSERT INTO roles(name) VALUES('ROLE_ADMIN');
+INSERT INTO roles(name) VALUES('ROLE_TEAMLEADER');
    
 -- security user roles
 INSERT INTO USER_ROLES(EMP_INDEX, ROLE_ID) VALUES (1, 3);

@@ -161,12 +161,19 @@ public class AuthController {
 		
 		
 		
-		//rank가 3일 때 관리자부여
-		if(signUpRequest.getRank()==3) {
-			System.out.println("getRank adminnnnnnnnnnnnnnnnnn");
+		//team이 인사팀일때 관리자부여
+		if(signUpRequest.getTeam()==2) {
+			System.out.println("getTeam adminnnnnnnnnnnnnnnnnn");
 			Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 			roles.add(adminRole);
+		}
+		//직책이 팀장일때 teamleader 부여
+		else if(signUpRequest.getPosition()==2) {
+			System.out.println("getPosition Team Leaderrrrrrrrrrrrrrrrrr");
+			Role teamLeaderRole = roleRepository.findByName(ERole.ROLE_TEAMLEADER)
+					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+			roles.add(teamLeaderRole);
 		}
 		else {
 			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
