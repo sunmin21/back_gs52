@@ -75,6 +75,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.authorizeRequests()
 			.antMatchers("/manager").access("hasRole('ADMIN')")
 			.antMatchers("/manager/**").access("hasRole('ADMIN')")
+			.antMatchers("/report/showOthersReport").access("hasRole('TEAMLEADER')")
+			.antMatchers("/report/showNextOthersReport").access("hasRole('TEAMLEADER')")
 			.antMatchers("/api/auth/**").permitAll()
 			.antMatchers("/**").permitAll()
 			//.antMatchers("/manager").access("hasRole('ROLE_ADMIN')")
