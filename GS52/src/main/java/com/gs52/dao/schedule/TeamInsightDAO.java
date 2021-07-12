@@ -20,10 +20,42 @@ public class TeamInsightDAO {
 	private SqlSessionFactory sqlFactory =null;
 	
 	public List<TeamInsightVO> selectList(int userid){
+	
+		 return sqlFactory.openSession().selectList("TeamInsight.selectTeamEntryDate",userid);
+		 
+	}
+	
+	public List<TeamInsightVO> selectProjectList(int userid){
+		 return sqlFactory.openSession().selectList("TeamInsight.selectTeamProject",userid);
+		 
+	}
+	
+	public List<TeamInsightVO> selectTodoList(int userid){
+		
+		 return sqlFactory.openSession().selectList("TeamInsight.selectTeamTodo",userid);
+		 
+	}
+	
+	public List<TeamInsightVO> selectBusinessList(int userid){
+			
+		 return sqlFactory.openSession().selectList("TeamInsight.selectTeamBusiness",userid);
+		 
+	}
+	
+	public List<TeamInsightVO> selectReportList(int userid){
 		System.out.println(userid);
 		System.out.println("나오나?");
 		
-		 return sqlFactory.openSession().selectList("TeamInsight.selectTeamEntryDate",userid);
+		 return sqlFactory.openSession().selectList("TeamInsight.selectTeamReport",userid);
+		 
+	}
+	
+	
+	public List<TeamInsightVO> selectWorkTimeList(int userid){
+		System.out.println(userid);
+		System.out.println("나오나?");
+		
+		 return sqlFactory.openSession().selectList("TeamInsight.selectTeamWorkTime",userid);
 		 
 	}
 	

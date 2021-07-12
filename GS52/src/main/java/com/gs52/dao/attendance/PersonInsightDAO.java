@@ -46,12 +46,18 @@ public class PersonInsightDAO {
 		 return sqlFactory.openSession().selectList("Insight.selectBusinessCount",userid);
 		 
 	}
-	
-	
+
 	public List<PersonInsightVO> selectReportCount(int userid){
 		
 		
 		 return sqlFactory.openSession().selectList("Insight.selectReportCount",userid);
+		 
+	}
+	
+	public List<PersonInsightVO> selectWorkTime(int userid){
+		
+		
+		 return sqlFactory.openSession().selectList("Insight.selectWorkTime",userid);
 		 
 	}
 	
