@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gs52.jwt.models.ERole;
 import com.gs52.jwt.models.Role;
-import com.gs52.jwt.models.UpdateUser;
 import com.gs52.jwt.models.User;
 import com.gs52.jwt.payload.request.LoginRequest;
 import com.gs52.jwt.payload.request.SignupRequest;
@@ -56,7 +55,6 @@ public class AuthController {
 
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-
 		System.out.println("#####signin#####");
 				// authenticataionManager.authenticate() 메소드로 검사하며 Security 내장 기능으로 수행함
 		Authentication authentication = authenticationManager.authenticate(
