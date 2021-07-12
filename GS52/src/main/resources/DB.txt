@@ -895,6 +895,3 @@ INSERT INTO USER_ROLES(EMP_INDEX, ROLE_ID) VALUES (12, 1);
 INSERT INTO USER_ROLES(EMP_INDEX, ROLE_ID) VALUES (13, 1);
 
 commit;
-
-select * from holiday;
-select * from project;
