@@ -64,8 +64,23 @@
 		values(#{PROJECT_INDEX}, #{PROJECT_TASK_SUCCESS},
 		#{PROJECT_TASK_PERCENT}, #{PROJECT_TASK_CONTENT})
 	</insert>
+	<insert id="insertprojectTaskDetail"
+		parameterType="com.gs52.vo.schedule.ProjectTaskDetailVO">
+		INSERT INTO PROJECT_TASK_DETAIL (PROJECT_TASK_INDEX, PROJECT_TASK_DETAIL_CONTENT, PROJECT_TASK_DETAIL_PERCENT, PROJECT_TASK_DETAIL_EMP,PROJECT_INDEX)
+		values(#{PROJECT_TASK_INDEX}, #{PROJECT_TASK_DETAIL_CONTENT},
+		#{PROJECT_TASK_DETAIL_PERCENT}, #{PROJECT_TASK_DETAIL_EMP},#{PROJECT_INDEX})
+	</insert>
+	<update id="updateProjecTaskDetailSuccess"
+		parameterType="com.gs52.vo.schedule.ProjectTaskDetailVO">
+		update PROJECT_TASK_DETAIL
+		SET PROJECT_TASK_DETAIL_SUCCESS = #{PROJECT_TASK_DETAIL_SUCCESS}
+		WHERE PROJECT_TASK_DETAIL_INDEX =
+		#{PROJECT_TASK_DETAIL_INDEX}
+
+	</update>
+	
 	<update id="updateProjectTodo"
-		parameterType="com.gs52.vo.schedule.ProjectWithVO">
+		parameterType="com.gs52.vo.schedule.ProjectTaskVO">
 		update PROJECT_TASK
 		SET PROJECT_TASK_PERCENT = #{PROJECT_TASK_PERCENT}, 
 		PROJECT_TASK_CONTENT=#{PROJECT_TASK_CONTENT}
@@ -73,6 +88,9 @@
 		#{PROJECT_TASK_INDEX}
 
 	</update>
+	<delete id="deleteProjectTodo" parameterType="com.gs52.vo.schedule.ProjectTaskVO">
+		DELETE FROM PROJECT_TASK WHERE PROJECT_TASK_INDEX = #{PROJECT_TASK_INDEX}
+	</delete>
 	
 	<select id="selectTask"
 		parameterType="com.gs52.vo.schedule.ProjectTaskVO"
@@ -94,7 +112,7 @@
 	<delete id="deleteFile" parameterType="String">
 		DELETE FROM PROJECT_FILE WHERE PROJECT_FILE_PATH = #{deleteFile}
 	</delete>
-
+  
 
 	<select id="selectOneProject"
 		parameterType="com.gs52.vo.schedule.ProjectVO"

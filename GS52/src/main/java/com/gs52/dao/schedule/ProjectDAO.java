@@ -222,6 +222,23 @@ public class ProjectDAO {
 		return sqlFacotry.openSession().selectList("Project.selectTaskDetail", vo);
 	}
 
+	public int deleteProjectTodo(ProjectTaskVO vo) {
+
+		return sqlFacotry.openSession().delete("Project.deleteProjectTodo", vo);
+		
+	}
+
+	public int insertprojectTaskDetail(ProjectTaskDetailVO vo) {
+		// TODO Auto-generated method stub
+		
+		return sqlFacotry.openSession().insert("Project.insertprojectTaskDetail", vo);
+	}
+
+	public int updateProjecTaskDetailSuccess(ProjectTaskDetailVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFacotry.openSession().update("Project.updateProjecTaskDetailSuccess", vo);
+	}
+
 	
 
 }

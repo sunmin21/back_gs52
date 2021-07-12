@@ -73,10 +73,29 @@ public class ProjectController {
 	@PostMapping(value="/project/updateProjectTodo")
 	public void updateProjectTodo(@RequestBody ProjectTaskVO vo) {
 
-   System.out.println("너왔냐");
-   System.out.println("업데이트가된거가?");
-   System.out.println(vo);
+
 	 pDAO.updateProjectTodo(vo);
+	
+	  }
+	@PostMapping(value="/project/deleteProjectTask")
+	public void deleteProjectTask(@RequestBody ProjectTaskVO vo) {
+
+   
+	 pDAO.deleteProjectTodo(vo);
+	
+	  }
+	@PostMapping(value="/project/insertprojectTaskDetail")
+	public int insertprojectTaskDetail(@RequestBody ProjectTaskDetailVO vo) {
+
+   
+	 return pDAO.insertprojectTaskDetail(vo);
+	
+	  }
+	@PostMapping(value="/project/updateProjecTaskDetailSuccess")
+	public int updateProjecTaskDetailSuccess(@RequestBody ProjectTaskDetailVO vo) {
+
+   
+	 return pDAO.updateProjecTaskDetailSuccess(vo);
 	
 	  }
 	
