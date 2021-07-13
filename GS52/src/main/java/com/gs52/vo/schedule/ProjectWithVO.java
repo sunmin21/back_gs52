@@ -25,7 +25,7 @@ public class ProjectWithVO {
     int PROJECT_WITH_OKAY=0 ;
     String PROJECT_WITH_REJECT= null;
     int  PROJECT_WITH_LEADER= 0;
-    
+    long PROJECT_WITH_SCORE =0L;
     String 	PROJECT_WITH_COLOR =null;
     String EMP_NAME= null;
     String TEAM_NAME= null;

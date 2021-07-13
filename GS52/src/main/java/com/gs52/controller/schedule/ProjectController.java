@@ -123,6 +123,13 @@ public class ProjectController {
 	 return pDAO.updateProjecTaskDetailSuccess(vo);
 	
 	  }
+	@PostMapping(value="/project/updateProjectWithScore")
+	public int updateProjectWithScore(@RequestBody ProjectWithVO vo) {
+
+   
+	 return pDAO.updateProjectWithScore(vo);
+	
+	  }
 	
 	@PostMapping(value="/project/selectTask")
 	public List<ProjectTaskVO>  selectTodo(@RequestBody ProjectTaskVO vo) {

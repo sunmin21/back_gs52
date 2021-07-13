@@ -36,6 +36,27 @@
 	
 	</select>
 	
+	<select id="selectPersonInsight" resultType="com.gs52.vo.attendance.PersonInsightVO">
+	select  EMP_INDEX,EMP_NAME,EMP_ENTRY_DATE, EMP_ENTRY_COUNT, EMP_PROJECT_COUNT, EMP_TODO_COUNT, EMP_BUSINESS_COUNT, EMP_REPORT_COUNT, EMP_WORK_TIME
+from (select  EMP_ENTRY_DATE,emp_index EMP_INDEXS,emp_name EMP_NAME from emp ) A ,
+(select   TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD')) - TO_DATE(emp_entry_date) as EMP_ENTRY_COUNT, emp_index EMP_INDEXS from emp ) B,
+(select NVL(EMP_PROJECT_COUNT,'0') as EMP_PROJECT_COUNT, emp_index EMP_INDEXS from emp left join (select distinct  project_with_emp_index,count(*) as EMP_PROJECT_COUNT from project_with group by project_with_emp_index) P on ( emp.EMP_INDEX=P.project_with_EMP_INDEX) ) C,
+(select NVL(EMP_TODO_COUNT,'0') as EMP_TODO_COUNT, emp_index EMP_INDEXS from emp left join (select distinct  todo_re_emp_index,count(*) as EMP_TODO_COUNT from todo_re where todo_done=2 group by todo_re_emp_index) T on (emp.EMP_INDEX=T.todo_re_emp_index)) D,
+(select NVL(EMP_BUSINESS_COUNT,'0') as EMP_BUSINESS_COUNT, emp_index  EMP_INDEXS from emp left join (select distinct  vacation_emp_index,count(*) as EMP_BUSINESS_COUNT from vacation where  vacation_attend_info_index between  5 and 6 group by vacation_emp_index) B on (emp.EMP_INDEX=B.vacation_emp_index))E,
+(select NVL(EMP_REPORT_COUNT,0) as EMP_REPORT_COUNT ,emp_index EMP_INDEXS from emp left join (select distinct  report_emp_index, count(*) as EMP_REPORT_COUNT from report group by report_emp_index) R on (emp.EMP_INDEX=R.report_emp_index))F,
+(select NVL(EMP_WORK_TIME,0) as EMP_WORK_TIME, emp_index EMP_INDEX from emp left join (select distinct  attend_emp_index,NVL(sum(attend_total) / DECODE(count(*), 0, NULL, count(*)), 0) as EMP_WORK_TIME  from attend where attend_attend_type_index 	<![CDATA[ < ]]> 4 group by attend_emp_index) W on (emp.EMP_INDEX=W.attend_EMP_INDEX))G
+where A.emp_indexs =B.emp_indexs and B.emp_indexs=C.emp_indexs and C.emp_indexs = D.emp_indexs and D.emp_indexs=E.emp_indexs and E.emp_indexs = F.emp_indexs and F.emp_indexs = G.emp_index
+	</select>
+
+	
+<!-- 	select (select TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD')) - TO_DATE(emp_entry_date)from emp where emp_index =#{EMP_INDEX}) EMP_ENTRY_COUNT,
+(select EMP_ENTRY_DATE from emp where emp_index = #{EMP_INDEX}) EMP_ENTRY_DATE,
+(select count(project_with_emp_index) as EMP_PROJECT_COUNT from project_with where project_WITH_emp_index = #{EMP_INDEX}) EMP_PROJECT_COUNT,
+(select count(*) as EMP_TODO_COUNT from todo_re where todo_done=2 and todo_RE_EMP_INDEX=#{EMP_INDEX} ) EMP_TODO_COUNT,
+(select count(*) as emp_business_count from vacation where vacation_emp_index = #{EMP_INDEX} and vacation_attend_info_index between  5 and 6)EMP_BUSINESS_COUNT,
+(select count(*) as emp_report_count from report where report_emp_index = #{EMP_INDEX}) emp_report_count,
+(select NVL(sum(attend_total) / DECODE(count(*), 0, NULL, count(*)), 0) as EMP_WORK_TIME  from attend where attend_emp_index = #{EMP_INDEX} and attend_attend_type_index <![CDATA[ < ]]> 4)EMP_WORK_TIME
+from dual -->
 	
 	
 </mapper>

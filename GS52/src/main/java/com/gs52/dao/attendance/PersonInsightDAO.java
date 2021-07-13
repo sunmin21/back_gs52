@@ -60,6 +60,14 @@ public class PersonInsightDAO {
 	}
 	
 	
+	public List<PersonInsightVO> selectPersonInsight(){
+		
+		System.out.println("오나?");
+		 return sqlFactory.openSession().selectList("Insight.selectPersonInsight");
+		 
+	}
+	
+	
 
 	
 	

@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor //모든 속성을 파라미터로 갖는 생성자
 public class TeamInsightVO {
 
+	private String EMP_NAME = null;
 	private int EMP_INDEX = 0;
 	private int EMP_TEAM_INDEX = 0;
+	
 	/*------------------------------selectEmpEntryDate----------------------------*/
 	
 	private String TEAM_ENTRY_COUNT = null;
