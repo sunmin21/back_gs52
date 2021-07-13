@@ -28,6 +28,7 @@ import com.gs52.jwt.models.Role;
 import com.gs52.jwt.models.User;
 import com.gs52.jwt.payload.request.LoginRequest;
 import com.gs52.jwt.payload.request.SignupRequest;
+import com.gs52.jwt.payload.request.UpdatePwdRequest;
 import com.gs52.jwt.payload.request.UpdateRequest;
 import com.gs52.jwt.payload.response.JwtResponse;
 import com.gs52.jwt.payload.response.MessageResponse;
@@ -241,10 +242,32 @@ public class AuthController {
 	@PostMapping("/updateEmpImg")
 	public int updateEmpImg(@ModelAttribute ProjectVO vo) {
 		
-	   
-
 		return eDAO.updateEmpImg(vo);
 	}
+	
+	@PostMapping("/update_Pwd")
+	public ResponseEntity<?> pwdCheck(@Valid @RequestBody UpdatePwdRequest updatePwd) {
+		System.out.println("#####checkPwd#####");
+		System.out.println(updatePwd.getUsername());
+		System.out.println(updatePwd.getPassword());
+		System.out.println(updatePwd.getNewPassword());
+				// authenticataionManager.authenticate() 메소드로 검사하며 Security 내장 기능으로 수행함
+		Authentication authentication = authenticationManager.authenticate(
+				// UserDetailsService를 호출하는 것은 AuthTokenFilter와 동일하다 볼 수 있으며, 비밀번호 검사를 하는 추가 작업인 PasswordEncoder도 추가로 호출함
+				new UsernamePasswordAuthenticationToken(updatePwd.getUsername(), updatePwd.getPassword()));
+		
+		System.out.println(authentication);
+		
+		Optional<User> user = userRepository.findByUsername(updatePwd.getUsername());
+
+		user.ifPresent(selectUser->{
+			selectUser.setPassword(encoder.encode(updatePwd.getNewPassword()));
+			userRepository.save(selectUser);
+		});
+		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+	}
+	
+	
 	@PostMapping("/update_user")
 	public ResponseEntity<?> updateUser(@Valid @RequestBody UpdateRequest update) {
 		System.out.println("update_user");
