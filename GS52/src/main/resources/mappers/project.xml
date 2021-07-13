@@ -109,6 +109,18 @@
 		#{PROJECT_TASK_INDEX}
 
 	</update>
+	<update id="updateProjectWithScore"
+		parameterType="com.gs52.vo.schedule.ProjectWithVO">
+		update PROJECT_WITH
+		SET PROJECT_WITH_SCORE =
+		#{PROJECT_WITH_SCORE}
+		WHERE PROJECT_WITH_EMP_INDEX =
+		#{PROJECT_WITH_EMP_INDEX} and
+		PROJECT_INDEX=#{PROJECT_INDEX}
+		
+
+	</update>
+	
 	<delete id="deleteProjectTodo"
 		parameterType="com.gs52.vo.schedule.ProjectTaskVO">
 		DELETE FROM PROJECT_TASK WHERE PROJECT_TASK_INDEX =
