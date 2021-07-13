@@ -68,5 +68,11 @@ public class PersonInsightController {
 	return piDAO.selectWorkTime(vo.getEMP_INDEX());
 	}
 	
+	@PostMapping("/selectpersoninsight")
+	public List<PersonInsightVO> PersonInsightBoard(@RequestBody PersonInsightVO vo) { 
+		System.out.println("오나" + piDAO.selectPersonInsight(vo.getEMP_INDEX()));
+	return piDAO.selectPersonInsight(vo.getEMP_INDEX());
+	}
+	
 	
 }

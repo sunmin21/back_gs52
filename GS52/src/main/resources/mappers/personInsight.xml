@@ -36,6 +36,19 @@
 	
 	</select>
 	
+	<select id="selectPersonInsight" resultType="com.gs52.vo.attendance.PersonInsightVO">
+	select (select TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD')) - TO_DATE(emp_entry_date)from emp where emp_index =#{EMP_INDEX}) EMP_ENTRY_COUNT,
+(select EMP_ENTRY_DATE from emp where emp_index = #{EMP_INDEX}) EMP_ENTRY_DATE,
+(select count(project_with_emp_index) as EMP_PROJECT_COUNT from project_with where project_WITH_emp_index = #{EMP_INDEX}) EMP_PROJECT_COUNT,
+(select count(*) as EMP_TODO_COUNT from todo_re where todo_done=2 and todo_RE_EMP_INDEX=#{EMP_INDEX} ) EMP_TODO_COUNT,
+(select count(*) as emp_business_count from vacation where vacation_emp_index = #{EMP_INDEX} and vacation_attend_info_index between  5 and 6)EMP_BUSINESS_COUNT,
+(select count(*) as emp_report_count from report where report_emp_index = #{EMP_INDEX}) EMP_REPORT_COUNT,
+(select NVL(sum(attend_total) / DECODE(count(*), 0, NULL, count(*)), 0) as EMP_WORK_TIME  from attend where attend_emp_index = #{EMP_INDEX} and attend_attend_type_index <![CDATA[ < ]]> 4)EMP_WORK_TIME
+from dual
+	</select>
+	
+	
+	
 	
 	
 </mapper>
