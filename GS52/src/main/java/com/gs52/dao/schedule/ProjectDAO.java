@@ -261,6 +261,7 @@ public class ProjectDAO {
 	public int updateProjectWithScore(ProjectWithVO vo) {
 		// TODO Auto-generated method stub
 //		return 1;
+		
 		return sqlFacotry.openSession().update("Project.updateProjectWithScore", vo);
 	}
 

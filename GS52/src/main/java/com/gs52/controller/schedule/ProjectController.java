@@ -126,7 +126,8 @@ public class ProjectController {
 	@PostMapping(value="/project/updateProjectWithScore")
 	public int updateProjectWithScore(@RequestBody ProjectWithVO vo) {
 
-   
+     System.out.println(vo);
+     System.out.println("여기안타냐???????????????????????????");
 	 return pDAO.updateProjectWithScore(vo);
 	
 	  }
