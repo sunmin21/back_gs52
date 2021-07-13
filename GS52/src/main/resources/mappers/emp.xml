@@ -22,5 +22,14 @@
     
     </select>
 
+<update id="updateEmpImgFile" parameterType="com.gs52.vo.schedule.ProjectVO">
+
+
+		UPDATE EMP SET EMP_IMG_PATH
+		= #{EMP_IMG_PATH}, EMP_IMG_NAME=#{EMP_IMG_NAME}
+		WHERE EMP_ID =
+		#{EMP_ID}
+	</update>
+
 
 </mapper>

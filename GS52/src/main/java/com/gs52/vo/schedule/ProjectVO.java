@@ -17,7 +17,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor // 모든 속성을 파라미터로 갖는 생성자
 
 public class ProjectVO {
-
+    long EMP_ID =0L;
+    
+    String EMP_IMG_PATH = null;
+    String EMP_IMG_NAME =null;
+    
 	long PROJECT_INDEX = 0L;
 
 	String PROJECT_TITLE = null;

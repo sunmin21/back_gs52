@@ -16,11 +16,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gs52.dao.emp.empDAO;
 import com.gs52.jwt.models.ERole;
 import com.gs52.jwt.models.Role;
 import com.gs52.jwt.models.User;
@@ -33,6 +35,7 @@ import com.gs52.jwt.repository.RoleRepository;
 import com.gs52.jwt.repository.UserRepository;
 import com.gs52.jwt.security.jwt.JwtUtils;
 import com.gs52.jwt.security.services.UserDetailsImpl;
+import com.gs52.vo.schedule.ProjectVO;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -52,7 +55,9 @@ public class AuthController {
 
 	@Autowired
 	JwtUtils jwtUtils;
-
+    
+	@Autowired
+	empDAO eDAO;
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 		System.out.println("#####signin#####");
@@ -228,12 +233,18 @@ public class AuthController {
 
 		user.setRoles(roles);
 		userRepository.save(user);
-
+       
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 	}
 	
 	
-	
+	@PostMapping("/updateEmpImg")
+	public int updateEmpImg(@ModelAttribute ProjectVO vo) {
+		
+	   
+
+		return eDAO.updateEmpImg(vo);
+	}
 	@PostMapping("/update_user")
 	public ResponseEntity<?> updateUser(@Valid @RequestBody UpdateRequest update) {
 		System.out.println("update_user");

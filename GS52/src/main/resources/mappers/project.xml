@@ -203,6 +203,7 @@
 		and emp.EMP_TEAM_INDEX =
 		team.TEAM_INDEX
 		and team.TEAM_DEPT_INDEX = dept.dept_index
+		order by PROJECT_WITH.PROJECT_WITH_INDEX
 	</select>
 	<select id="selectOneProjectFile"
 		parameterType="com.gs52.vo.schedule.ProjectVO"
