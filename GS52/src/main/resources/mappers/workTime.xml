@@ -4,6 +4,11 @@
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="WorkTime">
+	<select id="Select_Emp_Image" parameterType="map" resultType="com.gs52.vo.emp.EmpVO">
+		select EMP_IMG_PATH from EMP where EMP_INDEX=${EMP_INDEX}
+	</select>
+
+
 	<select id="Select_Work_Rule" parameterType="map" resultType="com.gs52.vo.main.WorkTimeVO">
 		select * from WORK_RULE W, TEAM T where W.WORK_RULE_INDEX=T.TEAM_WORK_TYPE and T.TEAM_INDEX=${EMP_TEAM_INDEX}
 	</select>

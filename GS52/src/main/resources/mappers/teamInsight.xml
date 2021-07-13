@@ -57,7 +57,7 @@
 	<select id="selectTeamList" 
 		resultType="com.gs52.vo.schedule.TeamInsightVO">
 		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
-		select EMP_INDEX from emp where emp_team_index = #{EMP_TEAM_INDEX}
+		select EMP_INDEX,EMP_NAME from emp where emp_team_index = #{EMP_TEAM_INDEX}
 	</select>
 	
 	

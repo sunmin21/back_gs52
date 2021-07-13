@@ -70,8 +70,8 @@ public class PersonInsightController {
 	
 	@PostMapping("/selectpersoninsight")
 	public List<PersonInsightVO> PersonInsightBoard(@RequestBody PersonInsightVO vo) { 
-		System.out.println("오나" + piDAO.selectPersonInsight(vo.getEMP_INDEX()));
-	return piDAO.selectPersonInsight(vo.getEMP_INDEX());
+		System.out.println("오나" + piDAO.selectPersonInsight());
+	return piDAO.selectPersonInsight();
 	}
 	
 	

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gs52.dao.main.WorkTimeDAO;
+import com.gs52.vo.emp.EmpVO;
 import com.gs52.vo.main.BreakTimeVO;
 import com.gs52.vo.main.WorkTimeVO;
 
@@ -21,6 +22,12 @@ public class WorkTimeController {
 	@Autowired
 	public WorkTimeDAO  wDAO = null;
 	
+	@PostMapping("/empImg")
+	public List<EmpVO> empImg(@RequestBody EmpVO vo){
+		System.out.println("empImg");
+		return wDAO.SelectEmpImg(vo);
+	}
+
 	@PostMapping("/workRule")
 	public List<WorkTimeVO> WorkRule(@RequestBody WorkTimeVO vo){
 		System.out.println("WorkRule");

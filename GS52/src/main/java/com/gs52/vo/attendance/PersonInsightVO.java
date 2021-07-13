@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class PersonInsightVO {
 
 	private int EMP_INDEX = 0;
+	private String EMP_NAME = null;
 	/*------------------------------selectEmpEntryDate----------------------------*/
 	private String EMP_ENTRY_DATE = null;
 	private String EMP_ENTRY_COUNT = null;
