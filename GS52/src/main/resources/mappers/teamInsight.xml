@@ -10,7 +10,7 @@
 	<select id="selectTeamEntryDate" 
 		resultType="com.gs52.vo.schedule.TeamInsightVO">
 		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
-			 select NVL(avg(TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD')) - TO_DATE(emp_entry_date)),'0') as team_entry_count  from emp where emp_team_index=#{EMP_TEAM_INDEX}
+			 select ROUND(NVL(avg(TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD')) - TO_DATE(emp_entry_date)),'0'),2) as team_entry_count  from emp where emp_team_index=#{EMP_TEAM_INDEX}
 	</select>
 	
 	<select id="selectTeamProject" 
