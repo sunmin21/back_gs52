@@ -20,17 +20,11 @@
 	
 	<update id="update_inform" parameterType="com.gs52.vo.emp.EmpVO">
 		update EMP set 
-					EMP_NAME=#{EMP_NAME},
-					EMP_EMAIL=#{EMP_EMAIL},
-					EMP_ADDRESS=#{EMP_ADDRESS},
-					EMP_PHONE=#{EMP_PHONE},
-					EMP_IMG_PATH=#{EMP_IMG_PATH},
-		where EMP_INDEX=#{EMP_INDEX} and 
-					EMP_NAME is not null and
-					EMP_EMAIL is not null and
-					EMP_ADDRESS is not null and
-					EMP_PHONE is not null and
-					EMP_IMG_PATH is not null
+			            EMP_NAME= nvl(#{EMP_NAME, jdbcType=VARCHAR },EMP.EMP_NAME),
+						EMP_EMAIL=nvl(#{EMP_EMAIL, jdbcType=VARCHAR },EMP.EMP_EMAIL),
+						EMP_ADDRESS=nvl(#{EMP_ADDRESS, jdbcType=VARCHAR },EMP.EMP_ADDRESS),
+						EMP_PHONE=nvl(#{EMP_PHONE, jdbcType=VARCHAR },EMP.EMP_PHONE)
+		where EMP_INDEX=#{EMP_INDEX}
 	</update>
 	
 </mapper>

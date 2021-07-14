@@ -27,5 +27,13 @@ public class MyPageController {
 		System.out.println(vo);
 		return mDAO.selectEmp(vo);
 	}
+	
+	@PostMapping("/updateInform")
+	public int updateInform(@RequestBody EmpVO vo){
+		System.out.println("updateInform");
+		System.out.println("updateInform");
+		System.out.println(vo);
+		return mDAO.updateInform(vo);
+	}
 
 }

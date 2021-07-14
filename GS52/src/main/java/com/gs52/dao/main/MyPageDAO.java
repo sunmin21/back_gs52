@@ -21,5 +21,9 @@ public class MyPageDAO {
 		System.out.println("DAO");
 		return sqlFacotry.openSession().selectList("myPage.select_Emp",vo);
 	}
+	public int updateInform(@RequestBody EmpVO vo) {
+		System.out.println("DAO");
+		return sqlFacotry.openSession().update("myPage.update_inform",vo);
+	}
 
 }
