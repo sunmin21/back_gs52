@@ -10,8 +10,10 @@ import lombok.NoArgsConstructor;
 public class TeamInsightVO {
 
 	private String EMP_NAME = null;
+	private String RANK_NAME = null;
 	private int EMP_INDEX = 0;
 	private int EMP_TEAM_INDEX = 0;
+	
 	
 	/*------------------------------selectEmpEntryDate----------------------------*/
 	
