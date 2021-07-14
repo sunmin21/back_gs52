@@ -104,8 +104,6 @@ public class ProjectController {
 	@PostMapping(value="/project/deleteProjectTaskDetail")
 	public int deleteProjectTaskDetail(@RequestBody ProjectTaskDetailVO vo) {
 
-       System.out.println(vo);
-       System.out.println("Detail");
 	 return pDAO.deleteProjectTaskDetail(vo);
 	
 	  }
@@ -126,11 +124,19 @@ public class ProjectController {
 	@PostMapping(value="/project/updateProjectWithScore")
 	public int updateProjectWithScore(@RequestBody ProjectWithVO vo) {
 
-     System.out.println(vo);
-     System.out.println("여기안타냐???????????????????????????");
 	 return pDAO.updateProjectWithScore(vo);
 	
 	  }
+	@PostMapping(value="/project/selectProjectWithScore")
+	public float selectProjectWithScore(@RequestBody ProjectWithVO vo) {
+        
+		System.out.println(vo );
+		System.out.println("너야");
+		System.out.println(pDAO.selectProjectWithScore(vo));
+	 return pDAO.selectProjectWithScore(vo);
+	
+	  }
+	
 	
 	@PostMapping(value="/project/selectTask")
 	public List<ProjectTaskVO>  selectTodo(@RequestBody ProjectTaskVO vo) {
@@ -156,7 +162,7 @@ public class ProjectController {
 	@PostMapping(value="/project/selectOneProjectWith")
 	public List<ProjectWithVO>  selectOneProjectWith(@RequestBody ProjectWithVO vo) {
       
-
+       
 		return pDAO.selectOneProjectWith(vo);
 	}
 	

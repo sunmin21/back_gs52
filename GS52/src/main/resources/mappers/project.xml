@@ -121,6 +121,12 @@
 
 	</update>
 	
+	<select id="selectProjectWithScore"
+		parameterType="com.gs52.vo.schedule.ProjectWithVO" resultType="float">
+		SELECT
+		PROJECT_WITH_SCORE FROM PROJECT_WITH WHERE PROJECT_WITH_EMP_INDEX =#{PROJECT_WITH_EMP_INDEX} and PROJECT_INDEX=#{PROJECT_INDEX}
+	</select>
+	
 	<delete id="deleteProjectTodo"
 		parameterType="com.gs52.vo.schedule.ProjectTaskVO">
 		DELETE FROM PROJECT_TASK WHERE PROJECT_TASK_INDEX =

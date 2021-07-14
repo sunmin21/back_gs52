@@ -72,7 +72,7 @@ public class ProjectDAO {
 			sqlFacotry.openSession().insert("Project.insertEmpWith", vo);
 		}
 
-		System.out.println(vo.getFILES());
+	
 		// 첨부파일 추가
 		if (vo.getFILES() != null) {
 
@@ -90,8 +90,7 @@ public class ProjectDAO {
                    
 				Path savePath = Paths.get(saveName);
 				String ReactPath = folderPath.replace(File.separator,"/"); 
-				System.out.println(ReactPath );
-				System.out.println("/upload/"+ReactPath+ "/" + uuid + "_" + fileName);
+			
 				vo.setPROJECT_FILE_ORIGIN_NAME(fileName);
 				vo.setPROJECT_FILE_NAME(uuid + "_" + fileName);
 				vo.setPROJECT_FILE_PATH(saveName);
@@ -158,7 +157,7 @@ public class ProjectDAO {
 				String saveName = uploadPath + File.separator + folderPath + File.separator + uuid + "_" + fileName;
                
 				Path savePath = Paths.get(saveName);
-				System.out.println(savePath);
+				
 				vo.setPROJECT_FILE_ORIGIN_NAME(fileName);
 				vo.setPROJECT_FILE_NAME(uuid + "_" + fileName);
 				vo.setPROJECT_FILE_PATH(saveName);
@@ -263,6 +262,11 @@ public class ProjectDAO {
 //		return 1;
 		
 		return sqlFacotry.openSession().update("Project.updateProjectWithScore", vo);
+	}
+
+	public float selectProjectWithScore(ProjectWithVO vo) {
+		// TODO Auto-generated method stub
+		return sqlFacotry.openSession().selectOne("Project.selectProjectWithScore", vo);
 	}
 
 	
