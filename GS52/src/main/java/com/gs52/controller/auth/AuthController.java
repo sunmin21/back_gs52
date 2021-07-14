@@ -1,5 +1,8 @@
 package com.gs52.controller.auth;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -112,14 +115,12 @@ public class AuthController {
 	// AuthTokenFilter가 Request로 넘어온 정보를 가지고 로그인 여부를 검사했으면,
 	// Authentication Manager에서는 입력된 Request 정보가 올바른지를 검사하는 것으로 볼 수 있음
 	@PostMapping("/signup")
-	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) throws ParseException {
 		System.out.println("signup111111111111111111111111111");
 		
 
 		System.out.println("signup222222222222222222222222222222");
-		System.out.println(signUpRequest.getRole());
-		System.out.println(signUpRequest.getId());
-		System.out.println(signUpRequest.getUsername());
+		System.out.println(signUpRequest.getEntry_date());
 		
 		//중복 아이디 가입 불가능
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
@@ -138,7 +139,10 @@ public class AuthController {
 					.body(new MessageResponse("Error: Email is already in use!"));
 		}
 		
+
 		
+		CalculVacation cal = new CalculVacation();
+		long vac = cal.CalculVacation(signUpRequest.getEntry_date());
 
 		// Create new user's account
 		User user = new User(
@@ -149,7 +153,8 @@ public class AuthController {
 							 signUpRequest.getPosition(),
 							 signUpRequest.getRank(),
 							 signUpRequest.getTeam(),
-							 signUpRequest.getFirst_login());
+							 signUpRequest.getFirst_login(),
+							 vac);
 
 		Set<String> strRoles = signUpRequest.getRole();
 		Set<Role> roles = new HashSet<>();
@@ -163,7 +168,7 @@ public class AuthController {
 
 		//System.out.println("???????????????????????????");
 		
-		
+
 		
 		//team이 인사팀일때 관리자부여
 		if(signUpRequest.getTeam()==2) {

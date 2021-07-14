@@ -1,5 +1,8 @@
 package com.gs52.controller.manager;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +63,7 @@ public class RegistController {
 	
 	
 	@PostMapping("/regist")
-	public int insertConf(@RequestBody RegistVO vo) {
+	public int insertConf(@RequestBody RegistVO vo) throws ParseException {
 		System.out.println("insertConf"); 
 		System.out.println(vo);
 		return rDAO.insertRegist(vo);

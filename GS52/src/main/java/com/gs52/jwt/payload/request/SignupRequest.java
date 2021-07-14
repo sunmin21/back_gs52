@@ -36,6 +36,8 @@ public class SignupRequest {  // 회원가입 시 웹페이지에서 입력한 R
 
 	private Long first_login;
 	
+	private String entry_date;
+	
   
     public String getUsername() {
         return username;
@@ -108,5 +110,14 @@ public class SignupRequest {  // 회원가입 시 웹페이지에서 입력한 R
 	public void setFirst_login(Long first_login) {
 		this.first_login = first_login;
 	}
+
+	public String getEntry_date() {
+		return entry_date;
+	}
+
+	public void setEntry_date(String entry_date) {
+		this.entry_date = entry_date;
+	}
     
+	
 }
