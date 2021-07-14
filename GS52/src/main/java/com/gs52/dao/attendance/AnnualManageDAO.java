@@ -17,6 +17,12 @@ public class AnnualManageDAO {
 	@Autowired 
 	private SqlSessionFactory sqlFactory =null;
 	
+	
+	public List<AnnualManageVO> selectNear(int userid){
+		 return sqlFactory.openSession().selectList("Annual.selectNear",userid);
+		 
+	}
+	
 	public List<AnnualManageVO> selectList(int userid){
 		 return sqlFactory.openSession().selectList("Annual.selectAnnual",userid);
 		 

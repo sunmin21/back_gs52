@@ -27,6 +27,11 @@ public class AnnualManageController {
 		this.aDAO = aDAO;
 	}
 	
+	@PostMapping("/near")
+	public List<AnnualManageVO> NearBoard(@RequestBody AnnualManageVO vo) {
+	System.out.println(aDAO.selectNear(vo.getVACATION_EMP_INDEX()));
+	return aDAO.selectNear(vo.getVACATION_EMP_INDEX());
+	}
 	
 	@PostMapping("/select")
 	public List<AnnualManageVO> TestBoard(@RequestBody AnnualManageVO vo) {
