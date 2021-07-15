@@ -121,16 +121,17 @@ public class ProjectDAO {
 //		int projectIndex = sqlFacotry.openSession().selectOne("Project.selectIndex", vo);
 //		vo.setPROJECT_INDEX(projectIndex);
 		sqlFacotry.openSession().delete("Project.deleteEmpWith", vo);
+		int index =0;
 		for (int emp : vo.getPROJECT_WITH_EMP_INDEXS()) {
 
-			vo.setPROJECT_WITH_EMP_INDEX(emp);
-			if (vo.getPROJECT_WITH_LEADER() == emp) {
-				vo.setPROJECT_WITH_OKAY(1);
-			} else {
-				vo.setPROJECT_WITH_OKAY(0);
-
-			}
-
+			System.out.println(vo);
+			
+			System.out.println(index);
+	      vo.setPROJECT_WITH_EMP_INDEX(emp);
+		   vo.setPROJECT_WITH_OKAY(vo.getPROJECT_WITH_OKAYS().get(index++));
+				
+			
+	
 			sqlFacotry.openSession().insert("Project.insertEmpWith", vo);
 		}
 
