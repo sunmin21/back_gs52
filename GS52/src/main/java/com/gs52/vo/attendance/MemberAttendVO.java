@@ -18,6 +18,8 @@ public class MemberAttendVO {
 	private int ATTEND_EMP_INDEX = 0;
 	private String ATTEND_DATE = null;
 	private String ATTEND_TYPE_NAME = null;
+	private String ATTEND_START = null;
+	private String ATTEND_END = null;
 	
 	
    

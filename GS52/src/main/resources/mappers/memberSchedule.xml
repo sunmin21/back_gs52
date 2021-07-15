@@ -22,7 +22,7 @@
 	
 	<select id="selectAttend" resultType="com.gs52.vo.attendance.MemberAttendVO">
 	select EMP_INDEX,EMP_ID, EMP_NAME,EMP_TEAM_INDEX ,ATTEND_INDEX,ATTEND_EMP_INDEX
-,ATTEND_DATE, ATTEND_TYPE_NAME from emp, attend, attend_type where emp.emp_index = attend.attend_emp_index
+,ATTEND_DATE, ATTEND_TYPE_NAME,  ATTEND_START, ATTEND_END from emp, attend, attend_type where emp.emp_index = attend.attend_emp_index
 and attend_type.attend_type_index = attend.attend_attend_type_index
 	</select>
 	
