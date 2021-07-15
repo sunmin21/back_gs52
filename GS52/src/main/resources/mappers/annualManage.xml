@@ -10,7 +10,7 @@
 	<select id="selectNear" parameterType="int"
 		resultType="com.gs52.vo.attendance.AnnualManageVO">
 		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
-		select vacation_date  from (select vacation_date from vacation where vacation_EMP_INDEX = #{EMP_INDEX} and vacation_date <![CDATA[ > ]]> sysdate order by vacation_date ) where rownum <![CDATA[ < ]]> 2
+		select vacation_date  from (select vacation_date from vacation where vacation_EMP_INDEX = #{EMP_INDEX} and vacation_attend_info_index <![CDATA[ > ]]> 6 and vacation_date <![CDATA[ > ]]> sysdate order by vacation_date ) where rownum <![CDATA[ < ]]> 2
 	</select>
 
 

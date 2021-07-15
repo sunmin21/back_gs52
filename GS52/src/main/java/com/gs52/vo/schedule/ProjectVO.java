@@ -34,6 +34,7 @@ public class ProjectVO {
 	
 	//팀원 추가
 	List<Integer> PROJECT_WITH_EMP_INDEXS = new ArrayList<Integer>();
+	List<Integer> PROJECT_WITH_OKAYS = new ArrayList<Integer>();
 	long PROJECT_WITH_INDEX =0L;
 	long PROJECT_WITH_EMP_INDEX= 0L;
     int PROJECT_WITH_OKAY=0 ;
