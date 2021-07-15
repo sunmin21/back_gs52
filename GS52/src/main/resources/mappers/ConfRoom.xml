@@ -28,7 +28,27 @@
    </insert>
    
       <select id="Select_book" parameterType="map" resultType="com.gs52.vo.schedule.ConfRoomBookVO">
-      select * from CONF
+      select * from conf
+      <!-- select c.CONF_INDEX, c.CONF_TITLE, 
+      				c.CONF_ROOM_INDEX, c.CONF_DATE, 
+      				c.CONF_START, c.CONF_END, 
+      				c.CONF_EMP_INDEX_SEND, 
+      				cr.CONF_RE_INDEX, cr.CONF_RE_EMP_INDEX, 
+      				cr.CONF_RE_CONF_INDEX 
+      				
+      				from CONF c, CONF_RE cr 
+      				where c.CONF_INDEX = cr.CONF_RE_CONF_INDEX -->
+           
+          <!--   select c.CONF_INDEX, c.CONF_TITLE, 
+      				c.CONF_ROOM_INDEX, c.CONF_DATE, 
+      				c.CONF_START, c.CONF_END, 
+      				c.CONF_EMP_INDEX_SEND, 
+      				cr.CONF_RE_INDEX, cr.CONF_RE_EMP_INDEX, 
+      				cr.CONF_RE_CONF_INDEX 
+      				
+      				from CONF c, CONF_RE cr 
+      				where c.CONF_INDEX = cr.CONF_RE_CONF_INDEX -->
+      
    </select>
       
       <select id="Select_room" parameterType="map" resultType="com.gs52.vo.schedule.ConfRoomVO">
@@ -60,5 +80,24 @@
 	<delete id="Delete_conf" >
    		delete from CONF where CONF_INDEX = #{CONF_INDEX}
 	</delete>
+	
+      <select id="Select_confOne" parameterType="com.gs52.vo.schedule.ConfRoomBookVO" resultType="com.gs52.vo.schedule.ConfRoomBookVO">
+					select c.CONF_TITLE, 
+     				c.CONF_ROOM_INDEX, c.CONF_DATE, 
+     				c.CONF_START, c.CONF_END, 
+     				c.CONF_EMP_INDEX_SEND, 
+     				cr.CONF_RE_INDEX, cr.CONF_RE_EMP_INDEX, 
+     				cr.CONF_RE_CONF_INDEX,
+                    e.EMP_NAME, 
+                    c_ro.CONF_ROOM_FLOOR, c_ro.CONF_ROOM_NUMBER
+                    
+     				from CONF c, CONF_RE cr , EMP e, CONF_ROOM c_ro
+     				
+     				where c.CONF_INDEX = cr.CONF_RE_CONF_INDEX and 
+     						c.CONF_INDEX=#{CONF_INDEX, jdbcType=VARCHAR } and 
+     						cr.CONF_RE_EMP_INDEX=e.EMP_INDEX and 
+     						c_ro.CONF_ROOM_INDEX=c.CONF_ROOM_INDEX
+      
+   </select>
 </mapper>
 

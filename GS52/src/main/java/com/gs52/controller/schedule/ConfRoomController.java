@@ -49,13 +49,12 @@ public class ConfRoomController {
 	
 	}
 	
-	@PostMapping("/select")
-	public List<ConfRoomBookVO> selectConf() {
+	@PostMapping("/select_confList")
+	public List<ConfRoomBookVO> selectConfList() {
 
 		System.out.println("select Conf");
-	System.out.println(tDAO.selectList()); 
 	
-	return tDAO.selectList();
+	return tDAO.selectConfList();
 	}
 	
 	
@@ -86,4 +85,15 @@ public class ConfRoomController {
 		System.out.println(vo.getCONF_INDEX());
 		return tDAO.deleteConf(vo.getCONF_INDEX());
 	}
+	
+	@PostMapping("select_confOne")
+	public List<ConfRoomBookVO> selectConfOne(@RequestBody ConfRoomBookVO vo) {
+
+		System.out.println("selectConfOne");
+
+		System.out.println(vo);
+		System.out.println(tDAO.selectConfOne(vo));
+	return tDAO.selectConfOne(vo);
+	}
+	
 }

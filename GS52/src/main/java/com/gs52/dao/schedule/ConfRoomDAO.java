@@ -37,7 +37,7 @@ public class ConfRoomDAO {
 	
 	
 	
-	public List<ConfRoomBookVO> selectList(){
+	public List<ConfRoomBookVO> selectConfList(){
 		 return sqlFacotry.openSession().selectList("ConfRoom.Select_book");
 	}
 	
@@ -65,4 +65,9 @@ public class ConfRoomDAO {
 		System.out.println("2");
 		return sqlFacotry.openSession().delete("ConfRoom.Delete_conf", l);
 	}
+	
+	public List<ConfRoomBookVO> selectConfOne(@RequestBody ConfRoomBookVO vo){
+		 return sqlFacotry.openSession().selectList("ConfRoom.Select_confOne",vo);
+	}
+	
 }

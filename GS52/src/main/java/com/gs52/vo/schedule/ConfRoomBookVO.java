@@ -19,6 +19,15 @@ public class ConfRoomBookVO {
 	private String CONF_END=null;
 	private long CONF_EMP_INDEX_SEND=0L;
 	
+	
+	private long CONF_RE_INDEX=0L;
+	private long CONF_RE_EMP_INDEX=0L;
+	private long CONF_RE_CONF_INDEX=0L; 
+	
+	private String EMP_NAME=null;
+	private long CONF_ROOM_FLOOR=0L;
+	private long CONF_ROOM_NUMBER=0L;
+	
 	private List<Map> person;
 	
 }
