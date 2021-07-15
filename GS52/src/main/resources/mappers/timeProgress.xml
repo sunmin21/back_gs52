@@ -18,5 +18,15 @@
 
 	</select>
 
+	<select id="Select_vacation" parameterType="map" resultType="com.gs52.vo.main.WorkTimeVO">
+	<!-- Attend_attend_type_index 7:연차, 8:오전반차, 9:오후반차-->
+		select ATTEND_ATTEND_TYPE_INDEX 
+		from ATTEND
+		where ATTEND_EMP_INDEX=${EMP_INDEX} and 
+				ATTEND_DATE between trunc(sysdate, 'iw') and 
+				trunc(sysdate , 'iw')+6
+	</select>
+	
+	
 
 </mapper>

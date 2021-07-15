@@ -33,4 +33,11 @@ public class TimeProgressController {
 		
 		return tDAO.WeekTotal(vo);
 	}
+	@PostMapping("/selectVacation")
+	public List<WorkTimeVO> SelectVacation(@RequestBody WorkTimeVO vo) {
+		System.out.println("SelectVacation");
+		System.out.println(vo);
+		
+		return tDAO.SelectVacation(vo);
+	}
 }

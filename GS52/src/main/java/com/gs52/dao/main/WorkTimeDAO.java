@@ -60,10 +60,10 @@ public class WorkTimeDAO {
 		System.out.println(vo.getBREAK_INDEX());
 		return sqlFacotry.openSession().insert("WorkTime.Insert_BreakStart",vo);
 	}
-	
+
 	public int BreakEnd(@RequestBody BreakTimeVO vo) {
 		return sqlFacotry.openSession().update("WorkTime.Update_BreakEnd",vo);
 	}
-
+	
 	
 }

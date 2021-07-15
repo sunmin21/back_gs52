@@ -25,4 +25,9 @@ public class TimeProgressDAO {
 	public List<WorkTimeVO> WeekTotal(@RequestBody WorkTimeVO vo) {
 		return sqlFacotry.openSession().selectList("TimeProgress.Select_Week",vo);
 	}
+
+	public List<WorkTimeVO> SelectVacation(@RequestBody WorkTimeVO vo) {
+		return sqlFacotry.openSession().selectList("TimeProgress.Select_vacation",vo);
+	}
+
 }
