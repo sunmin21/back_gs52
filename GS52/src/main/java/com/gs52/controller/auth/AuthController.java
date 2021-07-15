@@ -17,6 +17,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -292,4 +293,55 @@ public class AuthController {
 
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 	}
+	
+	
+	
+	@PostMapping("/update_userInfo")
+	public ResponseEntity<?> updateUserInfo() {
+		System.out.println("#####updateUserInfo#####");
+				// authenticataionManager.authenticate() 메소드로 검사하며 Security 내장 기능으로 수행함
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		System.out.println("111111111111111111111111111111111");
+		System.out.println(authentication);
+		//User user = (User)authentication.getPrincipal();
+
+		System.out.println("22222222222222222222222222222");
+		
+		//SecurityContextHolder.getContext().setAuthentication(authentication);
+		String jwt = jwtUtils.generateJwtToken(authentication);
+
+		System.out.println("333333333333333333333333333333");
+		//String tok=jwtUtils.getUserNameFromJwtToken(jwtUtils.generateJwtToken(authentication));
+		
+		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();		
+		List<String> roles = userDetails.getAuthorities().stream()
+				.map(item -> item.getAuthority())
+				.collect(Collectors.toList());
+		
+		
+//		System.out.println("authentication.getAuthorities()");
+//		System.out.println(authentication.getAuthorities());
+
+		
+//		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//		if(principal instanceof UserDetails) {
+//			String username = ((UserDetails)principal).getUsername();
+//			String password = ((UserDetails)principal).getPassword()
+//
+//		}else {
+//			String username = principal.toString();
+//		}
+		return ResponseEntity.ok(new JwtResponse(jwt, 
+												userDetails.getIndex(),
+												 userDetails.getUsername(), 
+												 userDetails.getId(), 
+												 userDetails.getEmail(),
+												 userDetails.getFirst_login(), 
+												 userDetails.getRank(),
+												 userDetails.getPosition(),
+												 userDetails.getTeam(),
+												 userDetails.getVacation(),
+												 roles));
+	}
+	
 }
