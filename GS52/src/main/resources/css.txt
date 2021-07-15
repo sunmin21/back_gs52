@@ -1,0 +1,57 @@
+07/14
+◉ alert
+	coreui CAlert 사용
+	color : warning 
+	
+	<CModalBody style={{textAlign:"center", margin:"10px 20px -20px 20px"}}>
+		<CAlert color="warning" show={visible} fade onShowChange={setVisible}>
+			{alertContents}
+		</CAlert>
+	</CModalBody>  
+	저는 이렇게넣었습니다 (component > task > report에서 확인해주세요)
+	
+	똑같이는 아니지만 모달창에서 조금 더 간격있는 모양으로 조정해주세요
+
+◉ button (수락, 거절 등)
+	https://ant.design/components/button/
+	
+	antd의 primary버튼 사용
+	수락 : <Button type="primary">primary</Button>
+	거절 : <Button type="primary" danger>
+	      Primary
+	    </Button>
+	추가, 취소, 삭제도 변경해야할지.. 고민즁
+
+◉ badge
+	https://ant.design/components/badge/#header
+	
+	antd의 status 뱃지 사용
+	대기중 > waring
+	수락 > success
+	거절 > error
+
+07/15
+◉ title
+	container에서 각자 페이지의 제목을 달아주세요
+	
+	const contentStyle = {
+        backgroundColor: "#3e4b54",
+        width: "400px",
+        textAlign: "center",
+        boxShadow: "5px 5px 5px gray",
+        padding: "8px",
+        borderRadius: "50px",
+    };
+      선언해주시고
+	가장 상단부에 추가, 삭제 등 버튼이 있다면 <CRow><CCol> 아래에, 
+	없다면 가장 상단에 놓아주세요
+	
+   <div style={contentStyle}>
+	   <h4 style={{ color: "white", marginTop: "5px" }}>
+	     	해당 페이지의 이름 (ex. 나의 연차 사용 조회하기 등)
+	   </h4>
+   </div>
+   <CCardBody>
+   ....
+   .... 	
+	* 가장 부모가되는 content를 담는 곳은 이미 여유있게 설정 돼 있지만 제목 설정 후 이상해지면 말해주세요 
