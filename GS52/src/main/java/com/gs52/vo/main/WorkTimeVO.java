@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class WorkTimeVO {
 	long EMP_TEAM_INDEX = 0L;
 	long EMP_INDEX = 0L;
-	
+
 	//ATTEND TABLE
 	long ATTEND_INDEX = 0L;
 	long ATTEND_EMP_INDEX = 0L;						//FK
@@ -21,16 +21,16 @@ public class WorkTimeVO {
 	long ATTEND_ATTEND_TYPE_INDEX=0L;				//FK
 	long ATTEND_TOTAL=0L;
 
-	
+
 	//ATTEND_TYPE TABLE
 	long ATTEND_TYPE_INDEX=0L;
 
-	
+
 	//WORK TYPE
 	long WORK_TYPE_INDEX=0L;
 	String WORK_TYPE_NAME=null;
-	
-	
+
+
 	//WORK_RULE
 	long WORK_RULE_INDEX=0L;
 	long WORK_RULE_WORK_TYPE_INDEX=0L;				//FK
@@ -38,8 +38,8 @@ public class WorkTimeVO {
 	String WORK_RULE_END=null;
 	String WORK_RULE_BREAK=null;
 	String WORK_RULE_AVG_HOUR=null;
-	
+
 	//user team index 가져올수 있음.
 	//team 테이블에서 index 찾아서 그 행의 근무유형 값을 가져오면 됨.
-	
+
 }
