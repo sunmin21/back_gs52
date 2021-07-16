@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor //모든 속성을 파라미터로 갖는 생성자
 public class WorkTimeVO {
 	long EMP_TEAM_INDEX = 0L;
+	long EMP_INDEX = 0L;
 	
 	//ATTEND TABLE
 	long ATTEND_INDEX = 0L;
