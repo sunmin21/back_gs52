@@ -77,7 +77,18 @@ public class WorkTimeController {
 		System.out.println(vo.getBREAK_INDEX());
 		return vo.getBREAK_INDEX();
 	}
+	
+	@PostMapping("/breakEnd")
+	public long BreakEnd(@RequestBody BreakTimeVO vo) {
 
+		System.out.println("BreakEnd");
+		System.out.println(vo);
+		int value=wDAO.BreakEnd(vo);
+		System.out.println("value");
+		System.out.println(vo.getBREAK_TIME());
+		long time=vo.getBREAK_TIME();
+		return vo.getBREAK_TIME();
+	}
 
 	
 }

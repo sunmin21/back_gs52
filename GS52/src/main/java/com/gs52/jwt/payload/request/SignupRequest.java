@@ -38,6 +38,8 @@ public class SignupRequest {  // 회원가입 시 웹페이지에서 입력한 R
 	
 	private String entry_date;
 	
+	private Long vacation;
+	
   
     public String getUsername() {
         return username;
@@ -117,6 +119,14 @@ public class SignupRequest {  // 회원가입 시 웹페이지에서 입력한 R
 
 	public void setEntry_date(String entry_date) {
 		this.entry_date = entry_date;
+	}
+
+	public Long getVacation() {
+		return vacation;
+	}
+
+	public void setVacation(Long vacation) {
+		this.vacation = vacation;
 	}
     
 	

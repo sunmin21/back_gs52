@@ -155,7 +155,8 @@ public class AuthController {
 							 signUpRequest.getRank(),
 							 signUpRequest.getTeam(),
 							 signUpRequest.getFirst_login(),
-							 vac);
+							 vac,
+							 signUpRequest.getEntry_date());
 
 		Set<String> strRoles = signUpRequest.getRole();
 		Set<Role> roles = new HashSet<>();

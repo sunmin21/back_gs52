@@ -94,7 +94,7 @@ public class User {
 	public User() {
 	}
 
-	public User(String id, String username, String email, String password, Long position, Long rank, Long team, Long first_login, long vacation) {
+	public User(String id, String username, String email, String password, Long position, Long rank, Long team, Long first_login, long vacation, String emp_entry_date) {
 		System.out.println("id");
 		System.out.println(id);
 		this.id = id;
@@ -107,6 +107,7 @@ public class User {
 		this.team =team;
 		this.first_login=first_login;
 		this.vacation=vacation;
+		this.entry_date=emp_entry_date;
 	}
 
 	public Long getIndex() {
