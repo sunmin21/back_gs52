@@ -62,6 +62,8 @@ public class WorkTimeDAO {
 	}
 
 	public int BreakEnd(@RequestBody BreakTimeVO vo) {
+		System.out.println("BreakEnd");
+		System.out.println(vo);
 		return sqlFacotry.openSession().update("WorkTime.Update_BreakEnd",vo);
 	}
 	
