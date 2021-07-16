@@ -47,7 +47,7 @@
 	</update>
 		
 	<update id="Update_BreakTime" parameterType="com.gs52.vo.main.WorkTimeVO">
-		update ATTEND set ATTEND_BREAK=ATTEND_BREAK+#{ATTEND_BREAK}
+		update ATTEND set ATTEND_BREAK=NVL(ATTEND_BREAK, 0)+#{ATTEND_BREAK}
 		where ATTEND_EMP_INDEX=#{ATTEND_EMP_INDEX} and ATTEND_DATE=#{ATTEND_DATE}
 	</update>
 		
