@@ -23,6 +23,9 @@ public class AnnualManageDAO {
 		 
 	}
 	
+	
+	
+	
 	public List<AnnualManageVO> selectList(int userid){
 		 return sqlFactory.openSession().selectList("Annual.selectAnnual",userid);
 		 

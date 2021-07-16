@@ -32,6 +32,8 @@ public class AnnualManageController {
 	System.out.println(aDAO.selectNear(vo.getVACATION_EMP_INDEX()));
 	return aDAO.selectNear(vo.getVACATION_EMP_INDEX());
 	}
+
+
 	
 	@PostMapping("/select")
 	public List<AnnualManageVO> TestBoard(@RequestBody AnnualManageVO vo) {

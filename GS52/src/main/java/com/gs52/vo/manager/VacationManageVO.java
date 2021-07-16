@@ -21,6 +21,7 @@ public class VacationManageVO {
 	private int EMP_ID = 0;
 	private int COUNT =0;
 	private String EMP_NAME=null;
+	private int EMP_TEAM_INDEX=0;
 	
 
 
