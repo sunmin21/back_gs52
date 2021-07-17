@@ -20,6 +20,7 @@ public class WorkTimeVO {
 	String ATTEND_END=null;
 	long ATTEND_ATTEND_TYPE_INDEX=0L;				//FK
 	long ATTEND_TOTAL=0L;
+	long ATTEND_TYPE_COUNT=0L;
 
 
 	//ATTEND_TYPE TABLE
