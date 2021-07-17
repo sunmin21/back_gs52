@@ -6,10 +6,10 @@
 <mapper namespace="myPage">
 	<select id="select_Emp" parameterType="com.gs52.vo.schedule.ProjectVO" resultType="com.gs52.vo.emp.EmpVO">
 				select EMP_INDEX,EMP_ID, EMP_NAME, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH,
-		EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, RANK_NAME,
+		EMP_ENTRY_DATE, EMP_RANK_INDEX, RANK_NAME,
 		DEPT_NAME,EMP_TEAM_INDEX,TEAM_NAME,
-		EMP_POSITION_INDEX,POSITION_NAME, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER,
-		EMP_VACATION, EMP_SALARY
+		EMP_POSITION_INDEX,POSITION_NAME,
+		EMP_VACATION
 		e from emp,rank,dept,team,position
 		where emp.emp_rank_index = rank.rank_index and
 		emp.emp_team_index = team.team_index and

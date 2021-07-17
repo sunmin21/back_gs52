@@ -73,20 +73,10 @@ public class User {
 	private String phone;
 	@Column(name="emp_birth")
 	private String birth;
-	@Column(name="emp_photo")
-	private String photo;
 	@Column(name="emp_entry_date")
 	private String entry_date;
-	@Column(name="emp_bank_name")
-	private String bank_name;
-	@Column(name="emp_account_number")
-	private Integer account_number;
 	@Column(name="emp_vacation")
 	private long vacation;
-//	@Column(name="emp_salary")
-//	private String salary;
-//	
-
 	
 	
 	
@@ -215,36 +205,12 @@ public class User {
 		this.birth = birth;
 	}
 
-	public String getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-
 	public String getEntry_date() {
 		return entry_date;
 	}
 
 	public void setEntry_date(String entry_date) {
 		this.entry_date = entry_date;
-	}
-
-	public String getBank_name() {
-		return bank_name;
-	}
-
-	public void setBank_name(String bank_name) {
-		this.bank_name = bank_name;
-	}
-
-	public long getAccount_number() {
-		return account_number;
-	}
-
-	public void setAccount_number(Integer account_number) {
-		this.account_number = account_number;
 	}
 
 	public long getVacation() {

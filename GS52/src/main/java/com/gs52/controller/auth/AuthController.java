@@ -172,13 +172,7 @@ public class AuthController {
 		
 
 		
-		//team이 인사팀일때 관리자부여
-		if(signUpRequest.getTeam()==2) {
-			System.out.println("getTeam adminnnnnnnnnnnnnnnnnn");
-			Role adminRole = roleRepository.findByName(ERole.ROLE_HR)
-					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-			roles.add(adminRole);
-		}
+
 		//직책이 팀장일때 teamleader 부여
 		if(signUpRequest.getPosition()==2) {
 			System.out.println("getPosition Team Leaderrrrrrrrrrrrrrrrrr");
