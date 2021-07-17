@@ -713,23 +713,23 @@ VALUES ('2022 협업 프로그램', '이것은 [2022 협업 프로그램] 프로
 -- (프로젝트 미승인(관리자))
 INSERT INTO PROJECT (PROJECT_TITLE, PROJECT_CONTENT,
 PROJECT_START, PROJECT_END, PROJECT_OKAY, PROJECT_DATE)
-VALUES ('승인이 필요합니다 1', '이것은 [승인이 필요합니다 1] 프로젝트에 대한 설명입니다',
+VALUES ('차세대 프로젝트 TT', '이것은 [차세대 프로젝트 TT] 프로젝트에 대한 설명입니다',
 '2021-10-01', '2022-04-01', 0, '2021-07-01');
 INSERT INTO PROJECT (PROJECT_TITLE, PROJECT_CONTENT,
 PROJECT_START, PROJECT_END, PROJECT_OKAY, PROJECT_DATE)
-VALUES ('승인이 필요합니다 2', '이것은 [승인이 필요합니다 2] 프로젝트에 대한 설명입니다',
+VALUES ('신입사원 캠프', '이것은 [신입사원 캠프] 프로젝트에 대한 설명입니다',
 '2021-11-01', '2022-10-31', 0, '2021-07-07');
 INSERT INTO PROJECT (PROJECT_TITLE, PROJECT_CONTENT,
 PROJECT_START, PROJECT_END, PROJECT_OKAY, PROJECT_DATE)
-VALUES ('승인이 필요합니다 3', '이것은 [승인이 필요합니다 3] 프로젝트에 대한 설명입니다',
+VALUES ('하반기 워크숍 기획', '이것은 [하반기 워크숍 기획] 프로젝트에 대한 설명입니다',
 '2022-01-01', '2022-04-01', 0, '2021-06-01');
 INSERT INTO PROJECT (PROJECT_TITLE, PROJECT_CONTENT,
 PROJECT_START, PROJECT_END, PROJECT_OKAY, PROJECT_DATE)
-VALUES ('승인이 필요합니다 4', '이것은 [승인이 필요합니다 4] 프로젝트에 대한 설명입니다',
+VALUES ('서울경기 입주시설', '이것은 [서울경기 입주시설] 프로젝트에 대한 설명입니다',
 '2021-12-28', '2022-02-01', 0, '2021-06-28');
 INSERT INTO PROJECT (PROJECT_TITLE, PROJECT_CONTENT,
 PROJECT_START, PROJECT_END, PROJECT_OKAY, PROJECT_DATE)
-VALUES ('승인이 필요합니다 5', '이것은 [승인이 필요합니다 5] 프로젝트에 대한 설명입니다',
+VALUES ('부산경남 입주시설', '이것은 [부산경남 입주시설] 프로젝트에 대한 설명입니다',
 '2021-11-29', '2022-07-01', 0, '2021-07-03');
 
 Insert into PROJECT (PROJECT_TITLE,PROJECT_CONTENT,PROJECT_START,PROJECT_END,PROJECT_OKAY,PROJECT_DATE)
