@@ -139,21 +139,25 @@ insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(1,'2021-07-19',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(1,'2021-07-20',7);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(1,'2021-07-20','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(1,'2021-07-21','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(1,'2021-07-22','09:00','18:00',1);
 
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(2,'2021-07-05',6);
+
+
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(2,'2021-07-06',6);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(2,'2021-07-07',6);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(2,'2021-07-08',6);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(2,'2021-07-09',6);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(2,'2021-07-19',7);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(2,'2021-07-20',7);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(2,'2021-07-20','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(2,'2021-07-21','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(2,'2021-07-22','09:00','18:00',1);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
 values(2,'2021-08-01','14:00','18:00',3);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
@@ -162,35 +166,52 @@ values(2,'2021-08-02','09:00','18:00',1);
 
 
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(3,'2021-07-05',7);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(3,'2021-07-06',7);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(3,'2021-07-21',7);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(3,'2021-07-22',7);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(3,'2021-07-20','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(3,'2021-07-21','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(3,'2021-07-22','09:00','18:00',1);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(3,'2021-07-23',7);
 
 
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(4,'2021-07-01',7);
+values(4,'2021-07-08',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(4,'2021-07-02',7);
+values(4,'2021-07-09',7);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(4,'2021-07-20','10:00','19:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
+values(4,'2021-07-21',7);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
+values(4,'2021-07-22',7);
 
 
+
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(5,'2021-07-20','12:00','18:00',3);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(5,'2021-07-21','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(5,'2021-07-22','09:00','18:00',1);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(5,'2021-07-26',7);
+values(5,'2021-07-12',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(5,'2021-07-27',7);
+values(5,'2021-07-13',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(5,'2021-07-28',7);
+values(5,'2021-07-14',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(5,'2021-07-29',7);
+values(5,'2021-07-15',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(5,'2021-07-30',7);
+values(5,'2021-07-16',7);
 
 
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(6,'2021-07-20','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(6,'2021-07-21','09:00','18:00',1);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(6,'2021-07-22',5);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
@@ -199,26 +220,40 @@ values(6,'2021-07-23',5);
 
 
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(7,'2021-07-05',7);
+values(7,'2021-07-07',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(7,'2021-07-06',7);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(7,'2021-07-20','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(7,'2021-07-21','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(7,'2021-07-22','11:00','18:00',3);
 
 
 
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(8,'2021-07-30',7);
+values(8,'2021-06-14',6);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(8,'2021-06-25',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(8,'2021-06-28',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(8,'2021-06-30',7);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(8,'2021-07-20','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(8,'2021-07-21','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(8,'2021-07-22','09:00','18:00',1);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(8,'2021-07-29',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(8,'2021-08-25',7);
+values(8,'2021-07-30',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(8,'2021-06-14',6);
+values(8,'2021-08-25',7);
+
+
 
 
 
@@ -229,8 +264,6 @@ insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(9,'2021-06-11',5);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(9,'2021-06-14',6);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(9,'2021-07-05',6);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(9,'2021-07-06',6);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
@@ -249,11 +282,24 @@ insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(9,'2021-07-15',7);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(9,'2021-07-16',7);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(9,'2021-07-20','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(9,'2021-07-21','10:00','18:00',3);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(9,'2021-07-22','09:00','18:00',1);
 
 
 
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(11,'2021-07-05',5);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(10,'2021-07-20','10:00','19:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(10,'2021-07-21','10:00','19:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(10,'2021-07-22','10:00','19:00',1);
+
+
+
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(11,'2021-07-06',5);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
@@ -262,20 +308,38 @@ insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(11,'2021-07-08',5);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(11,'2021-07-09',5);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(11,'2021-07-20','10:00','19:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(11,'2021-07-21','10:00','19:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(11,'2021-07-22','10:00','19:00',1);
 
 
 
-
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(12,'2021-07-20','10:00','19:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(12,'2021-07-21','10:00','19:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(12,'2021-07-22','10:00','19:00',1);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(12,'2021-07-26',5);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(12,'2021-07-27',5);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
-values(12,'2021-07-28',5);
-insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(12,'2021-07-29',5);
 insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE, ATTEND_ATTEND_TYPE_INDEX)
 values(12,'2021-07-30',5);
+
+
+
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(13,'2021-07-20','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(13,'2021-07-21','09:00','18:00',1);
+insert into attend(ATTEND_EMP_INDEX, ATTEND_DATE,ATTEND_START, ATTEND_END, ATTEND_ATTEND_TYPE_INDEX)
+values(13,'2021-07-22','09:00','18:00',1);
 
 
 -- 연차관리(VACATION) --연차신청 페이지
@@ -304,11 +368,7 @@ values(2,'2021-07-12',6,'서울 출장',0);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(2,'2021-07-08',6,'사상 외근',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(2,'2021-07-09',6,'사상 외근',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(2,'2021-07-19',7,'여름휴가',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(2,'2021-07-20',7,'여름휴가',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(2,'2021-02-19',7,'휴가',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
@@ -344,23 +404,19 @@ values(3,'2021-07-05',7,'휴가',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(3,'2021-07-06',7,'휴가',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(3,'2021-07-21',6,'출장',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(3,'2021-07-22',6,'출장',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(3,'2021-07-23',6,'출장',1);
 
 
+
+
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(4,'2020-07-01',7,'출장',1);
+values(4,'2020-07-08',7,'연차',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(4,'2020-07-02',7,'출장',1);
+values(4,'2020-07-09',7,'연차',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(4,'2021-07-07',6,'출장',1);
+values(4,'2020-07-21',7,'연차',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(4,'2020-07-08',6,'출장',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(4,'2020-07-09',6,'출장',1);
+values(4,'2020-07-22',7,'연차',1);
 
 
 
@@ -375,18 +431,18 @@ values(5,'2020-03-22',7,'휴가',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(5,'2020-02-22',7,'휴가',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(5,'2021-07-26',7,'출장',1);
+values(5,'2021-07-12',7,'출장',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(5,'2021-07-27',7,'병원',1);
+values(5,'2021-07-13',7,'병원',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(5,'2021-07-28',7,'삼전',1);
+values(5,'2021-07-14',7,'삼전',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(5,'2021-07-29',7,'병원',1);
+values(5,'2021-07-15',7,'병원',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(5,'2021-07-30',7,'병원',1);
+values(5,'2021-07-16',7,'병원',1);
 
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(7,'2021-07-05',7,'휴가',1);
+values(7,'2021-07-07',7,'휴가',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(7,'2021-07-06',7,'휴가',1);
 
@@ -397,8 +453,6 @@ insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_IND
 values(9,'2021-06-11',5,'강촌',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(9,'2021-06-14',6,'춘천',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(9,'2021-07-05',6,'춘천',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(9,'2021-07-06',6,'춘천',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
@@ -419,8 +473,7 @@ insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_IND
 values(9,'2021-07-16',7,'여름휴가',1);
 
 
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(11,'2021-07-05',5,'사상점 인원부족',1);
+
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(11,'2021-07-06',5,'사상점 인원부족',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
@@ -438,11 +491,10 @@ values(12,'2021-07-26',5,'명지점 제출임박',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(12,'2021-07-27',5,'명지점 제출임박',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
-values(12,'2021-07-28',5,'명지점 제출임박',1);
-insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(12,'2021-07-29',5,'명지점 제출임박',1);
 insert into vacation(VACATION_EMP_INDEX, VACATION_DATE, VACATION_ATTEND_INFO_INDEX, VACATION_CONTENTS, VACATION_STATUS)
 values(12,'2021-07-30',5,'명지점 제출임박',1);
+
 
 
 
@@ -888,9 +940,15 @@ values('인사 회의', 3, '2021-07-08', '10:00', '10:30', 2);
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send)
 values('운영 회의', 1, '2021-07-09', '09:00', '11:00', 1);
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send)
-values('경과 보고', 1, '2021/07/09', '11:00', '12:00', 2);
+values('경과 보고', 1, '2021-07-09', '11:00', '12:00', 2);
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send)
 values('인사 회의', 1, '2021-07-09', '14:00', '16:00', 3);
+insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send)
+values('개발 회의', 1, '2021-07-20', '10:00', '13:00', 2);
+insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send)
+values('이해조정 회의', 2, '2021-07-21', '12:00', '13:30', 5);
+insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send)
+values('정보전달 회의', 3, '2021-07-22', '14:00', '16:00', 10);
 
 -- 회의 참석자
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(3, 1);
@@ -903,6 +961,16 @@ insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(4, 5);
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(5, 5);
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(6, 6);
 insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(7, 6);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(2, 7);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(3, 7);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(6, 7);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(5, 8);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(9, 8);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(13, 8);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(10, 9);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(11, 9);
+insert into conf_re( conf_re_emp_index, conf_re_conf_index) values(12, 9);
+
 
 -- security role table data
 INSERT INTO roles(name) VALUES('ROLE_USER');
