@@ -11,7 +11,7 @@
 		resultType="com.gs52.vo.attendance.AnnualManageVO">
 		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
 		
-		select attend_date  from (select attend_date from attend where attend_EMP_INDEX = #{EMP_INDEX} and attend_attend_type_index <![CDATA[ > ]]> 6 and attend_date <![CDATA[ > ]]> sysdate order by attend_date ) where rownum <![CDATA[ < ]]> 2
+		select attend_date as VACATION_DATE  from (select attend_date from attend where attend_EMP_INDEX = #{EMP_INDEX} and attend_attend_type_index <![CDATA[ > ]]> 6 and attend_date <![CDATA[ > ]]> sysdate order by attend_date ) where rownum <![CDATA[ < ]]> 2
 	</select>
 	
 	
