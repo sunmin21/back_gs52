@@ -17,7 +17,7 @@
 	
 	<select id="selectEmp" resultType="com.gs52.vo.attendance.MemberEmpVO">
 		<!-- SELECT * from VACATION where vacation_emp_id = #{userid} -->
-		select EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_PHOTO, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_BANK_NAME, EMP_ACCOUNT_NUMBER, EMP_VACATION, EMP_SALARY from emp  
+		select EMP_INDEX, EMP_ID, EMP_NAME, EMP_PWD, EMP_EMAIL, EMP_ADDRESS, EMP_PHONE, EMP_BIRTH, EMP_ENTRY_DATE, EMP_RANK_INDEX, EMP_TEAM_INDEX, EMP_POSITION_INDEX, EMP_VACATION from emp  
 		</select>
 	
 	<select id="selectAttend" resultType="com.gs52.vo.attendance.MemberAttendVO">

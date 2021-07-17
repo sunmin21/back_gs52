@@ -37,6 +37,7 @@ public class TimeProgressController {
 	public List<WorkTimeVO> SelectVacation(@RequestBody WorkTimeVO vo) {
 		System.out.println("SelectVacation");
 		System.out.println(vo);
+		System.out.println(tDAO.SelectVacation(vo));
 		
 		return tDAO.SelectVacation(vo);
 	}

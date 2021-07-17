@@ -24,28 +24,15 @@ public class UpdateUser {
 	@Column(name="emp_birth")
 	private String birth;
 	
-	@Column(name="emp_photo")
-	private String photo;
-	
-	@Column(name="emp_bank_name")
-	private String bank_name;
-	
-	@Column(name="emp_account_number")
-	private Integer account_number;
-	
 
 	public UpdateUser() {
 	}
 
-	public UpdateUser(String password, String address, String phone, String birth, String photo, String bank_name, Integer account_number) {
+	public UpdateUser(String password, String address, String phone, String birth) {
 		this.password = password;
 		this.address = address;
 		this.phone = phone;
 		this.birth = birth;
-		this.photo = photo;
-
-		this.bank_name=bank_name;
-		this.account_number =account_number;
 	}
 
 	public String getPassword() {
@@ -80,30 +67,5 @@ public class UpdateUser {
 		this.birth = birth;
 	}
 
-	public String getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-
-	public String getBank_name() {
-		return bank_name;
-	}
-
-	public void setBank_name(String bank_name) {
-		this.bank_name = bank_name;
-	}
-
-	public long getAccount_number() {
-		return account_number;
-	}
-
-	public void setAccount_number(Integer account_number) {
-		this.account_number = account_number;
-	}
-
-	
 
 }
