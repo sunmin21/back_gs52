@@ -462,10 +462,6 @@ values ('7월기념', '2021-07-02', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
 values ('워크숍', '2021-07-05', 0);
 insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
-values ('가정의날', '2021-07-19', 0);
-insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
-values ('휴가', '2021-07-23', 0);
-insert into holiday(holiday_title, holiday_date, holiday_annual_repeat)
 values ('내부규정', '2021-07-28', 0);
 
 -- 주간보고 (REPORT)
