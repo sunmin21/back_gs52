@@ -17,7 +17,6 @@ public class MemberEmpVO {
 	private String EMP_ADDRESS = null;
 	private String EMP_PHONE = null;
 	private String EMP_BIRTH = null;
-	private String EMP_PHOTO = null;
 	private String EMP_ENTRY_DATE = null;
 	private int EMP_RANK_INDEX = 0;
 	private String RANK_NAME =null;
@@ -27,10 +26,7 @@ public class MemberEmpVO {
 	private String TEAM_NAME=null;
 	private int EMP_POSITION_INDEX = 0;
 	private String POSITION_NAME=null;
-	private String EMP_BANK_NAME = null;
-	private String EMP_ACCOUNT_NUMBER = null;
 	private int EMP_VACATION = 0;
-	private String EMP_SALARY = null;
 	private String admin ="USER";
    
 	
