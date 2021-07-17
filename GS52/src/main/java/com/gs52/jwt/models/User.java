@@ -77,10 +77,6 @@ public class User {
 	private String entry_date;
 	@Column(name="emp_vacation")
 	private long vacation;
-//	@Column(name="emp_salary")
-//	private String salary;
-//	
-
 	
 	
 	
