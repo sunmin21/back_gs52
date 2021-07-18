@@ -82,7 +82,7 @@
 	</delete>
 	
       <select id="Select_confOne" parameterType="com.gs52.vo.schedule.ConfRoomBookVO" resultType="com.gs52.vo.schedule.ConfRoomBookVO">
-					select c.CONF_TITLE, 
+					select c.CONF_INDEX, c.CONF_TITLE, 
      				c.CONF_ROOM_INDEX, c.CONF_DATE, 
      				c.CONF_START, c.CONF_END, 
      				c.CONF_EMP_INDEX_SEND, 
