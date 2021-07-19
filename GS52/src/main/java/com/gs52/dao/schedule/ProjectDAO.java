@@ -270,6 +270,12 @@ public class ProjectDAO {
 		return sqlFacotry.openSession().selectOne("Project.selectProjectWithScore", vo);
 	}
 
+	public int deleteproject(ProjectVO vo) {
+		// TODO Auto-generated method stub
+		System.out.println(vo);
+		return sqlFacotry.openSession().delete("Project.deleteProject", vo);
+	}
+
 	
 
 }

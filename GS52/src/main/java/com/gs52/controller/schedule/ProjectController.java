@@ -54,6 +54,14 @@ public class ProjectController {
 	
 		return pDAO.updateProject(vo);
 	}
+	@PostMapping(value="/project/deleteproject")
+	public int   deleteproject(@RequestBody ProjectVO vo) {
+
+	
+		return pDAO.deleteproject(vo);
+	}
+	
+	
 
 	@PostMapping(value="/project/updateprojectWith")
 	public void updateProjectWith(@RequestBody ProjectWithVO vo) {

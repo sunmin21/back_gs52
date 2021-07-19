@@ -48,6 +48,11 @@
 		PROJECT_INDEX = #{PROJECT_INDEX}
 
 	</update>
+	<delete id="deleteProject"
+		parameterType="com.gs52.vo.schedule.ProjectVO">
+		DELETE FROM PROJECT WHERE PROJECT_INDEX =
+		#{PROJECT_INDEX} 
+	</delete>
 
 	<update id="updateProjectWith"
 		parameterType="com.gs52.vo.schedule.ProjectWithVO">
@@ -117,16 +122,16 @@
 		WHERE PROJECT_WITH_EMP_INDEX =
 		#{PROJECT_WITH_EMP_INDEX} and
 		PROJECT_INDEX=#{PROJECT_INDEX}
-		
+
 
 	</update>
-	
+
 	<select id="selectProjectWithScore"
 		parameterType="com.gs52.vo.schedule.ProjectWithVO" resultType="float">
 		SELECT
-		PROJECT_WITH_SCORE FROM PROJECT_WITH WHERE PROJECT_WITH_EMP_INDEX =#{PROJECT_WITH_EMP_INDEX} and PROJECT_INDEX=#{PROJECT_INDEX}
+		PROJECT_WITH_SCORE FROM PROJECT_WITH WHERE PROJECT_WITH_EMP_INDEX
+		=#{PROJECT_WITH_EMP_INDEX} and PROJECT_INDEX=#{PROJECT_INDEX}
 	</select>
-	
 	<delete id="deleteProjectTodo"
 		parameterType="com.gs52.vo.schedule.ProjectTaskVO">
 		DELETE FROM PROJECT_TASK WHERE PROJECT_TASK_INDEX =
@@ -136,13 +141,14 @@
 		parameterType="com.gs52.vo.schedule.ProjectTaskVO">
 		DELETE FROM PROJECT_TASK_DETAIL WHERE
 		PROJECT_TASK_DETAIL_INDEX =
-		#{PROJECT_TASK_DETAIL_INDEX} 
+		#{PROJECT_TASK_DETAIL_INDEX}
 	</delete>
 	<delete id="deleteProjectTaskDetailAll"
 		parameterType="com.gs52.vo.schedule.ProjectTaskVO">
 		DELETE FROM PROJECT_TASK_DETAIL WHERE
-		PROJECT_TASK_INDEX =
-		#{PROJECT_TASK_INDEX} 
+		PROJECT_TASK_INDEX
+		=
+		#{PROJECT_TASK_INDEX}
 	</delete>
 	<select id="selectTask"
 		parameterType="com.gs52.vo.schedule.ProjectTaskVO"
@@ -221,7 +227,8 @@
 		and emp.EMP_TEAM_INDEX =
 		team.TEAM_INDEX
 		and team.TEAM_DEPT_INDEX = dept.dept_index
-		order by PROJECT_WITH.PROJECT_WITH_INDEX
+		order by
+		PROJECT_WITH.PROJECT_WITH_INDEX
 	</select>
 	<select id="selectOneProjectFile"
 		parameterType="com.gs52.vo.schedule.ProjectVO"
