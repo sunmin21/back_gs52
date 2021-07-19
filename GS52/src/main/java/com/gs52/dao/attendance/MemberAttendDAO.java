@@ -20,7 +20,6 @@ public class MemberAttendDAO {
 	
 	public List<MemberAttendVO> selectList(){
 		 return sqlFactory.openSession().selectList("Member.selectAttend");
-		 
 	}
 	
 

@@ -56,9 +56,9 @@
         ORDER BY PROJECT.PROJECT_INDEX
 	</select>
 	
-	<select id="updateOkay" parameterType="com.gs52.vo.schedule.ProjectListVO">
+	<update id="updateOkay" parameterType="com.gs52.vo.schedule.ProjectListVO">
 		UPDATE PROJECT
 		SET PROJECT_OKAY = #{PROJECT_OKAY}
 		WHERE PROJECT_INDEX = #{PROJECT_INDEX}
-	</select>
+	</update>
 </mapper>

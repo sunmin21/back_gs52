@@ -34,7 +34,6 @@ public class AnnualManageController {
 	}
 
 
-	
 	@PostMapping("/select")
 	public List<AnnualManageVO> TestBoard(@RequestBody AnnualManageVO vo) {
 	System.out.println(aDAO.selectList(vo.getVACATION_EMP_INDEX()));
@@ -50,8 +49,6 @@ public class AnnualManageController {
 	@PostMapping("/insert")
 	public void insertBoard(@RequestBody AnnualManageVO vo){
 		aDAO.insertAnnual(vo);
-		
-	
 	}
 	
 	@PostMapping("/delete")
@@ -59,10 +56,10 @@ public class AnnualManageController {
 		aDAO.deleteAttend(vo);
 		aDAO.deleteAnnual(vo);
 	}
+	
 	@PostMapping("/update")
 	public void updateBoard(@RequestBody AnnualManageVO vo) {
 		aDAO.updateAnnual(vo);
-		
 	}
 	
 }

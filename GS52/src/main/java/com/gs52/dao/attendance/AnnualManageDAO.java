@@ -20,11 +20,7 @@ public class AnnualManageDAO {
 	
 	public List<AnnualManageVO> selectNear(int userid){
 		 return sqlFactory.openSession().selectList("Annual.selectNear",userid);
-		 
 	}
-	
-	
-	
 	
 	public List<AnnualManageVO> selectList(int userid){
 		 return sqlFactory.openSession().selectList("Annual.selectAnnual",userid);
@@ -34,6 +30,7 @@ public class AnnualManageDAO {
 	public List<AnnualManageVO> selectOne(int userid){
 		 return sqlFactory.openSession().selectList("Annual.selectEmpVacation",userid);
 	}
+	
 	public void insertAnnual(AnnualManageVO vo) {
 		
 		sqlFactory.openSession().selectList("Annual.insertAnnual",vo);
@@ -52,17 +49,16 @@ public class AnnualManageDAO {
 		
 		sqlFactory.openSession().selectOne("Annual.deleteAnnual",vo);
 	}
+	
 	public void deleteAttend(AnnualManageVO vo) {
 		sqlFactory.openSession().selectOne("Annual.deleteAttend",vo);
 	}
 	
-
 	
 	public void updateAnnual(AnnualManageVO vo) {
 		  sqlFactory.openSession().update("Annual.updateEmpVacation",vo); //
 		  sqlFactory.openSession().close();
 		 		
-	
 	}
 
 
