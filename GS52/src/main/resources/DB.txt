@@ -1019,7 +1019,7 @@ values('인사 회의', 1, '2021-07-09', '14:00', '16:00', 3);
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send)
 values('개발 회의', 1, '2021-07-20', '10:00', '13:00', 2);
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send)
-values('이해조정 회의', 2, '2021-07-21', '12:00', '13:30', 5);
+values('이해조정 회의', 2, '2021-07-21', '12:00', '14:00', 5);
 insert into conf(conf_title, conf_room_index, conf_date, conf_start, conf_end, conf_emp_index_send)
 values('정보전달 회의', 3, '2021-07-22', '14:00', '16:00', 10);
 
