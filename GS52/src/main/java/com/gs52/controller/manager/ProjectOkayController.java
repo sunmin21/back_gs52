@@ -39,4 +39,11 @@ public class ProjectOkayController {
 		System.out.println(vo);
 		plDAO.updateOkay(vo);
 	}
+	@PostMapping("/selectAll")
+	public List<ProjectListVO> selectAll(@RequestBody ProjectListVO vo) {
+		System.out.println("spring => selectAll");
+		System.out.println(vo);		
+		return plDAO.selectList2(vo);
+	}
+
 }

@@ -26,7 +26,17 @@
 	        AND PROJECT_WITH_OKAY = 0	        
 	        AND PROJECT_WITH_EMP_INDEX = #{PROJECT_WITH_EMP_INDEX}
 	</select>
-	
+	<select id="selectAll"
+		parameterType="com.gs52.vo.schedule.ProjectListVO"
+		resultType="com.gs52.vo.schedule.ProjectListVO">
+		SELECT PROJECT.*, EMP_NAME, PROJECT_WITH.*
+		FROM PROJECT, PROJECT_WITH, EMP
+		WHERE PROJECT.PROJECT_INDEX = PROJECT_WITH.PROJECT_INDEX
+		AND PROJECT_WITH.PROJECT_WITH_EMP_INDEX = EMP.EMP_INDEX
+		AND PROJECT_WITH.PROJECT_WITH_LEADER = EMP.EMP_INDEX
+		AND PROJECT_OKAY != 0
+		ORDER BY PROJECT.PROJECT_INDEX
+	</select>
 	<update id="updateRequested" parameterType="com.gs52.vo.schedule.ProjectListVO">
 		UPDATE PROJECT_WITH 
 		SET PROJECT_WITH_OKAY = #{PROJECT_WITH_OKAY},

@@ -32,4 +32,11 @@ public class ProjectOkayDAO {
 	public void updateOkay(ProjectListVO vo) {
 		sqlFactory.openSession().update("Project.updateOkay", vo);
 	}
+	public List<ProjectListVO> selectList2(ProjectListVO vo) {
+		// TODO Auto-generated method stub
+		System.out.println(vo);
+		System.out.println("너안타니?");
+		return sqlFactory.openSession().selectList("Project.selectAll",vo);
+	}
+	
 }
