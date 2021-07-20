@@ -21,7 +21,7 @@
       from TODO,TODO_RE,EMP 
       where emp.EMP_INDEX =todo.TODO_EMP_INDEX_SEND 
       and TODO_INDEX=TODO_RE_TODO_INDEX AND TODO_RE_EMP_INDEX=#{TODO_RE_EMP_INDEX}
-       AND TODO_DONE != 0 order by  TODO_RE.TODO_END_DATE 
+       AND TODO_DONE != 0 order by  TODO_RE.TODO_END_DATE DESC
    
    </select>
     <update id="updateTodoDone" parameterType="com.gs52.vo.task.BusinessProgressVO">
