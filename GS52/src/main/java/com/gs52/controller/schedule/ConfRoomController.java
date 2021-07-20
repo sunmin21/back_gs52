@@ -78,15 +78,16 @@ public class ConfRoomController {
 	
 	return tDAO.selectEmp();
 	}
-	
+
 	@PostMapping("/delete_conf")
 	public int deleteConf(@RequestBody ConfRoomBookVO vo) {
 		System.out.println("deleteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-		System.out.println(vo.getCONF_INDEX());
-		return tDAO.deleteConf(vo.getCONF_INDEX());
+		
+		System.out.println(vo);
+		return tDAO.deleteConf(vo);
 	}
-	
-	@PostMapping("select_confOne")
+
+	@PostMapping("/select_confOne")
 	public List<ConfRoomBookVO> selectConfOne(@RequestBody ConfRoomBookVO vo) {
 
 		System.out.println("selectConfOne");
@@ -94,6 +95,15 @@ public class ConfRoomController {
 		System.out.println(vo);
 		System.out.println(tDAO.selectConfOne(vo));
 	return tDAO.selectConfOne(vo);
+	}
+	
+	@PostMapping("select_confOverlap")
+	public List<ConfRoomBookVO> selectConOverlap(@RequestBody ConfRoomBookVO vo) {
+
+		System.out.println("select_confOverlap");
+
+		System.out.println(vo);
+	return tDAO.selectConOverlap(vo);
 	}
 	
 }
