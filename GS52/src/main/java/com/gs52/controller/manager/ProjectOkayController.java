@@ -19,12 +19,19 @@ public class ProjectOkayController {
 	
 	@Autowired
 	public ProjectOkayDAO plDAO = null;
-	
+
 	@PostMapping("/selectOkay")
 	public List<ProjectListVO> ProjectListBoard(@RequestBody ProjectListVO vo) {
 		System.out.println("spring => selectOkay");
 		System.out.println(vo);		
 		return plDAO.selectList(vo);
+	}
+
+	@PostMapping("/selectOkay_teamLeader")
+	public List<ProjectListVO> ProjectListBoard_teamLeader(@RequestBody ProjectListVO vo) {
+		System.out.println("spring => selectOkay");
+		System.out.println(vo);		
+		return plDAO.selectList_teamLeader(vo);
 	}
 	
 	@PostMapping("/updateOkay")

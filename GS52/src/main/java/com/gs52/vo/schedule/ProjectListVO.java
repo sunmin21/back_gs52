@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProjectListVO {
+	private int EMP_INDEX=0;
 	
 	// project 테이블 컬럼들
 	private int PROJECT_INDEX = 0;

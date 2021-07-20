@@ -16,10 +16,17 @@ public class ProjectOkayDAO {
 	
 	@Autowired
 	private SqlSessionFactory sqlFactory = null;
-	
+
 	public List<ProjectListVO> selectList(ProjectListVO vo) {
+		System.out.println("selectList");
 		System.out.println(vo);
 		return sqlFactory.openSession().selectList("Project.selectOkay",vo);
+	}
+
+	public List<ProjectListVO> selectList_teamLeader(ProjectListVO vo) {
+		System.out.println("selectList_teamLeader");
+		System.out.println(vo);
+		return sqlFactory.openSession().selectList("Project.selectOkay_teamLeader",vo);
 	}
 	
 	public void updateOkay(ProjectListVO vo) {
