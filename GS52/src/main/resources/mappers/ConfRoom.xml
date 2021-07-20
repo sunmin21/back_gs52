@@ -78,8 +78,11 @@
    		delete from CONF_RE where CONF_RE_CONF_INDEX = #{CONF_RE_CONF_INDEX}
 	</delete>   	
 	<delete id="Delete_conf" >
-   		delete from CONF where CONF_INDEX = #{CONF_INDEX}
+   		delete from CONF where CONF_INDEX=#{CONF_INDEX} and CONF_EMP_INDEX_SEND=#{CONF_EMP_INDEX_SEND}
 	</delete>
+    <select id="Select_conf_find" parameterType="map" resultType="com.gs52.vo.schedule.ConfRoomVO">
+      select * from CONF where CONF_INDEX=#{CONF_INDEX} and CONF_EMP_INDEX_SEND=#{CONF_EMP_INDEX_SEND}
+   </select>
 	
       <select id="Select_confOne" parameterType="com.gs52.vo.schedule.ConfRoomBookVO" resultType="com.gs52.vo.schedule.ConfRoomBookVO">
 					select c.CONF_INDEX, c.CONF_TITLE, 
@@ -99,5 +102,21 @@
      						c_ro.CONF_ROOM_INDEX=c.CONF_ROOM_INDEX
       
    </select>
+   
+   <select id="Select_confOverlap" parameterType="com.gs52.vo.schedule.ConfRoomBookVO" resultType="com.gs52.vo.schedule.ConfRoomBookVO">
+   		
+		SELECT * FROM conf where 
+		CONF_ROOM_INDEX = #{CONF_ROOM_INDEX} and
+		CONF_DATE = #{CONF_DATE} and
+		((CONF_START between #{CONF_START, jdbcType = VARCHAR} and #{CONF_END, jdbcType = VARCHAR}) or
+		(CONF_END between #{CONF_START, jdbcType = VARCHAR} and #{CONF_END, jdbcType = VARCHAR}))
+   </select>
+   
+   <select id="Select_conf_emp_attend" parameterType="com.gs52.vo.schedule.ConfRoomBookVO" resultType="com.gs52.vo.schedule.ConfRoomBookVO">
+   		select * from attend 
+   		where ATTEND_EMP_INDEX = #{ATTEND_EMP_INDEX} and ATTEND_ATTEND_TYPE_INDEX
+   
+   </select>
+   
 </mapper>
 

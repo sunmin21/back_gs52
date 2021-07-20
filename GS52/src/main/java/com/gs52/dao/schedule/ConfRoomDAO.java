@@ -58,16 +58,28 @@ public class ConfRoomDAO {
 		 return sqlFacotry.openSession().selectList("ConfRoom.Select_emp");
 	}
 	
-	public int deleteConf(long l) {
+	public int deleteConf(@RequestBody ConfRoomBookVO vo) {
 		System.out.println("deleteConf");
 		System.out.println("1");
-		sqlFacotry.openSession().delete("ConfRoom.Delete_conf_re", l);
-		System.out.println("2");
-		return sqlFacotry.openSession().delete("ConfRoom.Delete_conf", l);
+		System.out.println(sqlFacotry.openSession().selectList("ConfRoom.Select_conf_find", vo));
+		if(sqlFacotry.openSession().selectList("ConfRoom.Select_conf_find", vo).isEmpty()==false)
+		{
+
+			System.out.println("2");
+			sqlFacotry.openSession().delete("ConfRoom.Delete_conf_re", vo.getCONF_INDEX());
+
+			return sqlFacotry.openSession().delete("ConfRoom.Delete_conf", vo);
+		}
+		else {
+			return 0;
+		}
 	}
 	
 	public List<ConfRoomBookVO> selectConfOne(@RequestBody ConfRoomBookVO vo){
 		 return sqlFacotry.openSession().selectList("ConfRoom.Select_confOne",vo);
 	}
-	
+
+	public List<ConfRoomBookVO> selectConOverlap(@RequestBody ConfRoomBookVO vo){
+		 return sqlFacotry.openSession().selectList("ConfRoom.Select_confOverlap",vo);
+	}
 }
