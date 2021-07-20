@@ -25,6 +25,6 @@ public class ProjectListVO {
 	private int PROJECT_WITH_OKAY = 0;
 	private String PROJECT_WITH_REJECT = null;
 	private int PROJECT_WITH_LEADER = 0;
-	
+     
 	private String EMP_NAME = null;	
 }

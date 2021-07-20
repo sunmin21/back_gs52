@@ -24,12 +24,14 @@ public class ProjectOkayController {
 	public List<ProjectListVO> ProjectListBoard(@RequestBody ProjectListVO vo) {
 		System.out.println("spring => selectOkay");
 		System.out.println(vo);		
+		System.out.println(vo.getPROJECT_INDEX());
 		return plDAO.selectList(vo);
 	}
-
+	
+	
 	@PostMapping("/selectOkay_teamLeader")
 	public List<ProjectListVO> ProjectListBoard_teamLeader(@RequestBody ProjectListVO vo) {
-		System.out.println("spring => selectOkay");
+		System.out.println("spring => electOkay_teamLeader");
 		System.out.println(vo);		
 		return plDAO.selectList_teamLeader(vo);
 	}
@@ -43,6 +45,7 @@ public class ProjectOkayController {
 	public List<ProjectListVO> selectAll(@RequestBody ProjectListVO vo) {
 		System.out.println("spring => selectAll");
 		System.out.println(vo);		
+		System.out.println("야야야야");
 		return plDAO.selectList2(vo);
 	}
 
