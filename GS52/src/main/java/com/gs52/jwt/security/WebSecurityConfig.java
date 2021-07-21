@@ -75,6 +75,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.authorizeRequests()
 			.antMatchers("/manager/holiday/showHoliday").permitAll()
 			//.antMatchers("/manager").access("hasAnyRole('ADMIN', 'TEAMLEADER')")
+			.antMatchers("/manager/regist/**").access("hasAnyRole('ADMIN')")
 			.antMatchers("/manager/addAccount/**").access("hasAnyRole('ADMIN')")
 			.antMatchers("/manager/addoptions/**").access("hasAnyRole('ADMIN')")
 			.antMatchers("/manager/holiday/addHoliday").access("hasAnyRole('ADMIN')")
