@@ -117,24 +117,18 @@ public class AuthController {
 	// Authentication Manager에서는 입력된 Request 정보가 올바른지를 검사하는 것으로 볼 수 있음
 	@PostMapping("/signup")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) throws ParseException {
-		System.out.println("signup111111111111111111111111111");
-		
-
-		System.out.println("signup222222222222222222222222222222");
-		System.out.println(signUpRequest.getEntry_date());
 		
 		//중복 아이디 가입 불가능
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-			System.out.println("signUpRequest.getId()");
-			System.out.println(signUpRequest.getId());
+			System.out.println("중복아이디");
 			return ResponseEntity
 					.badRequest()
 					.body(new MessageResponse("Error: ID is already taken!"));
 		}
 		
 		//중복 이메일 가입 불가능
-		System.out.println("signup33333333333333333333333");
 		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
+			System.out.println("중복이메일");
 			return ResponseEntity
 					.badRequest()
 					.body(new MessageResponse("Error: Email is already in use!"));
@@ -163,19 +157,11 @@ public class AuthController {
 
 		System.out.println("signUpRequest.getRank()");
 		System.out.println(signUpRequest.getRank());
-//		if(signUpRequest.getRank()==3) {
-//			System.out.println("getRank adminnnnnnnnnnnnnnnnnn");
-//			strRoles.add("ROLE_ADMIN");
-//		}
-
-		//System.out.println("???????????????????????????");
-		
 
 		
 
 		//직책이 팀장일때 teamleader 부여
 		if(signUpRequest.getPosition()==2) {
-			System.out.println("getPosition Team Leaderrrrrrrrrrrrrrrrrr");
 			Role teamLeaderRole = roleRepository.findByName(ERole.ROLE_TEAMLEADER)
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 			roles.add(teamLeaderRole);
@@ -184,10 +170,6 @@ public class AuthController {
 			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 			roles.add(userRole);
-			System.out.println(userRole);
-			System.out.println(userRole.toString());
-			System.out.println(userRole.getName());
-			System.out.println(userRole.getId());
 		}
 		
 		/*
