@@ -42,7 +42,7 @@
 	<update id="Update_End" parameterType="com.gs52.vo.main.WorkTimeVO">
 		update ATTEND set
 		 ATTEND_END= #{ATTEND_END}, 
-		 ATTEND_TOTAL=ROUND((TO_DATE(#{ATTEND_END}, 'HH24:MI') - TO_DATE(ATTEND_START, 'HH24:MI')) * 24 * 60, 2)
+		 ATTEND_TOTAL=ROUND((TO_DATE(#{ATTEND_END}, 'HH24:MI') - TO_DATE(ATTEND_START, 'HH24:MI')) * 24 * 60-60, 2)
 		where ATTEND_EMP_INDEX=#{ATTEND_EMP_INDEX} and ATTEND_DATE=#{ATTEND_DATE}
 	</update>
 		
